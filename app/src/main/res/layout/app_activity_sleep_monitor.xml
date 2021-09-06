@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="220dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bg_sleep_monitor" />
+
+            <View
+                android:id="@+id/line_monition"
+                android:layout_width="@dimen/dp1"
+                android:layout_height="@dimen/dp60"
+                android:layout_centerInParent="true" />
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line_monition"
+                android:layout_centerHorizontal="true"
+                android:text="@string/sleep_measuring"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp15" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <include layout="@layout/common_view_divide_line" />
+
+            <bike.gymproject.viewlibray.SleepMonitorView
+                android:id="@+id/avg_bmp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                app:leftIcon="@drawable/icon_en_heart"
+                app:titleColor="@color/common_gray_color"
+                app:titleSize="@dimen/sp30"
+                app:titleText="@string/app_hr"
+                app:unitColor="@color/common_white"
+                app:unitSize="@dimen/sp13"
+                app:unitText="@string/unit_time_per_minute"
+                app:valuseColor="@color/common_white"
+                app:valuseSize="@dimen/sp14"
+                app:valuseText="0" />
+
+            <include layout="@layout/common_view_divide_line" />
+
+            <bike.gymproject.viewlibray.SleepMonitorView
+                android:id="@+id/avg_breath"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                app:leftIcon="@drawable/icon_en_breath"
+                app:titleColor="@color/common_gray_color"
+                app:titleSize="@dimen/sp30"
+                app:titleText="@string/respiratory_rate"
+                app:unitColor="@color/common_white"
+                app:unitSize="@dimen/sp13"
+                app:unitText="@string/unit_time_per_minute"
+                app:valuseColor="@color/common_white"
+                app:valuseSize="@dimen/sp14"
+                app:valuseText="0" />
+
+            <include layout="@layout/common_view_divide_line" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_awake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/dp25"
+            android:layout_marginTop="19dp"
+            android:background="@drawable/shape_sleep_start_bg"
+            android:paddingBottom="@dimen/dp6"
+            android:paddingLeft="@dimen/dp30"
+            android:paddingRight="@dimen/dp30"
+            android:paddingTop="@dimen/dp6"
+            android:text="@string/get_up"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp20"
+            android:visibility="visible" />
+
+
+        <View style="@style/commonItemLineHeight20" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp25"
+            android:layout_marginLeft="@dimen/dp30"
+            android:layout_marginTop="@dimen/dp25"
+            android:text="@string/last_sleep" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="130dp"
+                android:layout_weight="1">
+
+                <bike.gymproject.viewlibray.RoundProgressBar xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/rundprogressbar"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_centerInParent="true"
+                    app:cirIsDisplayable="false"
+                    app:roundColor="@color/common_sleep_time_color"
+                    app:roundProgressColor="@color/common_view_color"
+                    app:roundWidth="16dp"
+                    app:textIsDisplayable="false" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="130dp"
+                android:layout_weight="1">
+
+                <View
+                    android:id="@+id/view_sum"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_alignTop="@+id/tv_sleep_time_tips"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginRight="13dp"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:background="@drawable/shape_sleep_sum" />
+
+
+                <TextView
+                    android:id="@+id/tv_sleep_time_tips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/view_sum"
+                    android:text="@string/you_slept_all_together_last_night"
+                    android:textColor="@color/common_white" />
+
+                <bike.gymproject.viewlibray.BebasNeueTextView
+                    android:id="@+id/tv_sleep_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_sleep_time_tips"
+                    android:layout_toRightOf="@id/view_sum"
+                    android:text="--"
+                    android:textColor="@color/common_white"
+                    android:textSize="@dimen/sp30" />
+
+                <View
+                    android:layout_width="12dp"
+                    android:layout_height="11dp"
+                    android:layout_alignTop="@+id/tv_sleep_rate_tips"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginRight="13dp"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:background="@drawable/shape_sleep_precent" />
+
+                <TextView
+                    android:id="@+id/tv_sleep_rate_tips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/tv_sleep_rate"
+                    android:layout_toRightOf="@id/view_sum"
+                    android:text="@string/your_deep_sleep"
+                    android:textColor="@color/common_white" />
+
+                <bike.gymproject.viewlibray.BebasNeueTextView
+                    android:id="@+id/tv_sleep_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toRightOf="@id/view_sum"
+                    android:text="--"
+                    android:textColor="@color/common_white"
+                    android:textSize="@dimen/sp30" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <!--
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="@color/common_item_bg_color">
+
+
+                    <View
+                        android:id="@+id/line"
+                        style="@style/commonItemLine"
+                        android:layout_centerInParent="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/line"
+                        android:layout_marginLeft="@dimen/dp40"
+                        android:layout_marginTop="@dimen/dp40"
+                        android:text="@string/your_deep_sleep"
+                        android:textColor="@color/common_white"
+                        android:textSize="14sp" />
+
+                    <bike.gymproject.viewlibray.BebasNeueTextView
+                        android:id="@+id/tv_sleep_rate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@id/line"
+                        android:layout_marginLeft="@dimen/dp40"
+                        android:layout_marginRight="@dimen/dp70"
+                        android:layout_marginTop="@dimen/dp32"
+                        android:text="&#45;&#45;"
+                        android:textColor="@color/common_white"
+                        android:textSize="30sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@id/line"
+                        android:layout_marginBottom="@dimen/dp40"
+                        android:layout_marginLeft="@dimen/dp40"
+                        android:text="@string/you_slept_all_together_last_night"
+                        android:textColor="@color/common_white"
+                        android:textSize="14sp" />
+
+                    <bike.gymproject.viewlibray.BebasNeueTextView
+                        android:id="@+id/tv_sleep_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@id/line"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginBottom="@dimen/dp32"
+                        android:layout_marginLeft="@dimen/dp40"
+                        android:layout_marginRight="@dimen/dp70"
+                        android:text="&#45;&#45;"
+                        android:textColor="@color/common_white"
+                        android:textSize="30sp" />
+                </RelativeLayout>
+        -->
+
+    </LinearLayout>
+</ScrollView>
+

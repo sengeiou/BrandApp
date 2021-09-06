@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical">
+
+    <brandapp.isport.com.basicres.commonrecyclerview.Xlist.XListView
+        android:id="@+id/recycler_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+
+    </brandapp.isport.com.basicres.commonrecyclerview.Xlist.XListView>
+</LinearLayout>

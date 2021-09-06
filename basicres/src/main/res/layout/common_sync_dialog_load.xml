@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/common_shape_dialog_bg"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="35dp">
+
+
+    <TextView
+        android:id="@+id/tips_loading_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/common_app_name"
+        android:textColor="@color/common_text_color"
+        android:textSize="@dimen/sp15" />
+
+    <TextView
+        android:id="@+id/tv_prog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="50%"
+        android:textColor="@color/color_00B167"
+        android:textSize="@dimen/sp11" />
+
+    <brandapp.isport.com.basicres.commonalertdialog.ProgressView
+        android:id="@+id/progressBar"
+        android:layout_width="200dp"
+        android:layout_height="2dp" />
+
+    <TextView
+        android:id="@+id/tv_sum_times"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text=""
+        android:textColor="#A9AEB7"
+        android:textSize="@dimen/sp11" />
+
+</LinearLayout>

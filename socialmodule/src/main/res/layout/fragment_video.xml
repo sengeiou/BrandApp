@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <phone.gym.jkcq.com.socialmodule.fragment.SampleCoverVideo
+        android:id="@+id/videoPlayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.2"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:focusedByDefault="true"
+                android:background="@drawable/bg_home_white_black_top" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.4"
+                android:background="@drawable/bg_home_white_black_bottom" />
+        </LinearLayout>
+
+
+    </phone.gym.jkcq.com.socialmodule.fragment.SampleCoverVideo>
+    <TextView
+        android:id="@+id/view_pause"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <ImageView
+        android:id="@+id/iv_pasue"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/main_video_play_normal"/>
+
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/tv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/video_back"
+        android:padding="@dimen/dp15"/>
+
+
+    <LinearLayout
+        android:id="@+id/layout_right"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:gravity="bottom|center"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp80"
+            android:layout_marginBottom="15dp">
+        <brandapp.isport.com.basicres.commonview.RoundImageView
+            android:id="@+id/iv_head"
+            android:layout_centerInParent="true"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/icon_defs"
+            app:border_outside_color="@color/common_item_line_color"
+            app:border_thickness="2dp" />
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/iv_option"
+                android:padding="@dimen/dp10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/icon_home_follow"
+                android:layout_alignParentBottom="true"/>
+        </RelativeLayout>
+        <ImageView
+            android:id="@+id/iv_like"
+            android:paddingTop="@dimen/dp10"
+            android:paddingLeft="@dimen/dp5"
+            android:paddingRight="@dimen/dp5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_home_like_nor"/>
+      <TextView
+          android:id="@+id/tv_like_number"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="@color/white"
+          android:text=""
+          android:textStyle="bold"
+          android:textSize="15dp"
+          />
+
+        <ImageView
+            android:id="@+id/iv_report"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_report"
+            android:visibility="visible"
+            android:paddingTop="@dimen/dp10"
+            android:paddingLeft="@dimen/dp5"
+            android:paddingRight="@dimen/dp5"/>
+        <TextView
+            android:visibility="visible"
+            android:id="@+id/tv_report_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="15dp"
+            />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_weight="0.09"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_toStartOf="@+id/layout_right"
+        android:layout_marginLeft="@dimen/dp15"
+        android:id="@+id/tv_profile"
+        android:scrollbars="vertical"
+        android:maxHeight="120dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dp10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        android:text=""/>
+    <TextView
+        android:layout_toStartOf="@+id/layout_right"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_above="@+id/tv_profile"
+        android:id="@+id/tv_time"
+        android:layout_marginBottom="@dimen/dp5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:text=""/>
+    <TextView
+        android:layout_toStartOf="@+id/layout_right"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_above="@+id/tv_time"
+        android:id="@+id/tv_nikeName"
+        android:textStyle="bold"
+        android:layout_marginBottom="@dimen/dp5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:textColor="@color/white"
+        android:text=""/>
+
+    <ProgressBar
+        android:id="@+id/video_bottom_progressbar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:visibility="visible"
+        android:layout_alignParentBottom="true"
+        android:max="100"
+        android:progressDrawable="@drawable/friend_video_progress" />
+</RelativeLayout>

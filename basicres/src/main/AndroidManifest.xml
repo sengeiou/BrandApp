@@ -1,0 +1,14 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.isport.brandapp.basicres">
+
+    <application
+        android:allowBackup="false"
+        tools:replace="android:allowBackup">
+        <meta-data
+            android:name="android.support.VERSION"
+            android:value="26.1.0"
+            tools:replace="android:value"/>
+    </application>
+
+</manifest>

@@ -1,0 +1,1013 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ExtraTranslation">
+    <string name="app_id">5c7229e9</string>
+    /**app**/
+    <string name="app_name">Bonlala</string>//iSport健康管家
+
+
+    //欢迎进入 iSport健康管家
+    <string name="app_band_step_number">steps(step)</string>//步数(步)
+    //米
+    <string name="unit_speed">km/h</string>//
+    <string name="unit_time_per_minute">BPM</string>//次/分
+    <string name="unit_minute">Minute</string>//分钟
+    <string name="main_sport_sum">minutes of exercise tody</string>//分钟
+    //分钟
+    <string name="sport_dtail">Sport details</string>
+    <string name="please_install_software">Please install the corresponding software</string>
+    <string name="speed_remind">Speed remind</string>
+    <string name="watch_step_unite_distance">km</string>
+    <string name="watch_step_type_distance">Distance</string>
+    <string name="watch_step_unite_calory">kcal</string>
+    <string name="watch_step_type_calory">Calorie</string>
+    <string name="watch_step_target_str">Step target</string>
+    <string name="watch_distance_target_str">Distance target</string>
+    <string name="watch_calorie_target_str">Calorie target</string>
+    <string name="watch_dial_is_set">Display setting</string>//表盘设置
+    <string name="bracelet_wear">Wearing setting</string>//佩戴方式
+    <string name="watch_step_target_count">6000 Steps</string>
+    <string name="watch_distance_target_count">1000m</string>
+    <string name="watch_calorie_target_count">10kcal</string>
+    <string name="watch_stable_version_str">Firmware Version</string>
+    <string name="watch_unbind_str">Unpair</string>
+    <string name="watch_stable_remind_starttime">Start time</string>
+    <string name="watch_stable_remind_endtime">End time</string>
+    <string name="watch_heart_rate_maxium">Maxium</string>
+    <string name="watch_heart_rate_minium">Minium</string>
+    <string name="watch_heart_rate_average">Average</string>
+    <string name="app_protol">@string/user_agreement</string>//用户协议
+    <string name="app_disconnect_device">The device is not connected</string>//请连接设备
+    <string name="app_disconnected">DisConnect</string>//连接断开
+    <string name="app_please_enter_the_verification_code">@string/enter_vertify</string>//请输入验证码
+    <string name="app_share_goal_dis_unit">km</string>//km
+    <string name="app_share_goal_cal_unit">kcal</string>//cal
+    <string name="app_hr">@string/heart_rate</string>//心率
+    <string name="app_device_disconnected">DisConnect</string>//断连
+    <string name="app_bodymove_temp">Body motion amplitude</string>//体动振幅
+    <string name="app_invalid">invalid</string>//无效
+    <string name="sleep_util">Minute</string>//分
+    <string name="sleep_util_new">M</string>//分
+    <string name="sleep_util_s">S</string>//秒
+    <string name="body_fat_util">kg</string>//kg
+    <string name="app_spash_name">Bonlala</string>//健康管家
+    <string name="app_nickname_cheak">@string/enter_nickname</string>//请输入昵称
+    <string name="app_co">Bonlala Technology (Shenzhen)Co.,Ltd. \nAll Rights Reserved</string>
+    <string name="app_weight_util_single">kg</string>//kg
+    <string name="app_sleep_util_min">Minute</string>//分
+    <string name="app_scale_unit">kg</string>//kg
+    <string name="app_syncing">Reading data</string>//读取数据中
+    <string name="app_bluetoothadapter_turnon">ALLOW</string>//打开
+    <string name="app_bluetoothadapter_turnoff">DENY</string>//打开
+    <string name="app_device_version">V %1$s</string>//V %1$s
+    <string name="app_scale_bmi">BMI:%1$s</string>//BMI:%1$s
+    //同步完成
+    <string name="press_again_exit">Click twice to exit the APP</string>//点击两次退出APP
+    <string name="app_rate_up">↑%1$s</string>//
+    <string name="app_rate_down">↓%1$s</string>//
+    <string name="app_bmp_recode">HeartRate record</string>//心率记录
+    <string name="app_time_util">%1$sH%2$sM</string>//%1$s时%2$s分
+    <string name="app_sleep_setting_remind">%1$d minute early</string>//%1$s时%2$s分
+    <string name="app_scale_sum">： </string>//：共
+
+    <string name="app_close">close</string>//关闭
+    <string name="app_band_achieve_goal">Achieved goal%1$s%%</string>//已达成目标%1$s%%
+    <string name="app_sleep_time_hour_min">%1$sH%2$sM</string>//%1$sH%2$sM
+    <string name="app_sleep_time_min">%1$sM</string>//%1$sM
+    <string name="cont_20kg">If the weight is less than 20kg, the data will not be recorded</string>
+    <string name="app_version">v%1$s</string>//v%1$s
+    <string name="app_sleep_time_remind_title">Sleep to remind</string>//睡眠提醒
+    <string name="app_sleep_time_remind_tips">Sleep time</string>//睡眠时间到
+    <string name="app_not_history_data">No historical data</string>//无历史数据
+    //微信登录失败
+    //微信登录取消
+    //QQ登录失败
+    //QQ登录取消
+    <string name="only_add_five_alarm">Only five alarms can be added</string>
+    <string name="detection">Monitor</string>
+    <string name="bmi">BMI</string>//BMI
+    <string name="fatweight">Body Fat</string>//脂肪重量
+
+    <string name="share_friend">share to firend</string>
+    <string name="hasBind">This device has been bound by another user</string>
+    <string name="user_time">Time</string>
+    <string name="dis_unit">km</string>
+    <string name="scale_unit">points</string>
+    <string name="dis_unit_number">%1$skm</string>
+    <string name="sport_tips">The distance of this movement is less than 0.2km, the record will not be saved!</string>
+    <string name="bmp_unit">BPM</string>
+    <string name="gps_tips">Please open the GPS</string>
+    <string name="app_scan_nodevice">No device was found</string>
+    <string name="my_position">Sport track</string>
+    <string name="select_date_error">Please select a valid date</string>
+    <string name="application_keep_running">Application keep running</string>
+    <string name="showContent">full</string>//全文
+    <string name="hiden">pack up</string>//收起
+    <string name="no_more">No more data</string>
+    //没有更多数据
+    <string name="app_nolong_history_data">Sleep data less than 10 minutes, invalid data</string>
+    <string name="facebook_app_id">693785877755643</string>
+    <string name="fb_login_protocol_scheme">fb693785877755643</string>
+
+
+    <!--已整理-->
+    <string name="no_data">- -</string>//
+    <string name="app_def_setting"> - - : - -</string>//
+    <string name="back">Back</string>
+
+    <string name="month1">Jan</string>
+    <string name="month2">Feb</string>
+    <string name="month3">Mar</string>
+    <string name="month4">Apr</string>
+    <string name="month5">May</string>
+    <string name="month6">Jun</string>
+    <string name="month7">Jul</string>
+    <string name="month8">Aug</string>
+    <string name="month9">Sep</string>
+    <string name="month10">Oct</string>
+    <string name="month11">Nov</string>
+    <string name="month12">Dec</string>
+    <string name="frequently_tip">Do not operate frequently</string>
+
+    <string name="share_title">All Time Safeguard for Your Health</string>
+    //iSport健康管家 已翻译
+
+    <string name="toolbar_data">Status</string>//数据
+    <string name="toolbar_sport">Sport</string>//运动
+    <string name="toolbar_mall">Feed</string>//商城
+    <string name="app_mine">Profile</string>//我的
+    <string name="app_device_no_data">No data</string>//没有数据
+    <string name="confirm">Confirm</string>
+    //口号、标语
+    //浏览所有产品
+    //绑定您的设备
+    //好的，去登录
+    <string name="unit_steps">steps</string>//步
+    <string name="unit_meters">m</string>//
+    <string name="unit_kcal">kcal</string>//千卡
+    <string name="unit_kg">Kg</string>//公斤
+    //公斤
+    <string name="weigh">Weigh</string>//称重
+    //时/分
+    <string name="sleep">Sleep</string>//睡眠
+    //睡眠带
+    <string name="unit_day">Day</string>//睡眠带
+    //同步
+    <string name="target_completion">Target Completion</string>//周期达标
+    <string name="compare_previous_period">Compared with previous period</string>//分钟
+    <string name="compared_to_last_time">Compared with last time</string>//分钟
+    <string name="today">Today</string>
+    <string name="week">Week</string>
+    <string name="sport_day">Day</string>
+    //请添加设备
+    <string name="connect">Connect</string>//连接
+    <string name="sport_count">共运动了%1$s次</string>
+    <string name="pair">Pair</string>//绑定
+    <string name="paired">Paired(%1$s)</string>//已绑定 %1$s
+    //选择设备开始绑定
+    <string name="search">Search</string>//搜索设备
+    <string name="not_pair">Not now</string>//先不绑定了
+    //设备绑定中
+    //绑定成功
+    <string name="scale_notice">Please step on the scale and keep its screen light on</string>
+    //请持续轻踩秤并保持屏幕常亮
+    <string name="search_again">Try again</string>//重新搜索
+    <string name="scale_found">Scale found. Please confirm the value displayed on the scale is the same as the decentralized value. Then confirm the pairing.</string>
+    //已经发现体脂秤
+    <string name="confirm_pairing">Confirm pair</string>//确定绑定
+    //绑定新设备之前，请先解绑设备
+    <string name="unpair">Unpair</string>//解绑
+    <string name="unpair_notice">Please confirm whether to sync data before unpairing. Direct unpair will lead to data loss.</string>
+    //是否在解绑前同步数据，直接解绑部分数据有可能丢失？
+    <string name="unpair_other_device_notice">You have bound the device %1$s. please unbind the device befre binding the new device?</string>
+
+    //您已经绑定了手环/手表，绑定新的手环/手表会解绑当前设备，是否继续？
+    <string name="unpair_directly">Unpair directly</string>//直接解绑
+    <string name="unpair_after_sync">Unpair after sync</string>//同步后解绑
+    <string name="unpair_successfully">Unpair successfully</string>//同步后解绑
+    Unpair successfully
+    <string name="sync_data">Syncing data...</string>//同步数据中
+    <string name="steps">steps</string>//同步数据中
+    <string name="last_weight">Last weight</string>//上次体重
+    <string name="bfr_value">BFR:%1$s</string>//体脂率:%1$s 另外加的
+    <string name="bfr">BFR(%)</string>//体脂率(%)
+    <string name="bfp">BFR</string>//体脂率
+
+
+    /**体脂秤首页**/
+
+    <string name="body_type">Body type:</string>//您的体型
+    <string name="thin">Thin</string>//偏瘦
+    <string name="standard">Normal</string>//标准
+    <string name="chubby">Overweight</string>//偏胖
+    <string name="obesity">Obese Ⅰ</string>//肥胖
+    <string name="severe_obesity">Obese Ⅱ</string>//重度
+    <string name="measuring_report">Report</string>//测量报告
+    <string name="measuring_befor_report">Generate report after measurement</string>//测量报告
+    //测量报告
+    <string name="history_memory">History</string>//历史记录
+    //无历史数据
+    /**称体重**/
+    <string name="please_step_on">Please scale barefoot</string>//请上秤
+    <string name="measuring_your_weight">Being measured, please do not leave the scale</string>
+    //正在测量中，请不要离开秤
+
+    /**体脂测量报告**/
+    /** 体重记录**/
+    <string name="weight_record">Weight record</string>//体重记录
+    <string name="time">Time</string>//时间
+    <string name="weight_KG">Weight(KG)</string>//体重(kg)
+    <string name="health_report">Health report</string>//健康报告
+    <string name="current_weight_kg">Current weight (KG)</string>//当前体重（公斤）
+    <string name="composite_score">Score:</string>//综合得分：
+    <!--<string name="composite_score">Composite Score:</string>//综合得分：-->
+    //肥胖度
+    <string name="body_bone">Body Bone</string>//骨骼肌率
+    <string name="skeleton_muscle_mass">Skeleton Muscle Mass</string>//骨骼肌重量
+    <string name="muscle_rate">Muscle rate</string>//肌肉率
+    <string name="muscle_mass">	Muscle mass</string>//肌肉重量
+    <string name="visceral_fat">Visceral fat</string>//内脏脂肪
+    <string name="water">Water</string>//水份
+    <string name="water_content">Water content</string>//水含量
+    <string name="basal_metabolism">Basal metabolism</string>//基础代谢
+    <string name="bone_mass">Bone mass</string>//骨量
+    <string name="protein">Protein</string>//蛋白质
+    <string name="ffm">FFM</string>//去脂体重
+    <string name="body_age">Body Age</string>//身体年龄
+    <string name="level_low">Low</string>
+    <string name="level_high">High</string>
+    <string name="level_overtop">Overtop</string>
+    <string name="level_good">Good</string>
+    <string name="app_scale_down_weight">lose weight %1$skg,</string>//减重%1$skg,
+    <string name="app_scale_up_weight">gain weight %1$skg,</string>//增重%1$skg,
+    <string name="app_scale_up_body">gain fat %1$s%%</string>//增脂%1$s%%
+    <string name="app_scale_down_body">lose fat %1$s%%</string>//减脂%1$s%%
+
+    /** 睡眠带首页**/
+    <string name="last_sleep">Last leep</string>//上次睡s眠
+
+    <string name="actual_deep_sleep_time">Actual deep sleep time</string>
+    <string name="deep_sleep_percent">Percentage of total sleep time %1$s%%</string>
+    //平均心率
+    <string name="app_sleep_histroy_avg_hr">Average HR(bpm)</string>//平均心 \n率(bpm)
+    //平均呼吸率
+    <string name="app_sleep_histroy_avg_breath">Average respiratory rate(t/m)</string>//平均呼吸
+    \n率(t/m)
+    <string name="time_to_fall_sleep">Time to fall sleep</string>//入睡时长
+    <string name="turn_over_times">Turn over times</string>//翻身次数
+    <string name="app_sleep_histroy_deep_infant">Turn over times(t)</string>//翻身次\n数(t)
+    //开始睡眠
+    <string name="sleep_record">Sleep record</string>//睡眠记录
+    <string name="back_today">Back to today</string>
+    /**监测睡眠**/
+    //监测睡眠
+    <string name="normal">Normal</string>//正常
+    //初始化
+    <string name="sleep_measuring">Measuring</string>//监测中
+    <string name="apnea">Apnea</string>//呼吸暂停
+    <string name="heart_pause">Heart pause</string>//心跳暂停
+    <string name="body_moving">Body movement</string>//体动
+    <string name="turn_over">Turn Over</string>//翻身
+    <string name="leave_bed">Out of bed</string>//离床
+
+    //已经离床，返回主页
+    <string name="heart_rate">HR</string>//心率
+    <string name="respiratory_rate">Respiratory rate</string>//呼吸率
+    <string name="get_up">Get up</string>//起床
+    <string name="you_slept_all_together_last_night">You slept for</string>
+    //您昨晚总共睡了
+    <string name="your_deep_sleep">Percentage of deep sleep</string>//您昨晚的深睡比例是
+    /**睡眠记录**/
+    <string name="deep_sleep_time_total_time">Deep sleep Time/Total Time(h)</string>//深睡时长/\n 总时长(h)
+
+    /**睡眠分享**/
+    <string name="total_sleep_duration">Total sleep time</string>//今日睡眠时长
+    <string name="deep_sleep">Deep sleep</string>//深睡
+    <string name="light_sleep">Light sleep</string>//深睡
+    <string name="awake_sleep">Awake</string>//深睡
+
+    <!--待确认-->
+    //实际深睡时长%1$s时%2$s分，占总睡眠时长%3$s%%
+
+    /**步数分享**/
+    <string name="last_step_recor">Last step recordd</string>//上次步数
+    //目标比例
+    //里程
+    <string name="app_band_dis">Distance%1$skm</string>//距离%1$sKM
+    <string name="app_band_step_dis">Distance(km)</string>//距离(km)
+    <string name="consumption">Consumption</string>//消耗
+    <string name="app_band_cal">Consumption%1$scal</string>//消耗%1$scal
+    <string name="app_band_step_cal">Consumption(cal)</string>//消耗(cal)
+    <string name="step_history">Step history</string>//步数记录
+    <string name="saved_title">You have saved %1$s pt of gas</string>//相当于节省了%1$s升汽油
+    <string name="burned_title">You have burned %1$s g fat</string>//相当于燃烧了%1$s克脂肪
+
+    /**登录**/
+    <string name="get_code">Get code</string>//获取验证码
+    <string name="enter_tel">Enter phone number</string>//请输入手机号
+    <string name="enter_email">Enter email address</string>//请输入手机号
+    <string name="enter_vertify">Enter code</string>//请输入验证码
+    <string name="enter_correct_vertify_notice">Please enter the correct verification code</string>
+    //请输入正确的验证码
+    <string name="login">Sign in</string>//登录
+    <string name="use_third_login">Third party authorization login</string>//使用以下第三方授权登录
+    <string name="agree_user_agreement_notice">Please agree to the user agreement</string>
+    //请选择用户协议
+    <string name="enter_correct_tel_notice">Incorrect format of telephone number</string>//电话号码格式不正确
+    <string name="enter_correct_email_notice">Incorrect mailbox format</string>//邮箱格式格式不正确
+    <string name="binding_tel">Incorrect phone number</string>//电话号码格式不正确
+    <string name="agree_user_agreement">Login means consent </string>//已阅读并同意
+    <string name="log_out_notice">Confirm to login out?</string>//确定退出登录
+
+    /**数据首页旧**/
+    //未绑定设备
+    <string name="watch">Watch </string>//手表
+    <string name="detail_watch">%1$s Watch</string>//手表
+    //手表
+    <string name="wristband">Band </string>//手环
+    <string name="detail_wristband">%1$s Band</string>//手环
+    <string name="body_fat_scale">Body fat scale</string>//体脂秤
+    <string name="rope_skipping">Rope skipping</string>
+    <string name="unconnected_device">Unconnected device</string>//未连接设备
+
+
+    /**我的主页**/
+    <string name="myDevice">My devices</string>//我的设备
+    <string name="mythrid">Third party access</string>//第三方接入
+    //Google Fit
+    <string name="add_device">Add</string>//添加
+    <string name="disConnect"> Disconnect</string>//未连接
+    <string name="connected">Connected</string>//已连接
+    <string name="user_watch">Watch:\n%1$s</string>//手表:%1$s
+    <string name="user_brand">Band:%1$s</string>//手环:%1$s
+    <string name="user_body_fat_scale">Body fat scale:\n%1$s</string>//体脂秤:%1$s
+    <string name="user_sleep_belt">Sleep belt:\n%1$s</string>//睡眠带:%1$s
+
+    <string name="app_device_watch">Watch:%1$s</string>//手表:%1$s
+    <string name="app_device_body_fat">Body fat scale:%1$s</string>//体脂秤:%1$s
+    <string name="app_device_sleep">Sleep belt:%1$s</string>//睡眠带:%1$s
+
+    //电量
+    <string name="health_index">Health index</string>
+    <string name="detail">Details</string>
+
+    /**设置页面**/
+    <string name="set">Settings</string>//设置
+    <string name="feedback">Feedback</string>//意见反馈
+    <string name="clear_acache">Clean cache</string>//
+    <string name="about_us">About us</string>//关于
+    <string name="quit_login">Log out</string>/
+
+    /**定时睡眠**/
+    <string name="sleep_timer">Sleep Timer</string>//定时睡眠
+    <string name="save">Save</string>//保存
+    <string name="sleep_alarm_notice_title">After turning it on, no need for manual operation. The sleep belt will automatically detect sleep at setup time period. If you do not sleep for 4 hours from setup time, you will need to turn on sleep detection manually.</string>
+    //打开后，您无需每天手动开启
+
+    /** 手表设置页面**/
+    <string name="battery">Battery</string>//电量
+    <string name="step_target">Step target</string>//计步目标
+    <string name="turn_screen_on">Lift the wrist bright screen</string>//翻腕亮屏
+    <string name="screen_saver_time">Screen saver timeout</string>//屏保时间
+    <string name="device_id">Device ID</string>//设备ID
+    <string name="firmware_version">Firmware version</string>//固件版本
+
+    <string name="app_no_setting"> Not Set</string>//未设置
+
+    /**更换头像**/
+    <string name="change_photo">Change photo</string>//更换头像
+    //图像保存成功
+
+    /**用户协议**/
+    <string name="user_agreement">User agreement</string>//用户协议
+    <string name="privacy_agreement">Privacy agreement</string>//用户协议
+    <string name="sdk_content">our App has integrated Umeng+ U-Share SDK , which will collect your device identifiable information and public information of social account in order to share information with social account.</string>
+    /**设备相关提示**/
+    <string name="select_device_type">Select device</string>//选择设备
+    <string name="select_device_type_watch">Select Watch</string>//选择手表
+    <string name="select_device_type_rope">Select Jump rope</string>//选择手表
+    <string name="select_device_type_bracelet">Select Band</string>//选择手环
+    <string name="select_device_type_scale">Select Body fat scale</string>//选择体脂秤
+    //选择设备
+    //选择设备
+    //选择设备
+    //选择设备
+    <string name="connect_fail">Connect fail</string>//选择设备
+    <string name="bluetooth_is_not_enabled">Bluetooth is not enabled, please turn on bluetooth</string>
+    //请先打开蓝牙
+
+    /**单位**/
+    <string name="unit_hour">H</string>
+    <string name="unit_min">M</string>
+    <string name="unit_times">Times</string>//次
+    <string name="sport_hour">hour</string>
+    <string name="sport_min">minute</string>
+    <string name="sport_second">S</string>
+    <string name="age">year</string>
+    <string name="sport_month">Month</string>
+    <string name="lv">_Lv</string>
+
+    <string name="sun">Sun</string>
+    <string name="mon">Mon</string>
+
+    <string name="tue">Tue</string>
+    <string name="wed">Wed</string>
+    <string name="thu">Thu</string>
+    <string name="fri">Fri</string>
+    <string name="sat">Sat</string>
+    <string name="every_day">Everyday</string>
+    <string name="work_day">Monday to Friday</string>
+    <string name="wenkend_day">Weekend</string>
+    <string name="once">Once</string>
+    <string name="company_name">Bonlala Technology (Shenzhen)Co.,Ltd.</string>
+    <string name="outdoor_running">Running</string>
+    /**单位名称**/
+    <string name="outdoor_running1">Running</string>//深圳市小香蕉科技有限公司
+
+    /**运动**/
+    <string name="treadmill">Treadmill</string>
+    <string name="walking">Walking</string>
+    <string name="tdoor_cycling">Cycling</string>
+    <string name="tdoor_cycling1">Cycling</string>
+    <string name="outdoor_set">Outdoor running setup</string>
+    <string name="indoor_set">Treadmill running setup</string>
+    <string name="icycle_set">Outdoor cycling setup</string>
+    <string name="walking_set">Walking setup</string>
+    <string name="ulative_sport_data">Accumulated mileage</string>
+    <string name="nute_per_km">min/km</string>
+    <string name="BPM">BPM</string>
+    <string name="ace_notice">Notify when the pace is slower than the set pace</string>
+    <string name="hr_high_notice">Band will vibrate when your heart rate goes above the set level</string>
+
+    <string name="remind_hr_running">Reference range of running heart rate:%1$s-%2$s</string>
+    <string name="remind_hr_rope">Heart rate reference range of rope skipping:%1$s-%2$s</string>
+    <string name="remind_hr_bike">Reference range of cycling heart rate:%1$s-%2$s</string>
+    <string name="remind_hr_walk">Reference range of walking heart rate:%1$s-%2$s</string>
+    <string name="real_hr_time">Monitoring time：</string>
+    <string name="pace">Pace</string>
+    <string name="real_time_hr">HR</string>
+    <string name="real_time_hr_nodata">Real-time heart rate no obtained</string>
+    <string name="mail_real_time">Real-time heart rate</string>
+    <string name="long_press_unlock">Long press to unlock</string>
+    <string name="lock">Locked</string>
+    <string name="long_press_end">Long press to end</string>
+    <string name="sport_history_memory">All workouts</string>
+    <string name="voice_play">Text-to-speech</string>
+    <string name="screen_always_on">Keep screen always on</string>
+    <string name="pace_remind">Pace remind</string>
+    <string name="hr_remind">High heart rate remind</string>
+    <string name="total_sport_times">%1$s workouts</string>
+    <string name="sport_unite_distance">%1$skm</string>
+    <string name="speed_notice">Notify when the speed is slower than the set speed</string>
+    <string name="share_content">I used Bonlala\'s fitness legends exercise%1$skm，consumeption%2$skcal，come on join!</string>
+    <string name="share_course">I\'m using Bonlala. Come and join us</string>
+    <string name="app_enable">Turn on</string>
+    <string name="below_the_pace_tips">Your pace is too low</string>
+    <string name="sport_start">Exercise begins</string>//开启
+    <string name="continue_start">Continue the exercise</string>
+    <string name="sport_pause">Pause the exercise</string>
+    <string name="sport_stop">After the exercise, please relax your muscle.</string>
+    <string name="below_the_hr_tips">Your heart rate is too high</string>
+    <string name="below_the_speed_tips">Your speed is too low</string>
+    <string name="below_the_dis_tips">You have already moved%1$s, the total time%2$s</string>
+    <string name="watch_heart_rate_current">Heart rate today</string>
+    <string name="app_issync_failed">Sync failed</string>
+
+    <string name="watch_litter_sleep_title">Nap</string>
+    <string name="watch_litter_sleep_title_1">1.Standard duration of nap</string>//同步完成
+
+    <string name="watch_litter_sleep_title_2">2.When is the best time for nap?</string>
+    <string name="watch_litter_sleep_title_3">Reference</string>
+    <string name="watch_litter_sleep_content_1">Lack of sleep at night or sleep quality is not good. Appropriate nap in the day can replenish energy. Generally speaking, a 15-30 minute nap before 1PM will refresh you and improve your alertness and productivity in the afternoon. However, the nap in the day should not be over 45 minutes. Otherwise you may enter into deep sleep, and your body temperature will drop, which will make you feel very sleepy, or dizzy and other adverse symptoms. Also, if you enter into deep sleep in the day, you will feel less sleepy at night, which will make it difficult for you to fall asleep in the night.</string>
+    <string name="watch_litter_sleep_content_2">The most important part of the body clock is the body temperature rhythm. When the body temperature rises, people will feel more awake. When your body temperature drops, you feel tired and sleepy. Body temperature fluctuates periodically throughout the day. It starts to rise in the morning, then drops at noon and continues to rise until night. Therefore, the best time to nap is when your body temperature falls back at noon (usually before 1 a.m.). The late daytime nap time will disturb the body temperature rhythm and affect the sleep quality at night. * single sleep of less than 3 hours was counted as sporadic naps.</string>
+    <string name="watch_litter_sleep_content_3">[1] The circadian rhythm of body temperature.Frontiers in Bioscience, 2010(15): 564-594. \n[2] 《睡眠障碍诊疗手册》 people\'s health publishing house, September 2012, 1st edition</string>
+    <string name="watch_stable_remind_str">Sedentary reminder</string>
+    <string name="watch_stable_remind_title">Sedentary reminder</string>
+
+    <string name="watch_stable_remind_open">Turn on a sedentary reminder</string>
+    <string name="watch_stable_remind_time">Time interval</string>
+    <string name="watch_24_heart_rate_str">24-hour HR measuring</string>
+    <string name="w311_hr_setting">Heart rate setting</string>
+
+    <string name="bracelet_dropping_reminder">The lost to remind</string>
+    <string name="bracelet_lift_up_screen">Lift the wrist bright screen</string>//心率设置
+    <string name="bracelet_play">Play on device</string>//防丢提醒
+    <string name="bracelet_find">Find Device</string>//抬腕亮屏
+    <string name="watch_alarm_setting_str">Alarm</string>//玩转手环
+    <string name="bracelet_display">Display setting</string>//查找手环
+    <string name="watch_backlight_time">Backlight time</string>
+    <string name="watch_screen_luminance">Screen brightness</string>//显示设置
+    <string name="watch_alarm_setting_title">Alarm</string>
+    <string name="watch_alarm_setting_title_edit">Edit Alarm</string>
+
+    <string name="watch_alarm_setting_title_add">Add Alarm</string>
+    <string name="watch_alarm_setting_open">Alarm on</string>//编辑闹钟
+    <string name="watch_alarm_setting_time">Alarm Time</string>//添加闹钟
+    <string name="watch_alarm_setting_name">Alarm name</string>//闹钟名称
+    <string name="watch_alarm_setting_repeat">Repeat</string>
+    <string name="watch_sleep_setting_str">Sleep setup</string>
+    <string name="watch_sleep_setting_title">Sleep setup</string>
+    <string name="watch_sleep_setting_change">Switch mode</string>
+
+    <string name="watch_heart_sleep_get_pointer">Score</string>
+    <string name="watch_sleep_early">Awake early</string>
+    <string name="watch_sleep_late">Sleep late</string>
+
+    <string name="watch_sleep_analyse">Sleep quality analysis</string>
+    <string name="watch_sleep_litter">Nap</string>
+    <string name="watch_sleep_total_time">Total sleep time</string>
+    <string name="watch_sleep_before">Compared with last sleep</string>
+
+    <string name="watch_call_remind_str">Incoming call</string>
+    <string name="watch_msg_setting_str">Incoming SMS</string>
+
+    <string name="watch_third_msg">APP message reminder</string>
+    <string name="watch_pointer_calibration_str">Hand adjust</string>
+    <string name="watch_default_setting_str">Factory reset</string>//APP消息提醒
+    <string name="watch_sleep_pointer_title">Hand adjust</string>
+    <string name="watch_sleep_pointer_content">Click or press the button to move the watch hand until it matches the picture below.</string>
+
+    <string name="watch_sleep_pointer_hour">Hour hand</string>
+    <string name="watch_sleep_pointer_min">Minute hand</string>
+    <string name="watch_sleep_pointer_confirm">Confirm adjust</string>
+    <string name="watch_default">Reset device? All setup and data will be cleared after factory reset.</string>
+    <string name="hr_tips">When turned on,battery life will be greatly reduced.But you can view complete heart rate data</string>
+    <string name="distrub_tips">In do not disturb mode, sedentary reminder, SMS reminder, phone reminder and APP reminder are turned off</string>
+    <string name="alarm_tips">In the process of vibration, the vibration can be stopped by touching the button of the watch.</string>
+    //开启后会大幅降低电池续航时间， 开启此功能后才能查看完整的心 率数据。
+    <string name="watch_sleep_setting_sleep_remind">Sleep reminder</string>
+    //勿扰模式下，久坐提醒、短信提醒、电话提醒、APP 提醒关闭
+    <string name="watch_sleep_setting_sleep_time">Bedtime</string>
+    //振动过程中，触摸手环按键即可停止振动。
+    <string name="watch_sleep_setting_wakeup_time">Wake-up time</string>
+    <string name="watch_disturb_setting_str">Do not disturb</string>
+    <string name="watch_disturb_setting_title">Do not disturb</string>
+
+    <string name="watch_disturb_setting_open">Turn on do not disturb mode</string>
+
+    <string name="watch_disturb_setting_start">Start time</string>
+    <string name="watch_disturb_setting_end">End time</string>
+    <string name="watch_heart_rate_title">Heart Rate</string>
+    <string name="watch_heart_rate_title_chart">Heart Rate Chart</string>
+    <string name="watch_heart_line_chart">Heart Rate Chart</string>
+    <string name="watch_heart_rate_max">Max HR</string>
+
+
+    <string name="watch_heart_rate_min">Min HR</string>
+    <string name="watch_heart_rate_avg">Avg HR</string>
+    <string name="watch_heart_rate_detect">Real-time monitor</string>
+    <string name="watch_heart_rate_close_detect">Stop measuring</string>
+    <string name="watch_heart_rate_detecting">Heart rate measuring</string>
+    <string name="litter_sleep_state">Reference value: 0 ~ 45 minutes</string>
+    <string name="sleep_normal">Normal</string>
+    <string name="sleep_tolong">Too long</string>
+
+    <string name="light_at_sleep">Sleep time </string>
+    <string name="watch_step_target_ratio">Target completion\npercentage</string>
+    <string name="watch_recode_active">Activities in last 30 days</string>
+    <string name="watch_recode_day_step">Total</string>
+
+    <string name="watch_recode_day_qiyou">Total fuel saved</string>
+    <string name="watch_recode_day_cal">Cumulative consumption</string>
+    <string name="watch_recode_day_fat">Total burned</string>
+    <string name="step_unit">steps</string>//累计消耗
+    <string name="distance_unit">km</string>
+    <string name="qiyou_unit">L</string> <!--String.format("the %s is running, isAppAlive return true", packageName));-->
+    <string name="fat_unit">g</string>
+    <string name="watch_type_step">steps</string>
+    <string name="app_isconnecting">Connecting...</string>
+    <string name="app_setsuccess">Setup successfully</string>
+    <string name="heartrate_tip">If the current heart rate is not turned on, whether to turn on the 24-hour heart rate monitoring？</string>
+    //连接中
+    <string name="heartrate_w311_tip">Current heart rate monitoring is not on. Do you want to start heart rate monitoring?</string>
+    //设置成功
+
+
+    <string name="display_setting">Display settings</string>
+    <string name="display_setting_dis">Distance</string>
+    //当前心率监测未开启，是否开启心率监测？
+    /**显示设置**/
+    <string name="display_setting_sport_time">Sports time</string>//显示设置
+    <string name="display_setting_present">Percentage</string>
+    <string name="display_setting_complete">Completion</string>//运动时间
+    <string name="display_setting_alarm">Alarm</string>//百分比
+    <string name="wear_left">Left hand</string>//完全情况
+    <string name="wear_right">Right hand</string>//闹钟
+    <string name="lift_to_view_info">Lift the wrist bright screen</string>
+    <string name="open_lift_to_view_info">Turn on the wrist bright screen</string>
+    <string name="lift_to_view_info_all_day">Always</string>//抬腕亮屏
+    <string name="lift_to_view_info_Timing_open_307j">Turn off during sleep</string>//抬腕亮屏
+    <string name="lift_to_view_info_Timing_open">Fixed time</string>//开启抬腕亮屏
+    <string name="lift_to_view_info_close">Close</string>//全天开启
+    <string name="add_alarm_emty_tips">You have not added the alarm clock, \n please click the "+" button above to add</string>
+    //定时开启
+    <string name="hr_timer_cheack">Enable automatic timed HR detection</string>//关闭
+    <string name="cheack_times">Monitoring frequency</string>
+    //您还没有添加闹钟，\n 请点击上方“+”按钮添加
+    <string name="hr_setting">Heart rate setting</string>//开启自动定时心率检测
+    <string name="today_step">Steps\ntoday</string>//今日步数
+    <string name="today_dis">Distance\ntoday</string>//今日距离
+    <string name="today_cal">Consume\ntoday</string>//今日消耗
+    <string name="today_step1">Steps today</string>//今日步数
+    <string name="today_dis1">Distance today</string>//今日距离
+    <string name="today_cal1">Consume today</string>//今日消耗
+    <string name="avg_step">Daily\navg steps</string>//今日距离
+    <string name="avg_share_step">Daily average steps</string>//今日距离
+    <string name="avg_dis">Daily\navg distance</string>//今日消耗
+    <string name="avg_share_dis">Daily average distance</string>//今日消耗
+    <string name="avg_cal">Daily avg\nconsumeption</string>//日均步数
+    <string name="avg_share_cal">Daily average consumpotion</string>//日均步数
+    <string name="sport_cal_unit">kcal</string>//日均距离
+    <string name="my_sport">My Sport</string>//日均消耗
+    <string name="qq">QQ</string>//千卡
+    <string name="wechat">Wechat</string>//我的运动
+    <string name="whatsapp">WhatsApp</string>
+    <string name="facebook">Facebook</string>//微信
+    <string name="messager">Messenger</string>
+    <string name="linkedIn">LinkedIn</string>
+    <string name="line">Line</string>
+    <string name="instagram">Instagram</string>
+    <string name="kakaotalk">kakaotalk</string>
+    <string name="twitter">Twitter</string>
+    <string name="skype">Skype</string>
+    <string name="app_message_remind">APP notification</string>
+    <string name="display_count">Turned on %1$s</string>
+    <string name="display_no_count">Off</string>//
+    //
+    <string name="setting_start">On</string>//开启了%1$s个
+    <string name="only_once">Once</string>//未开启
+    <string name="stableRemind_tips">The end time cannot be earlier than the start time</string>
+    <string name="stableRemind_same_tips">Start time and end time cannot be the same</string>
+    <string name="sleep_setting_tips">The interval between the start and end of sleep should be greater than 10 minutes</string>
+    <string name="nap_sleep_setting_tips">The interval between the start and end of your lunch break should be greater than 10 minutes</string>
+    <string name="stableRemind_Perid_tips">The time from start to finish shall not be less than the time interval!</string>
+    //只提醒一次
+    <string name="google_fit_con">Google Fit Access</string>
+    //请设置开始时间小于结束时间
+    <string name="player_title">play %1$s watch</string>
+    <string name="player1_title">Click the touch ring button switch function</string>
+    <string name="player1_content">Click the ring touch area to switch steps, heart rate and other functions</string>
+    //玩转311手环
+    <string name="player2_title">Long press the button on the watch to enter the secondary menu</string>
+    //点触手环按键切换功能
+    <string name="player2_content">Long press the ring for 3 seconds to touch the area to open the heart rate, find the phone and other functions</string>
+    //点击圆环触摸区域切换步数、心率等功能
+    <string name="player3_title">Click the watch button to return</string>
+    //长按手环按键进入二级菜单
+    <string name="player3_content">Click the ring to touch the area to return to the next level</string>
+    //长按3秒圆环触摸区域能打开心率、找手机等功能
+    <string name="player4_title">The correct way to wear it</string>//点击手环按键返回
+    <string name="player4_content">The watch is about one finger away from the wrist bone, and the tightness of the wrist band should be adjusted well, too loose may affect the heart rate collection.</string>
+    //点击圆环触摸区域能返回上一级
+    <string name="player4_content_bottom">Please keep the wrist area dry and clean the wrist band with water regularly.</string>
+    //正确的佩戴方式
+    <string name="next_day">The next day</string>
+    //手环离腕骨约一指距离，并调整好腕带松紧度， 过松可能会影响心率采集。
+    <string name="thride_tips">Turn on the switch to synchronize related information to smart bracelet.\n If the message is pushed abnormally,it can be restart Notification access Service to repair</string>
+    //请保持手腕部位干爽，定期用清水清洗腕带。
+    <string name="thride_tips_link">Notification access</string>//次日
+    <string name="find_bracelet">Looking for device</string>
+    <string name="all">All</string>
+    <string name="sport_all">All</string>
+    <string name="alarm_tips_reapte">An alarm clock has been set for this time</string>
+    <string name="google_fit_success">Access to success</string>
+    <string name="unbind_watch_tips">Please unpair the watch first</string>
+    <string name="un_get">Did not get</string>
+    <string name="sport_no_data">No more data</string>
+    <string name="please_install_qq">Please install QQ  before QQ login</string>
+    <string name="please_install_wechat">Please install Wechat before Wechat login</string>
+    <string name="firmware_upgrade">Firmware upgrade</string>
+    <string name="devcie_select">Select</string>
+    <string name="firmware_device_version">Current version: V %1$s</string>//固件升级
+    <string name="firmware_device_battery">Battery: %1$s%%</string>//选择
+    <string name="device_upgrade_tips">Note：\n1. Firmware update is expected to take 5~10 minutes, please wait patiently. \n2. Upgrade process, can not turn off bluetooth, mobile phone screen always bright. \n3. Device close to the phone, do not go away, do not exit the app. \n4. Please ensure that the device power is more than 40% or charging before upgrading.\n5. After successful upgrade, please ignore the device in the system bluetooth.\n6.After the upgrade failed, you need to select the DFU device name to connect and upgrade.</string>
+    //V %1$s
+    <string name="device_new_version">Is the latest version</string>//当前电量 %1$s%%
+    <string name="select_upgrade_device_type">Please select the type of device you want to upgrade：</string>
+    <string name="select_device_type_title">Select device type</string>
+    <string name="file_downlod_present">Have downloaded %1$s%%</string>
+    <string name="device_upgrade_present">Upgrading %1$s%%</string>
+    <string name="device_upgrade">Upgrade</string>
+    <string name="device_upgrade_success">Upgrade successfully</string>
+    <string name="device_upgrade_fail">Upgrade failed</string>
+    <string name="device_upgrade_success_tips">Upgrade successfully, please go to [Settings] -> [bluetooth] and ignore this device</string>
+    <string name="device_upgrade_success_W814_tips">The upgrade was successful, please restart the APP</string>
+    <string name="file_downlod_success_tips">Download successful, upgrade immediately？</string>
+    <string name="device_upgrade_sure">Confirm upgrade？</string>
+    <string name="device_upgrade_fail_dfu_tips">Upgrade failed. Please return to my and click device firmware upgrade. Scan the device with the name of DFU to upgrade. Note that the device type after connection is selected [%1$s]</string>
+    <string name="device_upgrade_fail_huntersun_tips">Upgrade failed. Please return to my and click device firmware upgrade. Scan the device with the name of DFU to upgrade. Note that the device type after connection is selected [%1$s]</string>
+    <string name="device_upgrade_fail_tips">Upgrade failed,select DFU or Huntersun-BLE device name for connection upgrade</string>
+    <string name="device_upgrade_fail_w311_tips">Upgrade failed.select DFU device name for connection upgrade after 2 minutes</string>
+    <string name="device_upgrade_fail_message">Whether to go back to the home page and upgrade again (Profile  -> Firmware upgrade)</string>
+    <string name="devcie_upgrade_battery_tips">Upgrading requires at least 40 percent battery</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="tips">tips</string>
+    <string name="tips_ok">Done</string>
+    <string name="file_download">Download</string>
+    <string name="cheack_update_error">Check updatable firmware failed</string>
+    <string name="try_again">Click retry</string>
+    <string name="has_update">(new)</string>
+    <string name="no_update"></string>
+    <string name="device_upgradeing">This device is being upgraded, do not exit</string>
+    <string name="back_home">Back to the home page</string>
+    <string name="device_new_version_title">Latest version：</string>
+    <string name="package_size">Package size：</string>
+    <string name="function">Function development</string>
+    <string name="re_scan_devcie">Please scan the equipment again and upgrade</string>
+    <string name="log_update">Update the content:</string>
+    <string name="file_downlod_fail_tips">Download failed, continue to download？</string>
+    <string name="fragment_mine_no_add_device">You have not added any device yet</string>
+    <string name="fragment_main_no_add_device">Unadded device</string>
+
+    //新主页文字页表
+    <string name="fragment_mine_device_upgrade">Firmware upgrade</string>
+    <string name="fragment_mine_ranking">Friends sports ranking</string>
+    <string name="fragment_data_target">Target %1$s Steps</string>
+    <string name="fragment_data_target_distance">Target %1$s Km</string>
+    <string name="fragment_data_target_calorie">Target %1$s Kcal</string>
+    <string name="fragment_data_no_data">No data</string>
+    <string name="fragment_data_sleep">Sleep</string>
+    <string name="google_fit">Google Fit</string>
+    <string name="bonlala_open_blue">Allow Bonlala to enable Bluetooth</string>
+    <string name="fragment_main_no_connect_open_ble">Not connected, Please turn on Bluetooth</string>
+    <string name="fragment_main_click_connect">connect</string>
+    <string name="sum_sport_min">Total</string>
+    <string name="fragment_mine_edit_user_info">Edit basic information</string>
+    <string name="devcie_no_unbind_device">Unpair device</string>
+    <string name="umeng_socialize_female">female</string>
+    <string name="umeng_socialize_male">male</string>
+    <string name="device_setting_photo">Remote control picture</string>
+    <string name="device_setting_time_fomate">Time Formats</string>
+
+    <string name="device_setting_weather">Weather setting</string>
+    <string name="time_format_12">12-Hour Time</string>
+    <string name="time_format_24">24-Hour Time</string>
+    <string name="time_setting_same">Start time and end time cannot be the same</string>
+    <string name="device_hr_24_h_tips">24 hours continuous heart rate monitoring</string>
+    <string name="save_success">Save success</string>
+    <string name="message_other">Other message</string>
+    <string name="oxyresult_about_oxy">About blood oxygen saturation</string>
+    <string name="oxyresult_oxy_des">Learn about blood oxygen saturation data:\nOxygen saturation is the capacity of oxygenated hemoglobin in the blood percentage of total binding hemoglobin volume, i.e. blood in the blood oxygen concentration, which is an important physiological parameter of respiratory cycle.\nThe normal arterial oxygen saturation is about 95% - 98%</string>
+
+    <string name="oxyresult_oxy_measure_trend">Trend of blood oxygen in the past 7 times</string>
+    <string name="oncehrresult_about_oxy">About heart rate data</string>
+    <string name="hr_select_times">Time:</string>
+    <string name="oncehrresult_oncehr_des">Quiet heart rate: the normal person is heart rate per minute is generally 60 ~ 100 times in a quiet state. \nExercise heart rate: the exercise state of the body can be judged according to the heart rate interval during the exercise, and only the appropriate heart rate interval can achieve better exercise effect.</string>
+    <string name="oncehrresult_once_measure_trend">Trend of heart rate in the past 7 times</string>
+    <string name="start_measure">Start measure</string>
+    <string name="stop_measure">Stop measure</string>
+    <string name="bpresult_about_bp_data">About blood pressure data</string>
+    <string name="bpresult_bp_des">Normal blood pressure:\n90mmHg \u003C systolic pressure \u003C 140mmHg \n60mmHg \u003C diastolic pressure \u003C 90mmHg</string>
+    <string name="bpresult_bp_measure_trend">Trend of blood pressure in  the past 7 times</string>
+    <string name="diastolic_pressure">Diastolic pressure</string>
+    <string name="systolic_pressure">Systolic pressure</string>
+    <string name="diastolic">Diastolic pressure</string>
+    <string name="systolic">Systolic pressure</string>
+    <string name="bp">Blood pressure</string>
+    <string name="oxy">Blood oxygen saturation</string>
+    <string name="oxy_saturation">Blood oxygen saturation</string>
+    <string name="mian_title_oxy">Blood oxygen saturation</string>
+    <string name="mian_title_once_hr">Single heart rate</string>
+    <string name="mmhg">mmHg</string>
+    <string name="kpa">kPa</string>
+    <string name="minute">Minute</string>
+    <string name="total_practise_times">Total excercise %1s times</string>
+
+    <string name="run">Running</string>
+    <string name="consume">Consumeption</string>
+    <string name="average_heart">Average HR</string>
+    <string name="step_count">Step</string>
+    <string name="distence">Distance</string>
+    <string name="hour_speed">Speed</string>
+    <string name="average_speed">Pace</string>
+    <string name="average_heart_value">%1sBPM</string>
+    <string name="consume_value">%1sKcal</string>
+    <string name="step_value">%1ssteps</string>
+    <string name="distance_value">%1skm</string>
+    <string name="hour_speed_value">%1skm/h</string>
+    <string name="walk">Walking</string>
+    <string name="ride">Cycling</string>
+    <string name="rope_skip">Skipping</string>
+    <string name="badminton">Badminton</string>
+    <string name="football">Football</string>
+    <string name="basketball">Basketball</string>
+    <string name="climbing">Climbing</string>
+    <string name="pingpang">Table tennis</string>
+    <string name="practise_record">Excercise record</string>
+    <string name="practise_today">Today exercise</string>
+    <string name="no_practise_data">NO data</string>
+    <string name="no_w81_day_detail">No daily details available</string>
+    <string name="alarm_del">Delete</string>
+    <string name="def_know">OK</string>
+    <string name="weather_location">Access to locate</string>
+    <string name="weather_location_ing">Getting location</string>
+    <string name="current_city">Current city</string>
+    <string name="no_location">Location city not obtained</string>
+    <string name="current_city_title">Current city</string>
+    <string name="update_weather_pe">Automatically update equipment weather information every two hours</string>
+    <string name="def_guide">OTA upgrade guidelines</string>
+    <string name="w813dfu_guide">OTA upgrade requires\nthe device to stay on the [version information] page to upgrade successfully(from the main page of the watch > slides to the left > slides to the top > slides to the top > clicks to enter)</string>
+    <string name="w814_dfu_guide">OTA upgrade requires\nthe device to stay on the [about] page to upgrade successfully(long press > to enter the main page of the watch)</string>
+    <string name="wheather_setting_title">Mobile location service not enabled</string>
+    <string name="wheather_setting_content">Please enable the location service in the notification bar</string>
+    <string name="wheather_setting_start">On</string>
+    <string name="failed_obtain_location">Failed to obtain location</string>
+    <string name="practise_detail_heart_tips_title">Learn about heart rate data analsis</string>
+    <string name="practise_detail_heart_tips_content1">Quiet heart rate: the normal person\'s heart rate per minute is generally 60 ~ 100 times in a quiet state.</string>
+    //锻炼数据详情页面
+    <string name="practise_detail_heart_tips_content2">Exercise heart rate: during the exercise, the body\'s exercise state can be judged according to the heart rate interval, and the better exercise effect can only be achieved by choosing the appropriate heart rate interval.</string>
+    <string name="heart_limit">Limit</string>
+    <string name="today_sleep">Sleep</string>
+    <string name="heart_anaerobic_exercise">Anaerobic\nexercise</string>
+    <string name="heart_aerobic_exercise">Aerobic\nexercise</string>
+    <string name="heart_fat_burning_exercise">Fat burning\nexercise</string>
+    <string name="heart_anaerobic_exercise_dialog">Anaerobic exercise</string>
+    <string name="heart_aerobic_exercise_dialog">Aerobic exercise</string>
+    <string name="heart_fat_burning_exercise_dialog">Fat burning exercise</string>
+
+    <string name="heart_warm_up">Warm up</string>
+    <string name="heart_leisure">Leisure</string>
+    <string name="practise_sum_time">Total time</string>
+    <string name="practise_heart_anli">Heart rate data analysis</string>
+    <string name="privacy_agreement_title">Update notice</string>
+    <string name="privacy_agreement_content">To give you a better understanding of how we use to process and protect your data, we have updated the \"service agreement\" and \"privacy policy\".\nWe will not obtain, share or provide your information to third parties without your consent\nYou can view, change, delete personal information and manage your authorization in settings. You can read《Service Agreement》 and 《Privacy Policy》for more information.\nBy clicking \"agree\", you agree to the latest \"service agreement\" and the statement on \"privacy policy\".</string>
+    <string name="privacy_agreement_refuse">Disagree</string>
+    <string name="privacy_agreement_ok">Agree</string>
+
+    <string name="user_agreement_tips">《Service Agreement》</string>
+    <string name="privacy_agreement_tips">《Privacy Policy》</string>
+    <string name="login_tips">Only support Chinese mainland mobile phone number login</string>
+    <string name="login_phone_ways">Phone number login</string>
+    <string name="login_email_ways">Email Login</string>//用户协议
+    <string name="onece_hr_unit">BPM</string>//用户协议
+
+    <string name="unit_backlight_time">s</string>
+    <string name="unit_screen_luminance">level</string>
+    <string name="activity_sleep_history_exp">Sleep is one of the most important life-sustaining behaviors of biology. By recording your sleep status and analyzing your sleep quality through hardware devices, you can understand and adjust your sleep habits.</string>
+    <string name="activity_hr_history_exp">Heart rate detection is carried out by means of bracelet and other hardware. You can adjust the exercise intensity according to the changes of heart rate and achieve scientific exercise and other purposes.Each point in the heart rate chart represents the current heart rate for 1 minute.</string>
+    <string name="device_unbind_tips">Please unpair the phone with the device</string>
+    <string name="device_unbind_content1">After unpairing, the device can be bound to other phones</string>
+
+    //睡眠详情页面名词解释
+    <string name="device_unbind_content2">Please go to the system setting > bluetooth > and click the button > on the right of the device name to cancel the pairing</string>
+    <string name="incomingNumber">incoming telegram</string>
+
+    //设备解绑引导页面
+    <string name="experience">Try now</string>
+    <string name="data_loading">loading…</string>
+    <string name="liftwrist_allday">This time period is open all day, and the option of turning on the wrist lift screen will be turned on all day.</string>
+
+    //来电提醒
+    <string name="temperature_setting">Temperature unit</string>
+    <string name="temperature_cali">Temperature calibration</string>
+
+    //玩转手环
+    <string name="temperature_degree_centigrade">℃</string>
+    <string name="temperature_fahrenheit">℉</string>
+
+    <string name="measureing">measuring...</string>
+    <string name="temp">Body temperature</string>
+
+    <string name="measure_fail">Bluetooth has been disconnected, the measurement failed, please remeasure</string>
+    <string name="measure_way">View measurement method</string>
+    <string name="about_temp_data">About temperature data</string>
+
+    <string name="bpresult_temp_measure_trend">Trend of temperature in  the past 7 times</string>
+    <string name="temp_norm_temp_title">Normal: %1$s ~ %2$s</string>
+    <string name="temp_low_fever_title">Low fever: %1$s ~ %2$s</string>
+    <string name="temp_high_fever_title">High fever: >= %1$s</string>
+    <string name="temp_norm_temp_state">Normal</string>
+    <string name="temp_low_fever_state">Low fever</string>
+    <string name="temp_high_fever_state">High fever</string>
+    <string name="temp_measure_way">Measurement method</string>
+    <string name="temp_measure_way_title">Please aim the thermometer of the watch at your forehead and keep it within 1cm</string>
+    <string name="edit_share">Edit share</string>
+    <string name="custom">DIY background</string>
+    <string name="please_open_camera_permission">please open camera permission</string>
+    <string name="temp_sub_reset">Change</string>
+    <string name="fragment_mine_friend_rank">Friends sports ranking</string>
+    <string name="follow_you">Followed you</string>
+
+    <string-array name="arr_month">
+        <item>@string/month1</item>
+        <item>@string/month2</item>
+        <item>@string/month3</item>
+        <item>@string/month4</item>
+        <item>@string/month5</item>
+        <item>@string/month6</item>
+        <item>@string/month7</item>
+        <item>@string/month8</item>
+        <item>@string/month9</item>
+        <item>@string/month10</item>
+        <item>@string/month11</item>
+        <item>@string/month12</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string-array name="arr_week">
+        <item>Sun</item>
+        <item>Mon</item>
+        <item>Tue</item>
+        <item>Wed</item>
+        <item>Thu</item>
+        <item>Fri</item>
+        <item>Sat</item>
+    </string-array>
+
+
+    <string name="heart_data_title">Heart rate color indication</string>
+
+    //w307j睡眠目标设置
+    <string name="w307j_Open_Auto_Sleep">Switch</string>
+    <string name="w307j_Sleep_Time">Sleep time</string>
+    <string name="w307j_Sleep_Reminder">Sleep remind</string>
+    <string name="w307j_Lunch_Break">Lunch break</string>
+    <string name="w307j_Lunch_reminder">Lunch break remind</string>
+    <string name="w307j_Sleep_Target">Sleep goals</string>
+
+    //固件包升级提示语
+    <string name="fir_upgrade_title">Notice</string>
+    <string name="fir_upgrade_content">The currently connected device needs to be disconnected in order to search for the device for firmware upgrade</string>
+    <string name="time_error">The cell phone time is not correct, please modify the cell phone time</string>
+
+    //跳绳
+    <string name="rope_raking">Ranking</string>
+    <string name="rope_count">Counting</string>
+    <string name="rope_time">Timing</string>
+    <string name="rope_free">Freedom</string>
+    <string name="rope_change">Challenge</string>
+    <string name="rope_courese">Course</string>
+    <string name="rope_history">History</string>
+    <string name="rope_training_times">Times</string>
+    <string name="rope_trainning_time">Time</string>
+    <string name="rope_traninning_cal">Consumption</string>
+    <string name="rope_sum_count">Total jumps</string>
+    <string name="rope_screen_setting">Screen settings</string>
+    <string name="rope_hr_setting">Heart rate remind</string>
+    <string name="rope_bg_music">BGM</string>
+    <string name="rope_music_switch">Music</string>
+    <string name="rope_voice_announcements">Voice</string>
+    <string name="rope_by_interval_duration">In interval time</string>
+    <string name="rope_by_number">In numbers</string>
+    <string name="rope_start">Start</string>
+    <string name="rope_end">End</string>
+    <string name="rope_real_hr_chart">Real-time heart rate histogram</string>
+    <string name="rope_real_rope_number">Jumps</string>
+    <string name="rope_real_setting_taget_number">Set target numbers</string>
+    <string name="rope_real_setting_taget_number_start">Target numbers</string>
+    <string name="rope_real_setting_countdown_start">Count down</string>
+    <string name="rope_real_rope_time">Time</string>
+    <string name="rope_real_setting_taget_time">Set target time</string>
+    <string name="rope_count_unitl">Jumps</string>
+    <string name="rope_share_sum_time">Cumulative duration</string>
+    <string name="rope_share_sum_count">Cumulative times</string>
+    <string name="detail_rope">%1$s Skipping</string>
+    <string name="detail_rope_end">The end of rope skipping</string>
+    <string name="main_device_no_conn_title">The device is not connected, please connect the device first.</string>
+    <string name="rope_dtail">Detail</string>
+    <string name="rope_setting_time_title">Single training time is not less than 30 seconds</string>
+    <string name="rope_count_remid">You have skipped rope %1$s，times %2$s，remaining %2$s</string>
+    <string name="rope_time_remid">You have skipped rope %1$s，remaining %1$s</string>
+    <string name="rope_free_remid">You have skipped rope %1$s，times %2$s</string>
+    <string name="rope_hour">H</string>
+    <string name="rope_min">M</string>
+    <string name="rope_sec">S</string>
+    <string name="rope_speed_end">Skipping end</string>
+    <string name="rope_speed_start">Skipping begins</string>
+    <string name="rope_challeg_is_end">Is rope skipping over in a challenge</string>
+    <string name="rope_challeg_end">End</string>
+    <string name="rope_challeg_cancel">Cancel</string>
+    <string name="rope_device">Rope skipping</string>
+    <string name="rope_device_dis_end">The device has been disconnected, the rope skipping is over</string>
+    <string name="rope_time_small_not_save">If the skipping time is less than 10 seconds, the skipping data will not be saved</string>
+    <string name="sporting_pause">Pause</string>
+    <string name="sporting_continue">Continue</string>
+    <string name="sporting_end">End</string>
+    <string name="pace_low_remind">Below set value reminder</string>
+    <string name="hr_high_remind">Higher than set value reminder</string>
+    <string name="guide_click_con_device">Click to connect or set up the device</string>
+    <string name="guide_sync_data">When the device is connected, pull down to synchronize the device data</string>
+    <string name="guide_chang_date">Left and right sliding to switch date</string>
+    <string name="guide_bind_device">Click to bind device</string>
+
+
+    <string name="scale_chart">Weight curve</string>
+    <string name="no_float_permission">没有悬浮窗权限</string>
+    <string name="go_t0_open_float_ask">前往打开悬浮窗权限吗？</string>
+
+
+
+    <string name="messure_hr">Measuring heart rate</string>
+    <string name="messure_oxy">Measuring blood oxygen</string>
+    <string name="messure_blood">Measuring blood pressure</string>
+
+    <string name="sport_setting_tips">为保证Bonlala更好的记录运动数据，建议您进行如下设置</string>
+    <string name="sport_setting_enable_power_tips">请勿开启[省电模式]</string>
+    <string name="sport_setting_enable_power_content">如果开启了省电模式，将可能导致运动记录异常、距离不准确、轨迹点漂移问题。建议您在使用Bonlala过程中关闭省电模式</string>
+    <string name="sport_setting_quick_setup">快速设置</string>
+    <string name="sport_setting_battery_optimization_tips">电池优化设置</string>
+    <string name="sport_setting_battery_optimization_content">由于系统的省电设置，可能会在运动记录过程中误杀进程，请将Bonlala加入电池保护名单中</string>
+    <string name="sport_setting_float_tips">悬浮窗权限设置</string>
+    <string name="sport_setting_float_content">由于您当前的操作系统版本会管控后台设置，可能会在运动记录过程中误杀Bonlala进程,请您开启悬浮窗权限以保证Bonlala正常运行</string>
+    <string name="sport_setting_background_run_tips">后台运行设置</string>
+    <string name="sport_setting_background_run_content">为避免运动记录异常、距离不准确、轨迹点漂移问题,建议您为Bonlala开启后台运行权限 </string>
+</resources>

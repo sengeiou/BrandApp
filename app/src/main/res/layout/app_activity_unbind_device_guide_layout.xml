@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/dp15"
+    android:paddingRight="@dimen/dp15"
+    android:paddingTop="@dimen/dp10">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.3" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="@dimen/dp8"
+        android:text="@string/device_unbind_tips"
+        android:textColor="@color/common_white"
+        android:textSize="@dimen/sp17" />
+
+    <TextView
+        android:id="@+id/tv_conttent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp14"
+        android:gravity="center"
+        android:text="@string/device_unbind_content1"
+        android:textColor="@color/common_tips_color"
+        android:textSize="@dimen/sp13" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp6"
+        android:gravity="center"
+        android:text="@string/device_unbind_content2"
+        android:textColor="@color/common_tips_color"
+        android:textSize="@dimen/sp13" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.4" />
+
+    <ImageView
+        android:id="@+id/iv_pic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bg_unbind_device_guide"
+        android:visibility="visible" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5" />
+
+    <TextView
+        android:id="@+id/tv_known"
+        android:layout_width="270dp"
+        android:layout_height="@dimen/dp46"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp10"
+        android:background="@drawable/app_frame_green"
+        android:gravity="center"
+        android:text="@string/def_know"
+        android:textColor="@drawable/app_frame_view_color_text"
+        android:textSize="@dimen/sp17" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2" />
+</LinearLayout>

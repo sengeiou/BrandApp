@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/layout_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp14"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="8dp"
+            android:layout_weight="1.3"
+            android:background="@color/common_transparent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="18.5"
+            android:textColor="@color/common_gray_color"
+            android:textSize="@dimen/dp14" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="8dp"
+            android:layout_weight="1"
+            android:background="@color/common_transparent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="24.0"
+            android:textColor="@color/common_gray_color"
+            android:textSize="@dimen/dp14" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="8dp"
+            android:layout_weight="1"
+            android:background="@color/common_transparent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="28.0"
+            android:textColor="@color/common_gray_color"
+            android:textSize="@dimen/dp14" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="8dp"
+            android:layout_weight="1"
+            android:background="@color/common_transparent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="30.0"
+            android:textColor="@color/common_gray_color"
+            android:textSize="@dimen/dp14" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="8dp"
+            android:layout_weight="1.3"
+            android:background="@color/common_transparent" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_bar"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_below="@id/layout_value"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <View
+            android:id="@+id/view_bule"
+            android:layout_width="0dp"
+            android:layout_height="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_stander_bg" />
+
+        <View
+            android:id="@+id/view_green"
+            android:layout_width="0dp"
+            android:layout_height="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_stander_bg" />
+
+        <View
+            android:id="@+id/view_yello"
+            android:layout_width="0dp"
+            android:layout_height="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_stander_bg" />
+
+        <View
+            android:id="@+id/view_orange"
+            android:layout_width="0dp"
+            android:layout_height="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_stander_bg" />
+
+        <View
+            android:id="@+id/view_red"
+            android:layout_width="0dp"
+            android:layout_height="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_stander_bg" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_remove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_value"
+        android:src="@drawable/icon_remove_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_bar"
+        android:layout_marginTop="@dimen/dp14"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/thin"
+            android:textColor="@color/common_gray_color"
+            android:textSize="@dimen/dp14" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/standard"
+            android:textColor="@color/common_gray_color"
+            android:textSize="@dimen/dp14" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/chubby"
+            android:textColor="@color/common_gray_color"
+            android:textSize="@dimen/dp14" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/obesity"
+            android:textColor="@color/common_gray_color"
+            android:textSize="@dimen/dp14" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/severe_obesity"
+            android:textColor="@color/common_gray_color"
+            android:textSize="@dimen/dp14" />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

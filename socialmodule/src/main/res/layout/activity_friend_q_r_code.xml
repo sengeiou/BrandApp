@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".activity.FriendQRCodeActivity">
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/friend_dp16"
+        android:layout_marginTop="@dimen/friend_dp12"
+        android:src="@drawable/icon_back" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginTop="@dimen/friend_dp35"
+        android:layout_marginRight="@dimen/dp15"
+        android:background="@drawable/shape_btn_white_20_bg"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp30"
+            android:layout_marginTop="@dimen/dp30"
+            android:layout_marginRight="@dimen/dp30">
+
+            <brandapp.isport.com.basicres.commonview.RoundImageView
+                android:id="@+id/iv_head"
+                android:layout_width="@dimen/friend_dp70"
+                android:layout_height="@dimen/friend_dp70"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginRight="@dimen/dp15"
+                android:scaleType="centerCrop"
+                android:src="@drawable/friend_icon_default_photo"
+                app:border_inside_color="@color/white"
+                app:border_outside_color="#ffd8d8d8"
+                app:border_thickness="@dimen/friend_dp2" />
+
+            <TextView
+                android:id="@+id/tv_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/iv_head"
+                android:layout_toRightOf="@+id/iv_head"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/sp28"
+                tools:text="nickname" />
+        </RelativeLayout>
+
+
+        <ImageView
+            android:id="@+id/iv_qrcode"
+            android:layout_width="285dp"
+            android:layout_height="285dp"
+            android:layout_marginTop="@dimen/friend_dp20"
+            android:src="@mipmap/friend_test_qr_code" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sp28"
+            android:layout_marginBottom="@dimen/sp28"
+            android:text="@string/friend_open_to_scan"
+            android:textColor="@color/common_tips_color"
+            android:textSize="@dimen/sp_14" />
+    </LinearLayout>
+
+
+</LinearLayout>

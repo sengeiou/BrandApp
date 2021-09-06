@@ -1,0 +1,9 @@
+<resources>
+
+    <!--pickView-->
+    <dimen name="pickerview_textsize">17sp</dimen>
+    <dimen name="rippleStrokeWidth">2dp</dimen>
+    <dimen name="rippleRadius">64dp</dimen>
+    <dimen name="view_def_size">15sp</dimen>
+
+</resources>

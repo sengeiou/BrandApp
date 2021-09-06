@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/common_item_line_color"
+    android:paddingLeft="@dimen/dp15"
+    android:paddingRight="@dimen/dp20">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/dp10">
+
+        <bike.gymproject.viewlibray.BebasNeueTextView
+            android:id="@+id/tv_detail_value"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp35"
+            android:layout_gravity="center_vertical"
+            android:paddingBottom="@dimen/dp7"
+            android:paddingLeft="@dimen/dp10"
+            android:paddingRight="@dimen/dp10"
+            android:paddingTop="@dimen/dp7"
+            android:text="2018年10月：共减重3.0公斤，减脂0.3%"
+            android:textColor="@color/common_text_color"
+            android:textSize="@dimen/sp15" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

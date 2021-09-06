@@ -1,0 +1,346 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg">
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/annonce.main.coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="RtlHardcoded">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <LinearLayout
+                android:id="@+id/toolbar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/friend_dp150"
+                android:orientation="vertical"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <LinearLayout
+                    android:id="@+id/layout_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="450dp"
+                        android:background="@color/common_bg"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/iv_bg"
+                            android:layout_width="fill_parent"
+                            android:layout_height="220dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/friend_bg_homepage_defaut" />
+
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="220dp"
+                            android:scaleType="centerCrop"
+                            android:src="@color/blank_40" />
+
+
+                        <View
+                            android:id="@+id/view_top"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp" />
+
+                        <brandapp.isport.com.basicres.commonview.RoundImageView
+                            android:id="@+id/iv_head"
+                            android:layout_width="115dp"
+                            android:layout_height="115dp"
+                            android:layout_below="@+id/iv_bg"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="-75dp"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/icon_defs"
+                            app:border_outside_color="@color/white"
+                            app:border_thickness="5dp" />
+
+                        <TextView
+                            android:id="@+id/tv_edit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/iv_head"
+                            android:layout_marginLeft="-25dp"
+                            android:layout_marginTop="@dimen/dp45"
+                            android:layout_marginRight="15dp"
+                            android:layout_toRightOf="@+id/iv_head"
+                            android:background="@drawable/app_frame_all_green"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="25dp"
+                            android:paddingBottom="8dp"
+                            android:text="编辑"
+                            android:textColor="@color/white"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/tv_age"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/iv_head"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="-8dp"
+                            android:drawableLeft="@drawable/common_icon_female"
+                            android:paddingRight="10dp"
+                            android:textColor="@color/common_white"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/tv_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_age"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="@dimen/dp30"
+                            android:layout_marginRight="@dimen/dp15"
+                            android:layout_marginTop="@dimen/dp5"
+                            android:ellipsize="middle"
+                            android:textStyle="bold"
+                            android:singleLine="true"
+                            android:text="55525555222"
+                            android:textColor="@color/common_white"
+                            android:textSize="28sp" />
+
+                        <TextView
+                            android:id="@+id/tv_myprofile_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_name"
+                            android:layout_marginLeft="@dimen/dp30"
+                            android:layout_marginTop="@dimen/dp10"
+                            android:layout_marginRight="@dimen/dp30"
+                            android:ellipsize="end"
+                            android:maxLines="2"
+                            android:textColor="@color/common_tips_color"
+                            android:textSize="13sp"
+                            android:text="1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+                            android:visibility="visible" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="82dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginLeft="@dimen/dp15"
+                            android:layout_marginRight="@dimen/dp15"
+                            android:background="@drawable/shape_btn_white_20_bg"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <bike.gymproject.viewlibray.FriendItemView
+                                android:id="@+id/tv_friend"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                app:friendItemviewTitleColor="@color/common_white"
+                                app:friendItemviewTitleSize="14sp"
+                                app:friendItemviewTitleStr="@string/friend"
+                                app:friendItemviewValueColor="@color/common_white"
+                                app:friendItemviewValueSize="32sp"
+                                app:friendItemviewValueStr="0" />
+
+                            <bike.gymproject.viewlibray.FriendItemView
+                                android:id="@+id/tv_follow"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                app:friendItemviewTitleColor="@color/common_white"
+                                app:friendItemviewTitleSize="14sp"
+                                app:friendItemviewTitleStr="@string/attention"
+                                app:friendItemviewValueColor="@color/common_white"
+                                app:friendItemviewValueSize="32sp"
+                                app:friendItemviewValueStr="0" />
+
+                            <bike.gymproject.viewlibray.FriendItemView
+                                android:id="@+id/tv_fans"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                app:friendItemviewTitleColor="@color/common_white"
+                                app:friendItemviewTitleSize="14sp"
+                                app:friendItemviewTitleStr="@string/fans_club"
+                                app:friendItemviewValueColor="@color/common_white"
+                                app:friendItemviewValueSize="32sp"
+                                app:friendItemviewValueStr="0" />
+
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/tv_myprofile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/layout_bottom"
+                        android:paddingTop="@dimen/dp10"
+                        android:paddingBottom="@dimen/dp10"
+                        android:text=""
+                        android:textColor="@color/common_white"
+                        android:textSize="13sp"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+
+                <RadioGroup
+                    android:id="@+id/rg_login"
+                    android:paddingTop="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp50"
+                    android:background="@color/common_bg"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rbtn_phone"
+                        android:layout_width="@dimen/dp80"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:button="@null"
+                        android:checked="true"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:text="@string/friend_videos"
+                        android:textColor="@drawable/socialmodule_radio_home_text_selector"
+                        android:textSize="@dimen/sp16" />
+
+                    <View
+                        android:layout_width="@dimen/dp25"
+                        android:layout_height="wrap_content" />
+
+                    <RadioButton
+                        android:id="@+id/rbtn_home_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:button="@null"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:text="@string/friend_like"
+                        android:textColor="@drawable/socialmodule_radio_home_text_selector"
+                        android:textSize="@dimen/sp16"
+                        android:visibility="visible" />
+
+
+                </RadioGroup>
+
+
+            </LinearLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/smartrefreshlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:srlEnableLoadMore="false"
+            app:srlEnableRefresh="false">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewpager_test"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"></androidx.viewpager2.widget.ViewPager2>
+
+            <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></com.scwang.smartrefresh.layout.footer.ClassicsFooter>
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/friend_dp100"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/dp50"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:id="@+id/layout_top_head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/tv_top_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp15"
+                android:src="@drawable/icon_back" />
+
+            <LinearLayout
+                android:id="@+id/ll_head_nick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/tv_top_back"
+                android:orientation="horizontal">
+
+                <brandapp.isport.com.basicres.commonview.RoundImageView
+                    android:id="@+id/iv_top_head"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/icon_defs"
+                    app:border_outside_color="@color/common_main_nor_press"
+                    app:border_thickness="2dp" />
+
+                <TextView
+                    android:id="@+id/tv_top_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="5dp"
+                    android:textStyle="bold"
+                    android:text="55525555222"
+                    android:textColor="@color/common_white"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_top_sq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp10"
+                android:src="@drawable/friend_icon_sq_black" />
+
+            <TextView
+                android:id="@+id/tv_top_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/app_frame_all_green"
+                android:paddingLeft="37dp"
+                android:paddingTop="6dp"
+                android:paddingRight="37dp"
+                android:paddingBottom="6dp"
+                android:text="@string/friend_edit"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</RelativeLayout>

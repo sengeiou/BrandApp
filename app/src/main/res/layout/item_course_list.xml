@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginLeft="@dimen/dp15"
+    android:layout_marginTop="@dimen/dp8"
+    android:layout_marginRight="@dimen/dp15"
+    android:layout_marginBottom="@dimen/dp8"
+    android:elevation="@dimen/dp10"
+    app:cardCornerRadius="12dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_course_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp20"
+            android:gravity="center"
+            tools:text="未完成"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp10" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_current_course"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dp20"
+            android:layout_marginRight="@dimen/dp10"
+            android:layout_marginBottom="@dimen/dp2"
+            android:gravity="center"
+            tools:text="/10节"
+            android:textSize="@dimen/sp12" />
+
+        <TextView
+            android:id="@+id/tv_current_course"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp20"
+            android:gravity="center"
+            android:text="1"
+            android:textSize="@dimen/sp15"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_pic"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@id/tv_course_state"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="@dimen/dp6"
+            android:layout_marginRight="@dimen/dp10"
+            android:layout_marginBottom="@dimen/dp20"
+            android:scaleType="fitXY"
+            android:src="@drawable/default_avatar_picture" />
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/iv_pic"
+            android:layout_toEndOf="@+id/iv_pic"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/dp24"
+                android:layout_height="@dimen/dp24"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/default_avatar_picture" />
+
+        </LinearLayout>
+
+
+
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

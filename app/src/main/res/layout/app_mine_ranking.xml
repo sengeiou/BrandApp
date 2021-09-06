@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/dp10"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp">
+
+
+            <bike.gymproject.viewlibray.ItemView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/itemview_ranking"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp50"
+                android:background="@drawable/common_item_bg_selector"
+                android:onClick="onClick"
+                android:visibility="visible"
+                app:contentSize="@dimen/sp14"
+                app:contentTextColor="@color/common_tips_color"
+                app:itemText="@string/fragment_mine_ranking"
+                app:itemviewTitleSize="@dimen/sp15"
+                app:remindIcon="@drawable/icon_mine_raking"
+                app:showArrow="true"
+                app:showBottomLine="false"
+                app:showCheckModel="false"
+                app:showRemind="true" />
+
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

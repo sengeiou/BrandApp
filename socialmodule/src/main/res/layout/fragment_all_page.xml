@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_video"
+    android:orientation="vertical">
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/home_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srlEnableOverScrollBounce="true">
+
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/common_blank"
+            app:srlAccentColor="@color/white"
+            app:srlTextFinish="@string/friend_option_success"
+            app:srlTextRefreshing="@string/xlistview_footer_hint_loading">
+        </com.scwang.smartrefresh.layout.header.ClassicsHeader>
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager_all_page"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layout_fail"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/common_white"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp20"
+            android:src="@drawable/bg_dynamic_not_newwork" />
+
+        <TextView
+            android:id="@+id/tv_no_network"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="@string/friend_no_netWork"
+            android:textColor="@color/white"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/tv_cheack_network"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:textStyle="bold"
+            android:text="@string/friend_cheack_netWork"
+            android:textColor="@color/common_main_nor_press"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/btn_try_again"
+            android:layout_width="270dp"
+            android:layout_height="@dimen/dp46"
+            android:layout_gravity="center"
+            android:layout_marginTop="65dp"
+            android:background="@drawable/app_frame_all_green"
+            android:gravity="center"
+            android:text="@string/no_netWork_try_again"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp17" />
+
+    </LinearLayout>
+</FrameLayout>
+

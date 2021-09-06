@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/dp15"
+    android:paddingRight="@dimen/dp15"
+    android:paddingBottom="@dimen/dp20">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingTop="@dimen/dp20">
+
+        <ImageView
+            android:id="@+id/iv_type"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp5"
+            android:src="@drawable/icon_run" />
+
+        <TextView
+            android:id="@+id/tv_run"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp5"
+            android:layout_toRightOf="@id/iv_type"
+            android:textStyle="bold"
+            android:text="@string/run"
+            android:textColor="@color/common_white"
+            android:textSize="@dimen/sp16" />
+
+        <TextView
+            android:id="@+id/tv_run_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_run"
+            android:layout_alignLeft="@id/tv_run"
+            android:textColor="@color/common_rope_time_color"
+            android:textSize="@dimen/sp12"
+            tools:text="10:00:00~12:00:59" />
+
+        <TextView
+            android:id="@+id/tv_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/tv_sport_time"
+            android:layout_alignParentRight="true"
+            android:text="@string/minute"
+            android:textColor="@color/common_text_color"
+            android:textSize="@dimen/sp13"
+            android:visibility="gone" />
+
+        <bike.gymproject.viewlibray.AkrobatNumberTextView
+            android:id="@+id/tv_sport_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp15"
+            android:textColor="@color/common_text_color"
+            android:textSize="@dimen/sp24"
+            tools:text="00:23:22" />
+
+        <ImageView
+            android:id="@+id/iv_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/icon_practise_right" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp70"
+        android:layout_marginTop="@dimen/dp10"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/dp5"
+            android:layout_weight="1"
+            android:background="@drawable/shape_parctise_bg"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/dp10"
+            android:paddingBottom="@dimen/dp10">
+
+            <bike.gymproject.viewlibray.AkrobatNumberTextView
+                android:id="@+id/tv_average_heart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:singleLine="true"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/sp16"
+                tools:text="@string/average_heart_value" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="@string/average_heart"
+                android:textColor="@color/common_tips_color"
+                android:textSize="@dimen/sp10" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/dp5"
+            android:layout_weight="1"
+            android:background="@drawable/shape_parctise_bg"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/dp10"
+            android:paddingBottom="@dimen/dp10">
+
+            <bike.gymproject.viewlibray.AkrobatNumberTextView
+                android:id="@+id/tv_consume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:singleLine="true"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/sp16"
+                tools:text="@string/consume_value" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="@string/consume"
+                android:textColor="@color/common_tips_color"
+                android:textSize="@dimen/sp10" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/cardview_step"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/dp5"
+            android:layout_weight="1"
+            android:background="@drawable/shape_parctise_bg"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/dp10"
+            android:paddingBottom="@dimen/dp10">
+
+            <bike.gymproject.viewlibray.AkrobatNumberTextView
+                android:id="@+id/tv_step"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:singleLine="true"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/sp16"
+                tools:text="@string/step_value" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="@string/step_count"
+                android:textColor="@color/common_tips_color"
+                android:textSize="@dimen/sp10" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:id="@+id/cardview_distance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/dp5"
+            android:layout_weight="1"
+            android:background="@drawable/shape_parctise_bg"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/dp10"
+            android:paddingBottom="@dimen/dp10">
+
+            <bike.gymproject.viewlibray.AkrobatNumberTextView
+                android:id="@+id/tv_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:singleLine="true"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/sp16"
+                tools:text="@string/distance_value" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="@string/distence"
+                android:textColor="@color/common_tips_color"
+                android:textSize="@dimen/sp10" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/cardview_hour_speed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/dp5"
+            android:layout_weight="1"
+            android:background="@drawable/shape_parctise_bg"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/dp10"
+            android:paddingBottom="@dimen/dp10">
+
+            <bike.gymproject.viewlibray.AkrobatNumberTextView
+                android:id="@+id/tv_hour_speed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:singleLine="true"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/sp16"
+                tools:text="@string/hour_speed_value" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="@string/hour_speed"
+                android:textColor="@color/common_tips_color"
+                android:textSize="@dimen/sp10" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/cardview_average_speed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/dp5"
+            android:layout_weight="1"
+            android:background="@drawable/shape_parctise_bg"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/dp10"
+            android:paddingBottom="@dimen/dp10">
+
+            <bike.gymproject.viewlibray.AkrobatNumberTextView
+                android:id="@+id/tv_average_speed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:singleLine="true"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/sp16"
+                tools:text="13'14''" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="@string/average_speed"
+                android:textColor="@color/common_tips_color"
+                android:textSize="@dimen/sp10" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

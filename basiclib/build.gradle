@@ -1,0 +1,209 @@
+apply plugin: 'com.android.library'
+
+android {
+    def versions = rootProject.ext.versions
+    compileSdkVersion versions.sdkCompileVersion
+    defaultConfig {
+        minSdkVersion versions.sdkMinVersion
+        targetSdkVersion versions.sdkTargetVersion
+        versionCode versions.appVersionCode
+        versionName versions.appVersionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+            java.srcDirs = ['src/main/java', 'src/main/java-gen']
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+}
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    implementation files('libs\\AMap_Search_V6.9.3_20190722.jar')
+    implementation files('libs\\commons-lang-2.5.jar')
+    def deps = rootProject.ext.deps
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api(name: 'crpblelib_141', ext: 'aar')
+    implementation deps.appcompat
+//    testImplementation 'junit:junit:4.12'
+//    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+//    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    api 'androidx.cardview:cardview:1.0.0'
+
+    /* api 'com.squareup.okhttp:okhttp:latest.integration'
+     api 'com.squareup.okio:okio:latest.integration'*/
+//    api 'com.tencent.bugly:crashreport:latest.release'
+//    api 'com.tencent.bugly:nativecrashreport:latest.release'
+    api 'com.google.code.gson:gson:2.2.1'
+
+    //图片加载库
+     api 'jp.wasabeef:glide-transformations:4.0.1'
+    //  api 'jp.wasabeef:glide-transformations:3.1.1'
+   // api 'jp.wasabeef:glide-transformations:2.0.2'
+
+     api 'com.github.bumptech.glide:glide:4.10.0'
+    //annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
+
+   // api 'com.githang:status-bar-compat:0.7'
+
+    //权限控制
+    // rxjava
+    /*api 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    api 'io.reactivex.rxjava2:rxjava:2.0.5'*/
+    api 'com.github.tbruyelle:rxpermissions:0.10.2'
+    //api 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.3@aar'
+    api 'com.jakewharton.rxbinding2:rxbinding:2.1.1'
+
+
+    api 'com.aliyun.ams:alicloud-android-feedback:3.2.0'
+    api 'com.aliyun.ams:alicloud-android-utdid:1.1.5.3'
+    api 'com.aliyun.ams:alicloud-android-ut:5.1.0'
+    api 'com.aliyun.ams:alicloud-android-utils:1.1.1'
+
+    api 'org.greenrobot:eventbus:3.0.0'
+
+    api 'androidx.recyclerview:recyclerview:1.0.0'
+    api 'com.google.android.material:material:1.0.0'
+
+    //图片压缩
+    api 'id.zelory:compressor:2.1.0'
+
+    /**
+     * 数据库存储
+     */
+//    api 'org.greenrobot:greendao:3.0.1'
+//    api 'org.greenrobot:greendao-generator:3.0.0'
+
+    api 'androidx.multidex:multidex:2.0.0'
+
+    // AutoDispose
+    api 'com.uber.autodispose:autodispose:0.7.0'
+    api 'com.uber.autodispose:autodispose-android:0.7.0'
+    api 'com.uber.autodispose:autodispose-android-archcomponents:0.7.0'
+
+    //okhttp3
+    api 'com.squareup.okhttp3:okhttp:3.10.0'
+    api "com.squareup.okhttp3:logging-interceptor:3.10.0"
+    //retrofit2
+    api 'com.squareup.retrofit2:retrofit:2.4.0'
+    api 'com.squareup.retrofit2:converter-gson:2.4.0'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    //rxjava2
+    api "io.reactivex.rxjava2:rxjava:2.1.12"
+    api 'io.reactivex.rxjava2:rxandroid:2.0.2'
+
+    api 'com.yanzhenjie:recyclerview-swipe:1.1.3'
+
+    api 'org.greenrobot:greendao:3.0.1'
+    api 'org.greenrobot:greendao-generator:3.0.0'
+    api 'com.google.code.gson:gson:2.2.1'
+    api 'com.alibaba:arouter-api:1.5.0'
+
+//    api 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+
+    // api 'com.amap.api:3dmap:7.1.0'
+    // api 'com.amap.api:3dmap:latest.integration'
+    // api 'com.amap.api:map2d:5.2.0'
+    // api 'com.amap.api:location:4.7.2'
+    // api 'com.amap.api:location:latest.integration'
+//    api 'com.amap.api:search:6.5.0'
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-21'
+//    //没有使用特殊Header，可以不加这行
+    api 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-21'
+    //   api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-26'
+    //  api 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-26'
+
+    api 'androidx.legacy:legacy-support-v4:1.0.0'
+    //api 'com.flyco.tablayout:FlycoTabLayout_Lib:2.0.2@aar'
+
+    api 'com.google.android.gms:play-services-maps:16.1.0'
+
+//    地图操作工具类，添加标记等
+    // api 'com.google.maps.android:android-maps-utils:0.5+'
+//google登录
+    api 'com.google.android.gms:play-services-auth:16.0.1'
+    //google fitness
+    api 'com.google.android.gms:play-services-fitness:16.0.1'
+
+    api 'pl.droidsonroids.gif:android-gif-drawable:1.2.+'
+
+    api 'com.alibaba:arouter-api:1.5.0'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
+
+   // api 'com.sina.weibo.sdk:core:4.4.3:openDefaultRelease@aar'
+
+
+
+    api 'com.twitter.sdk.android:twitter-core:3.1.1'
+    api 'com.twitter.sdk.android:tweet-composer:3.1.1'
+
+    api 'com.facebook.android:facebook-login:[5,6)'
+    api 'com.tencent.bugly:crashreport:latest.release'
+    api 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:5.4.3'
+    api 'com.liulishuo.okdownload:okhttp:1.0.5'
+    api 'com.liulishuo.okdownload:okdownload:1.0.5'
+    api 'com.liulishuo.okdownload:sqlite:1.0.5'
+
+    // api 'com.blankj:utilcode:1.23.7'
+    api 'com.blankj:utilcodex:1.28.3'
+
+
+    /**
+     * 社交模块引入
+     */
+    api 'com.aliyun.dpa:oss-android-sdk:+'
+   // api 'com.aliyun.dpa:oss-android-sdk:2.9.2'
+
+   //viewpage2  与tableview联动
+    api 'com.google.android.material:material:1.2.0-alpha03'
+    api "androidx.viewpager2:viewpager2:1.0.0"
+
+    //视频录制
+    api 'com.otaliastudios:cameraview:2.6.2'
+    //引入播放器
+    api 'com.shuyu:GSYVideoPlayer:7.1.3'
+
+    //根据你的需求ijk模式的so
+    api 'com.shuyu:gsyVideoPlayer-armv5:7.1.3'
+    api 'com.shuyu:gsyVideoPlayer-armv7a:7.1.3'
+    api 'com.shuyu:gsyVideoPlayer-arm64:7.1.3'
+    api 'com.shuyu:gsyVideoPlayer-x64:7.1.3'
+    api 'com.shuyu:gsyVideoPlayer-x86:7.1.3'
+
+
+//    api 'com.github.warkiz.widget:indicatorseekbar:2.1.2'
+
+
+    api 'com.gyf.immersionbar:immersionbar:3.0.0'
+    // fragment快速实现（可选）
+    api 'com.gyf.immersionbar:immersionbar-components:3.0.0'
+    api 'androidx.constraintlayout:constraintlayout:1.1.3'
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.3'
+
+    api 'com.youth.banner:banner:2.1.0'
+
+
+    //绕过Android P对非SDK接口的限制 http://weishu.me/2018/06/07/free-reflection-above-android-p/
+    api 'me.weishu:free_reflection:1.2.0'
+
+}

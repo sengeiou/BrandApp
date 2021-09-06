@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <bike.gymproject.viewlibray.ItemView
+        android:id="@+id/itemview_device"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp60"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15"
+        android:background="@drawable/shape_btn_white_20_bg"
+        android:visibility="visible"
+        app:contentSize="@dimen/sp16"
+        app:contentTextColor="@color/common_white"
+        app:itemText="@string/battery"
+        app:itemviewTitleSize="@dimen/sp16"
+        app:showArrow="true"
+        app:showBottomLine="true"
+        app:showCheckModel="false"
+        app:showRemind="true" />
+
+</LinearLayout>

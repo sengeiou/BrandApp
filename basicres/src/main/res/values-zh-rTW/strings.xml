@@ -1,0 +1,93 @@
+<resources>
+    <string name="common_app_name">basicres</string>
+    <string name="common_please_wait">请稍候....</string>
+    <string name="common_sync">正在同步数据</string>
+    <string name="common_please_check_that_your_network_is_connected">网络未连接</string>
+    <string name="common_dialog_cancel">取消</string>
+    <string name="common_dialog_ok">确定</string>
+
+    <string name="permission_photograph">请允许访问拍照功能以便您能正常使用扫一扫和相机功能</string>
+    <string name="permission_contacts">请允许访问通讯录权限以便您能将联系人保存到通讯录</string>
+    <string name="permission_recording">请允许访问语音权限以便您能正常使用聊天中的发送语音功能</string>
+    <string name="permission_phone">请允许启用电话权限</string>
+    <string name="permission_shortcut">请允许启用快捷方式权限，以便创建签到快捷方式</string>
+    <string name="permission_location0">请允许启用定位权限，以便您能正常使用蓝牙搜索连接功能</string>
+    <string name="permission_location1">请允许启用定位权限，以便您能正常使用蓝牙搜索连接和地图定位功能</string>
+    <string name="permission_location2">请允许必要的权限，以便您能正常使用来电提醒功能</string>
+    <string name="permission_location3">请允许必要的权限，以便您能正常使用信息提醒功能</string>
+    <string name="permission_storage">请允许启用存储权限，以便您能正常使用设置头像功能</string>
+    <string name="permission_storage_camera">请允许启用拍照和存储权限，以便您能正常使用设置头像功能</string>
+    <string name="permission_vibrate">请允许启用震动权限权限，以便您能正常使用寻找手机功能</string>
+    <string name="permission_location">location</string>
+
+    <string name="permission_tips">权限提醒</string>
+    <string name="permission_gosetting">好，去设置</string>
+
+
+    <string name="xlistview_header_hint_ready">释放立即刷新</string>
+    <string name="xlistview_header_hint_loading">正在刷新&#8230;</string>
+    <string name="xlistview_header_last_time">最近更新：</string>
+    <string name="xlistview_footer_hint_normal">加载更多</string>
+    <string name="xlistview_footer_hint_loading">内容加载中</string>
+    <string name="xlistview_footer_hint_ready">释放载入更多</string>
+
+    <string name="error_Connection_timeout">服务器连接超时,请稍后再试</string>
+    <string name="login_again">请重新登录</string>
+    <string name="comm_sync_data">预计%1$ss同步完数据</string>
+
+    <!--已整理-->
+
+    <string name="pull_to_refresh">下拉刷新</string>
+    <string name="parse_error">解析错误</string>
+    <string name="net_err_parse_error">连接失败</string>
+    <string name="net_err_verification">证书验证失败</string>
+    <string name="net_err_unknown">未知错误</string>
+    <string name="loginout_tips">下线通知</string>
+    <string name="battery_tips">电量不足</string>
+    <string name="battery_content">跳绳电量不足，可能会导致连接异常和数据同步失败，请及时为您的跳绳充电</string>
+    <string name="loginout_content">你的账号已下线请重新登录</string>
+    <string name="loginout_button_content">好的,去登录</string>
+    <string name="take_photo_no_camara_surpport">没有相机支持</string>
+    <string name="take_photo_no_camara_permission">没有相机权限</string>
+    <string name="take_photo_no_storage_permission">没有存储权限</string>
+
+
+    <string name="friend">好友</string>
+    <string name="attention">关注</string>
+    <string name="fans_club">粉丝</string>
+    <string name="feed">动态</string>
+
+
+    /**用户个人信息**/
+    <string name="done">完成</string>//完成
+    <string name="head">头像</string>//头像
+    <string name="set_user_info">基本信息</string>//基本信息
+    <string name="enter_nickname">请输入昵称</string>//请输入昵称
+    <string name="nickname">昵称</string>//昵称
+    <string name="gender">性别</string>//性别
+    <string name="gender_male">男</string>//男
+    <string name="gender_female">女</string>//女
+    <string name="body_height">身高</string>//身高
+    <string name="birthday">出生年月</string>//出生年月
+    <string name="not_save_alert">您有修改的内容是否保存？</string>//确定不保存更改的资料
+    <string name="edit_info_save">保存</string>
+    <string name="edit_info_not_save">不保存</string>
+    /**数据首页旧**/
+
+
+    <string name="body_weight">体重</string>//体重
+    <string name="individual_resume">个人简介</string>//体重
+    <string name="change_bg">更换背景</string>//更换背景
+    <string name="edit_user_info">编辑资料</string>//编辑资料
+    <string name="edit_person_page">编辑</string>//编辑
+    <string name="friend_state_fans">互相关注</string>//互相关注
+    <string name="friend_state_follow">+关注</string>//关注
+    <string name="friend_state_friend">已关注</string>//取消关注
+    <string name="friend_eidt_user_succsss">修改成功</string>
+    <string name="friend_eidt_user_fail">修改失败</string>
+    <string name="friend_feed_no_content">没有动态哦</string>
+    <string name="friend_enter_myprofile">简单地介绍一下自己吧</string>//请输入昵称
+    <string name="friend_message">消息</string>
+
+
+</resources>

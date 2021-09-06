@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical"
+    tools:context=".ropeskipping.RopeSkippingActivity">
+
+
+    <View
+        android:id="@+id/view_top"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <com.isport.brandapp.Home.customview.MainHeadLayout
+        android:id="@+id/layout_mainHeadLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"></com.isport.brandapp.Home.customview.MainHeadLayout>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/home_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srlEnableOverScrollBounce="true">
+
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/common_bg"
+            app:srlAccentColor="@color/blank_40"
+            app:srlTextFinish="@string/friend_option_success"
+            app:srlTextRefreshing="@string/xlistview_footer_hint_loading">
+
+        </com.scwang.smartrefresh.layout.header.ClassicsHeader>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp250"
+                    android:layout_marginLeft="@dimen/dp15"
+                    android:layout_marginRight="@dimen/dp15"
+                    android:layout_marginBottom="@dimen/dp15"
+                    android:background="@drawable/shape_btn_white_20_bg"
+                    android:paddingLeft="@dimen/dp15"
+                    android:paddingTop="@dimen/dp10"
+                    android:paddingRight="@dimen/dp15"
+                    android:paddingBottom="@dimen/dp15">
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:layout_toLeftOf="@+id/tv_history"
+                        android:background="@drawable/shape_btn_gray_20_bg"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+
+                        <brandapp.isport.com.basicres.commonview.RoundImageView
+                            android:id="@+id/iv_head"
+                            android:layout_width="@dimen/dp40"
+                            android:layout_height="@dimen/dp40"
+                            android:src="@drawable/icon_rope_ranking" />
+
+                        <TextView
+                            android:id="@+id/tv_nikeName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:paddingLeft="@dimen/dp14"
+                            android:paddingRight="@dimen/dp5"
+                            android:singleLine="true"
+                            android:text="测试测试测试测试测试测试测试测试测试测试测试测试"
+                            android:textColor="@color/common_white" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_history"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="@dimen/dp15"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:layout_marginRight="@dimen/dp15"
+                        android:background="@drawable/shape_btn_gray_20_bg"
+                        android:drawableLeft="@drawable/icon_rope_history"
+                        android:drawablePadding="@dimen/dp3"
+                        android:paddingLeft="@dimen/dp15"
+                        android:paddingTop="@dimen/dp10"
+                        android:paddingRight="@dimen/dp15"
+                        android:paddingBottom="@dimen/dp10"
+                        android:text="@string/rope_history" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/layout_min"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal">
+
+                            <bike.gymproject.viewlibray.AkrobatNumberTextView
+                                android:id="@+id/tv_rope_count"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textColor="#4DDA64"
+                                android:textSize="@dimen/sp46"
+                                android:textStyle="bold"></bike.gymproject.viewlibray.AkrobatNumberTextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/common_white"
+                                android:textSize="@dimen/sp16"
+                                android:textStyle="bold"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal">
+
+                            <bike.gymproject.viewlibray.AkrobatNumberTextView
+                                android:id="@+id/tv_hr_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/no_data"
+                                android:textColor="@color/common_text_color"
+                                android:textSize="@dimen/sp46"
+                                android:textStyle="bold"></bike.gymproject.viewlibray.AkrobatNumberTextView>
+
+                            <TextView
+                                android:id="@+id/tv_hr_unit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/BPM"
+                                android:textColor="@color/common_white"
+                                android:textSize="@dimen/sp16"
+                                android:textStyle="bold"></TextView>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_min"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/layout_bottom_value"
+                        android:layout_marginBottom="@dimen/dp18">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/rope_sum_count"
+                            android:textColor="@color/common_name_profile_color"
+                            android:textSize="@dimen/sp14"></TextView>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/real_time_hr"
+                            android:textColor="@color/common_name_profile_color"
+                            android:textSize="@dimen/sp14"></TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_bottom_value"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/layout_bottom"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal">
+
+                            <bike.gymproject.viewlibray.AkrobatNumberTextView
+                                android:id="@+id/tv_exeCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textColor="@color/common_white"
+                                android:textSize="@dimen/sp24"
+                                android:textStyle="bold"></bike.gymproject.viewlibray.AkrobatNumberTextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/unit_times"
+                                android:textColor="@color/common_white"
+                                android:textSize="@dimen/sp12"
+                                android:textStyle="bold"></TextView>
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal">
+
+                            <bike.gymproject.viewlibray.AkrobatNumberTextView
+                                android:id="@+id/tv_hour"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textColor="@color/common_white"
+                                android:textSize="@dimen/sp24"
+                                android:textStyle="bold"></bike.gymproject.viewlibray.AkrobatNumberTextView>
+
+                            <TextView
+                                android:id="@+id/tv_hour_unit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/unit_hour"
+                                android:textColor="@color/common_white"
+                                android:textSize="@dimen/sp12"
+                                android:textStyle="bold"></TextView>
+
+                            <bike.gymproject.viewlibray.AkrobatNumberTextView
+                                android:id="@+id/tv_min"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textColor="@color/common_white"
+                                android:textSize="@dimen/sp24"
+                                android:textStyle="bold"></bike.gymproject.viewlibray.AkrobatNumberTextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/unit_min"
+                                android:textColor="@color/common_white"
+                                android:textSize="@dimen/sp12"
+                                android:textStyle="bold"></TextView>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal">
+
+                            <bike.gymproject.viewlibray.AkrobatNumberTextView
+                                android:id="@+id/tv_cal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textColor="@color/common_white"
+                                android:textSize="@dimen/sp24"
+                                android:textStyle="bold"></bike.gymproject.viewlibray.AkrobatNumberTextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/unit_kcal"
+                                android:textColor="@color/common_white"
+                                android:textSize="@dimen/sp12"
+                                android:textStyle="bold"></TextView>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_bottom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="@dimen/dp10">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/rope_training_times"
+                            android:textColor="@color/common_name_profile_color"
+                            android:textSize="@dimen/sp14"></TextView>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/rope_trainning_time"
+                            android:textColor="@color/common_name_profile_color"
+                            android:textSize="@dimen/sp14"></TextView>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/rope_traninning_cal"
+                            android:textColor="@color/common_name_profile_color"
+                            android:textSize="@dimen/sp14"></TextView>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerview_ropeskipp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp7"
+                    android:layout_marginRight="@dimen/dp7">
+
+                </androidx.recyclerview.widget.RecyclerView>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+</LinearLayout>

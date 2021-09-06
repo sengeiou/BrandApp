@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jkcq.train">
+
+    <application>
+        <activity android:name=".ui.TrainFinishActivity"></activity>
+        <activity
+            android:name=".ui.TrainVideoActivity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".ui.ExitTrainActivity" />
+    </application>
+
+</manifest>

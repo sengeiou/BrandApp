@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="125dp">
+
+    <com.isport.brandapp.view.TasksRopeCompletedView xmlns:tc="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/sport_stop"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_centerInParent="true"
+        tc:radius="100dp"
+        tc:ringColor="#ADADBB"
+        tc:strokeWidth="4dp" />
+
+    <LinearLayout
+        android:id="@+id/layout_end"
+        android:layout_width="125dp"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_end_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="@string/rope_end"
+            android:textColor="@color/common_white"
+            android:textSize="@dimen/sp22" />
+
+        <TextView
+            android:id="@+id/tv_end_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/long_press_end"
+            android:textColor="@color/common_name_profile_color" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_rope_start"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="@string/rope_start"
+        android:textColor="@color/common_white"
+        android:textSize="@dimen/sp22" />
+
+
+</RelativeLayout>

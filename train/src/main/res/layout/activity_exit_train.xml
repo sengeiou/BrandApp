@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".ui.ExitTrainActivity">
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp17"
+        android:src="@mipmap/icon_close_black"></ImageView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp80"
+        android:text="@string/why_exit"
+        android:textColor="@color/common_text_color"
+        android:textSize="@dimen/sp20"
+        android:textStyle="bold"></TextView>
+
+    <TextView
+        android:id="@+id/tv_too_easy"
+        android:layout_width="230dp"
+        android:layout_height="@dimen/dp44"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp26"
+        android:background="@drawable/shape_text_select_grey"
+        android:gravity="center"
+        android:text="@string/too_easy"
+        android:textColor="@color/color_text_select_gray"
+        android:textSize="@dimen/sp20"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_too_hard"
+        android:layout_width="230dp"
+        android:layout_height="@dimen/dp44"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp20"
+        android:background="@drawable/shape_text_select_grey"
+        android:gravity="center"
+        android:text="@string/too_hard"
+        android:textColor="@color/color_text_select_gray"
+        android:textSize="@dimen/sp20"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_unlike"
+        android:layout_width="230dp"
+        android:layout_height="@dimen/dp44"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp20"
+        android:background="@drawable/shape_text_select_grey"
+        android:gravity="center"
+        android:text="@string/unlike_course"
+        android:textColor="@color/color_text_select_gray"
+        android:textSize="@dimen/sp20"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_no_time"
+        android:layout_width="230dp"
+        android:layout_height="@dimen/dp44"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp20"
+        android:background="@drawable/shape_text_select_grey"
+        android:gravity="center"
+        android:text="@string/inconvenient"
+        android:textColor="@color/color_text_select_gray"
+        android:textSize="@dimen/sp20"
+        android:textStyle="bold" />
+</LinearLayout>

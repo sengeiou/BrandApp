@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    tools:context="phone.gym.jkcq.com.socialmodule.activity.SportRankActivity">
+
+    <LinearLayout
+        android:id="@+id/ll_tab_rank"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15"
+        android:background="@drawable/shape_btn_white_20_bg"
+        android:orientation="vertical">
+
+        <phone.gym.jkcq.com.socialmodule.shadow.ShadowLayout
+            android:id="@+id/mShadowLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            app:hl_cornerRadius="20dp"
+            app:hl_shadowColor="#0d000000"
+            app:hl_shadowLimit="10dp"
+            app:hl_shadowOffsetY="5dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_btn_white_20_bg"
+            android:orientation="vertical">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/friend_dp50"
+                app:tabGravity="center"
+                app:tabIndicatorColor="@color/common_view_color"
+                app:tabIndicatorFullWidth="false"
+                app:tabIndicatorHeight="@dimen/friend_dp2"
+                app:tabMode="scrollable"
+                app:tabPaddingBottom="@dimen/friend_dp2"
+                app:tabRippleColor="@android:color/transparent"
+                app:tabSelectedTextColor="@color/common_text_color"
+                app:tabTextAppearance="@style/tabStyle"
+                app:tabTextColor="@color/common_gray_color"></com.google.android.material.tabs.TabLayout>
+        </LinearLayout>
+        </phone.gym.jkcq.com.socialmodule.shadow.ShadowLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewpager_rank"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"></androidx.viewpager2.widget.ViewPager2>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_launch"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dp16"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp80"
+            android:text="@string/launch_friend_rope_rank"
+            android:textColor="@color/common_text_color"
+            android:textSize="@dimen/sp22"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp30"
+            android:text="@string/launch_you_can"
+            android:textColor="@color/common_text_color"
+            android:textSize="@dimen/sp15" />
+
+        <TextView
+            android:id="@+id/tv_content1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/see_friend_rope_rank"
+            android:textColor="@color/common_text_color"
+            android:textSize="@dimen/sp15" />
+
+        <TextView
+            android:id="@+id/tv_content2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/friend_see_your_roperank"
+            android:textColor="@color/common_text_color"
+            android:textSize="@dimen/sp15" />
+
+
+        <Button
+            android:id="@+id/btn_launch"
+            android:layout_width="@dimen/dp240"
+            android:layout_height="@dimen/dp46"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp220"
+            android:background="@drawable/shape_sleep_start_bg"
+            android:text="@string/launch_rank"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp18"></Button>
+    </LinearLayout>
+</FrameLayout>

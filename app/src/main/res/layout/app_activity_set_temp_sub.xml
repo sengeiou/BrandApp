@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/bg_temp_sub"/>
+        <TextView
+            android:id="@+id/tv_value"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/sp30"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="+0.0\n℃"
+            />
+       
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_reset"
+            android:layout_width="220dp"
+            android:layout_height="@dimen/dp46"
+            android:layout_marginBottom="@dimen/dp15"
+            android:layout_gravity="center"
+            android:background="@drawable/app_frame_green"
+            android:gravity="center"
+            android:text="@string/temp_sub_reset"
+            android:textColor="@drawable/app_frame_view_color_text"
+            android:textSize="@dimen/sp17" />
+        <TextView
+            android:layout_marginTop="@dimen/dp15"
+            android:id="@+id/tv_save_value"
+            android:layout_width="220dp"
+            android:layout_height="@dimen/dp46"
+            android:layout_gravity="center"
+            android:background="@drawable/app_frame_all_green_50"
+            android:gravity="center"
+            android:text="@string/save"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp17" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+</LinearLayout>
+
+

@@ -1,0 +1,128 @@
+<resources>
+    <string name="app_name">socialmodule</string>
+    <string name="friend_cancel">取消</string>
+
+    <string name="pull_to_refresh">下拉刷新</string>//下拉刷新
+    <string name="xlistview_header_hint_ready">释放立即刷新</string>//释放立即刷新
+    <string name="xlistview_header_hint_loading">正在刷新&#8230;</string>//正在刷新
+    <string name="xlistview_header_last_time">最近更新：</string>//最近更新
+    <string name="xlistview_footer_hint_normal">加载更多</string>//加载更多
+    <string name="xlistview_footer_hint_loading">内容加载中</string>//内容加载中
+    <string name="xlistview_footer_hint_ready">释放载入更多</string>
+
+    <string name="friend_no_match_user">没有相关用户</string>
+    <string name="please_input_phone">输入昵称/手机号码/邮箱</string>
+    <string name="friend_open_to_scan">打开Bonlala点击“我的扫一扫”，关注我吧</string>
+    <string name="friend_input_qrcode_to_frame">请将二维码放入放入框中</string>
+    <string name="friend_scan">扫一扫</string>
+    <string name="friend_open_light">打开闪光灯</string>
+    <string name="friend_close_light">关闭闪光灯</string>
+    <string name="ensure_unfollow">确认取消关注用户？</string>
+    <string name="friend_follow">关注</string>
+    <string name="friend_each_follow">互相关注</string>
+    <string name="friend_already_follow">已关注</string>
+    <string name="friend_change_photo">更换头像</string>
+    <string name="friend_to_follow">+关注</string>
+    <string name="empty_data">暂无数据</string>
+    <string name="find">发现</string>//释放载入更多
+    <string name="edit_user_save">保存</string>
+    <string name="friend_enter_nickname">请输入昵称</string>//请输入昵称
+    <string name="friend_option_success">操作成功！</string>//请输入昵称
+
+
+    <string name="trimmed_done">视频处理完成！</string>
+    <string name="trimming">正在处理视频,请稍等...</string>
+    <string name="compressing">正在压缩视频...</string>
+    <string name="compressed_done">视频压缩完成！</string>
+    <string name="video_shoot_tip">拖动选择你要发表的%d秒以内片段！</string>
+    <string name="open_permission">开启权限</string>
+    <string name="video_record_des">要录制视频，需要授予相机和麦克风使用权.</string>
+    <string name="recording">录制</string>
+    <string name="back">返回</string>
+    <string name="finish">完成</string>
+    <string name="no_netWork_try_again">重试</string>
+    <string name="friend_no_netWork">无网络</string>
+    <string name="friend_cheack_netWork">请检查网络连接</string>
+    <string name="friend_video_play_tip">开启后，各信息流中的视频将会自动播放</string>
+    <string name="friend_video_play_wifi">仅WiFi</string>
+    <string name="friend_video_play_wifi_4g">4G和WiFi</string>
+    <string name="friend_video_play_close">关闭自动播放</string>
+    <string name="friend_current_play_4g">当前为非Wi-Fi环境，请注意流量消耗</string>
+    <string name="friend_no_content">没有内容哟</string>
+
+
+
+
+    <string name="friend_dynamic_del">删除</string>
+    <string name="friend_dynamic_report">举报</string>
+    <string name="friend_dynamic_save_location">保存到本地</string>
+    <string name="friend_dynamic_save__video_location">视频保存到本地</string>
+    <string name="friend_dynamic_hite">说说什么吧</string>
+    <string name="friend_exit_no_save_content">退出后内容不会保存哦 是否退出？</string>
+    <string name="friend_exit">退出</string>
+    <string name="friend_send_dynamic_success">发布成功</string>
+    <string name="friend_send_dynamic_fail">发布失败</string>
+    <string name="friend_send_dynamic">发布</string>
+    <string name="friend_report_adv">广告</string>
+    <string name="friend_report_other">其他</string>
+    <string name="friend_video_down_succss">下载成功</string>
+    <string name="dynamic_sen">刚刚</string>
+    <string name="dynamic_min">%1s分钟前</string>
+    <string name="dynamic_hour">%1s小时前</string>
+    <string name="dynamic_day">%1s天前</string>
+
+
+
+    <string name="ensure_delete">确定要删除吗</string>
+    <string name="friend_edit">编辑</string>
+    <string name="read_failed">读取失败，请重新打开</string>
+    <string name="friend_all">全部</string>
+    <string name="friend_videos">作品</string>
+    <string name="friend_like">喜欢</string>
+    <string name="friend_community_guide_ok">我知道了</string>
+    <string name="friend_community_guide_tips">点击这里\n可以发布作品哦</string>
+    <string name="friend_community_refresh">正在刷新...</string>
+    <string name="friend_community_refresh_success">刷新成功</string>
+    <string name="friend_cut_next">下一步</string>
+    <string name="friend_cut_back">返回</string>
+    <string name="friend_dynamic_posting">您有动态正在发布中，请稍后</string>
+    <string name="friend_report_send">发送</string>
+    <string name="friend_report_edit_tips">快来发表您的评论吧</string>
+
+
+    <string name="rank_friend">好友排行</string>
+    <string name="stop_use">停用</string>
+    <string name="ensure_stop_use">确定停用吗?</string>
+    <string name="ensure_stop_tips">停用后您的运动数据不会出现在好友排行榜,并关闭您的运动排行榜功能</string>
+    <string name="launch_friend_sport_rank">启用好友运动排行功能吗？</string>
+    <string name="launch_you_can">启用后您可以：</string>
+    <string name="see_friend_sport_rank">1、查看好友的运动数据和排名情况</string>
+    <string name="friend_see_your_rank">2、好友可以在排行榜中看到您的运动数据</string>
+    <string name="launch_rank">启用</string>
+    <string name="unit_step">步</string>
+    <string name="unit_distance">公里</string>
+    <string name="unit_kcal">千卡</string>
+    <string name="comment_number">%1s条评论</string>
+    <string name="comment_reply_number">%1s条回复</string>
+    <string name="comment_author">作者</string>
+    <string name="comment_host">楼主</string>
+    <string name="comment_reply">回复\t</string>
+    <string name="data_from">数据来源：</string>
+    <string name="data_from_watch">手表/手环</string>
+    <string name="data_from_app">APP</string>
+    <string name="invalide_video_can_not_upload">时间太短啦，再拍一会儿吧</string>
+    <string name="last_week_ranking">上周排行</string>
+    /**运动**/
+    <string name="friend_outdoor_step">步数</string>
+    <string name="friend_outdoor_calorie">卡路里</string>
+    <string name="friend_outdoor_running">户外跑</string>
+    <string name="friend_outdoor_running1">户外跑</string>
+    <string name="friend_tdoor_cycling">骑行</string>
+    <string name="friend_treadmill">室内跑</string>
+    <string name="friend_walking">行走</string>
+    <string name="no_replay">暂无回复</string>
+    <string name="no_commend">暂无评论</string>
+    <string name="no_message">暂无消息</string>
+    <string name="commend">评论</string>
+    <string name="copy_text">复制</string>
+</resources>

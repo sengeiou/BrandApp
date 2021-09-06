@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginBottom="@dimen/dp27"
+        android:layout_marginLeft="@dimen/dp70"
+        android:layout_marginRight="@dimen/dp70"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/common_main_item_selector_view_bg_color">
+
+        <bike.gymproject.viewlibray.BebasNeueTextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="22:00"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp48" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp28"
+        android:layout_marginRight="@dimen/dp28"
+        android:gravity="center"
+        android:text="@string/sleep_alarm_notice_title"
+        android:textColor="@color/common_white"
+        android:textSize="@dimen/sp13" />
+
+</LinearLayout>
+

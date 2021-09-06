@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="common_text_color">#2F2F33</color>
+    <color name="common_transparent">@color/white</color>
+    <color name="transparent">#00000000</color>
+    <color name="common_ripple_color">#e4e4e4</color>
+    <color name="common_press_color">#ededed</color>
+    <color name="common_scale_text_color">@color/common_text_color</color>
+    <color name="common_white">@color/common_text_color</color>
+    <color name="common_text_grey_color">#D6D6DD</color>
+    <color name="white">#FFFFFF</color>
+    <color name="blank_40">#78000000</color>
+    <color name="scale_bg">#03000000</color>
+    <color name="common_item_bg_color">@color/white</color>
+    <color name="common_item_main_bg_color">@color/white</color>
+    <color name="common_main_nor_press">#A9AEB7</color>
+    <color name="common_item_line_color">#E7E8EB</color>
+    <color name="common_item_bar_line_color">#D6D6DD</color>
+    <color name="common_main_table_bg_color">@color/white</color>
+    <color name="common_blank">#000000</color>
+    <color name="color_00B167">#1DCE74</color>
+    <color name="title_bg_color">#06bfff</color>
+    <color name="oxyen_error">#FE9600</color>
+    <color name="main_number_color">#101D37</color>
+
+    <!--按钮-->
+    <color name="common_bg">#F7F7F9</color>
+    <color name="common_bind_bg">#f2f2f2</color>
+    <color name="common_bind_title">@color/white</color>
+    <color name="common_button_bg_enabled">#D8D8D8</color>
+
+    <!--标题-->
+    <color name="common_title_text">@color/common_white</color>
+    <color name="common_title_button_text">@color/common_white</color>
+    <color name="common_title_button_text_select">@color/common_gray_color</color>
+    <color name="common_title_button_text_enabled">@color/common_gray_color</color>
+
+    <color name="common_tips_color">#6E6E77</color>
+    <color name="common_gray_color">#9399A5</color>
+    <color name="common_tips_color_6666">#FDFDFD</color>
+    <color name="common_hint_color_606060">#E7E8EB</color>
+    <color name="common_view_color">#4DDA64</color>
+    <color name="dark_green">#1EA460</color>
+    <color name="common_view_color_alpha90">#1A1DCE74</color>
+    <color name="common_start_color">#00B167</color>
+    <color name="common_end_color">#87ED4D</color>
+    <color name="common_pop_bg">#f7f7f7</color>
+
+
+    <color name="color_limit">#F85842</color>
+    <color name="color_anaerobic_exercise">#FFCB14</color>
+    <color name="color_aerobic_exercise">#14D36B</color>
+    <color name="color_fat_burning_exercise">#3FA6F2</color>
+    <color name="color_warm_up">#9399A5</color>
+    <color name="color_leisure">#BDC1C7</color>
+    <color name="color_practise_line">#59E39C</color>
+    <color name="color_nor">#E0E3E6</color>
+
+
+    <color name="color_temp_normal">#4DDA64</color>
+    <color name="color_temp_low_fever">#FFAA00</color>
+    <color name="color_temp_high_fever">#ED4040</color>
+
+
+    <!--95% — F2-->
+    <!--90% — E6-->
+    <!--85% — D9-->
+    <!--80% — CC-->
+    <!--75% — BF-->
+    <color name="common_black_75">#BF000000</color>
+    <!--70% — B3-->
+    <color name="common_black_70">#B3000000</color>
+    <!--65% — A6-->
+    <!--60% — 99-->
+    <!--55% — 8C-->
+    <!--50% — 80-->
+    <color name="white_50">#80FFFFFF</color>
+    <color name="white_0">#00FFFFFF</color>
+    <!--45% — 73-->
+    <!--40% — 66-->
+    <color name="common_black_40">#66000000</color>
+    <!--35% — 59-->
+    <color name="common_black_30">#4D000000</color>
+    <!--30% — 4D-->
+    <!--25% — 40-->
+    <!--20% — 33-->
+    <!--15% — 26-->
+    <color name="common_black_15">#26000000</color>
+    <!--10% — 1A-->
+    <!--5% — 0D-->
+    <color name="common_stande_blue">#4BC4FF</color>
+    <color name="common_stande_green">#50E3C2</color>
+    <color name="common_stande_yello">#FFD100</color>
+    <color name="common_stande_orange">#FD944A</color>
+    <color name="common_stande_red">#FA5F5F</color>
+    <color name="common_sleep_deep_color">#50E356</color>
+    <color name="common_deep_sleep">#5856D7</color>
+    <color name="common_light_sleep">#4194FF</color>
+    <color name="common_awake_sleep">#4DDA64</color>
+    <color name="common_sleep_time_color">#4B78FF</color>
+    <color name="common_rec">#F3546A</color>
+    <color name="common_practise">#99FFFFFF</color>
+    <color name="common_rec_breath">#FFA801</color>
+    <color name="common_view_Bg">#1Af3556b</color>
+    <color name="common_rec_breath_Bg">#1AFFA801</color>
+    <color name="common_name_color">#2F2F33</color>
+    <color name="common_name_profile_color">#6E6E77</color>
+    <color name="common_rope_time_color">#ADADBB</color>
+
+    <color name="color_text_select_gray">#4A5468</color>
+
+
+</resources>

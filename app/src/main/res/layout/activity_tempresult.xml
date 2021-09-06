@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".wu.activity.BPResultActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginTop="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15"
+        android:layout_marginBottom="@dimen/dp15"
+        android:background="@drawable/shape_btn_white_20_bg"
+        android:orientation="vertical">
+
+
+        <phone.gym.jkcq.com.socialmodule.shadow.ShadowLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            app:hl_cornerRadius="20dp"
+            app:hl_shadowColor="#0d000000"
+            app:hl_shadowLimit="10dp"
+            app:hl_shadowOffsetY="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginBottom="@dimen/dp15"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/iv_measure_way"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/iv_measure_way" />
+
+                    <TextView
+                        android:id="@+id/tv_bp_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:textStyle="bold"
+                        android:text="@string/no_data"
+                        android:textColor="@color/color_warm_up"
+                        android:textSize="@dimen/sp13" />
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <bike.gymproject.viewlibray.AkrobatNumberTextView
+                        android:id="@+id/tv_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="@string/no_data"
+                        android:textColor="@color/common_white"
+                        android:textSize="@dimen/sp36" />
+
+                    <TextView
+                        android:id="@+id/tv_unitl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/no_data"
+                        android:textStyle="bold"
+                        android:textColor="@color/common_white"
+                        android:textSize="@dimen/sp16" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/tv_bp_time"
+                    android:layout_centerHorizontal="true"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:text="@string/no_data"
+                    android:textColor="@color/common_white"
+                    android:textSize="@dimen/sp16" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp34"
+                    android:layout_marginLeft="@dimen/dp15"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:layout_marginRight="@dimen/dp15"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="@dimen/dp8"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:id="@+id/iv_state_norm"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp30"
+                        android:layout_weight="1"
+                        android:visibility="invisible"
+                        android:src="@drawable/icon_temp_norm" />
+
+                    <ImageView
+                        android:id="@+id/iv_state_low"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp30"
+                        android:visibility="invisible"
+                        android:layout_weight="1"
+                        android:src="@drawable/icon_temp_low" />
+
+
+                    <ImageView
+                        android:id="@+id/iv_state_high"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp30"
+                        android:visibility="invisible"
+                        android:layout_weight="1"
+                        android:src="@drawable/icon_temp_high" />
+
+                    <View
+                        android:layout_width="@dimen/dp8"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp34"
+                    android:layout_marginLeft="@dimen/dp15"
+                    android:layout_marginRight="@dimen/dp15"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="@dimen/dp8"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/view_leisure"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp30"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_temp_low"
+                        android:gravity="center"
+                        android:text="@string/temp_norm_temp_state"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp14" />
+
+                    <TextView
+                        android:id="@+id/view_warm_up"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp30"
+                        android:layout_weight="1"
+                        android:background="#FE9600"
+                        android:gravity="center"
+                        android:text="@string/temp_low_fever_state"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp14" />
+
+
+                    <TextView
+                        android:id="@+id/view_limit"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp30"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_temp_high"
+                        android:gravity="center"
+                        android:text="@string/temp_high_fever_state"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp14" />
+
+                    <View
+                        android:layout_width="@dimen/dp8"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/layout_bar"
+                    android:layout_marginLeft="@dimen/dp15"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:layout_marginRight="@dimen/dp15"
+
+                    android:layout_marginBottom="@dimen/dp21"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/tv_start_temp1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="35℃"
+                        android:textColor="@color/common_white"
+                        android:textSize="@dimen/sp14" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp30"
+                        android:layout_weight="1"
+                        android:background="@color/transparent" />
+
+
+                    <TextView
+                        android:id="@+id/tv_start_temp2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="35℃"
+                        android:textColor="@color/common_white"
+                        android:textSize="@dimen/sp14" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp30"
+                        android:layout_weight="1"
+                        android:background="@color/transparent" />
+
+
+                    <TextView
+                        android:id="@+id/tv_start_temp3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="35℃"
+                        android:textColor="@color/common_white"
+                        android:textSize="@dimen/sp14" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp30"
+                        android:layout_weight="1"
+                        android:background="@color/transparent" />
+
+                    <TextView
+                        android:id="@+id/tv_start_temp4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="35℃"
+                        android:textColor="@color/common_white"
+                        android:textSize="@dimen/sp14" />
+
+                </LinearLayout>
+
+
+                <EditText
+                    android:id="@+id/et_temp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/tv_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="输入体温"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </phone.gym.jkcq.com.socialmodule.shadow.ShadowLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_marginTop="13dp"
+            android:layout_marginRight="@dimen/dp15"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="@string/bpresult_temp_measure_trend"
+            android:textColor="@color/common_white"
+            android:textSize="@dimen/sp12" />
+
+        <com.isport.brandapp.wu.view.TempTrendView
+            android:id="@+id/trendview_temp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/friend_dp120"
+            android:layout_marginLeft="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp5"
+            android:layout_marginRight="@dimen/dp10"
+            android:layout_marginBottom="@dimen/dp10" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp74"
+        android:layout_alignParentBottom="true"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_measure"
+            android:layout_width="@dimen/dp220"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp15"
+            android:layout_marginBottom="@dimen/dp15"
+            android:background="@drawable/shape_btn_bg"
+            android:text="@string/start_measure"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp17" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/common_bg"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent">
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp60"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="180dp">
+
+
+
+        <bike.gymproject.viewlibray.LineChartView
+            android:id="@+id/lineChartView"
+            android:layout_width="match_parent"
+            android:layout_height="180dp" />
+
+
+        <bike.gymproject.viewlibray.LineRecChartView
+            android:id="@+id/lineChartView1"
+            android:layout_width="match_parent"
+            android:layout_height="180dp" />
+
+        <bike.gymproject.viewlibray.LineRecChartView
+            android:id="@+id/lineChartView2"
+            android:layout_width="match_parent"
+            android:layout_height="180dp" />
+
+        <bike.gymproject.viewlibray.LineRecChartView
+            android:id="@+id/lineChartView3"
+            android:layout_width="match_parent"
+            android:layout_height="180dp" />
+
+        <bike.gymproject.viewlibray.LineRecChartView
+            android:id="@+id/lineChartView4"
+            android:layout_width="match_parent"
+            android:layout_height="180dp" />
+
+        <bike.gymproject.viewlibray.LineRecChartView
+            android:id="@+id/lineChartView5"
+            android:layout_width="match_parent"
+            android:layout_height="180dp" />
+
+        <bike.gymproject.viewlibray.LineRecChartView
+            android:id="@+id/lineChartView6"
+            android:layout_width="match_parent"
+            android:layout_height="180dp" />
+
+        <bike.gymproject.viewlibray.LineScrollChartView
+            android:id="@+id/testStepView"
+            android:layout_width="match_parent"
+            android:layout_height="180dp" />
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

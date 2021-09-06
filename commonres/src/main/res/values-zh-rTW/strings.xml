@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">viewlibray</string>
+    <!--pickView-->
+    <string name="cancel">取消</string>//取消
+    <string name="clear_cache">确定要清除全部缓存?</string>
+    <string name="confirm">确认</string>//取消
+    /**通用**/
+    <string name="notice">提示</string>//提示
+    //**更换头像**/
+    <string name="camera">拍照</string>//拍照
+    <string name="choose_from_album">相册</string>//相册
+    <string name="take_video">拍视频</string>//拍视频
+    <string name="location_permissions">需要打开权限</string>
+    <string name="video_player">视频自动播放</string>//
+
+    <string name="bonlala_loaction_server">扫描附近蓝牙设备需要开启定位服务</string>
+    <string name="bonlala_loaction_on">开启</string>
+    <string name="bonlala_loaction_off">取消</string>
+    <string name="no_more">没有更多数据了</string>
+    <string name="data_loading">数据加载中,请稍等</string>
+
+</resources>

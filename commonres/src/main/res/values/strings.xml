@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">commonRes</string>
+
+    <string name="notice">Tips</string>//提示
+
+    <string name="cancel">Cancel</string>//取消
+    <string name="clear_cache">Clean the cache?</string>
+    <string name="camera">Take photo</string>//拍照
+    <string name="confirm">Confirm</string>//取消
+    <string name="choose_from_album">Gallery</string>//相册
+    <string name="take_video">Shoot video</string>//拍视频
+    <string name="location_permissions">You need to open permissions</string>
+    <string name="video_player">Automatic video playback</string>//
+
+
+    <string name="bonlala_loaction_server">Location service is disable</string>
+    <string name="bonlala_loaction_on">ENABLE</string>
+    <string name="bonlala_loaction_off">CANCEL</string>
+    <string name="no_more">No more data</string>
+    <string name="data_loading">数据加载中,请稍等</string>
+</resources>

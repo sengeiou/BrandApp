@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/common_bg"
+        android:textStyle="bold"
+        android:paddingBottom="@dimen/dp10"
+        android:paddingLeft="@dimen/dp15"
+        android:paddingRight="@dimen/dp15"
+        android:paddingTop="@dimen/dp20"
+        android:text="@string/select_upgrade_device_type"
+        android:textColor="@color/common_text_color"
+        android:textSize="@dimen/sp15" />
+
+    <brandapp.isport.com.basicres.commonrecyclerview.RefreshRecyclerView
+        android:id="@+id/recycler_device"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </brandapp.isport.com.basicres.commonrecyclerview.RefreshRecyclerView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/common_bg" />
+
+</LinearLayout>

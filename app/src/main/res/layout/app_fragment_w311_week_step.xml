@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    android:orientation="vertical">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_marginRight="@dimen/dp15"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/shape_btn_white_20_bg"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp50" />
+
+                <TextView
+                    android:id="@+id/tv_update_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginBottom="13dp"
+                    android:background="@color/white"
+                    android:focusable="true"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:text="2019-5-15"
+                    android:textColor="@color/common_white"
+                    android:textSize="@dimen/sp12" />
+
+
+                <LinearLayout
+                    android:id="@+id/layout_detail_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp150"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_no_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_rope_history_def"
+                        android:visibility="gone" />
+
+
+                    <bike.gymproject.viewlibray.WeekBarChartView
+                        android:id="@+id/barChartView"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp150"
+                        android:layout_marginLeft="@dimen/dp15"
+                        android:layout_marginRight="@dimen/dp15"
+                        android:background="@color/white"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:paddingLeft="14dp"
+                    android:paddingTop="@dimen/dp10"
+                    android:paddingRight="14dp">
+
+
+                    <bike.gymproject.viewlibray.SporttemView
+                        android:id="@+id/item_one"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        app:sharebottomColor="@color/common_tips_color"
+                        app:sharebottomSize="12sp"
+                        app:sharebottomText="@string/today_step"
+
+
+                        app:shareisShowLine="true"
+                        app:shareisUnit="true"
+
+                        app:sharetitleColor="@color/common_white"
+                        app:sharetitleSize="24sp"
+                        app:sharetitleText="0"
+
+                        app:sharevaluseColor="@color/common_white"
+                        app:sharevaluseSize="12sp"
+                        app:sharevaluseText="@string/watch_type_step"
+
+                        />
+
+                    <bike.gymproject.viewlibray.SporttemView
+                        android:id="@+id/item_two"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+
+                        app:sharebottomColor="@color/common_tips_color"
+                        app:sharebottomSize="12sp"
+                        app:sharebottomText="@string/today_dis"
+
+                        app:shareisShowLine="true"
+                        app:shareisUnit="true"
+                        app:sharetitleColor="@color/common_white"
+
+                        app:sharetitleSize="24sp"
+                        app:sharetitleText="0.00"
+
+
+                        app:sharevaluseColor="@color/common_white"
+                        app:sharevaluseSize="12sp"
+                        app:sharevaluseText="@string/distance_unit" />
+
+                    <bike.gymproject.viewlibray.SporttemView
+                        android:id="@+id/item_three"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        app:sharebottomColor="@color/common_tips_color"
+                        app:sharebottomSize="12sp"
+                        app:sharebottomText="@string/today_cal"
+                        app:shareisShowLine="true"
+                        app:shareisUnit="true"
+                        app:sharetitleColor="@color/common_white"
+                        app:sharetitleSize="24sp"
+                        app:sharetitleText="0"
+
+                        app:sharevaluseColor="@color/common_white"
+                        app:sharevaluseSize="12sp"
+                        app:sharevaluseText="@string/unit_kcal" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp15"
+                android:layout_marginBottom="@dimen/dp15"
+                android:background="@drawable/shape_btn_white_20_bg"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingTop="11dp"
+                android:paddingBottom="15dp">
+
+                <LinearLayout
+                    android:id="@+id/layout_step"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/watch_step_record_step" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:paddingLeft="13dp"
+                        android:text="@string/watch_recode_day_step"
+                        android:textColor="@color/common_text_color"
+                        android:textSize="@dimen/sp14" />
+
+                    <bike.gymproject.viewlibray.BebasNeueTextView
+                        android:id="@+id/tv_watch_step_recode_step"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="3dp"
+                        android:paddingRight="3dp"
+                        android:text=" "
+                        android:textColor="@color/common_text_color"
+                        android:textSize="@dimen/sp24" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="@string/step_unit"
+                        android:textColor="@color/common_text_color"
+                        android:textSize="@dimen/sp14" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_dis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp15"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/watch_step_recod_day_distance" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:paddingLeft="13dp"
+                        android:text="@string/watch_recode_day_step"
+                        android:textColor="@color/common_text_color"
+                        android:textSize="@dimen/sp14" />
+
+                    <bike.gymproject.viewlibray.BebasNeueTextView
+                        android:id="@+id/tv_watch_step_recode_distance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="3dp"
+                        android:paddingRight="3dp"
+                        android:text=" "
+                        android:textColor="@color/common_text_color"
+                        android:textSize="@dimen/sp24" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="@string/distance_unit"
+                        android:textColor="@color/common_text_color"
+                        android:textSize="@dimen/sp14" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_cal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp15"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/icon_avg_cal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:paddingLeft="13dp"
+                        android:text="@string/watch_recode_day_cal"
+                        android:textColor="@color/common_text_color"
+                        android:textSize="@dimen/sp14" />
+
+                    <bike.gymproject.viewlibray.BebasNeueTextView
+                        android:id="@+id/tv_watch_avg_cal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="3dp"
+                        android:paddingRight="3dp"
+                        android:text=" "
+                        android:textColor="@color/common_text_color"
+                        android:textSize="@dimen/sp24" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="@string/sport_cal_unit"
+                        android:textColor="@color/common_text_color"
+                        android:textSize="@dimen/sp14" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp15"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/watch_step_recod_qiyou" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:paddingLeft="13dp"
+                        android:text="@string/watch_recode_day_qiyou"
+                        android:textColor="@color/common_text_color"
+                        android:textSize="@dimen/sp14" />
+
+                    <bike.gymproject.viewlibray.BebasNeueTextView
+                        android:id="@+id/tv_watch_step_recode_qiyou"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="3dp"
+                        android:paddingRight="3dp"
+                        android:text=" "
+                        android:textColor="@color/common_text_color"
+                        android:textSize="@dimen/sp24" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="@string/qiyou_unit"
+                        android:textColor="@color/common_text_color"
+                        android:textSize="@dimen/sp14" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp15"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/watch_step_recod_fat" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:paddingLeft="13dp"
+                        android:text="@string/watch_recode_day_fat"
+                        android:textColor="@color/common_text_color"
+                        android:textSize="@dimen/sp14" />
+
+                    <bike.gymproject.viewlibray.BebasNeueTextView
+                        android:id="@+id/tv_watch_step_recode_fat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="3dp"
+                        android:paddingRight="3dp"
+                        android:text=" "
+                        android:textColor="@color/common_text_color"
+                        android:textSize="@dimen/sp24" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="@string/fat_unit"
+                        android:textColor="@color/common_text_color"
+                        android:textSize="@dimen/sp14" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>
+
+
+
+
+
+
+
+

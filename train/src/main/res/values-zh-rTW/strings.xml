@@ -1,0 +1,23 @@
+<resources>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="train_duration">训练时长</string>
+    <string name="exit">退出</string>
+    <string name="why_exit">为什么退出训练？</string>
+    <string name="too_easy">太容易</string>
+    <string name="too_hard">太难</string>
+    <string name="unlike_course">不喜欢课程</string>
+    <string name="inconvenient">暂时不方便</string>
+    <string name="train_not_good">不好</string>
+    <string name="train_normal">一般</string>
+    <string name="very_good">很棒</string>
+    <string name="finish_train_times">完成第%1s次训练</string>
+    <string name="text_train_duration">训练时长 %1s分钟</string>
+    <string name="train_consume_cal">消耗卡路里 %1s千卡</string>
+    <string name="ensure_exit">确定退出吗</string>
+    <string name="ensure_exit_train">确定退出</string>
+    <string name="continue_train">继续训练</string>
+    <string name="now_exit_can_not_save_data">现在退出将无法保存记录</string>
+
+</resources>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/dp15"
+    android:paddingRight="@dimen/dp15">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/layout_battery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.isport.brandapp.view.VerBatteryView xmlns:tc="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/iv_battery"
+                android:layout_width="@dimen/dp20"
+                android:layout_height="@dimen/dp10"
+                android:layout_below="@+id/tv_lock_tips"
+                tc:ringColor="@color/common_view_color" />
+
+            <TextView
+                android:id="@+id/tv_battery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp5"
+                android:text="90%"
+                android:textColor="@color/common_name_color"
+                android:textSize="@dimen/sp16"
+                android:textStyle="bold"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_device_con_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout_battery"
+            android:layout_marginTop="-2dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="@dimen/dp10"
+            android:text="@string/connect"
+            android:textColor="@color/common_text_color" />
+
+        <ImageView
+            android:id="@+id/iv_pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp77"
+            android:src="@drawable/icon_scan_rope" />
+
+        <TextView
+
+            android:id="@+id/tv_hr_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/item_hr"
+            android:layout_marginTop="13dp"
+            android:layout_marginBottom="13dp"
+            android:textStyle="bold"
+            android:text="@string/rope_hr_setting"
+            android:textColor="@color/common_text_color"
+            android:textSize="@dimen/sp18"></TextView>
+
+        <bike.gymproject.viewlibray.ItemDeviceSettingView
+            android:id="@+id/item_hr"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:layout_below="@+id/iv_pic"
+            android:layout_marginBottom="@dimen/dp15"
+            android:background="@drawable/shape_btn_white_20_bg"
+            android:visibility="visible"
+            app:contentSize="@dimen/sp16"
+            app:contentTextColor="@color/common_text_color"
+            app:itemText="160bpm"
+            app:itemTextColor="@color/common_text_color"
+            app:itemviewTitleSize="@dimen/sp16"
+            app:showArrow="true"
+            app:showBottomLine="false"
+            app:showCheckModel="false"
+            app:showRemind="false" />
+
+        <TextView
+            android:id="@+id/tv_scrren"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_hr"
+            android:layout_marginTop="13dp"
+            android:layout_marginBottom="13dp"
+            android:textStyle="bold"
+            android:text="@string/rope_screen_setting"
+            android:textColor="@color/common_text_color"
+            android:textSize="@dimen/sp18"></TextView>
+
+        <bike.gymproject.viewlibray.ItemDeviceSettingView
+            android:id="@+id/item_backlight_time"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:layout_below="@+id/tv_scrren"
+            android:layout_marginBottom="@dimen/dp15"
+            android:background="@drawable/shape_btn_white_20_bg"
+            android:visibility="visible"
+            app:contentSize="@dimen/sp16"
+            app:contentText="3s"
+            app:contentTextColor="@color/common_text_color"
+            app:itemText="@string/watch_backlight_time"
+            app:itemTextColor="@color/common_text_color"
+            app:itemviewTitleSize="@dimen/sp16"
+            app:showArrow="true"
+            app:showBottomLine="false"
+            app:showCheckModel="false"
+            app:showRemind="false" />
+
+
+        <bike.gymproject.viewlibray.ItemDeviceSettingView
+            android:id="@+id/item_scrren_brightness"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:layout_below="@+id/item_backlight_time"
+            android:layout_marginBottom="@dimen/dp15"
+            android:background="@drawable/shape_btn_white_20_bg"
+            android:visibility="visible"
+            app:contentSize="@dimen/sp16"
+            app:contentText="3级"
+            app:contentTextColor="@color/common_text_color"
+            app:itemText="@string/watch_screen_luminance"
+            app:itemTextColor="@color/common_text_color"
+            app:itemviewTitleSize="@dimen/sp16"
+            app:showArrow="true"
+            app:showBottomLine="false"
+            app:showCheckModel="false"
+            app:showRemind="false" />
+
+
+        <TextView
+            android:id="@+id/tv_about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_scrren_brightness"
+            android:layout_marginTop="13dp"
+            android:layout_marginBottom="13dp"
+            android:textStyle="bold"
+            android:text="@string/about_us"
+            android:textColor="@color/common_text_color"
+            android:textSize="@dimen/sp18"></TextView>
+
+        <bike.gymproject.viewlibray.ItemDeviceSettingView
+            android:id="@+id/iv_braclet_play"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp50"
+            android:layout_below="@+id/tv_about"
+            android:layout_marginBottom="@dimen/dp15"
+            android:background="@drawable/shape_btn_white_20_bg"
+            app:contentSize="@dimen/sp16"
+            app:contentText=""
+            app:contentTextColor="@color/common_text_color"
+            app:itemText="@string/bracelet_play"
+            app:itemTextColor="@color/common_text_color"
+            app:itemviewTitleSize="@dimen/sp16"
+            app:showArrow="true"
+            app:showBottomLine="false"
+            app:showCheckModel="false"
+            app:showRemind="false" />
+
+        <bike.gymproject.viewlibray.ItemDeviceSettingView
+            android:id="@+id/iv_watch_stable_version"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:layout_below="@+id/iv_braclet_play"
+            android:background="@drawable/shape_btn_white_20_bg"
+            app:contentSize="@dimen/sp16"
+            app:contentText="@string/watch_stable_version_str"
+            app:contentTextColor="@color/common_text_color"
+            app:itemText="@string/watch_stable_version_str"
+            app:itemTextColor="@color/common_text_color"
+            app:itemviewTitleSize="@dimen/sp16"
+            app:showArrow="true"
+            app:showBottomLine="false"
+            app:showCheckModel="false"
+            app:showRemind="false" />
+
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

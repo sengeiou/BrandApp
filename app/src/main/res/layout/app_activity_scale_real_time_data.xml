@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg">
+
+    <LinearLayout
+        android:id="@+id/rl_onscale"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.3"
+            android:gravity="center">
+
+            <brandapp.isport.com.basicres.commonview.RoundImageView
+                android:id="@+id/iv_head"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/icon_defs"
+                android:visibility="invisible" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_tips"
+            android:drawableTop="@drawable/icon_scale_tips"
+            android:gravity="center"
+            android:text="@string/please_step_on"
+            android:textColor="@color/common_white"
+            android:textSize="@dimen/sp15" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/rl_onscale_start"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.3" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp30"
+            android:layout_marginRight="@dimen/dp30"
+            android:background="@drawable/shape_btn_white_20_bg"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="82dp"
+                android:layout_marginTop="@dimen/dp25"
+                android:layout_marginBottom="@dimen/dp25"
+                android:background="@drawable/shape_scale_bg"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <bike.gymproject.viewlibray.BebasNeueTextView
+                    android:id="@+id/tv_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="0.0"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp36" />
+
+                <TextView
+                    android:id="@+id/tv_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:text="@string/app_scale_unit"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp16" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp25"
+                android:src="@drawable/icon_foot" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_scale_bind_tips1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp30"
+            android:layout_marginTop="@dimen/dp28"
+            android:layout_marginRight="@dimen/dp30"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="@string/measuring_your_weight"
+            android:textColor="@color/common_white"
+            android:textSize="@dimen/sp18" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+
+</RelativeLayout>

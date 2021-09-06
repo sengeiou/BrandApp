@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="495dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="375dp"
+        android:layout_marginTop="@dimen/friend_dp120">
+
+        <ImageView
+            android:layout_width="375dp"
+            android:layout_height="375dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="-132dp"
+            android:background="@drawable/shape_device_guide_bg" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout_ceten"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dp5"
+            android:layout_marginRight="@dimen/dp6"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/tv_tips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp10"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:maxWidth="180dp"
+                android:text="@string/guide_click_con_device"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp18" />
+
+            <TextView
+                android:id="@+id/tv_known"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="@string/friend_community_guide_ok"
+                android:textColor="@color/common_view_color"
+                android:textSize="@dimen/sp18" />
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_ceten"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/view_center"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/icon_rope_setting" />
+
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/shape_device_white_10_bg"></ImageView>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</RelativeLayout>

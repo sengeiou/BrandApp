@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/layout_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp30"
+        android:layout_marginTop="@dimen/dp10"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="@dimen/dp8"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:id="@+id/view_leisure"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp30"
+            android:layout_weight="1"
+            android:background="@drawable/shape_color_leisure" />
+        />
+
+        <View
+            android:id="@+id/view_warm_up"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp30"
+            android:layout_weight="1"
+            android:background="@color/color_warm_up" />
+
+        <View
+            android:id="@+id/view_fat_burning_exercise"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/color_fat_burning_exercise" />
+
+        <View
+            android:id="@+id/view_fat_aerobic_exercise"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp30"
+            android:layout_weight="1"
+            android:background="@color/color_aerobic_exercise" />
+
+        <View
+            android:id="@+id/view_anaerobic_exercise"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp30"
+            android:layout_weight="1"
+            android:background="@color/color_anaerobic_exercise" />
+
+        <View
+            android:id="@+id/view_limit"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp30"
+            android:layout_weight="1"
+            android:background="@drawable/shape_color_limit" />
+
+        <View
+            android:layout_width="@dimen/dp8"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="1dp"
+        android:layout_height="@dimen/dp30"
+        android:layout_marginLeft="@dimen/dp9"
+        android:layout_marginTop="@dimen/dp10"
+        android:background="@color/white"
+        android:visibility="invisible" />
+
+
+    <ImageView
+        android:id="@+id/iv_remove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp9"
+        android:src="@drawable/icon_once_hr"
+        android:visibility="invisible" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_bar"
+        android:layout_marginTop="@dimen/dp5"
+
+        android:layout_marginBottom="@dimen/dp21"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="@dimen/dp8"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/heart_leisure"
+            android:textColor="@color/common_rope_time_color"
+            android:textSize="@dimen/sp11" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="@string/heart_warm_up"
+            android:textColor="@color/color_warm_up"
+            android:textSize="@dimen/sp10" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="@string/heart_fat_burning_exercise"
+            android:textColor="@color/color_fat_burning_exercise"
+            android:textSize="@dimen/sp10" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="@string/heart_aerobic_exercise"
+            android:textColor="@color/color_aerobic_exercise"
+            android:textSize="@dimen/sp10" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="@string/heart_anaerobic_exercise"
+            android:textColor="@color/color_anaerobic_exercise"
+            android:textSize="@dimen/sp10" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="@string/heart_limit"
+            android:textColor="@color/color_limit"
+            android:textSize="@dimen/sp10" />
+
+        <View
+            android:layout_width="@dimen/dp8"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+</RelativeLayout>

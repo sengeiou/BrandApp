@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dp15"
+    android:layout_marginTop="@dimen/dp8"
+    android:layout_marginRight="@dimen/dp15"
+    android:layout_marginBottom="@dimen/dp8"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_nickname"
+        android:layout_alignLeft="@id/tv_nickname"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="@dimen/sp13"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textColor="@color/common_gray_color"
+        android:textSize="@dimen/sp14"
+        tools:text="nickname" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:background="@drawable/shape_btn_white_20_bg">
+
+        <TextView
+            android:id="@+id/tv_follow"
+            android:layout_width="@dimen/friend_dp100"
+            android:layout_height="@dimen/dp38"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/friend_dp15"
+            android:background="@drawable/shape_btn_green_20_bg"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp14"
+            tools:text="@string/friend_follow" />
+
+        <TextView
+            android:id="@+id/tv_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/iv_head_photo"
+            android:layout_marginRight="@dimen/friend_dp18"
+            android:layout_toLeftOf="@id/tv_follow"
+            android:layout_toRightOf="@id/iv_head_photo"
+            android:textStyle="bold"
+            android:singleLine="true"
+            android:textColor="@color/friend_text_black_color"
+            android:textSize="@dimen/sp16"
+            tools:text="nickname" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_nickname"
+            android:layout_alignLeft="@id/tv_nickname"
+            android:layout_marginTop="@dimen/dp5"
+            android:text="@string/follow_you"
+            android:textColor="@color/common_tips_color"
+            android:textSize="@dimen/sp12" />
+
+        <brandapp.isport.com.basicres.commonview.RoundImageView
+            android:id="@+id/iv_head_photo"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/friend_dp16"
+            android:layout_marginRight="@dimen/friend_dp10"
+            android:scaleType="centerCrop"
+            android:src="@drawable/friend_icon_default_photo"
+            app:border_inside_color="@color/white"
+            app:border_outside_color="#E7E8EB"
+            app:border_thickness="@dimen/friend_dp1" />
+
+    </RelativeLayout>
+
+</LinearLayout>

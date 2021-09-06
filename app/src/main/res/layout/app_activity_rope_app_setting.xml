@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/dp15"
+    android:paddingRight="@dimen/dp15">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+
+            android:id="@+id/tv_hr_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/item_hr"
+            android:layout_marginTop="13dp"
+            android:layout_marginBottom="13dp"
+            android:textStyle="bold"
+            android:text="@string/rope_bg_music"
+            android:textColor="@color/common_text_color"
+            android:textSize="@dimen/sp18"></TextView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp15"
+            android:background="@drawable/shape_btn_white_20_bg"
+            android:orientation="vertical">
+
+            <phone.gym.jkcq.com.socialmodule.shadow.ShadowLayout
+                android:layout_width="match_parent"
+                android:layout_height="81dp"
+                android:layout_gravity="center_horizontal"
+                app:hl_cornerRadius="20dp"
+                app:hl_shadowColor="#0d000000"
+                app:hl_shadowLimit="10dp"
+                app:hl_shadowOffsetY="5dp">
+
+                <bike.gymproject.viewlibray.ItemDeviceSettingView
+                    android:id="@+id/item_music_switch"
+                    android:layout_width="match_parent"
+                    android:layout_height="61dp"
+                    android:background="@drawable/shape_btn_white_20_bg"
+                    android:visibility="visible"
+                    app:contentSize="@dimen/sp16"
+                    app:contentTextColor="@color/common_text_color"
+                    app:itemText="@string/rope_music_switch"
+                    app:itemTextColor="@color/common_text_color"
+                    app:itemviewTitleSize="@dimen/sp16"
+                    app:showArrow="false"
+                    app:showBottomLine="false"
+                    app:showCheckModel="true"
+                    app:showRemind="false" />
+            </phone.gym.jkcq.com.socialmodule.shadow.ShadowLayout>
+
+            <bike.gymproject.viewlibray.ItemDeviceSettingView
+                android:id="@+id/item_music_value"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/shape_btn_white_20_bg"
+                android:visibility="visible"
+                app:contentSize="@dimen/sp16"
+                app:contentTextColor="@color/common_text_color"
+                app:itemText="药水歌"
+                app:itemTextColor="@color/common_text_color"
+                app:itemviewTitleSize="@dimen/sp16"
+                app:showArrow="false"
+                app:showBottomLine="false"
+                app:showCheckModel="false"
+                app:showRemind="false" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_scrren"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:layout_marginBottom="13dp"
+            android:textStyle="bold"
+            android:text="@string/rope_voice_announcements"
+            android:textColor="@color/common_text_color"
+            android:textSize="@dimen/sp18"></TextView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp15"
+            android:background="@drawable/shape_btn_white_20_bg"
+            android:orientation="vertical">
+
+            <phone.gym.jkcq.com.socialmodule.shadow.ShadowLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_gravity="center_horizontal"
+                app:hl_cornerRadius="20dp"
+                app:hl_shadowColor="#0d000000"
+                app:hl_shadowLimit="10dp"
+                app:hl_shadowOffsetY="5dp">
+
+                <bike.gymproject.viewlibray.ItemDeviceSettingView
+                    android:id="@+id/item_times"
+                    android:layout_width="match_parent"
+                    android:layout_height="61dp"
+                    android:background="@drawable/shape_btn_white_20_bg"
+                    android:visibility="visible"
+                    app:contentSize="@dimen/sp16"
+                    app:contentTextColor="@color/common_text_color"
+                    app:itemText="@string/rope_by_interval_duration"
+                    app:itemTextColor="@color/common_text_color"
+                    app:itemviewTitleSize="@dimen/sp16"
+                    app:showArrow="false"
+                    app:showBottomLine="false"
+                    app:showCheckModel="true"
+                    app:showRemind="false" />
+            </phone.gym.jkcq.com.socialmodule.shadow.ShadowLayout>
+
+            <bike.gymproject.viewlibray.ItemDeviceSettingView
+                android:id="@+id/item_time_value"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/shape_btn_white_20_bg"
+                android:visibility="visible"
+                app:contentSize="@dimen/sp16"
+                app:contentTextColor="@color/common_text_color"
+                app:itemText="20s"
+                app:itemTextColor="@color/common_text_color"
+                app:itemviewTitleSize="@dimen/sp16"
+                app:showArrow="true"
+                app:showBottomLine="false"
+                app:showCheckModel="false"
+                app:showRemind="false" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp15"
+            android:background="@drawable/shape_btn_white_20_bg"
+            android:orientation="vertical">
+
+            <phone.gym.jkcq.com.socialmodule.shadow.ShadowLayout
+                android:layout_width="match_parent"
+                android:layout_height="81dp"
+                android:layout_gravity="center_horizontal"
+                app:hl_cornerRadius="20dp"
+                app:hl_shadowColor="#0d000000"
+                app:hl_shadowLimit="10dp"
+                app:hl_shadowOffsetY="5dp">
+
+                <bike.gymproject.viewlibray.ItemDeviceSettingView
+                    android:id="@+id/item_count"
+                    android:layout_width="match_parent"
+                    android:layout_height="61dp"
+                    android:background="@drawable/shape_btn_white_20_bg"
+                    android:visibility="visible"
+                    app:contentSize="@dimen/sp16"
+                    app:contentTextColor="@color/common_text_color"
+                    app:itemText="@string/rope_by_number"
+                    app:itemTextColor="@color/common_text_color"
+                    app:itemviewTitleSize="@dimen/sp16"
+                    app:showArrow="false"
+                    app:showBottomLine="false"
+                    app:showCheckModel="true"
+                    app:showRemind="false" />
+            </phone.gym.jkcq.com.socialmodule.shadow.ShadowLayout>
+
+            <bike.gymproject.viewlibray.ItemDeviceSettingView
+                android:id="@+id/item_count_value"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/shape_btn_white_20_bg"
+                android:visibility="visible"
+                app:contentSize="@dimen/sp16"
+                app:contentTextColor="@color/common_text_color"
+                app:itemText="100个"
+                app:itemTextColor="@color/common_text_color"
+                app:itemviewTitleSize="@dimen/sp16"
+                app:showArrow="true"
+                app:showBottomLine="false"
+                app:showCheckModel="false"
+                app:showRemind="false" />
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp25"
+            android:background="@drawable/shape_btn_white_20_bg">
+
+            <phone.gym.jkcq.com.socialmodule.shadow.ShadowLayout
+                android:id="@+id/shardow"
+                android:layout_width="match_parent"
+                android:layout_height="81dp"
+                android:layout_gravity="center_horizontal"
+                app:hl_cornerRadius="20dp"
+                app:hl_shadowColor="#0d000000"
+                app:hl_shadowLimit="10dp"
+                app:hl_shadowOffsetY="5dp">
+
+                <bike.gymproject.viewlibray.ItemDeviceSettingView
+                    android:id="@+id/item_hr_switch"
+                    android:layout_width="match_parent"
+                    android:layout_height="61dp"
+                    android:background="@drawable/shape_btn_white_20_bg"
+                    android:visibility="visible"
+                    app:contentSize="@dimen/sp16"
+                    app:contentTextColor="@color/common_text_color"
+                    app:itemText="@string/hr_remind"
+                    app:itemTextColor="@color/common_text_color"
+                    app:itemviewTitleSize="@dimen/sp16"
+                    app:showArrow="false"
+                    app:showBottomLine="false"
+                    app:showCheckModel="true"
+                    app:showRemind="false" />
+            </phone.gym.jkcq.com.socialmodule.shadow.ShadowLayout>
+
+            <com.isport.brandapp.sport.service.Seekbars
+                android:id="@+id/seekbars_hr"
+                android:layout_marginBottom="@dimen/dp20"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@+id/shardow"
+                app:seekbar_tips="@string/hr_high_notice"
+                app:seekbar_type="1"
+                app:seekbar_unit="@string/bmp_unit">
+
+            </com.isport.brandapp.sport.service.Seekbars>
+
+            <View
+                android:id="@+id/view_enable"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@+id/shardow"
+                android:background="@color/transparent"
+                android:visibility="gone" />
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_all"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/icon_share_background"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/titleview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp80"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp20"
+            android:background="@color/transparent" />
+
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp15"
+            android:src="@drawable/icon_back" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_share_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/layout_bottom"
+        android:layout_below="@+id/titleview"
+
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <brandapp.isport.com.basicres.commonview.RoundImageView
+                android:id="@+id/iv_head"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginBottom="@dimen/dp15"
+                android:src="@drawable/icon_defs" />
+
+
+            <TextView
+                android:id="@+id/tv_name"
+                style="@style/etdit_nikename"
+                android:layout_below="@id/iv_head"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp16" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_step_share"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/step_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp20"
+                android:layout_marginRight="@dimen/dp5"
+                android:text="shouhuan"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp16" />
+
+            <TextView
+                android:id="@+id/step_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp5"
+                android:layout_marginTop="@dimen/dp20"
+                android:gravity="left"
+                android:text="shouhuan"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp14" />
+        </LinearLayout>
+
+        <bike.gymproject.viewlibray.ShareItemView
+            android:id="@+id/item_centre"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+
+            app:sharebottomColor="@color/white"
+            app:sharebottomSize="@dimen/sp14"
+            app:sharebottomText="2018-11-01"
+
+            app:shareisUnit="false"
+
+            app:sharetitleColor="@color/white"
+            app:sharetitleSize="@dimen/sp16"
+            app:sharetitleText="@string/total_sleep_duration"
+
+            app:shareunitColor="@color/white"
+            app:shareunitSize="@dimen/sp18"
+            app:shareunitText=""
+
+            app:sharevaluseColor="@color/white"
+            app:sharevaluseSize="@dimen/sp64"
+            app:sharevaluseText="8H38M" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+
+            <bike.gymproject.viewlibray.ShareItemView
+                android:id="@+id/item_one"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
+                app:sharebottomColor="@color/white"
+                app:sharebottomSize="@dimen/sp14"
+                app:sharebottomText="@string/total_sleep_duration"
+
+                app:shareisShowLine="true"
+                app:shareisUnit="false"
+                app:sharetitleIcon="@drawable/icon_share_sleep"
+
+                app:shareunitColor="@color/white"
+                app:shareunitSize="@dimen/sp12"
+                app:shareunitText="@string/time_to_fall_sleep"
+
+                app:sharevaluseColor="@color/white"
+                app:sharevaluseSize="@dimen/sp24"
+                app:sharevaluseText="28H28M" />
+
+            <bike.gymproject.viewlibray.ShareItemView
+                android:id="@+id/item_two"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:sharebottomColor="@color/white"
+                app:sharebottomSize="@dimen/sp14"
+                app:sharebottomText="@string/deep_sleep"
+                app:shareisShowLine="true"
+                app:shareisUnit="false"
+                app:sharetitleIcon="@drawable/icon_share_sleep_deep"
+                app:shareunitColor="@color/white"
+                app:shareunitSize="@dimen/sp12"
+                app:shareunitText="@string/deep_sleep"
+                app:sharevaluseColor="@color/white"
+                app:sharevaluseSize="@dimen/sp24"
+                app:sharevaluseText="18H28M" />
+
+            <bike.gymproject.viewlibray.ShareItemView
+                android:id="@+id/item_three"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:sharebottomColor="@color/white"
+                app:sharebottomSize="@dimen/sp14"
+                app:sharebottomText="@string/total_sleep_duration"
+                app:shareisShowLine="true"
+                app:shareisUnit="false"
+                app:shareunitColor="@color/white"
+                app:shareunitSize="@dimen/sp12"
+                app:shareunitText="@string/total_sleep_duration"
+                app:sharevaluseColor="@color/white"
+                app:sharevaluseSize="@dimen/sp24"
+                app:sharevaluseText="88M" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/iv_wechat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_share_wechat" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+
+        <ImageView
+            android:id="@+id/iv_qq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_share_qq" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+        <ImageView
+            android:id="@+id/iv_friend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_share_friend" />
+
+        <ImageView
+            android:id="@+id/iv_facebook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/facebook" />
+
+        <View
+            android:id="@+id/view_zh"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/iv_weibo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_share_weibo" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/iv_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_share_more" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dp15"
+    android:layout_marginTop="@dimen/dp10"
+    android:layout_marginRight="@dimen/dp15"
+    android:background="@drawable/shape_itme_layout_white_bg"
+    android:padding="@dimen/dp15">
+
+    <TextView
+        android:id="@+id/tv_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp15"
+        android:textColor="@color/common_view_color"
+        android:textSize="@dimen/sp30"
+        tools:text="98" />
+
+    <TextView
+        android:id="@+id/tv_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/tv_value"
+        android:layout_marginLeft="@dimen/dp5"
+        android:layout_toRightOf="@id/tv_value"
+        android:text="%"
+        android:textColor="@color/common_blank"
+        android:textSize="@dimen/sp17" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/dp15"
+        tools:text="2019-11-06 12:00" />
+</RelativeLayout>

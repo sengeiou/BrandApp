@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:paddingLeft="@dimen/dp20"
+    android:paddingRight="@dimen/dp20"
+    android:layout_height="80dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <View
+            android:id="@+id/view_centre"
+            android:layout_width="@dimen/dp1"
+            android:layout_height="@dimen/dp1"
+            android:layout_centerInParent="true" />
+
+        <bike.gymproject.viewlibray.BebasNeueTextView
+            android:id="@+id/tv_avg_bmp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="10"
+            android:textColor="@color/common_white"
+            android:textSize="@dimen/sp22"/>
+
+        <TextView
+            android:id="@+id/tv_avg_bpm_one"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/view_centre"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/dp10"
+            android:layout_marginRight="@dimen/dp15"
+            android:text="平均心"
+            android:textColor="@color/common_title_button_text_enabled"
+            android:textSize="@dimen/sp14"
+            android:visibility="invisible" />
+
+
+        <bike.gymproject.viewlibray.BebasNeueTextView
+            android:id="@+id/tv_infant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp20"
+            android:text="2"
+            android:textColor="@color/common_white"
+            android:textSize="@dimen/sp22" />
+
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/view_centre"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:gravity="left"
+            android:textStyle="bold"
+            android:text="10/20"
+            android:textColor="@color/common_title_button_text_enabled"
+            android:textSize="@dimen/sp14"/>
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/view_centre"
+            android:layout_centerVertical="true"
+            android:textStyle="bold"
+            android:text="22:38"
+            android:gravity="left"
+            android:textColor="@color/common_title_button_text_enabled"
+            android:textSize="@dimen/sp14" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/view_centre"
+            android:layout_toRightOf="@id/tv_avg_bpm_one"
+            android:text="平均呼吸"
+            android:textColor="@color/common_title_button_text_enabled"
+            android:textSize="@dimen/sp14"
+            android:visibility="invisible" />
+
+        <bike.gymproject.viewlibray.BebasNeueTextView
+            android:id="@+id/tv_avg_breathe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_toRightOf="@id/tv_avg_bpm_one"
+            android:text="20"
+            android:textColor="@color/common_white"
+            android:textSize="@dimen/sp22" />
+
+
+        <bike.gymproject.viewlibray.BebasNeueTextView
+            android:id="@+id/tv_sleep_deep_time"
+            android:layout_width="@dimen/dp80"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_above="@id/view_centre"
+            android:layout_toLeftOf="@id/tv_avg_bpm_one"
+            android:text="10H43M/ "
+            android:textColor="@color/common_white"
+            android:textSize="@dimen/sp20" />
+
+        <bike.gymproject.viewlibray.BebasNeueTextView
+            android:id="@+id/tv_sleep_sum_time"
+            android:layout_width="@dimen/dp80"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view_centre"
+            android:layout_toLeftOf="@id/tv_avg_bpm_one"
+            android:text=" 12H55M"
+            android:textColor="@color/common_white"
+            android:textSize="@dimen/sp20"/>
+
+        <View
+            android:id="@+id/view_line"
+            style="@style/commonItemLine"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
+</RelativeLayout>

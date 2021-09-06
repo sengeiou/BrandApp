@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="225dp">
+
+    <com.isport.brandapp.Home.view.circlebar.BandView
+        android:id="@+id/objectAnimatorView"
+        android:layout_width="225dp"
+        android:layout_height="225dp"
+        android:layout_centerInParent="true" />
+
+    <LinearLayout
+        android:id="@+id/ll_rate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center|bottom"
+        android:orientation="horizontal">
+
+        <bike.gymproject.viewlibray.BebasNeueTextView
+            android:id="@+id/tv_value"
+            textAllCaps="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textAllCaps="false"
+            android:textColor="@color/common_view_color"
+            android:textSize="@dimen/sp64"/>
+
+        <TextView
+            android:id="@+id/tv_util"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp5"
+            android:text="%"
+            android:textColor="@color/common_view_color"
+            android:textSize="@dimen/sp14" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_target_goal_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_rate"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-10dp"
+        android:gravity="center"
+        android:text="@string/watch_step_target_ratio"
+        android:textColor="@color/common_view_color"
+        android:textSize="@dimen/sp14"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

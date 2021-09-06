@@ -1,0 +1,26 @@
+<resources>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="train_duration">Training duration</string>
+    <string name="training_time">Time</string>
+    <string name="exit">Exit</string>
+    <string name="why_exit">Why exit the course?</string>
+    <string name="too_easy">Too easy</string>
+    <string name="too_hard">Too difficult</string>
+    <string name="unlike_course">Dislike the course</string>
+    <string name="inconvenient">I am busy</string>
+    <string name="train_not_good">Bad</string>
+    <string name="train_normal">General</string>
+    <string name="very_good">Great</string>
+    <string name="finish_train_times">Completed %1s times</string>
+    <string name="text_train_duration">Training duration %1s min</string>
+    <string name="train_consume_cal">Consumed %1s kcal</string>
+    <string name="ensure_exit">Are you sure you want to exit?</string>
+    <string name="ensure_exit_train">Exit</string>
+    <string name="continue_train">Continue</string>
+    <string name="now_exit_can_not_save_data">If you exit now, the record will not be saved.</string>
+    <string name="commint_success">Submitted successfully</string>
+    <string name="train_free">Training experience</string>
+
+</resources>

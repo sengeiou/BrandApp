@@ -1,0 +1,84 @@
+if (isSocialModule.toBoolean()) {
+    apply plugin: 'com.android.library'
+} else {
+    apply plugin: 'com.android.application'
+}
+
+
+android {
+
+    def versions = rootProject.ext.versions
+
+    compileSdkVersion versions.sdkCompileVersion
+
+    defaultConfig {
+        if (!isSocialModule.toBoolean()) {
+            applicationId "phone.gym.jkcq.com.socialmodule"
+            multiDexEnabled true
+        }
+        minSdkVersion versions.sdkMinVersion
+        targetSdkVersion versions.sdkTargetVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//        ndk {
+//            // 设置支持的SO库架构
+////            abiFilters  'armeabi-v7a', 'arm64-v8a'//, 'x86', 'x86_64'
+//            abiFilters  'armeabi-v7a'
+//        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+
+        sourceCompatibility JavaVersion.VERSION_1_8
+
+        targetCompatibility JavaVersion.VERSION_1_8
+
+    }
+
+    sourceSets {
+        main {
+            // 单独调试与集成调试时使用不同的 AndroidManifest.xml 文件
+            if (isSocialModule.toBoolean()) {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/manifest/AndroidManifest.xml'
+            }
+        }
+    }
+
+}
+
+repositories {
+    flatDir {
+        // dirs 'libs'
+        dirs '../basiclib/libs', 'libs'
+    }
+}
+dependencies {
+
+    implementation project(':basiclib')
+    implementation project(':basicres')
+    implementation project(':viewlibray')
+    implementation project(':commonres')
+
+//    implementation 'com.android.support:appcompat-v7:28.+'
+
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    //扫码
+//    implementation('com.github.yuzhiqiang1993:zxing:2.2.5') {
+////        exclude(group: 'com.google.zxing.DecodeHintType', module: 'support-v4')
+//        exclude(group: 'com.google.zxing')
+//    }
+    implementation 'me.devilsen:czxing:1.0.10'
+    api 'com.github.iknow4:android-utils-sdk:1.1.2'
+    implementation 'com.github.microshow:RxFFmpeg:4.3.0'
+//    implementation 'com.github.yuzhiqiang1993:zxing:2.2.5'
+}

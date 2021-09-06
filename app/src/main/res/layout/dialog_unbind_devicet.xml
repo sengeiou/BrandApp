@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_black_70"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_background"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/common_item_white_selector"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/dp10"
+            android:text="@string/notice"
+            android:textColor="@color/common_blank"
+            android:textSize="@dimen/sp17" />
+
+        <TextView
+            android:id="@+id/tv_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="@dimen/dp10"
+            android:paddingLeft="@dimen/dp15"
+            android:paddingRight="@dimen/dp15"
+            android:text="@string/unpair_notice"
+            android:textColor="@color/common_blank"
+            android:textSize="@dimen/sp13" />
+
+        <include layout="@layout/common_view_divide_line" />
+
+        <LinearLayout
+            android:id="@+id/ll_needsync"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_direct_unbind"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/dp10"
+                android:text="@string/unpair_directly"
+                android:textColor="@color/common_blank"
+                android:textSize="@dimen/sp18" />
+
+            <include layout="@layout/common_view_divide_line" />
+
+            <TextView
+                android:id="@+id/tv_syn_unbind"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/dp10"
+                android:text="@string/unpair_after_sync"
+                android:textColor="@color/common_blank"
+                android:textSize="@dimen/sp18" />
+
+            <include
+                android:id="@+id/line_syn_unbind"
+                layout="@layout/common_view_divide_line" />
+
+            <TextView
+                android:id="@+id/tv_cancle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/dp10"
+                android:text="@string/common_dialog_cancel"
+                android:textColor="@color/common_blank"
+                android:textSize="@dimen/sp18" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_not_needsync"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_direct_unbind_not_needsync"
+                android:layout_width="@dimen/dp0"
+                android:layout_height="@dimen/dp50"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/common_dialog_ok"
+                android:textColor="@color/common_blank"
+                android:textSize="@dimen/sp18" />
+
+            <include layout="@layout/common_view_v_divide_line" />
+
+            <TextView
+                android:id="@+id/tv_cancle_not_needsync"
+                android:layout_width="@dimen/dp0"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/common_dialog_cancel"
+                android:textColor="@color/common_blank"
+                android:textSize="@dimen/sp18" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

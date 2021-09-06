@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">viewlibray</string>
+    <!--pickView-->
+
+    <string name="pickerview_year">Y</string>//年
+    <string name="pickerview_month">M</string>//月
+    <string name="pickerview_day">D</string>//日
+    <string name="pickerview_hours">H</string>//时
+    <string name="pickerview_minutes">M</string>//分
+    <string name="pickerview_seconds">s</string>//秒
+    <string name="watch_unite_step">Steps</string>
+
+    /**通用**/
+    <string name="notice">Notice</string>//提示
+    <string name="pull_to_refresh">Pull To Refresh</string>//下拉刷新 已翻译
+    <string name="xlistview_header_hint_ready">Release refresh now</string>//释放立即刷新
+    <string name="xlistview_header_hint_loading">onRefresh&#8230;</string>//正在刷新
+    <string name="xlistview_header_last_time">recent updates：</string>//最近更新
+    <string name="xlistview_footer_hint_normal">load more</string>//加载更多
+    <string name="xlistview_footer_hint_loading">Content loading</string>//内容加载中
+    <string name="xlistview_footer_hint_ready">Free load more</string>//释放载入更多
+
+    <string name="compared_to_last_time">Compared to last time</string>
+
+
+    <string name="auto_mode">Automatic mode</string>
+    <string name="active_mode">Active mode</string>
+    <string name="today">today</string>
+    <string name="sleep_awake">Awake</string>
+    <string name="light_1sleep">Rem</string>
+    <string name="light_2sleep">Light sleep</string>
+    <string name="sleep_deep">Deep sleep</string>
+    <string name="bar_w311_tips">Step：%1$s steps</string>
+    <string name="view_dis_unit">%1$s KM</string>
+    <string name="rope_ranking_me">(Me)</string>
+</resources>

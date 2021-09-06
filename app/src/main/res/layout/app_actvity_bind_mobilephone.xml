@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp45"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/layout_phone"
+            style="@style/login_item_style"
+            android:layout_below="@+id/layout_title">
+
+            <EditText
+                android:id="@+id/et_phone"
+
+                style="@style/login_edit_style"
+                android:hint="@string/enter_tel"
+                android:inputType="number"
+                android:maxLength="11" />
+
+            <EditText
+                android:id="@+id/et_email"
+                style="@style/login_edit_style"
+                android:digits="0123456789abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.@_+-"
+                android:hint="@string/enter_email"
+                android:visibility="gone" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/layout_login_tips"
+            style="@style/login_item_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="@string/login_tips"
+            android:textColor="@color/common_item_bar_line_color"
+            android:textSize="@dimen/sp12" />
+
+        <LinearLayout
+            android:id="@+id/code"
+            style="@style/login_item_style"
+            android:layout_marginTop="@dimen/dp20">
+
+
+            <EditText
+                android:id="@+id/et_code"
+                style="@style/login_edit_style"
+                android:layout_width="@dimen/dp0"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:digits="0123456789"
+                android:hint="@string/enter_vertify"
+                android:inputType="number"
+                android:maxLength="4" />
+
+
+            <com.isport.brandapp.view.TimerView
+                android:id="@+id/timer"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/dp5"
+                app:second="60"
+                app:text="@string/get_code" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/btn_bind_mobile_phone"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp50"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/dp50"
+        android:layout_marginRight="@dimen/dp50"
+        android:layout_marginBottom="@dimen/dp50"
+        android:background="@drawable/common_button_bg_selector"
+        android:gravity="center"
+        android:text="@string/binding_tel"
+        android:textColor="@drawable/common_button_text_selector"
+        android:textSize="@dimen/sp16" />
+
+
+</RelativeLayout>

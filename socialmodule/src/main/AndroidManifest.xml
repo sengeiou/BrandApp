@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="phone.gym.jkcq.com.socialmodule">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <application>
+        <activity android:name="phone.gym.jkcq.com.socialmodule.activity.SportRankActivity"></activity>
+        <activity android:name=".activity.TestActivity"></activity>
+        <activity android:name=".activity.PersonalHomepageActivity" />
+        <activity android:name=".video.cut.FriendCutActivity" />
+        <activity android:name=".community.ActivitySendDynamic" />
+        <activity android:name=".activity.FriendCameraActivity" />
+        <activity android:name=".activity.FriendSearchActivity" />
+        <activity android:name=".activity.FriendScanActivity" />
+        <activity android:name=".activity.FriendQRCodeActivity" />
+        <activity android:name=".activity.ScanActivity" />
+        <activity android:name=".report.FriendMainReportActivity"/>
+        <activity android:name=".report.FriendMainNextReportActivity"/>
+        <activity android:name=".activity.FansActivity" />
+        <activity android:name=".personal.FriendPersonalVideoActivity" />
+        <activity android:name=".personal.Personalhomepage" />
+        <activity android:name=".report.ranking.RopeRankActivity"/>
+        <activity
+            android:name=".personal.EditUserInfo"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity android:name=".personal.FriendActivityImageShow" />
+        <activity
+            android:name=".personal.ShowImageActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".activity.FollowActivity" />
+        <activity android:name=".activity.FriendActivity" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.isport.brandapp.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+</manifest>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="300dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:background="@drawable/bg_mine_header">
+
+
+        <ImageView
+            android:id="@+id/iv_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp20"
+            android:padding="@dimen/dp15"
+            android:src="@drawable/icon_setting" />
+
+        <ImageView
+            android:id="@+id/iv_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dp20"
+            android:padding="@dimen/dp15"
+            android:src="@drawable/icon_edit" />
+
+        <TextView
+            android:id="@+id/tv_title_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp20"
+            android:padding="@dimen/dp15"
+            android:text="@string/health_report"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp17" />
+
+        <brandapp.isport.com.basicres.commonview.RoundImageView
+            android:id="@+id/iv_head"
+            android:layout_width="69sp"
+            android:layout_height="67sp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/icon_defs" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            style="@style/etdit_nikename"
+            android:layout_below="@id/iv_head"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp15"
+            android:inputType="text"
+            android:maxLines="1"
+            android:text="@string/enter_nickname"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp18"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_report_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_head"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp5"
+            android:gravity="center"
+            android:text="@string/enter_nickname"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp18"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_report_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_report_name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp3"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp12"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_heath"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:visibility="gone">
+
+        <bike.gymproject.viewlibray.ItemView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/itemview_heath"
+            android:layout_width="match_parent"
+            android:layout_height="74dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_marginRight="@dimen/dp15"
+            app:contentSize="@dimen/sp15"
+            app:contentText="@string/detail"
+            app:contentTextColor="@color/common_gray_color"
+            app:itemText="@string/health_index"
+            app:itemviewTitleSize="@dimen/sp18"
+            app:remindIcon="@drawable/icon_health_index"
+            app:showArrow="true"
+            app:showBottomLine="false"
+            app:showCheckModel="false"
+            app:showRemind="true" />
+    </RelativeLayout>
+
+</RelativeLayout>

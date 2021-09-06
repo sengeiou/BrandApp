@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp250">
+
+    <ImageView
+        android:id="@+id/iv_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/bg_watch" />
+
+    <com.isport.brandapp.Home.view.circlebar.SleepTimeView
+        android:id="@+id/objectAnimatorView"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerInParent="true" />
+
+    <com.isport.brandapp.Home.view.circlebar.DeepSleepTimeView
+        android:id="@+id/view_sleep"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerInParent="true" />
+
+    <bike.gymproject.viewlibray.BebasNeueTextView
+        android:id="@+id/tv_time"
+        textAllCaps="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="13"
+        android:textAllCaps="false"
+        android:textColor="@color/common_white"
+        android:textSize="@dimen/sp40" />
+
+
+</RelativeLayout>

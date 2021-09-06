@@ -1,0 +1,5 @@
+include ':webSocket'
+include ':util'
+include ':train'
+include ':platform'
+include ':app', ':basiclib', ':basicres', ':viewlibray', ':blelibrary', ':socialmodule', ':commonres',":todaystepcounterlib",":FlycoTabLayout_Lib",":dfu"

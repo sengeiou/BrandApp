@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp16"
+        android:layout_marginTop="13dp"
+        android:layout_marginRight="@dimen/dp16"
+        android:layout_marginBottom="13dp"
+        android:gravity="center"
+        android:text="@string/update_weather_pe"
+        android:textColor="@color/common_white"
+        android:textSize="@dimen/sp16" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginTop="@dimen/dp1"
+        android:layout_marginRight="@dimen/dp15"
+        android:background="@drawable/shape_btn_white_20_bg"
+        android:paddingLeft="@dimen/dp15"
+        android:paddingRight="@dimen/dp15">
+
+        <TextView
+            android:id="@+id/tv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/shape_layout_green_bg_19"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dp10"
+            android:paddingRight="@dimen/dp10"
+            android:minWidth="@dimen/dp100"
+            android:paddingTop="@dimen/dp6"
+            android:paddingBottom="@dimen/dp6"
+            android:tag="start"
+            android:text="@string/weather_location"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp14" />
+
+
+        <TextView
+            android:id="@+id/no_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/no_location"
+            android:textColor="@color/common_tips_color"
+            android:textSize="@dimen/sp15" />
+
+
+        <TextView
+            android:id="@+id/tv_current_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10"
+            android:textStyle="bold"
+            android:text="@string/current_city"
+            android:textColor="@color/common_white"
+            android:textSize="@dimen/sp36" />
+
+        <TextView
+            android:id="@+id/tv_current_city_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_current_city"
+            android:text="@string/current_city"
+            android:textColor="@color/common_white"
+            android:textSize="@dimen/sp16" />
+    </RelativeLayout>
+
+
+</LinearLayout>

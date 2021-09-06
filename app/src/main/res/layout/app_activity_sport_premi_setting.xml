@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/sport_setting_tips"
+        android:textColor="@color/common_white"
+        android:textSize="14sp"></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginTop="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15"
+        android:layout_marginBottom="@dimen/dp15"
+        android:text="@string/sport_setting_enable_power_tips"
+        android:textColor="@color/common_white"
+        android:textSize="@dimen/sp18"></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15"
+        android:text="@string/sport_setting_enable_power_content"></TextView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/dp15"
+        android:background="@color/friend_grey_line_color"></View>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginTop="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15"
+        android:layout_marginBottom="@dimen/dp15"
+
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@string/sport_setting_battery_optimization_tips"
+            android:textColor="@color/common_white"
+            android:textSize="@dimen/sp18"></TextView>
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"></View>
+
+        <TextView
+            android:id="@+id/tv_battery_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_btn_green_20_bg"
+            android:paddingLeft="@dimen/dp10"
+            android:paddingTop="@dimen/dp5"
+            android:paddingRight="@dimen/dp10"
+            android:paddingBottom="@dimen/dp5"
+            android:text="@string/sport_setting_quick_setup"
+            android:textColor="@color/white"></TextView>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15"
+        android:text="@string/sport_setting_battery_optimization_content"></TextView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/dp15"
+        android:background="@color/friend_grey_line_color"></View>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginTop="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15"
+        android:layout_marginBottom="@dimen/dp15"
+
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sport_setting_float_tips"
+            android:textColor="@color/common_white"
+            android:textSize="@dimen/sp18"></TextView>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"></View>
+
+        <TextView
+            android:id="@+id/tv_float_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_btn_green_20_bg"
+            android:paddingLeft="@dimen/dp10"
+            android:paddingTop="@dimen/dp5"
+            android:paddingRight="@dimen/dp10"
+            android:paddingBottom="@dimen/dp5"
+            android:text="@string/sport_setting_quick_setup"
+            android:textColor="@color/white"></TextView>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15"
+        android:text="@string/sport_setting_float_content"></TextView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/dp15"
+        android:background="@color/friend_grey_line_color"></View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginTop="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15"
+        android:layout_marginBottom="@dimen/dp15"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sport_setting_background_run_tips"
+            android:textColor="@color/common_white"
+            android:textSize="@dimen/sp18"></TextView>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"></View>
+
+        <TextView
+            android:id="@+id/tv_back_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_btn_green_20_bg"
+            android:paddingLeft="@dimen/dp10"
+            android:paddingTop="@dimen/dp5"
+            android:paddingRight="@dimen/dp10"
+            android:paddingBottom="@dimen/dp5"
+            android:text="@string/sport_setting_quick_setup"
+            android:textColor="@color/white"></TextView>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15"
+        android:text="@string/sport_setting_background_run_content"></TextView>
+
+</LinearLayout>

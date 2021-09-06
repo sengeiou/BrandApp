@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.isport.brandapp.basiclib">
+    <application
+        android:allowBackup="false"
+        tools:replace="android:allowBackup">
+    </application>
+</manifest>

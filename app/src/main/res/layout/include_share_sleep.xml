@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_share_content_sleep"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/dp15"
+    android:visibility="visible"
+    tools:background="@drawable/share_sleep_bg1">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp8"
+            android:layout_toRightOf="@id/iv_user_head_sleep"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_nickname_sleep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp15"
+                tools:text="昵称"></TextView>
+
+            <TextView
+                android:id="@+id/tv_time_sleep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp4"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp13"
+                tools:text="2020-03-30"></TextView>
+        </LinearLayout>
+
+        <bike.gymproject.viewlibray.CircleImageView
+            android:id="@+id/iv_user_head_sleep"
+            android:layout_width="@dimen/dp70"
+            android:layout_height="@dimen/dp70"
+            android:layout_centerVertical="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/icon_def"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="@dimen/dp2" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/total_sleep_duration"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp13"></TextView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.6"
+        android:orientation="horizontal">
+
+        <bike.gymproject.viewlibray.BebasNeueTextView
+            android:id="@+id/tv_hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dp_64"
+            tools:text="8"></bike.gymproject.viewlibray.BebasNeueTextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/unit_hour"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp18"></TextView>
+
+        <bike.gymproject.viewlibray.BebasNeueTextView
+            android:id="@+id/tv_minute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dp_64"
+            tools:text="20"></bike.gymproject.viewlibray.BebasNeueTextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/unit_min"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp18"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <!-- <bike.gymproject.viewlibray.chart.PieChartViewHeart
+             android:id="@+id/pieChartView"
+             android:layout_width="140dp"
+             android:layout_height="140dp"
+             android:layout_marginLeft="15dp"
+             android:layout_marginRight="@dimen/dp30" />-->
+
+        <com.isport.brandapp.view.SleepArcView
+            android:id="@+id/sleep_arcview"
+            android:layout_width="@dimen/dp100"
+            android:layout_height="@dimen/dp100"
+            android:layout_gravity="center_vertical"></com.isport.brandapp.view.SleepArcView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp15"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_awake_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/shape_point_wake_sleep"
+                    android:drawablePadding="10dp"
+                    android:text="@string/awake_sleep"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp13" />
+
+                <bike.gymproject.viewlibray.BebasNeueTextView
+                    android:id="@+id/tv_hour_awake"
+                    android:layout_width="@dimen/dp30"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|right"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp22"
+                    tools:text="8"></bike.gymproject.viewlibray.BebasNeueTextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/unit_hour"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp10"></TextView>
+
+                <bike.gymproject.viewlibray.BebasNeueTextView
+                    android:id="@+id/tv_minute_awake"
+                    android:layout_width="@dimen/dp30"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|right"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp22"
+                    tools:text="20"></bike.gymproject.viewlibray.BebasNeueTextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/unit_min"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp10"></TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_light_sleep_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/shape_point_light_sleep"
+                    android:drawablePadding="10dp"
+                    android:text="@string/light_sleep"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp13" />
+
+                <bike.gymproject.viewlibray.BebasNeueTextView
+                    android:id="@+id/tv_hour_light_sleep"
+                    android:layout_width="@dimen/dp30"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|right"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp22"
+                    tools:text="8"></bike.gymproject.viewlibray.BebasNeueTextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/unit_hour"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp10"></TextView>
+
+                <bike.gymproject.viewlibray.BebasNeueTextView
+                    android:id="@+id/tv_minute_light_sleep"
+                    android:layout_width="@dimen/dp30"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|right"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp22"
+                    tools:text="20"></bike.gymproject.viewlibray.BebasNeueTextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/unit_min"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp10"></TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_deep_sleep_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/shape_point_deep_sleep"
+                    android:drawablePadding="10dp"
+                    android:text="@string/deep_sleep"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp13" />
+
+                <bike.gymproject.viewlibray.BebasNeueTextView
+                    android:id="@+id/tv_hour_deep_sleep"
+                    android:layout_width="@dimen/dp30"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|right"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp22"
+                    tools:text="8"></bike.gymproject.viewlibray.BebasNeueTextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/unit_hour"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp10"></TextView>
+
+                <bike.gymproject.viewlibray.BebasNeueTextView
+                    android:id="@+id/tv_minute_deep_sleep"
+                    android:layout_width="@dimen/dp30"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|right"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp22"
+                    tools:text="20"></bike.gymproject.viewlibray.BebasNeueTextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/unit_min"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp10"></TextView>
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.3">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp15"
+            android:src="@drawable/share_app_logo"></ImageView>
+    </RelativeLayout>
+</LinearLayout>
+

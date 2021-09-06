@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    android:orientation="vertical">
+
+
+    <bike.gymproject.viewlibray.ItemView
+        android:id="@+id/iv_display_cal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp60"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15"
+        android:layout_marginBottom="@dimen/dp15"
+        android:background="@drawable/shape_btn_white_20_bg"
+        android:onClick="onClick"
+        app:contentSize="@dimen/sp16"
+        app:contentText=""
+        app:contentTextColor="@color/common_gray_color"
+        app:itemText="@string/watch_step_type_calory"
+        app:itemviewTitleSize="@dimen/sp16"
+        app:showArrow="false"
+        app:showBottomLine="true"
+        app:showCheckModel="true"
+        app:showRemind="false" />
+
+    <bike.gymproject.viewlibray.ItemView
+        android:id="@+id/iv_display_dis"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp60"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15"
+        android:layout_marginBottom="@dimen/dp15"
+        android:background="@drawable/shape_btn_white_20_bg"
+        android:onClick="onClick"
+        app:contentSize="@dimen/sp16"
+        app:contentText=""
+        app:contentTextColor="@color/common_white"
+        app:itemText="@string/display_setting_dis"
+        app:itemviewTitleSize="@dimen/sp16"
+        app:showArrow="false"
+        app:showBottomLine="true"
+        app:showCheckModel="true"
+        app:showRemind="false" />
+
+    <bike.gymproject.viewlibray.ItemView
+        android:id="@+id/iv_display_sport_time"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp60"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15"
+        android:layout_marginBottom="@dimen/dp15"
+        android:background="@drawable/shape_btn_white_20_bg"
+        android:onClick="onClick"
+        app:contentSize="@dimen/sp14"
+        app:contentText=""
+        app:contentTextColor="@color/common_gray_color"
+        app:itemText="@string/display_setting_sport_time"
+        app:itemviewTitleSize="@dimen/sp15"
+        app:showArrow="false"
+        app:showBottomLine="true"
+        app:showCheckModel="true"
+        app:showRemind="false" />
+
+    <bike.gymproject.viewlibray.ItemView
+        android:id="@+id/iv_display_present"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp60"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15"
+        android:layout_marginBottom="@dimen/dp15"
+        android:background="@drawable/shape_btn_white_20_bg"
+        android:onClick="onClick"
+        app:contentSize="@dimen/sp16"
+        app:contentText=""
+        app:contentTextColor="@color/common_gray_color"
+        app:itemText="@string/display_setting_present"
+        app:itemviewTitleSize="@dimen/sp16"
+        app:showArrow="false"
+        app:showBottomLine="true"
+        app:showCheckModel="true"
+        app:showRemind="false" />
+
+    <bike.gymproject.viewlibray.ItemView
+        android:id="@+id/iv_display_complete"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp60"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15"
+        android:layout_marginBottom="@dimen/dp15"
+        android:background="@drawable/shape_btn_white_20_bg"
+        android:onClick="onClick"
+        app:contentSize="@dimen/sp16"
+        app:contentText=""
+        app:contentTextColor="@color/common_gray_color"
+        app:itemText="@string/display_setting_complete"
+        app:itemviewTitleSize="@dimen/sp16"
+        app:showArrow="false"
+        app:showBottomLine="true"
+        app:showCheckModel="true"
+        app:showRemind="false" />
+
+    <bike.gymproject.viewlibray.ItemView
+        android:id="@+id/iv_display_alarm"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp60"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15"
+        android:layout_marginBottom="@dimen/dp15"
+        android:background="@drawable/shape_btn_white_20_bg"
+        android:onClick="onClick"
+        app:contentSize="@dimen/sp16"
+        app:contentText=""
+        app:contentTextColor="@color/common_gray_color"
+        app:itemText="@string/display_setting_alarm"
+        app:itemviewTitleSize="@dimen/sp16"
+        app:showArrow="false"
+        app:showBottomLine="true"
+        app:showCheckModel="true"
+        app:showRemind="false" />
+
+
+</LinearLayout>
+
+

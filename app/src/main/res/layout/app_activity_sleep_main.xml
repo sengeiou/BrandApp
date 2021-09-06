@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?><!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">-->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/tv_update_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:padding="@dimen/dp14"
+            android:text=""
+            android:textColor="@color/common_white"
+            android:visibility="gone" />
+
+        <com.isport.brandapp.Home.view.circlebar.SleepCircleLayout
+            android:id="@+id/layout_data_head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_update_time" />
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/actual_deep_sleep_time"
+            android:textColor="@color/common_white"
+            android:textSize="@dimen/sp20" />
+
+        <TextView
+            android:id="@+id/tv_sleep_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/app_time_util"
+            android:textColor="@color/common_view_color"
+            android:textSize="@dimen/sp40" />
+
+        <TextView
+            android:id="@+id/tv_sleep_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginBottom="23dp"
+            android:gravity="center"
+            android:text="@string/deep_sleep_percent"
+            android:textColor="@color/common_white"
+            android:textSize="@dimen/sp20" />
+
+
+        <View style="@style/commonItemLineHeight20" />
+
+
+        <bike.gymproject.viewlibray.SleepItemView
+            android:id="@+id/avg_bmp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            app:leftIcon="@drawable/icon_sleep_main_hr"
+            app:titleColor="@color/common_white"
+            app:titleSize="@dimen/sp40"
+            app:titleText="@string/heart_rate"
+            app:unitColor="@color/common_title_button_text_enabled"
+            app:unitSize="@dimen/sp13"
+            app:unitText="@string/unit_time_per_minute"
+            app:valuseColor="@color/common_white"
+            app:valuseSize="@dimen/sp17"
+            app:valuseText="--" />
+
+        <bike.gymproject.viewlibray.chart.HeartChar
+            android:id="@+id/heart_chart"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_marginLeft="@dimen/dp20"
+            android:layout_marginRight="@dimen/dp20"
+            app:graphBgColor="@color/common_view_Bg"
+            app:lineColor="@color/common_rec"
+            app:lineStartX="@dimen/dp30"
+            app:maxorminColor="@color/common_white"
+            app:startMargin="@dimen/dp10"
+            app:viewMargin="@dimen/dp20"
+            app:yAxisColor="@color/common_rec"
+            app:yTextColor="@color/common_gray_color" />
+            <!--common_item_line_color  -->
+        <View
+            style="@style/commonItemLineHeight20"
+            android:layout_marginTop="@dimen/dp20" />
+
+        <bike.gymproject.viewlibray.SleepItemView
+            android:id="@+id/avg_breath"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            app:leftIcon="@drawable/icon_sleep_main_breath"
+            app:maxorminColor="@color/common_white"
+            app:titleColor="@color/common_white"
+            app:titleSize="@dimen/sp40"
+            app:titleText="@string/respiratory_rate"
+            app:unitColor="@color/common_title_button_text_enabled"
+            app:unitSize="@dimen/sp13"
+            app:unitText="@string/unit_time_per_minute"
+            app:valuseColor="@color/common_white"
+            app:valuseSize="@dimen/sp17"
+            app:valuseText="--" />
+
+        <bike.gymproject.viewlibray.chart.HeartChar
+            android:id="@+id/breath_chart"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_marginLeft="@dimen/dp20"
+            android:layout_marginRight="@dimen/dp20"
+            app:graphBgColor="@color/common_rec_breath_Bg"
+            app:lineColor="@color/common_rec_breath"
+            app:lineStartX="@dimen/dp30"
+            app:maxorminColor="@color/common_white"
+            app:startMargin="@dimen/dp10"
+            app:viewMargin="@dimen/dp20"
+            app:yAxisColor="@color/common_item_line_color"
+            app:yTextColor="@color/common_gray_color" />
+        <View
+            style="@style/commonItemLineHeight20"
+            android:layout_marginTop="@dimen/dp20" />
+        <!-- <bike.gymproject.viewlibray.SleepItemView
+             android:id="@+id/sleep_time"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:gravity="center"
+             app:titleColor="@color/common_white"
+             app:titleSize="30sp"
+             app:titleText="@string/time_to_fall_sleep"
+             app:unitColor="@color/common_title_button_text_enabled"
+             app:unitSize="13sp"
+             app:unitText="@string/unit_minute"
+             app:valuseColor="@color/common_white"
+             app:valuseSize="14sp"
+             app:valuseText="&#45;&#45;" />-->
+
+        <bike.gymproject.viewlibray.SleepItemView
+            android:id="@+id/infant"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            app:leftIcon="@drawable/icon_sleep_main_infant"
+            app:titleColor="@color/common_white"
+            app:titleSize="@dimen/sp40"
+            app:titleText="@string/turn_over_times"
+            app:unitColor="@color/common_title_button_text_enabled"
+            app:unitSize="@dimen/sp13"
+            app:unitText="@string/unit_times"
+            app:valuseColor="@color/common_white"
+            app:valuseSize="@dimen/sp17"
+            app:valuseText="--" />
+
+        <bike.gymproject.viewlibray.chart.HeartChar
+            android:id="@+id/infant_chart"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_marginLeft="@dimen/dp20"
+            android:layout_marginRight="@dimen/dp20"
+            app:graphBgColor="@color/transparent"
+            app:lineColor="@color/common_view_color"
+            app:lineStartX="@dimen/dp30"
+            app:startMargin="@dimen/dp10"
+            app:viewMargin="@dimen/dp20"
+            app:yAxisColor="@color/common_item_line_color"
+            app:yTextColor="@color/common_gray_color" />
+
+
+    </LinearLayout>
+</ScrollView>
+
+    <!-- <TextView
+         android:id="@+id/tv_start_sleep"
+         android:visibility="gone"
+         android:layout_width="match_parent"
+         android:layout_height="@dimen/dp50"
+         android:layout_alignParentBottom="true"
+         android:background="@color/common_view_color"
+         android:gravity="center"
+         android:text="@string/start_to_sleep"
+         android:textColor="@color/white"
+         android:textSize="@dimen/sp18" />
+ </RelativeLayout>-->
+

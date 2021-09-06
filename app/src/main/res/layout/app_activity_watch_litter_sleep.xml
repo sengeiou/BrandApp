@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|bottom"
+                android:paddingTop="40dp">
+
+                <bike.gymproject.viewlibray.BebasNeueTextView
+                    android:id="@+id/tv_pointer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="88"
+                    android:textColor="@color/common_view_color"
+                    android:textSize="@dimen/sp64" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/unit_minute"
+                    android:textColor="@color/common_view_color"
+                    android:textSize="@dimen/sp13" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/sleep_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="正常"
+                android:textColor="@color/common_view_color"
+                android:textSize="@dimen/sp15" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/litter_sleep_state"
+                android:textColor="@color/common_tips_color"
+                android:textSize="@dimen/sp13" />
+
+            <androidx.recyclerview.widget.RecyclerView xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/recyclerview_sleep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/item_sleep">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="20dp"
+                android:paddingLeft="28dp"
+                android:paddingRight="14dp"
+                android:paddingTop="39dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/watch_litter_sleep_title_1"
+                    android:textColor="@color/common_text_color"
+                    android:textSize="@dimen/sp15"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="21dp"
+                    android:text="@string/watch_litter_sleep_content_1"
+                    android:textColor="@color/common_text_color"
+                    android:textSize="@dimen/sp15" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:text="@string/watch_litter_sleep_title_2"
+                    android:textColor="@color/common_text_color"
+                    android:textSize="@dimen/sp15"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="21dp"
+                    android:text="@string/watch_litter_sleep_content_2"
+                    android:textColor="@color/common_text_color"
+                    android:textSize="@dimen/sp15" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:text="@string/watch_litter_sleep_title_3"
+                    android:textColor="@color/common_text_color"
+                    android:textSize="@dimen/sp15"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="21dp"
+                    android:text="@string/watch_litter_sleep_content_3"
+                    android:textColor="@color/common_text_color"
+                    android:textSize="@dimen/sp15" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>
+
+

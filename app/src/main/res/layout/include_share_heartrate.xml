@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/ll_share_content_hr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        tools:background="@drawable/share_heartrate_bg1"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp15">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp80">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp8"
+            android:layout_toRightOf="@id/iv_user_head_hr"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_nickname_hr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp15"
+                tools:text="昵称"></TextView>
+
+            <TextView
+                android:id="@+id/tv_time_hr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp4"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp15"
+                tools:text="2020-03-30"></TextView>
+        </LinearLayout>
+
+        <bike.gymproject.viewlibray.CircleImageView
+            android:id="@+id/iv_user_head_hr"
+            android:layout_width="@dimen/dp70"
+            android:layout_height="@dimen/dp70"
+            android:layout_centerVertical="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/default_avatar_picture"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="@dimen/dp2" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/watch_heart_rate_current"
+        android:layout_marginTop="@dimen/dp27"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp13"></TextView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <bike.gymproject.viewlibray.BebasNeueTextView
+            android:id="@+id/tv_today_hr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="77"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dp_64"></bike.gymproject.viewlibray.BebasNeueTextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/unit_time_per_minute"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp18"></TextView>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/watch_heart_rate_max"
+            android:textSize="@dimen/sp13"
+            android:textColor="@color/white" />
+
+        <com.isport.brandapp.view.HeartrateRoundView
+            android:id="@+id/hr_roundview_max"
+            android:layout_width="200dp"
+            android:layout_marginLeft="@dimen/dp5"
+            android:layout_height="@dimen/dp8"></com.isport.brandapp.view.HeartrateRoundView>
+
+        <bike.gymproject.viewlibray.BebasNeueTextView
+            android:id="@+id/tv_max_hr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="135"
+            android:layout_marginLeft="@dimen/dp5"
+            android:textSize="@dimen/sp22"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/watch_heart_rate_min"
+            android:textSize="@dimen/sp13"
+            android:textColor="@color/white" />
+
+        <com.isport.brandapp.view.HeartrateRoundView
+            android:id="@+id/hr_roundview_min"
+            android:layout_width="200dp"
+            android:layout_marginLeft="@dimen/dp5"
+            android:layout_height="@dimen/dp8"></com.isport.brandapp.view.HeartrateRoundView>
+
+        <bike.gymproject.viewlibray.BebasNeueTextView
+            android:id="@+id/tv_min_hr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="135"
+            android:layout_marginLeft="@dimen/dp5"
+            android:textSize="@dimen/sp22"
+            android:textColor="@color/white" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/watch_heart_rate_average"
+            android:textSize="@dimen/sp13"
+            android:textColor="@color/white" />
+
+        <com.isport.brandapp.view.HeartrateRoundView
+            android:id="@+id/hr_roundview_average"
+            android:layout_width="200dp"
+            android:layout_marginLeft="@dimen/dp5"
+            android:layout_height="@dimen/dp8"></com.isport.brandapp.view.HeartrateRoundView>
+
+        <bike.gymproject.viewlibray.BebasNeueTextView
+            android:id="@+id/tv_average_hr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="135"
+            android:layout_marginLeft="@dimen/dp5"
+            android:textSize="@dimen/sp22"
+            android:textColor="@color/white" />
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/share_app_logo"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/dp15"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="@dimen/dp15"></ImageView>
+    </RelativeLayout>
+</LinearLayout>

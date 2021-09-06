@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".wu.activity.OxyResultActivity">
+
+
+    <include
+        android:id="@+id/head"
+        layout="@layout/include_result_title"></include>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/head"
+        android:layout_marginBottom="@dimen/dp74"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/dp15"
+                    android:paddingTop="@dimen/dp10"
+                    android:paddingRight="@dimen/dp15"
+                    android:paddingBottom="13dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_horizontal"
+                        android:textStyle="bold"
+                        android:text="@string/heart_rate"
+                        android:textColor="@color/common_white"
+                        android:textSize="@dimen/sp18"
+                        tools:text="@string/heart_rate" />
+
+                    <TextView
+                        android:id="@+id/tv_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_horizontal"
+                        android:textStyle="bold"
+                        android:textColor="@color/common_tips_color"
+                        android:textSize="@dimen/sp14"
+                        tools:text="2019-11-06 18:52:22" />
+
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/et_value"
+                android:layout_width="@dimen/dp150"
+                android:layout_height="@dimen/dp80"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btn_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="提交心率"
+                android:visibility="gone" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginRight="@dimen/dp15"
+                android:background="@drawable/shape_btn_white_20_bg"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <phone.gym.jkcq.com.socialmodule.shadow.ShadowLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    app:hl_cornerRadius="20dp"
+                    app:hl_shadowColor="#0d000000"
+                    app:hl_shadowLimit="10dp"
+                    app:hl_shadowOffsetY="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <bike.gymproject.viewlibray.BebasNeueTextView
+                            android:id="@+id/tv_oxy_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp20"
+                            android:layout_marginBottom="@dimen/dp7"
+                            android:textColor="@color/common_white"
+                            android:textSize="@dimen/dp46"
+                            tools:text="--" />
+
+                        <TextView
+                            android:id="@+id/tv_percent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:text="@string/BPM"
+                            android:textColor="@color/common_white"
+                            android:textSize="@dimen/dp16" />
+
+                        <com.isport.brandapp.device.scale.view.OnceHrBarView
+                            android:id="@+id/barview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginLeft="@dimen/dp5"
+                            android:layout_marginTop="@dimen/dp22"
+                            android:layout_marginRight="@dimen/dp5"
+                            android:layout_marginBottom="@dimen/dp10" />
+                    </LinearLayout>
+                </phone.gym.jkcq.com.socialmodule.shadow.ShadowLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp20"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dp15">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:text="@string/oncehrresult_once_measure_trend"
+                        android:textColor="@color/common_white"
+                        android:textSize="@dimen/dp12" />
+
+                    <com.isport.brandapp.wu.view.OxyTrendView
+                        android:id="@+id/trendview_oxy"
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:background="@color/white" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginTop="13dp"
+                android:layout_marginRight="@dimen/dp15"
+                android:layout_marginBottom="13dp"
+                android:textStyle="bold"
+                android:text="@string/oncehrresult_about_oxy"
+                android:textColor="@color/common_white"
+                android:textSize="@dimen/dp18" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginRight="@dimen/dp15"
+                android:background="@drawable/shape_btn_white_20_bg"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/dp15"
+                android:paddingTop="13dp"
+                android:paddingRight="@dimen/dp15"
+                android:paddingBottom="13dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/oncehrresult_oncehr_des"
+                    android:textColor="@color/common_name_color"
+                    android:textSize="@dimen/sp14" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp74"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/dp10"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/btn_measure"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_marginTop="@dimen/dp15"
+            android:layout_marginRight="@dimen/dp15"
+            android:layout_marginBottom="@dimen/dp15"
+            android:background="@drawable/shape_btn_bg"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="@string/start_measure"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp18" />
+    </LinearLayout>
+</RelativeLayout>

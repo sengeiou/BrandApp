@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg">
+
+
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <bike.gymproject.viewlibray.ItemView
+            android:id="@+id/itemview_battry"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp60"
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_marginRight="@dimen/dp15"
+            android:layout_marginBottom="@dimen/dp15"
+            android:background="@drawable/shape_btn_white_20_bg"
+            android:onClick="onClick"
+            android:visibility="gone"
+            app:contentSize="@dimen/sp14"
+            app:contentTextColor="@color/common_tips_color"
+            app:itemText="@string/battery"
+            app:itemviewTitleSize="@dimen/sp15"
+            app:remindIcon="@drawable/icon_device_battry"
+            app:showArrow="false"
+            app:showBottomLine="true"
+            app:showCheckModel="false"
+            app:showRemind="true" />
+
+
+        <bike.gymproject.viewlibray.ItemView
+            android:id="@+id/itemview_sleep_remind"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp60"
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_marginRight="@dimen/dp15"
+            android:background="@drawable/shape_btn_white_20_bg"
+            android:onClick="onClick"
+            android:visibility="gone"
+            app:contentSize="@dimen/sp14"
+            app:contentTextColor="@color/common_tips_color"
+            app:itemText="@string/sleep_timer"
+            app:itemviewTitleSize="@dimen/sp15"
+            app:remindIcon="@drawable/icon_remind"
+            app:showArrow="true"
+            app:showBottomLine="true"
+            app:showCheckModel="false"
+            app:showRemind="true" />
+
+        <bike.gymproject.viewlibray.ItemView
+            android:id="@+id/item_step_goal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp50"
+            android:background="@drawable/common_item_bg_selector"
+            android:onClick="onClick"
+            android:visibility="gone"
+            app:contentSize="@dimen/sp14"
+            app:contentTextColor="@color/common_tips_color"
+            app:itemText="@string/step_target"
+            app:itemviewTitleSize="@dimen/sp15"
+            app:remindIcon="@drawable/icon_setting_band_step_goal"
+            app:showArrow="true"
+            app:showBottomLine="true"
+            app:showCheckModel="false"
+            app:showRemind="true" />
+
+        <bike.gymproject.viewlibray.ItemView
+            android:id="@+id/item_screen_up"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp50"
+            android:background="@drawable/common_item_bg_selector"
+            android:onClick="onClick"
+            android:visibility="gone"
+            app:contentSize="@dimen/sp14"
+            app:contentTextColor="@color/common_tips_color"
+            app:itemText="@string/turn_screen_on"
+            app:itemviewTitleSize="@dimen/sp15"
+            app:remindIcon="@drawable/icon_setting_band_brighten_the_screen"
+            app:showArrow="true"
+            app:showBottomLine="true"
+            app:showCheckModel="false"
+            app:showRemind="true" />
+
+        <bike.gymproject.viewlibray.ItemView
+            android:id="@+id/item_screen_time"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp50"
+            android:background="@drawable/common_item_bg_selector"
+            android:onClick="onClick"
+            android:visibility="gone"
+            app:contentSize="@dimen/sp14"
+            app:contentTextColor="@color/common_tips_color"
+            app:itemText="@string/screen_saver_time"
+            app:itemviewTitleSize="@dimen/sp15"
+            app:remindIcon="@drawable/icon_setting_band_scree_protection"
+            app:showArrow="true"
+            app:showBottomLine="true"
+            app:showCheckModel="false"
+            app:showRemind="true" />
+
+
+        <bike.gymproject.viewlibray.ItemView
+            android:id="@+id/itemview_device_id"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp60"
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_marginRight="@dimen/dp15"
+            android:layout_marginBottom="@dimen/dp15"
+            android:background="@drawable/shape_btn_white_20_bg"
+            android:onClick="onClick"
+            app:contentSize="@dimen/sp14"
+            app:contentTextColor="@color/common_tips_color"
+            app:itemText="@string/device_id"
+            app:itemviewTitleSize="@dimen/sp15"
+            app:remindIcon="@drawable/icon_device_id"
+            app:showArrow="false"
+            app:showBottomLine="true"
+            app:showCheckModel="false"
+            app:showRemind="true" />
+
+
+        <bike.gymproject.viewlibray.ItemView
+            android:id="@+id/itemview_firmware_upgrade"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp60"
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_marginBottom="@dimen/dp15"
+            android:layout_marginRight="@dimen/dp15"
+            android:background="@drawable/shape_btn_white_20_bg"
+            android:onClick="onClick"
+            app:contentSize="@dimen/sp14"
+            app:contentTextColor="@color/common_tips_color"
+            app:itemText="@string/firmware_version"
+            app:itemviewTitleSize="@dimen/sp15"
+            app:remindIcon="@drawable/icon_device_version"
+            app:showArrow="false"
+            app:showBottomLine="false"
+            app:showCheckModel="false"
+            app:showRemind="true" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/btn_unbind"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp50"
+        android:layout_marginBottom="@dimen/dp25"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/common_button_bg_selector"
+        android:gravity="center"
+        android:text="@string/unpair"
+        android:textColor="@drawable/common_button_text_selector"
+        android:textSize="@dimen/sp18" />
+</RelativeLayout>

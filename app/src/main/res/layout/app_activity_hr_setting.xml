@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/dp40"
+        android:paddingTop="@dimen/dp10"
+        android:paddingRight="@dimen/dp40"
+        android:paddingBottom="@dimen/dp10"
+        android:text="@string/hr_tips"
+        android:textColor="@color/common_white"
+        android:textSize="@dimen/sp16" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15"
+        android:background="@drawable/shape_btn_white_20_bg"
+        android:orientation="vertical">
+
+
+        <phone.gym.jkcq.com.socialmodule.shadow.ShadowLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            app:hl_cornerRadius="20dp"
+            app:hl_shadowColor="#0d000000"
+            app:hl_shadowLimit="10dp"
+            app:hl_shadowOffsetY="5dp">
+
+            <bike.gymproject.viewlibray.ItemView
+                android:id="@+id/switch_open"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp60"
+                android:onClick="onClick"
+                app:contentSize="@dimen/dp15"
+                app:contentTextColor="@color/common_white"
+                app:itemText="@string/hr_timer_cheack"
+                app:itemviewTitleSize="@dimen/dp15"
+                app:showArrow="false"
+                app:showBottomLine="true"
+                app:showCheckModel="true"
+                app:showRemind="false" />
+        </phone.gym.jkcq.com.socialmodule.shadow.ShadowLayout>
+
+        <bike.gymproject.viewlibray.ItemView
+            android:id="@+id/hr_times"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp60"
+            android:onClick="onClick"
+            app:contentSize="@dimen/sp16"
+            app:contentTextColor="@color/common_white"
+            app:itemText="@string/cheack_times"
+            app:itemviewTitleSize="@dimen/sp16"
+            app:showArrow="true"
+            app:showBottomLine="true"
+            app:showCheckModel="false"
+            app:showRemind="false" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp30" />
+
+
+    <bike.gymproject.viewlibray.ItemView
+        android:id="@+id/switch_24h_open"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp60"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15"
+        android:background="@drawable/shape_btn_white_20_bg"
+        android:onClick="onClick"
+        app:contentSize="@dimen/sp16"
+        app:contentTextColor="@color/common_white"
+        app:itemText="@string/device_hr_24_h_tips"
+        app:itemviewTitleSize="@dimen/sp16"
+        app:showArrow="false"
+        app:showBottomLine="true"
+        app:showCheckModel="true"
+        app:showRemind="false" />
+
+
+</LinearLayout>
+
+

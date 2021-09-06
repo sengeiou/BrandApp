@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tv_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/seekbar_hr"
+        android:background="@drawable/iv_rope_pro_hr"
+        android:gravity="center"
+        android:text=""
+        android:textColor="#4DDA64"
+        android:textSize="@dimen/sp12" />
+
+
+    <SeekBar
+        android:id="@+id/seekbar_hr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="@dimen/dp25"
+        android:layout_marginRight="@dimen/dp25"
+        android:focusable="true"
+        android:maxHeight="@dimen/dp10"
+        android:minHeight="@dimen/dp10"
+        android:progressDrawable="@drawable/po_seekbar"
+        android:thumb="@drawable/seekbar_thumb" />
+
+    <TextView
+        android:id="@+id/tv_hr_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seekbar_hr"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="23dp"
+        android:layout_marginBottom="@dimen/dp15"
+        android:text="@string/bmp_unit"
+        android:textColor="@color/common_view_color"
+        android:textSize="@dimen/sp10"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_pace_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seekbar_hr"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="23dp"
+        android:layout_marginBottom="@dimen/dp15"
+        android:text="@string/nute_per_km"
+        android:textColor="@color/common_view_color"
+        android:textSize="@dimen/sp10" />
+
+
+    <TextView
+        android:id="@+id/tv_range"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginBottom="@dimen/dp17"
+        android:text=""
+        android:textColor="@color/common_tips_color"
+        android:textSize="@dimen/sp12" />
+
+    <TextView
+        android:id="@+id/tv_hr_remid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seekbar_hr"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="@dimen/dp17"
+        android:text="@string/hr_high_remind"
+        android:textColor="@color/common_tips_color"
+        android:textSize="@dimen/sp12" />
+
+    <TextView
+        android:id="@+id/tv_pace_remind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seekbar_hr"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="@dimen/dp17"
+        android:text="@string/pace_low_remind"
+        android:textColor="@color/common_tips_color"
+        android:textSize="@dimen/sp12" />
+
+
+</RelativeLayout>
+

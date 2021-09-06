@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+<!--    <external-path path="Android/data/com.isport.brandapp/" name="files_root" />-->
+<!--  <external-path path="." name="." />-->
+
+    <external-path name="external_files" path="brandapp"/>
+    <external-path name="external_video"  path="brandapp/video" />
+   <!-- <external-path
+        name="external_files" path="." />-->
+</paths>

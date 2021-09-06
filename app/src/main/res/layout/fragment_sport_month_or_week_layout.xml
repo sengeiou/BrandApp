@@ -1,0 +1,97 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/layout_rec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_history_top"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="-70dp"
+        android:layout_marginRight="@dimen/dp15"
+        android:background="@drawable/shape_btn_white_20_bg"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/dp70">
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/smartRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srlEnableAutoLoadMore="false"
+            app:srlEnableLoadMore="true"
+            app:srlEnableRefresh="true">
+
+            <com.scwang.smartrefresh.layout.header.ClassicsHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srlClassicsSpinnerStyle="FixedBehind"
+                app:srlDrawableArrowSize="20dp"
+                app:srlDrawableMarginRight="20dp"
+                app:srlDrawableProgressSize="20dp"
+                app:srlEnableLastTime="true"
+                app:srlFinishDuration="500"
+                app:srlTextSizeTime="10dp"
+                app:srlTextSizeTitle="16sp"
+                app:srlTextTimeMarginTop="2dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"
+                tools:listitem="@layout/item_course_list" />
+
+
+            <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rl_nodata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_history_top"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginTop="-70dp"
+        android:layout_marginRight="@dimen/dp15"
+        android:background="@drawable/shape_btn_white_20_bg"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="70dp"
+        android:paddingBottom="@dimen/dp150"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_no_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp70"
+            android:src="@drawable/icon_rope_history_def" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/no_message"
+            android:gravity="center"
+            android:text="@string/sport_no_data"
+            android:textColor="@color/common_white"
+            android:textSize="@dimen/sp16" />
+
+
+    </LinearLayout>
+
+
+    <include
+        android:id="@+id/layout_history_top"
+        layout="@layout/app_common_sport_history_head_layout" />
+
+
+</RelativeLayout>

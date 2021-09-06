@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="@dimen/dp130"
+        android:layout_height="@dimen/dp130"
+        android:layout_marginBottom="@dimen/dp20"
+        android:layout_marginLeft="@dimen/dp7"
+        android:layout_marginRight="@dimen/dp7"
+        android:background="@drawable/shape_main_device_bg"
+        android:paddingBottom="@dimen/dp7"
+        android:paddingLeft="@dimen/dp19"
+        android:paddingTop="@dimen/dp15">
+
+
+        <bike.gymproject.viewlibray.BebasNeueTextView
+            android:id="@+id/tv_type_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="--"
+            android:textColor="@color/common_text_color"
+            android:textSize="@dimen/sp30" />
+
+        <TextView
+            android:id="@+id/tv_type_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/tv_type_value"
+            android:layout_marginBottom="@dimen/dp6"
+            android:layout_marginLeft="@dimen/dp4"
+            android:layout_toRightOf="@id/tv_type_value"
+            android:text="--"
+            android:textColor="@color/common_text_color"
+            android:textSize="@dimen/sp14" />
+
+
+        <ImageView
+            android:id="@+id/iv_type_log"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_time"
+            android:layout_marginBottom="@dimen/dp9"
+            android:src="@drawable/icon_watch" />
+
+        <TextView
+            android:id="@+id/tv_type_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_time"
+            android:layout_marginBottom="@dimen/dp9"
+            android:layout_marginLeft="@dimen/dp7"
+            android:layout_toRightOf="@id/iv_type_log"
+            android:text=""
+            android:textColor="@color/common_text_color"
+            android:textSize="@dimen/sp15" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text=""
+            android:textColor="@color/common_tips_color_6666"
+            android:textSize="@dimen/sp13" />
+    </RelativeLayout>
+
+
+</LinearLayout>

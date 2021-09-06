@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp60"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginTop="@dimen/dp18"
+        android:layout_marginRight="@dimen/dp15"
+        android:background="@drawable/shape_btn_white_20_bg"
+        android:orientation="horizontal"
+        android:paddingRight="@dimen/dp15">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:gravity="center_vertical"
+            android:text="@string/w307j_Open_Auto_Sleep"
+            android:textColor="@color/common_white"
+            android:textSize="16dp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/switch_sleep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/icon_open"
+            android:tag="nor" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/dp18"
+        android:background="@color/common_item_line_color" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/layout_sleep_settings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/text_sleep_item_title"
+                android:layout_height="wrap_content"
+                android:text="@string/w307j_Sleep_Time" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginRight="@dimen/dp15"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/text_sleep_time_begin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/app_frame_all_gray"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dp20"
+                    android:paddingTop="@dimen/dp5"
+                    android:paddingRight="@dimen/dp20"
+                    android:paddingBottom="@dimen/dp5"
+                    android:text="22:00"
+                    android:textColor="@drawable/common_sleep_setting_selector"
+                    android:textSize="16dp" />
+
+                <View
+                    android:layout_width="15dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp15"
+                    android:layout_marginRight="@dimen/dp15"
+                    android:background="@color/common_text_color"
+                    android:gravity="center"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/text_sleep_time_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/app_frame_all_gray"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dp20"
+                    android:paddingTop="@dimen/dp5"
+                    android:paddingRight="@dimen/dp20"
+                    android:paddingBottom="@dimen/dp5"
+                    android:text="06:00"
+                    android:textColor="@drawable/common_sleep_setting_selector"
+                    android:textSize="16dp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:id="@+id/switch_sleep_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp5"
+                    android:paddingRight="@dimen/dp15"
+                    android:src="@drawable/icon_close"
+                    android:tag="nor" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dp18"
+                android:background="@color/common_item_line_color" />
+
+            <TextView
+                style="@style/text_sleep_item_title"
+                android:text="@string/w307j_Sleep_Reminder" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp50"
+                android:layout_marginLeft="@dimen/dp15"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/text_reminder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/app_frame_all_gray"
+                    android:paddingLeft="@dimen/dp20"
+                    android:paddingTop="@dimen/dp5"
+                    android:paddingRight="@dimen/dp20"
+                    android:paddingBottom="@dimen/dp5"
+                    android:text="15min"
+                    android:textColor="@drawable/common_sleep_setting_selector"
+                    android:textSize="16dp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:id="@+id/switch_reminder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp15"
+                    android:padding="@dimen/dp5"
+                    android:paddingRight="@dimen/dp15"
+                    android:src="@drawable/icon_close"
+                    android:tag="nor" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dp18"
+                android:background="@color/common_item_line_color" />
+
+            <TextView
+                style="@style/text_sleep_item_title"
+                android:text="@string/w307j_Lunch_Break" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp15"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/text_lunch_begin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/app_frame_all_gray"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dp20"
+                    android:paddingTop="@dimen/dp5"
+                    android:paddingRight="@dimen/dp20"
+                    android:paddingBottom="@dimen/dp5"
+                    android:text="13:00"
+                    android:textColor="@drawable/common_sleep_setting_selector"
+                    android:textSize="16dp" />
+
+                <View
+                    android:layout_width="15dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp15"
+                    android:layout_marginRight="@dimen/dp15"
+                    android:background="@color/common_text_color"
+                    android:gravity="center"
+                    android:textSize="16dp" />
+                />
+
+                <TextView
+                    android:id="@+id/text_lunch_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/app_frame_all_gray"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/dp20"
+                    android:paddingTop="@dimen/dp5"
+                    android:paddingRight="@dimen/dp20"
+                    android:paddingBottom="@dimen/dp5"
+                    android:text="14:00"
+                    android:textColor="@drawable/common_sleep_setting_selector"
+                    android:textSize="16dp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:id="@+id/switch_lunch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp15"
+                    android:padding="@dimen/dp5"
+                    android:paddingRight="@dimen/dp15"
+                    android:src="@drawable/icon_open"
+                    android:tag="nor" />
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dp18"
+                android:background="@color/common_item_line_color" />
+
+            <TextView
+                android:id="@+id/tv_luncher_reminder_title"
+                style="@style/text_sleep_item_title"
+                android:text="@string/w307j_Lunch_reminder" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp50"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_toLeftOf="@+id/switch_sleep_time"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/tv_luncher_reminder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/app_frame_all_gray"
+                    android:paddingLeft="@dimen/dp20"
+                    android:paddingTop="@dimen/dp5"
+                    android:paddingRight="@dimen/dp20"
+                    android:paddingBottom="@dimen/dp5"
+                    android:text="15min"
+                    android:textColor="@drawable/common_sleep_setting_selector"
+                    android:textSize="16dp" />
+
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:id="@+id/switch_lunch_reminder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp15"
+                    android:padding="@dimen/dp5"
+                    android:paddingRight="@dimen/dp15"
+                    android:src="@drawable/icon_open"
+                    android:tag="nor" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

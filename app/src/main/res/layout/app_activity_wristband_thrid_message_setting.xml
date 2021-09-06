@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tv_multiHyperLink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp40"
+        android:layout_marginRight="@dimen/dp40"
+        android:gravity="center_vertical"
+        android:paddingTop="@dimen/dp10"
+        android:paddingBottom="@dimen/dp10"
+        android:text="@string/thride_tips"
+        android:textColor="@color/common_text_color"
+        android:textSize="@dimen/sp16" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_marginRight="@dimen/dp15"
+            android:orientation="vertical">
+
+            <bike.gymproject.viewlibray.ItemView
+                android:id="@+id/iv_message_qq"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp60"
+                android:layout_marginBottom="@dimen/dp15"
+                android:background="@drawable/shape_btn_white_20_bg"
+                android:onClick="onClick"
+                app:contentSize="@dimen/sp14"
+                app:contentText=""
+                app:contentTextColor="@color/common_text_color"
+                app:itemText="@string/qq"
+                app:itemviewTitleSize="@dimen/sp16"
+                app:remindIcon="@drawable/icon_message_qq"
+                app:showArrow="false"
+                app:showBottomLine="true"
+                app:showCheckModel="true"
+                app:showRemind="false" />
+
+            <bike.gymproject.viewlibray.ItemView
+                android:id="@+id/iv_message_wechat"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp60"
+                android:layout_marginBottom="@dimen/dp15"
+                android:background="@drawable/shape_btn_white_20_bg"
+                android:onClick="onClick"
+                app:contentSize="@dimen/sp14"
+                app:contentText=""
+                app:contentTextColor="@color/common_text_color"
+                app:itemText="@string/wechat"
+                app:itemviewTitleSize="@dimen/sp16"
+                app:remindIcon="@drawable/icon_message_wechat"
+                app:showArrow="false"
+                app:showBottomLine="true"
+                app:showCheckModel="true"
+                app:showRemind="false" />
+
+            <bike.gymproject.viewlibray.ItemView
+                android:id="@+id/iv_message_whatsapp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp60"
+                android:layout_marginBottom="@dimen/dp15"
+                android:background="@drawable/shape_btn_white_20_bg"
+                android:onClick="onClick"
+                app:contentSize="@dimen/sp14"
+                app:contentText=""
+                app:contentTextColor="@color/common_text_color"
+                app:itemText="@string/whatsapp"
+                app:itemviewTitleSize="@dimen/sp16"
+                app:remindIcon="@drawable/icon_message_whatsapp"
+                app:showArrow="false"
+                app:showBottomLine="true"
+                app:showCheckModel="true"
+                app:showRemind="false" />
+
+            <bike.gymproject.viewlibray.ItemView
+                android:id="@+id/iv_message_facebook"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp60"
+                android:layout_marginBottom="@dimen/dp15"
+                android:background="@drawable/shape_btn_white_20_bg"
+                android:onClick="onClick"
+                app:contentSize="@dimen/sp14"
+                app:contentText=""
+                app:contentTextColor="@color/common_text_color"
+                app:itemText="@string/facebook"
+                app:itemviewTitleSize="@dimen/sp16"
+                app:remindIcon="@drawable/icon_message_facebook"
+                app:showArrow="false"
+                app:showBottomLine="true"
+                app:showCheckModel="true"
+                app:showRemind="false" />
+
+            <bike.gymproject.viewlibray.ItemView
+                android:id="@+id/iv_message_message"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp60"
+                android:layout_marginBottom="@dimen/dp15"
+                android:background="@drawable/shape_btn_white_20_bg"
+                android:onClick="onClick"
+                app:contentSize="@dimen/sp14"
+                app:contentText=""
+                app:contentTextColor="@color/common_text_color"
+                app:itemText="@string/messager"
+                app:itemviewTitleSize="@dimen/sp16"
+                app:remindIcon="@drawable/icon_message_message"
+                app:showArrow="false"
+                app:showBottomLine="true"
+                app:showCheckModel="true"
+                app:showRemind="false" />
+
+            <bike.gymproject.viewlibray.ItemView
+                android:id="@+id/iv_message_twitter"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp60"
+                android:layout_marginBottom="@dimen/dp15"
+                android:background="@drawable/shape_btn_white_20_bg"
+                android:onClick="onClick"
+                app:contentSize="@dimen/sp14"
+                app:contentText=""
+                app:contentTextColor="@color/common_text_color"
+                app:itemText="@string/twitter"
+                app:itemviewTitleSize="@dimen/sp16"
+                app:remindIcon="@drawable/icon_message_twitter"
+                app:showArrow="false"
+                app:showBottomLine="true"
+                app:showCheckModel="true"
+                app:showRemind="false" />
+
+            <bike.gymproject.viewlibray.ItemView
+                android:id="@+id/iv_message_skype"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp60"
+                android:layout_marginBottom="@dimen/dp15"
+                android:background="@drawable/shape_btn_white_20_bg"
+                android:onClick="onClick"
+                app:contentSize="@dimen/sp14"
+                app:contentText=""
+                app:contentTextColor="@color/common_text_color"
+                app:itemText="@string/skype"
+                app:itemviewTitleSize="@dimen/sp16"
+                app:remindIcon="@drawable/icon_message_skype"
+                app:showArrow="false"
+                app:showBottomLine="true"
+                app:showCheckModel="true"
+                app:showRemind="false" />
+
+            <bike.gymproject.viewlibray.ItemView
+                android:id="@+id/iv_message_linkedin"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp60"
+                android:layout_marginBottom="@dimen/dp15"
+                android:background="@drawable/shape_btn_white_20_bg"
+                android:onClick="onClick"
+                app:contentSize="@dimen/sp14"
+                app:contentText=""
+                app:contentTextColor="@color/common_text_color"
+                app:itemText="@string/linkedIn"
+                app:itemviewTitleSize="@dimen/sp16"
+                app:remindIcon="@drawable/icon_message_linkedin"
+                app:showArrow="false"
+                app:showBottomLine="true"
+                app:showCheckModel="true"
+                app:showRemind="false" />
+
+            <bike.gymproject.viewlibray.ItemView
+                android:id="@+id/iv_message_line"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp60"
+                android:layout_marginBottom="@dimen/dp15"
+                android:background="@drawable/shape_btn_white_20_bg"
+                android:onClick="onClick"
+                app:contentSize="@dimen/sp14"
+                app:contentText=""
+                app:contentTextColor="@color/common_text_color"
+                app:itemText="@string/line"
+                app:itemviewTitleSize="@dimen/sp16"
+                app:remindIcon="@drawable/icon_message_line"
+                app:showArrow="false"
+                app:showBottomLine="true"
+                app:showCheckModel="true"
+                app:showRemind="false" />
+
+            <bike.gymproject.viewlibray.ItemView
+                android:id="@+id/iv_message_instagram"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp60"
+                android:layout_marginBottom="@dimen/dp15"
+                android:background="@drawable/shape_btn_white_20_bg"
+                android:onClick="onClick"
+                app:contentSize="@dimen/sp14"
+                app:contentText=""
+                app:contentTextColor="@color/common_text_color"
+                app:itemText="@string/instagram"
+                app:itemviewTitleSize="@dimen/sp16"
+                app:remindIcon="@drawable/icon_message_instagram"
+                app:showArrow="false"
+                app:showBottomLine="true"
+                app:showCheckModel="true"
+                app:showRemind="false" />
+
+            <bike.gymproject.viewlibray.ItemView
+                android:id="@+id/iv_message_kakaotalk"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp60"
+                android:layout_marginBottom="@dimen/dp15"
+                android:background="@drawable/shape_btn_white_20_bg"
+                android:onClick="onClick"
+                app:contentSize="@dimen/sp14"
+                app:contentText=""
+                app:contentTextColor="@color/common_text_color"
+                app:itemText="@string/kakaotalk"
+                app:itemviewTitleSize="@dimen/sp16"
+                app:remindIcon="@drawable/icon_message_kakaotalk"
+                app:showArrow="false"
+                app:showBottomLine="true"
+                app:showCheckModel="true"
+                app:showRemind="false" />
+
+            <bike.gymproject.viewlibray.ItemView
+                android:id="@+id/iv_message_others"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp60"
+                android:layout_marginBottom="@dimen/dp15"
+                android:background="@drawable/shape_btn_white_20_bg"
+                android:onClick="onClick"
+                app:contentSize="@dimen/sp14"
+                app:contentText=""
+                app:contentTextColor="@color/common_text_color"
+                app:itemText="@string/message_other"
+                app:itemviewTitleSize="@dimen/sp16"
+                app:remindIcon="@drawable/icon_message_others"
+                app:showArrow="false"
+                app:showBottomLine="true"
+                app:showCheckModel="true"
+                app:showRemind="false" />
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>
+
+

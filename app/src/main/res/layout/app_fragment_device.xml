@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/df_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F7F7F9"
+        android:orientation="vertical">
+
+        <com.youth.banner.Banner xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/tv_banner"
+            android:layout_width="match_parent"
+            android:layout_height="270dp" />
+
+        <View
+            android:id="@id/view_top"
+            android:layout_width="match_parent"
+            android:layout_height="180dp" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+
+            android:id="@+id/recyclerview_device_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/view_top">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <RelativeLayout
+            android:id="@+id/frame_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_def"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/icon_main_add_device"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <com.isport.brandapp.Home.fragment.HomeSuqAdView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_main_add_device"
+            android:visibility="visible" />
+    </com.isport.brandapp.Home.fragment.HomeSuqAdView>
+</FrameLayout>

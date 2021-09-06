@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    android:orientation="vertical">
+
+
+    <brandapp.isport.com.basicres.commonrecyclerview.Xlist.XListView
+        android:id="@+id/recycler_result"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layout_history_top"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginTop="-70dp"
+        android:layout_marginRight="@dimen/dp15"
+        android:background="@drawable/shape_btn_white_20_bg"
+        android:paddingTop="70dp">
+
+    </brandapp.isport.com.basicres.commonrecyclerview.Xlist.XListView>
+
+
+    <LinearLayout
+        android:id="@+id/rl_nodata"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layout_history_top"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginTop="-70dp"
+        android:layout_marginRight="@dimen/dp15"
+        android:background="@drawable/shape_btn_white_20_bg"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/iv_no_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp70"
+            android:src="@drawable/icon_rope_history_def" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/no_message"
+            android:layout_centerInParent="true"
+            android:drawablePadding="@dimen/dp20"
+            android:gravity="center"
+            android:text="@string/sport_no_data"
+            android:textColor="@color/common_white"
+            android:textSize="@dimen/sp15" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2" />
+    </LinearLayout>
+
+    <include
+        android:id="@+id/layout_history_top"
+        layout="@layout/app_common_sport_history_head_layout" />
+
+
+</RelativeLayout>
+
+

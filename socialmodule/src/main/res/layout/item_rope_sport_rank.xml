@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/dp20"
+    android:paddingBottom="@dimen/dp20">
+
+    <RelativeLayout
+        android:id="@+id/fl_rank"
+        android:layout_width="@dimen/dp40"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp15">
+
+        <ImageView
+            android:id="@+id/iv_rank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/icon_rank_first"></ImageView>
+
+        <TextView
+            android:id="@+id/tv_rank"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:textColor="@color/common_gray_color"
+            android:textSize="@dimen/sp15"
+            tools:text="9889"></TextView>
+    </RelativeLayout>
+
+    <bike.gymproject.viewlibray.CircleImageView
+        android:id="@+id/circle_view_head"
+        android:layout_width="@dimen/dp50"
+        android:layout_height="@dimen/dp50"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp7"
+        android:layout_toRightOf="@id/fl_rank"
+        android:scaleType="centerCrop"
+        android:src="@drawable/default_avatar_picture"
+        app:civ_border_color="@color/common_hint_color_606060"
+        app:civ_border_width="@dimen/dp2"></bike.gymproject.viewlibray.CircleImageView>
+
+
+    <TextView
+        android:id="@+id/tv_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/circle_view_head"
+        android:layout_marginLeft="@dimen/dp10"
+        android:layout_toRightOf="@id/circle_view_head"
+        android:text="健康传奇"
+        android:textColor="@color/common_text_color"
+        android:textSize="@dimen/sp15"
+        android:textStyle="bold"></TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tv_nickname"
+        android:layout_alignBottom="@id/circle_view_head"
+        android:layout_toRightOf="@id/circle_view_head"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/common_view_color"
+            android:textSize="@dimen/sp22"
+            tools:text="9889"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp5"
+            android:textColor="@color/common_view_color"
+            android:textSize="@dimen/sp15"
+            tools:text="@string/view_dis_unit"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/ll_like"
+        android:orientation="horizontal">
+
+        <bike.gymproject.viewlibray.AkrobatNumberTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/common_text_color"
+            android:textSize="@dimen/sp16"
+            tools:text="6566"></bike.gymproject.viewlibray.AkrobatNumberTextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/common_text_color"
+            android:textSize="@dimen/sp15"
+            tools:text="个"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/dp5"
+        android:paddingRight="@dimen/dp15"
+        android:paddingBottom="@dimen/dp5">
+
+        <ImageView
+            android:id="@+id/iv_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_rope_like_unselected"></ImageView>
+
+        <bike.gymproject.viewlibray.AkrobatBlackTextView
+            android:id="@+id/tv_like_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/common_white"
+            android:textSize="@dimen/sp15"
+            tools:text="6566"></bike.gymproject.viewlibray.AkrobatBlackTextView>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/rl_onscale"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5" />
+
+        <ImageView
+            android:id="@+id/iv_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_scale_tips" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp30"
+            android:layout_marginTop="@dimen/dp23"
+            android:layout_marginRight="@dimen/dp30"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="@string/scale_notice"
+            android:textColor="@color/common_white"
+            android:textSize="@dimen/sp18" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/rl_onscale_start"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/dp20">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="81dp"
+                android:layout_marginBottom="@dimen/dp20"
+                android:background="@drawable/shape_scale_bg"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <bike.gymproject.viewlibray.BebasNeueTextView
+                    android:id="@+id/tv_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="0.0"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp36" />
+
+                <TextView
+                    android:id="@+id/tv_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:text="@string/app_scale_unit"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp16" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp25"
+                android:src="@drawable/icon_foot" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_scale_bind_tips1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_start"
+            android:layout_marginLeft="@dimen/dp30"
+            android:layout_marginTop="@dimen/sp36"
+            android:layout_marginRight="@dimen/dp30"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="@string/scale_found"
+            android:textColor="@color/common_white"
+            android:textSize="@dimen/sp18" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_select_layout_option"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/dp38"
+        android:layout_marginBottom="@dimen/dp25"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_scan_again"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp50"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/dp30"
+            android:layout_marginRight="@dimen/dp30"
+            android:layout_weight="1"
+            android:background="@drawable/shape_scanagion_btn_bg"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="@string/search_again"
+            android:textColor="@color/common_view_color"
+            android:textSize="@dimen/sp18" />
+
+        <TextView
+            android:id="@+id/tv_confirm_bind"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp50"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/dp30"
+            android:layout_marginRight="@dimen/dp30"
+            android:layout_weight="1"
+            android:background="@drawable/shape_bind_scale_bg"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="@string/confirm_pairing"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp18" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_delay_bind"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp49"
+        android:layout_alignParentBottom="true"
+        android:background="@color/common_view_color"
+        android:gravity="center"
+        android:text="@string/not_pair"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp18"
+        android:visibility="gone" />
+
+</RelativeLayout>

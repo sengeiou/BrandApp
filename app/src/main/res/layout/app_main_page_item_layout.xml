@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_marginLeft="@dimen/dp30"
+    android:layout_marginRight="@dimen/dp30"
+    android:background="@drawable/common_main_item_selector"
+    android:orientation="horizontal">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dp20">
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/icon_unbind"
+            android:drawablePadding="@dimen/dp5"
+            android:text="设备未连接"
+            android:textColor="@color/common_text_color"
+            android:textSize="@dimen/sp15" />
+
+        <TextView
+            android:id="@+id/tv_option"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4"
+            android:background="@drawable/common_item_view_color_selector"
+            android:gravity="center"
+            android:text="绑定"
+            android:textColor="@color/common_white"
+            android:textSize="@dimen/sp15" />
+    </LinearLayout>
+
+
+</RelativeLayout>
+

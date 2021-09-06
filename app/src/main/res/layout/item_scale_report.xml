@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="50dp"
+              android:orientation="vertical"
+              android:paddingLeft="@dimen/dp30"
+              android:paddingRight="@dimen/dp30">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp50">
+
+
+        <ImageView
+            android:id="@+id/iv_res"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp7"/>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/iv_res"
+            android:textColor="@color/common_white"
+            android:textSize="@dimen/sp14"/>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp10"
+            android:layout_toLeftOf="@id/tv_stande"
+            android:orientation="horizontal">
+
+            <bike.gymproject.viewlibray.BebasNeueTextView
+                android:id="@+id/tv_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="50.1"
+                android:textColor="@color/common_white"
+                android:textSize="@dimen/sp20"/>
+
+            <TextView
+                android:id="@+id/tv_unitl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/common_white"
+                android:textSize="@dimen/sp13"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_stande"
+            android:layout_width="@dimen/dp50"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/shape_stander_bg"
+            android:gravity="center"
+            android:paddingBottom="@dimen/dp2"
+            android:paddingTop="@dimen/dp2"
+            android:text="标准不"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp12"/>
+
+        <View
+            android:id="@+id/line"
+            style="@style/commonItemLine"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+</LinearLayout>

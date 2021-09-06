@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_map"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:id="@+id/layout_map_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+        <com.amap.api.maps.MapView
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/tv_show_gps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text=""
+            android:textColor="@color/common_blank" />
+
+        <TextView
+            android:id="@+id/tv_show_gps1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_show_gps"
+            android:text=""
+            android:textColor="@color/common_blank" />
+
+        <RelativeLayout
+            android:id="@+id/layout_map_hr"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_marginTop="@dimen/dp20"
+            android:background="@drawable/shape_btn_white_20_bg">
+
+
+            <bike.gymproject.viewlibray.AkrobatNumberTextView
+                android:id="@+id/tv_map_hr_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:drawableBottom="@drawable/icon_sport_hr"
+                android:textStyle="bold"
+                android:text="88"
+                android:textColor="#FA5F5F"
+                android:textSize="32sp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_map_gps"
+            android:layout_width="@dimen/dp75"
+            android:layout_height="@dimen/dp75"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dp20"
+            android:layout_marginRight="@dimen/dp15"
+            android:background="@drawable/shape_btn_white_20_bg"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/iv_map_gps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_gps_nor" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp8"
+                android:textStyle="bold"
+                android:text="GPS"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/sp16" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layout_google"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <fragment
+            android:id="@+id/google_mapview"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.8" />
+    </LinearLayout>
+
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15"
+        android:layout_marginBottom="@dimen/dp35"
+        android:background="@drawable/shape_btn_white_20_bg"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/dp15"
+        android:paddingBottom="@dimen/dp15">
+
+        <bike.gymproject.viewlibray.ShareItemView
+            android:id="@+id/item_map_dis"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:sharebottomColor="@color/common_tips_color"
+            app:sharebottomSize="14sp"
+            app:sharebottomText="@string/dis_unit"
+            app:shareisShowLine="true"
+            app:shareisUnit="false"
+            app:shareunitColor="@color/common_text_color"
+            app:shareunitSize="@dimen/sp12"
+            app:shareunitText="@string/time_to_fall_sleep"
+            app:sharevaluseColor="@color/common_white"
+            app:sharevaluseSize="@dimen/sp24"
+            app:sharevaluseText="0.00" />
+
+        <bike.gymproject.viewlibray.ShareItemView
+            android:id="@+id/item_map_time"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:sharebottomColor="@color/common_tips_color"
+            app:sharebottomSize="@dimen/sp14"
+            app:sharebottomText="@string/user_time"
+            app:shareisShowLine="true"
+            app:shareisUnit="false"
+            app:shareunitColor="@color/common_text_color"
+            app:shareunitSize="12sp"
+            app:shareunitText="@string/deep_sleep"
+            app:sharevaluseColor="@color/common_white"
+            app:sharevaluseSize="@dimen/sp24"
+            app:sharevaluseText="00:00:00" />
+
+        <bike.gymproject.viewlibray.ShareItemView
+            android:id="@+id/item_map_speed"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:sharebottomColor="@color/common_tips_color"
+            app:sharebottomSize="@dimen/sp14"
+            app:sharebottomText="@string/pace"
+            app:shareisShowLine="true"
+            app:shareisUnit="false"
+            app:shareunitColor="@color/common_text_color"
+            app:shareunitSize="12sp"
+            app:sharevaluseColor="@color/common_white"
+            app:sharevaluseSize="24sp"
+            app:sharevaluseText="0'0" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
+

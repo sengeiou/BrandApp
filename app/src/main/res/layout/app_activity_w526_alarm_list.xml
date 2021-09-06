@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/dp15"
+    android:paddingRight="@dimen/dp15">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingLeft="@dimen/dp15"
+        android:paddingTop="13dp"
+        android:paddingRight="@dimen/dp15"
+        android:paddingBottom="13dp"
+        android:text="@string/alarm_tips"
+        android:textColor="@color/common_white"
+        android:textSize="@dimen/sp16" />
+
+    <RelativeLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:layout_marginBottom="@dimen/dp15"
+        android:background="@drawable/shape_btn_white_20_bg">
+
+        <TextView
+            android:id="@+id/tv_time1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_marginTop="@dimen/dp5"
+            android:textStyle="bold"
+            android:text="08:00"
+            android:textColor="#2F2F33"
+            android:textSize="@dimen/sp36" />
+
+
+        <TextView
+            android:id="@+id/tv_repeat1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp50"
+            android:layout_below="@id/tv_time1"
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_toLeftOf="@+id/view_car_remind_radio1"
+            android:gravity="center_vertical|left"
+            android:text="周一"
+            android:textColor="#2F2F33"
+            android:textSize="@dimen/sp16" />
+
+        <ImageView
+            android:id="@+id/view_car_remind_radio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp10"
+            android:clickable="true"
+            android:padding="5dp"
+            android:src="@drawable/icon_open"
+            android:text=""
+            android:visibility="visible" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout2"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:layout_marginBottom="@dimen/dp15"
+        android:background="@drawable/shape_btn_white_20_bg">
+
+
+        <TextView
+            android:id="@+id/tv_time2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_marginTop="@dimen/dp5"
+            android:textStyle="bold"
+            android:text="08:00"
+            android:textColor="#2F2F33"
+            android:textSize="@dimen/sp36" />
+
+
+        <TextView
+            android:id="@+id/tv_repeat2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp50"
+            android:layout_below="@id/tv_time2"
+            android:layout_marginLeft="@dimen/dp15"
+            android:gravity="center_vertical|left"
+            android:text="周一"
+            android:textColor="#2F2F33"
+            android:textSize="@dimen/sp16" />
+
+
+        <ImageView
+            android:id="@+id/view_car_remind_radio2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp10"
+            android:padding="5dp"
+            android:src="@drawable/icon_open"
+            android:text=""
+            android:visibility="visible" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout3"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:layout_marginBottom="@dimen/dp15"
+        android:background="@drawable/shape_btn_white_20_bg">
+
+        <TextView
+            android:id="@+id/tv_time3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_marginTop="@dimen/dp5"
+            android:textStyle="bold"
+            android:text="08:00"
+            android:textColor="#2F2F33"
+            android:textSize="@dimen/sp36" />
+
+
+        <TextView
+            android:id="@+id/tv_repeat3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp50"
+            android:layout_below="@id/tv_time3"
+            android:layout_marginLeft="@dimen/dp15"
+            android:gravity="center_vertical|left"
+            android:text="周一"
+            android:textColor="#2F2F33"
+            android:textSize="@dimen/sp16" />
+
+        <ImageView
+            android:id="@+id/view_car_remind_radio3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp10"
+            android:padding="5dp"
+            android:src="@drawable/icon_open"
+            android:text=""
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>
+
+

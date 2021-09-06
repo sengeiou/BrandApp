@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_btn_white_20_bg"
+        android:orientation="vertical">
+
+
+        <phone.gym.jkcq.com.socialmodule.shadow.ShadowLayout
+            android:id="@+id/mShadowLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout_top"
+            android:layout_gravity="center_vertical"
+            app:hl_cornerRadius="20dp"
+            app:hl_shadowColor="#0d000000"
+            app:hl_shadowLimit="10dp"
+            app:hl_shadowOffsetY="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp15"
+                android:orientation="vertical">
+
+                <bike.gymproject.viewlibray.BebasNeueTextView
+                    android:id="@+id/tv_weight_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/view_weight_ceter"
+                    android:gravity="center"
+                    android:text="@string/no_data"
+                    android:textColor="@color/common_white"
+                    android:textSize="@dimen/sp46" />
+
+
+                <TextView
+                    android:id="@+id/tv_unit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view_center"
+                    android:layout_alignBottom="@+id/tv_weight_value_title"
+                    android:layout_marginLeft="@dimen/dp5"
+                    android:layout_toRightOf="@+id/view_weight_ceter"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:text="@string/unit_kg"
+                    android:textColor="@color/common_white"
+                    android:textSize="@dimen/sp16" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp">
+
+                    <ImageView
+                        android:id="@+id/iv_empty"
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="@dimen/dp15"
+                        android:layout_marginRight="@dimen/dp15"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/bg_scale_emty_zh"
+                        android:visibility="invisible" />
+
+                    <com.isport.brandapp.Home.customview.BezierView
+                        android:id="@+id/bezier"
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="@dimen/dp10"
+                        android:layout_marginRight="@dimen/dp10"
+                        android:visibility="visible" />
+
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="71dp"
+                    android:layout_marginLeft="@dimen/dp15"
+                    android:layout_marginRight="@dimen/dp15"
+                    android:orientation="horizontal">
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:orientation="vertical">
+
+                        <bike.gymproject.viewlibray.BebasNeueTextView
+                            android:id="@+id/tv_bmi_value"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:text="@string/no_data"
+                            android:textColor="@color/common_white"
+                            android:textSize="@dimen/sp24" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_bmi_unitl"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold"
+                                android:text="@string/bmi"
+                                android:textColor="@color/common_gray_color"
+                                android:textSize="@dimen/sp12" />
+
+                            <TextView
+                                android:id="@+id/tv_bmi_standard"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold"
+                                android:text="111"
+                                android:textSize="@dimen/sp12"
+                                android:visibility="visible" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal">
+
+                            <bike.gymproject.viewlibray.AkrobatNumberTextView
+                                android:id="@+id/tv_bfp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textColor="@color/common_white"
+                                android:textSize="@dimen/sp24" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold"
+                                android:text="%"
+                                android:textColor="@color/common_white"
+                                android:textSize="@dimen/sp12" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/bfp"
+                            android:textColor="@color/common_gray_color"
+                            android:textSize="@dimen/sp12" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </phone.gym.jkcq.com.socialmodule.shadow.ShadowLayout>
+
+        <bike.gymproject.viewlibray.ItemView
+            android:id="@+id/item_screen_time"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp70"
+            android:visibility="visible"
+            app:contentSize="@dimen/sp12"
+            app:contentTextColor="@color/common_gray_color"
+            app:itemText="@string/measuring_report"
+            app:itemTextColor="@color/common_white"
+            app:itemviewTitleSize="@dimen/sp16"
+            app:remindIcon="@drawable/icon_messure_rusult"
+            app:showArrow="true"
+            app:showBottomLine="true"
+            app:showCheckModel="false"
+            app:showRemind="true" />
+    </LinearLayout>
+
+</LinearLayout>

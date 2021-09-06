@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="beforeDescendants"
+    android:id="@+id/nestedScroll"
+    android:focusableInTouchMode="true"
+    android:background="@color/common_bind_bg"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/common_bind_bg"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/layout_head"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:background="@color/common_view_color">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_mine_message"
+                android:layout_width="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/iv_mine_scan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/iv_mine_message"
+                    android:layout_toLeftOf="@+id/layout_mine_message"
+                    android:padding="@dimen/dp15"
+                    android:src="@drawable/icon_mine_scan" />
+
+                <ImageView
+                    android:id="@+id/iv_mine_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginRight="@dimen/dp15"
+                    android:padding="@dimen/dp15"
+                    android:src="@drawable/icon_mine_message" />
+
+                <TextView
+                    android:id="@+id/tv_message_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:paddingTop="1dp"
+                    android:paddingBottom="1dp"
+                    android:background="@drawable/shape_text_red_bg"
+                    android:gravity="center"
+                    android:text="9"
+                    android:visibility="invisible"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp10"
+                    app:layout_constraintCircle="@id/iv_mine_message"
+                    app:layout_constraintCircleAngle="45"
+                    app:layout_constraintCircleRadius="12dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"></TextView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/layout_common_head"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_mine_message"
+                android:orientation="horizontal">
+                <brandapp.isport.com.basicres.commonview.RoundImageView
+                    android:id="@+id/iv_head"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp15"
+                    android:src="@drawable/icon_defs"
+                    app:border_outside_color="@color/white"
+                    app:border_thickness="2dp" />
+
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    style="@style/etdit_nikename"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:layout_toLeftOf="@+id/iv_mine_left"
+                    android:layout_toRightOf="@+id/iv_head"
+                    android:textStyle="bold"
+                    android:gravity="left"
+                    android:ellipsize="end"
+                    android:inputType="text"
+                    android:text="@string/enter_nickname"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp18"
+
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/iv_mine_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:padding="@dimen/dp15"
+                    android:src="@drawable/icon_arrow_white_left" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_below="@+id/layout_common_head"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <bike.gymproject.viewlibray.FriendItemView
+                    android:id="@+id/tv_friend"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:friendItemviewTitleColor="@color/white"
+                    app:friendItemviewTitleSize="13sp"
+                    app:friendItemviewTitleStr="@string/friend"
+                    app:friendItemviewValueColor="@color/white"
+                    app:friendItemviewValueSize="15sp"
+                    app:friendItemviewValueStr="0" />
+
+                <bike.gymproject.viewlibray.FriendItemView
+                    android:id="@+id/tv_follow"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:friendItemviewTitleColor="@color/white"
+                    app:friendItemviewTitleSize="13sp"
+                    app:friendItemviewTitleStr="@string/attention"
+                    app:friendItemviewValueColor="@color/white"
+                    app:friendItemviewValueSize="15sp"
+                    app:friendItemviewValueStr="0" />
+
+                <bike.gymproject.viewlibray.FriendItemView
+                    android:id="@+id/tv_fans"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:friendItemviewTitleColor="@color/white"
+                    app:friendItemviewTitleSize="13sp"
+                    app:friendItemviewTitleStr="@string/fans_club"
+                    app:friendItemviewValueColor="@color/white"
+                    app:friendItemviewValueSize="15sp"
+                    app:friendItemviewValueStr="0" />
+
+                <bike.gymproject.viewlibray.FriendItemView
+                    android:id="@+id/tv_feed"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:friendItemviewTitleColor="@color/white"
+                    app:friendItemviewTitleSize="13sp"
+                    app:friendItemviewTitleStr="@string/feed"
+                    app:friendItemviewValueColor="@color/white"
+                    app:friendItemviewValueSize="15sp"
+                    app:friendItemviewValueStr="0" />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+        <com.isport.brandapp.banner.recycleView.RefrushRecycleView
+            android:id="@+id/rc_home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/layout_head"
+            android:layout_marginBottom="@dimen/dp20"
+            android:layout_marginTop="-100dp"
+            android:nestedScrollingEnabled="false">
+
+        </com.isport.brandapp.banner.recycleView.RefrushRecycleView>
+
+
+        <!--<TextView-->
+        <!--android:id="@+id/tv_te"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:onClick="onClick"-->
+        <!--android:text="请求测试"-->
+        <!--android:textSize="@dimen/sp20" />-->
+
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+
+    <brandapp.isport.com.basicres.commonview.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp50"
+        android:background="@color/common_bg"></brandapp.isport.com.basicres.commonview.TitleBarView>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginTop="@dimen/dp10"
+        android:layout_marginRight="@dimen/dp15"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_btn_white_20_bg"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/dp20"
+                android:paddingBottom="@dimen/dp15">
+
+                <phone.gym.jkcq.com.socialmodule.shadow.ShadowLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    app:hl_cornerRadius="20dp"
+                    app:hl_shadowColor="#0d000000"
+                    app:hl_shadowLimit="10dp"
+                    app:hl_shadowOffsetY="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/dp15"
+                        android:paddingRight="@dimen/dp15">
+
+                        <TextView
+                            android:id="@+id/tv_update_time"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/dp8"
+                            android:text=""
+                            android:textColor="@color/common_white"
+                            android:textSize="@dimen/dp12"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal">
+
+
+                            <bike.gymproject.viewlibray.AkrobatNumberTextView
+                                android:id="@+id/tv_current_hour"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="@color/common_view_color"
+                                android:textSize="66sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/unit_hour"
+                                android:textColor="@color/common_white"
+                                android:textSize="@dimen/sp20"
+                                android:textStyle="bold" />
+
+                            <bike.gymproject.viewlibray.AkrobatNumberTextView
+                                android:id="@+id/tv_current_min"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="@color/common_view_color"
+                                android:textSize="66sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/unit_min"
+                                android:textColor="@color/common_white"
+                                android:textSize="@dimen/sp20"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_current_state"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp9"
+                            android:layout_marginBottom="@dimen/dp26"
+                            android:text="浅睡5:30～6:45"
+                            android:textColor="#6E6E77"
+                            android:textSize="16sp"></TextView>
+
+
+                        <bike.gymproject.viewlibray.ContinousBarChartView
+                            android:id="@+id/continousBarChartView"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp60"
+                            android:layout_marginBottom="@dimen/dp10" />
+                    </LinearLayout>
+                </phone.gym.jkcq.com.socialmodule.shadow.ShadowLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="0.05"></View>
+
+                    <bike.gymproject.viewlibray.chart.PieChartViewHeart
+                        android:id="@+id/pieChartView"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="0.05"></View>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:paddingRight="30dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/dp10"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/watch_sleep_total_time"
+                                android:textColor="@color/common_white"
+                                android:textSize="@dimen/sp12"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_sum_hour"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="@color/common_white"
+                                android:textSize="@dimen/sp16"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/unit_hour"
+                                android:textColor="@color/common_white"
+                                android:textSize="@dimen/sp12"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_sum_min"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="@color/common_white"
+                                android:textSize="@dimen/sp16"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/unit_min"
+                                android:textColor="@color/common_white"
+                                android:textSize="@dimen/sp12"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+
+                        <bike.gymproject.viewlibray.WatchHourMinuteView
+                            android:id="@+id/whmv_deep_sleep"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:WatchTitleSize="@dimen/sp12"
+                            app:iconColor="@color/common_end_color" />
+
+                        <bike.gymproject.viewlibray.WatchHourMinuteView
+                            android:id="@+id/whmv_sleep"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:WatchTitleSize="@dimen/sp12"
+                            app:iconColor="@color/common_end_color" />
+
+                        <bike.gymproject.viewlibray.WatchHourMinuteView
+                            android:id="@+id/whmv_wakeup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:WatchTitleSize="@dimen/sp12"
+                            app:iconColor="@color/common_text_color" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_litter_sleep"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="@dimen/dp15"
+                android:layout_marginBottom="@dimen/dp15"
+                android:background="@drawable/shape_btn_white_20_bg"
+                android:paddingLeft="16dp"
+                android:paddingRight="13dp">
+
+                <ImageView
+                    android:id="@+id/iv_litter_sleep"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/watch_sleep_litter" />
+
+                <TextView
+                    android:id="@+id/tv_sleep_litter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/iv_litter_sleep"
+                    android:text="@string/watch_sleep_litter"
+                    android:textColor="@color/common_text_color"
+                    android:textSize="@dimen/sp16" />
+
+                <TextView
+                    android:id="@+id/sporadic_naps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@+id/iv_sleep_right"
+                    android:text="13:10～13:50 40分钟"
+                    android:textColor="@color/common_tips_color"
+                    android:textSize="@dimen/sp16"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/iv_sleep_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/icon_arrow_left" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_text_light_green_bg"
+                android:paddingLeft="@dimen/dp15"
+                android:paddingTop="@dimen/dp10"
+                android:paddingRight="@dimen/dp15"
+                android:paddingBottom="@dimen/dp10"
+                android:text="@string/activity_sleep_history_exp"
+                android:textColor="@color/common_white"
+                android:textSize="@dimen/sp14" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="58dp"
+                android:paddingTop="9dp"
+                android:paddingBottom="24dp"
+                android:visibility="gone"
+
+                >
+
+                <!--<ImageView-->
+                <!--android:layout_width="34dp"-->
+                <!--android:layout_height="34dp"/>-->
+
+                <TextView
+                    android:id="@+id/sleep_total_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/watch_sleep_total_time"
+                    android:textColor="@color/common_text_color"
+                    android:textSize="@dimen/sp18" />
+
+                <TextView
+                    android:id="@+id/sleep_total_time_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/sleep_total_time"
+                    android:text=""
+                    android:textColor="@color/common_tips_color"
+                    android:textSize="@dimen/sp14" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>
+

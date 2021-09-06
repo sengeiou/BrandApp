@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true">
+
+
+    <brandapp.isport.com.basicres.commonview.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        app:leftIcon="@drawable/icon_back"
+        app:titleText="@string/app_name" />
+
+    <View
+        android:id="@+id/frame_body_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_line1"
+        android:layout_below="@+id/title_bar"
+        android:background="@color/common_bind_title"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/frame_body_line"
+        android:background="@color/common_bg">
+
+        <LinearLayout
+            android:id="@+id/frame_body_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible" />
+    </FrameLayout>
+
+</RelativeLayout>

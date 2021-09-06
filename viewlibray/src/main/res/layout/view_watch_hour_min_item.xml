@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+
+        <bike.gymproject.viewlibray.chart.CircleView
+            android:id="@+id/iv_hour_min"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:id="@+id/tv_value"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/common_text_color"
+            android:textSize="13sp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <bike.gymproject.viewlibray.BebasNeueTextView
+                android:id="@+id/tv_hour_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dp5"
+                android:textColor="@color/common_white"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tv_hour_unitl"
+                android:text="@string/pickerview_hours"
+                android:layout_marginLeft="@dimen/dp5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/common_white"
+                android:textSize="13sp" />
+
+            <bike.gymproject.viewlibray.BebasNeueTextView
+                android:id="@+id/tv_min_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|right"
+                android:textColor="@color/common_white"
+                android:layout_marginLeft="@dimen/dp5"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tv_min_unitl"
+                android:text="@string/pickerview_minutes"
+                android:layout_marginLeft="@dimen/dp5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/common_white"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

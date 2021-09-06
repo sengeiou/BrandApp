@@ -1,0 +1,75 @@
+apply plugin: 'com.android.library'
+apply plugin: 'org.greenrobot.greendao'
+
+
+android {
+    def versions = rootProject.ext.versions
+    compileSdkVersion versions.sdkCompileVersion
+    defaultConfig {
+        minSdkVersion versions.sdkMinVersion
+        targetSdkVersion versions.sdkTargetVersion
+        versionCode versions.appVersionCode
+        versionName versions.appVersionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+    compileOptions {
+
+        sourceCompatibility JavaVersion.VERSION_1_8
+
+        targetCompatibility JavaVersion.VERSION_1_8
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "boolean", "SHOW_LOG", "Boolean.parseBoolean(\"true\")"
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+            java.srcDirs = ['src/main/java', 'src/main/java-gen']
+        }
+    }
+
+}
+
+greendao {
+    schemaVersion 3
+    daoPackage 'brandapp.isport.com.basicres.gen'
+    targetGenDir 'src/main/java'
+}
+
+repositories {
+    flatDir {
+        // dirs 'libs'
+        dirs '../basiclib/libs','libs'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+
+//    testImplementation 'junit:junit:4.12'
+//    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+//    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+
+    implementation project(':commonres')
+    implementation project(':viewlibray')
+    implementation project(':basiclib')
+    implementation project(':blelibrary')
+    api 'com.alibaba:arouter-api:1.5.0'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+}

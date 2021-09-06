@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/layout_top_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <com.isport.brandapp.Home.customview.MainHeadLayout
+        android:id="@+id/layout_mainHeadLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10">
+
+    </com.isport.brandapp.Home.customview.MainHeadLayout>
+
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/home_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/dp25"
+        android:background="@color/common_bg"
+        app:srlEnableOverScrollBounce="true">
+
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srlAccentColor="@color/common_white"
+            app:srlTextFinish="@string/sync_data"
+            app:srlTextRefreshing="@string/sync_data"/>
+
+        <com.isport.brandapp.banner.recycleView.RefrushRecycleView
+            android:id="@+id/rc_home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/common_bg">
+
+        </com.isport.brandapp.banner.recycleView.RefrushRecycleView>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+

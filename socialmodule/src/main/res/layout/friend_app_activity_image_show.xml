@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2" />
+
+    <ImageView
+        android:id="@+id/iv_pic"
+        android:layout_width="match_parent"
+        android:layout_height="375dp"
+        android:layout_gravity="center"
+        android:src="@drawable/icon_def" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.4"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/btn_uplode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view_two"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/app_frame_green"
+            android:gravity="center"
+            android:paddingBottom="@dimen/dp10"
+            android:paddingLeft="@dimen/dp25"
+            android:paddingRight="@dimen/dp25"
+            android:paddingTop="@dimen/dp10"
+            android:text="@string/friend_change_photo"
+            android:textColor="@drawable/app_frame_view_color_text"
+            android:textSize="@dimen/sp14" />
+    </LinearLayout>
+
+</LinearLayout>

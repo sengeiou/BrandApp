@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    android:orientation="vertical"
+    android:padding="@dimen/dp15">
+
+    <LinearLayout
+        android:id="@+id/layout_nikename"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        android:layout_marginTop="@dimen/dp15"
+        android:background="@drawable/shape_btn_white_20_bg"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="@string/nickname"
+            android:textColor="@color/common_white"
+            android:textSize="@dimen/sp16" />
+
+        <EditText
+            android:id="@+id/et_name"
+            style="@style/login_edit_style"
+            android:gravity="right|center_vertical"
+            android:hint="@string/enter_nickname"
+            android:inputType="text"
+            android:lines="1"
+            android:maxLength="18"
+            android:maxLines="1" />
+    </LinearLayout>
+
+
+    <bike.gymproject.viewlibray.ItemView
+        android:id="@+id/item_date_gender"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        android:layout_below="@id/layout_nikename"
+        android:layout_marginTop="@dimen/dp15"
+        android:background="@drawable/shape_btn_white_20_bg"
+        android:onClick="onClick"
+        app:contentSize="@dimen/sp16"
+        app:contentText="@string/gender_male"
+        app:contentTextColor="@color/common_white"
+        app:itemText="@string/gender"
+        app:itemviewTitleSize="@dimen/sp16"
+        app:showArrow="true"
+        app:showBottomLine="false"
+        app:showCheckModel="false"
+        app:showRemind="false" />
+
+
+    <bike.gymproject.viewlibray.ItemView
+        android:id="@+id/item_date_height"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        android:layout_below="@id/item_date_gender"
+        android:layout_marginTop="@dimen/sp16"
+        android:background="@drawable/shape_btn_white_20_bg"
+        android:onClick="onClick"
+        app:contentSize="@dimen/sp14"
+        app:contentTextColor="@color/common_white"
+        app:itemText="@string/body_height"
+        app:itemviewTitleSize="@dimen/sp16"
+        app:showArrow="true"
+        app:showBottomLine="false"
+        app:showCheckModel="false"
+        app:showRemind="false" />
+
+
+    <bike.gymproject.viewlibray.ItemView
+        android:id="@+id/item_date_weight"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        android:layout_below="@id/item_date_height"
+        android:layout_marginTop="@dimen/dp15"
+        android:background="@drawable/shape_btn_white_20_bg"
+        android:onClick="onClick"
+        app:contentSize="@dimen/sp16"
+        app:contentTextColor="@color/common_white"
+        app:itemText="@string/body_weight"
+        app:itemviewTitleSize="@dimen/dp16"
+        app:showArrow="true"
+        app:showBottomLine="false"
+        app:showCheckModel="false"
+        app:showRemind="false" />
+
+
+    <bike.gymproject.viewlibray.ItemView
+        android:id="@+id/item_date_birth"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height"
+        android:layout_below="@id/item_date_weight"
+        android:layout_marginTop="@dimen/dp15"
+        android:background="@drawable/shape_btn_white_20_bg"
+        android:onClick="onClick"
+        app:contentSize="@dimen/sp16"
+        app:contentText="@string/birthday"
+        app:contentTextColor="@color/common_white"
+        app:itemText="@string/birthday"
+        app:itemTextColor="@color/common_white"
+        app:itemviewTitleSize="@dimen/sp16"
+        app:showArrow="true"
+        app:showBottomLine="false"
+        app:showCheckModel="false"
+        app:showRemind="false" />
+
+
+    <TextView
+        android:id="@+id/btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp50"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dp45"
+        android:background="@drawable/common_button_bg_selector"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:text="@string/done"
+        android:textColor="@drawable/common_button_text_selector"
+        android:textSize="@dimen/sp18" />
+</RelativeLayout>

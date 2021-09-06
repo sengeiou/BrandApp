@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ShadowLayout">
+        <!-- 1、关于阴影 -->
+        <!--阴影：是否要显示阴影，可能有只想用shape和selector功能，不想要阴影-->
+        <attr name="hl_shadowHidden" format="boolean" />
+        <!--阴影：阴影颜色-->
+        <attr name="hl_shadowColor" format="color" />
+        <!--阴影：阴影的扩散范围(也可以理解为扩散程度)-->
+        <attr name="hl_shadowLimit" format="dimension" />
+        <!--控件区域是否对称，默认是对称。不对称的话，那么控件区域随着阴影区域走-->
+        <attr name="hl_shadowSymmetry" format="boolean" />
+        <!--阴影：x轴的偏移量-->
+        <attr name="hl_shadowOffsetX" format="dimension" />
+        <!--阴影：y轴的偏移量-->
+        <attr name="hl_shadowOffsetY" format="dimension" />
+        <!--阴影：左边是否隐藏阴影-->
+        <attr name="hl_shadowHiddenLeft" format="boolean" />
+        <!--阴影：右边是否隐藏阴影-->
+        <attr name="hl_shadowHiddenRight" format="boolean" />
+        <!--阴影：上边是否隐藏阴影-->
+        <attr name="hl_shadowHiddenTop" format="boolean" />
+        <!--阴影：下面是否隐藏阴影-->
+        <attr name="hl_shadowHiddenBottom" format="boolean" />
+
+
+        <!-- 2、关于圆角 -->
+        <!--圆角：统一大小，其中包括了阴影，shape、背景图、stroke边框圆角-->
+        <attr name="hl_cornerRadius" format="dimension" />
+        <!--圆角：左上圆角。设置后会忽略hl_cornerRadius的值-->
+        <attr name="hl_cornerRadius_leftTop" format="dimension" />
+        <!--圆角：右上圆角。同上-->
+        <attr name="hl_cornerRadius_rightTop" format="dimension" />
+        <!--圆角：左下圆角。同上-->
+        <attr name="hl_cornerRadius_leftBottom" format="dimension" />
+        <!--圆角：右下圆角。同上-->
+        <attr name="hl_cornerRadius_rightBottom" format="dimension" />
+
+
+        <!-- 3、关于shape及selector -->
+        <!-- shape及selector样式：pressed、sectored -->
+        <attr name="hl_shapeMode">
+            <enum name="pressed" value="1" />
+            <enum name="selected" value="2" />
+        </attr>
+
+        <!-- 为false的默认背景，可单独使用-->
+        <attr name="hl_layoutBackground" format="reference|color" />
+        <!-- 为true的默认背景，必须搭配hl_layoutBackground属性使用。否则报错-->
+        <attr name="hl_layoutBackground_true" format="reference|color" />
+
+        <!-- stroke样式，stroke的宽度-->
+        <attr name="hl_strokeWith" format="dimension" />
+        <!-- 为false时，默认的stoke颜色值，可单独使用-->
+        <attr name="hl_strokeColor" format="color" />
+        <!-- 为true时，默认的stoke颜色值，必须搭配hl_strokeColor属性使用。否则报错-->
+        <attr name="hl_strokeColor_true" format="color" />
+
+
+        <!-- 这里最终舍弃了系统clickable的方案，因为系统系统主动设置setOnClickListener后，会主动设置成true,所以这里采用自定义 -->
+        <attr name="clickable" format="boolean" />
+        <!-- hl_clickable为false时，要展示的图片或颜色-->
+        <attr name="hl_layoutBackground_clickFalse" format="reference|color" />
+
+
+    </declare-styleable>
+    <attr name="progressColor" format="color" />
+    <attr name="progressBackColor" format="color" />
+    <attr name="progress" format="integer" />
+    <attr name="minProgress" format="integer" />
+    <attr name="maxProgress" format="integer" />
+
+    <declare-styleable name="ProgressButton">
+        <attr name="progressColor" />
+        <attr name="progressBackColor" />
+        <attr name="buttonColor" format="color" />
+        <attr name="cornerRadius" format="dimension" />
+        <attr name="progress" />
+        <attr name="minProgress" />
+        <attr name="maxProgress" />
+        <attr name="progressMargin" format="dimension" />
+    </declare-styleable>
+
+
+    <declare-styleable name="ItemView">
+        <attr name="itemText" format="reference|string" />
+        <attr name="contentText" format="reference|string" />
+        <attr name="remindIcon" format="reference" />
+        <attr name="showRemind" format="boolean" />
+        <attr name="showArrow" format="boolean" />
+        <attr name="showBottomLine" format="boolean" />
+        <attr name="showCheckModel" format="boolean" />
+        <attr name="showCheckModelChange" format="boolean" />
+        <attr name="showRadioModelChange" format="boolean" />
+        <attr name="isChecked" format="boolean" />
+        <attr name="itemTextColor" format="color"/>
+        <attr name="contentTextColor" format="color"/>
+        <attr name="itemviewTitleSize" format="dimension"/>
+        <attr name="contentSize" format="dimension"/>
+    </declare-styleable>
+    <declare-styleable name="FriendItemView">
+        <attr name="friendItemviewValueStr" format="reference|string" />
+        <attr name="friendItemviewTitleStr" format="reference|string" />
+        <attr name="friendItemviewValueColor" format="color"/>
+        <attr name="friendItemviewTitleColor" format="color"/>
+        <attr name="friendItemviewValueSize" format="dimension"/>
+        <attr name="friendItemviewTitleSize" format="dimension"/>
+    </declare-styleable>
+    <declare-styleable name="DeviceItemView">
+        <attr name="deviceValueText" format="reference|string" />
+        <attr name="deviceResultText" format="reference|string" />
+        <attr name="deviceTimeText" format="reference|string" />
+        <attr name="deviceResultTipsText" format="reference|string" />
+        <attr name="deviceValueUnitText" format="reference|string" />
+        <attr name="deviceResultUnitText" format="reference|string" />
+        <attr name="deviceResultIcon" format="reference" />
+        <attr name="deviceShowUnit" format="boolean" />
+        <attr name="deviceValueTextColor" format="color"></attr>
+        <attr name="deviceResultTextColor" format="color"></attr>
+        <attr name="deviceTimeTextColor" format="color"></attr>
+        <attr name="deviceResultTipsTextColor" format="color"></attr>
+        <attr name="deviceValueTextSize" format="dimension"></attr>
+        <attr name="deviceResultTextSize" format="dimension"></attr>
+        <attr name="deviceTimeTextSize" format="dimension"></attr>
+        <attr name="deviceResultTipsTextSize" format="dimension"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="WatchModeCheckBox">
+        <attr name="modeChecked" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="SleepItem">
+        <attr name="valuseText" format="reference|string" />
+        <attr name="titleText" format="reference|string" />
+        <attr name="unitText" format="reference|string" />
+        <attr name="valuseColor" format="color"></attr>
+        <attr name="titleColor" format="color"></attr>
+        <attr name="unitColor" format="color"></attr>
+        <attr name="valuseSize" format="dimension" />
+        <attr name="titleSize" format="dimension" />
+        <attr name="unitSize" format="dimension" />
+        <attr name="leftIcon" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="WatchTypeDataView">
+        <attr name="valueText" format="reference|string" />
+        <attr name="typeText" format="reference|string" />
+        <attr name="uniteText" format="reference|string" />
+        <attr name="valueColor" format="color" />
+        <attr name="typeColor" format="color" />
+        <attr name="uniteColor" format="color" />
+        <attr name="valueSize" format="dimension" />
+        <attr name="typeSize" format="dimension" />
+        <attr name="uniteSize" format="dimension" />
+        <attr name="bg" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="HeartRateIngView">
+        <attr name="rulerHeight" format="dimension" />               <!--尺子的高度-->
+        <attr name="rulerToResultgap" format="dimension" />          <!--尺子距离结果的高度-->
+        <attr name="scaleGap" format="dimension" />                  <!--刻度间距-->
+        <attr name="scaleCount" format="integer" />                  <!--刻度数-->
+        <attr name="firstScale" format="float" />                    <!--默认选中的刻度-->
+        <attr name="maxScale" format="integer" />                    <!--最大刻度-->
+        <attr name="minScale" format="integer" />                    <!--最小刻度-->
+        <attr name="bgColor" format="color" />                       <!--背景色-->
+        <attr name="smallScaleColor" format="color" />               <!--小刻度的颜色-->
+        <attr name="midScaleColor" format="color" />                 <!--中刻度的颜色-->
+        <attr name="largeScaleColor" format="color" />               <!--大刻度的颜色-->
+        <attr name="scaleNumColor" format="color" />                 <!--刻度数的颜色-->
+        <attr name="resultNumColor" format="color" />                <!--结果字体的颜色-->
+        <attr name="unit" format="string" />                         <!--单位-->
+        <!--<attr name="unitColor" format="color" />                     &lt;!&ndash;单位颜色&ndash;&gt;-->
+        <attr name="smallScaleStroke" format="dimension" />          <!--小刻度的宽度-->
+        <attr name="midScaleStroke" format="dimension" />            <!--中刻度的宽度-->
+        <attr name="largeScaleStroke" format="dimension" />          <!--大刻度的宽度-->
+        <attr name="resultNumTextSize" format="dimension" />         <!--结果字体大小-->
+        <attr name="scaleNumTextSize" format="dimension" />          <!--刻度字体大小-->
+        <attr name="unitTextSize" format="dimension" />              <!--单位字体大小-->
+        <attr name="showScaleResult" format="boolean" />             <!--是否显示结果值-->
+        <attr name="isBgRoundRect" format="boolean" />               <!--背景是否圆角-->
+        <attr name="scaleLimit" format="integer" />                <!--相邻2个刻度之间的数量-->
+
+    </declare-styleable>
+    <declare-styleable name="WatchHourMinuteView">
+        <attr name="iconColor" format="color" />
+        <attr name="Watchtexttitlecolor" format="color" />
+        <attr name="WatchtextMincolor" format="color" />
+        <attr name="WatchtextMinUnitlcolor" format="color" />
+        <attr name="Watchtextvalue" format="string" />
+        <attr name="WatchTitleSize" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="WatchStepChartView">
+        <attr name="leftColor" format="color" />
+        <attr name="leftColorBottom" format="color" />
+        <attr name="selectLeftColor" format="color" />
+        <attr name="rightColor" format="color" />
+        <attr name="rightColorBottom" format="color" />
+        <attr name="selectRightColor" format="color" />
+        <attr name="xyColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="ShareItem">
+        <attr name="sharevaluseText" format="reference|string" />
+        <attr name="sharetitleText" format="reference|string" />
+        <attr name="shareunitText" format="reference|string" />
+        <attr name="sharebottomText" format="reference|string" />
+        <attr name="sharevaluseColor" format="color"></attr>
+        <attr name="sharetitleColor" format="color"></attr>
+        <attr name="shareunitColor" format="color"></attr>
+        <attr name="sharebottomColor" format="color"></attr>
+        <attr name="sharevaluseSize" format="dimension" />
+        <attr name="sharetitleSize" format="dimension" />
+        <attr name="shareunitSize" format="dimension" />
+        <attr name="sharebottomSize" format="dimension" />
+        <attr name="shareisShowLine" format="boolean" />
+        <attr name="shareisUnit" format="boolean" />
+        <attr name="shareisValue" format="boolean" />
+        <attr name="shareisTitle" format="boolean" />
+        <attr name="sharetitleIcon" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="BikeItemView">
+        <attr name="numberColor" format="color" />
+        <attr name="numberSize" format="dimension" />
+
+        <attr name="nameColor" format="color" />
+        <attr name="nameSize" format="dimension" />
+
+        <attr name="hrValueColor" format="color" />
+        <attr name="hrValueSize" format="dimension" />
+
+        <attr name="speedColor" format="color" />
+        <attr name="speedSize" format="dimension" />
+
+        <attr name="speedUnitlColor" format="color" />
+        <attr name="speedUnitlSize" format="dimension" />
+
+        <attr name="disColor" format="color" />
+        <attr name="disSize" format="dimension" />
+
+        <attr name="calTitleColor" format="color" />
+        <attr name="calTitleSize" format="dimension" />
+        <attr name="calTitleValue" format="reference|string" />
+
+        <attr name="calValueColor" format="color" />
+        <attr name="calValueSize" format="dimension" />
+
+        <attr name="lightTitleColor" format="color" />
+        <attr name="lightTitleSize" format="dimension" />
+        <attr name="lightTitleValue" format="reference|string" />
+
+        <attr name="ligthValueColor" format="color" />
+        <attr name="ligthValueSize" format="dimension" />
+
+        <attr name="hrZonesTitleColor" format="color" />
+        <attr name="hrZonesTitleSize" format="dimension" />
+        <attr name="hrZonesTitleValue" format="reference|string" />
+
+        <attr name="hrZonesValueColor" format="color" />
+        <attr name="hrZonesValueSize" format="dimension" />
+
+
+    </declare-styleable>
+
+    <declare-styleable name="RippleBackground">
+        <attr name="rb_color" format="color" />
+        <attr name="rb_strokeWidth" format="dimension" />
+        <attr name="rb_radius" format="dimension" />
+        <attr name="rb_duration" format="integer" />
+        <attr name="rb_rippleAmount" format="integer" />
+        <attr name="rb_scale" format="float" />
+        <attr name="rb_type" format="enum">
+            <enum name="fillRipple" value="0" />
+            <enum name="strokeRipple" value="1" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="TitleView">
+        <attr name="title_bg_start_color" format="color" />
+        <attr name="title_bg_end_color" format="color" />
+        <attr name="title_icon" format="reference" />
+        <attr name="title_radio_left_top" format="dimension" />
+        <attr name="title_radio_left_bottom" format="dimension" />
+        <attr name="title_radio_right_top" format="dimension" />
+        <attr name="title_radio_right_bottom" format="dimension" />
+        <attr name="title_value" format="string" />
+        <attr name="title_show_icon" format="boolean" />
+
+    </declare-styleable>
+
+    <declare-styleable name="TextViewImageView">
+        <attr name="text_image_view_text_value" format="string" />
+        <attr name="text_image_view_text_title_value" format="string" />
+        <attr name="text_image_view_text_number_value" format="string" />
+        <attr name="text_image_view_text_color" format="color" />
+        <attr name="text_image_view_text_title_color" format="color" />
+        <attr name="text_image_view_text_number_color" format="color" />
+        <attr name="text_image_view_text_size" format="dimension" />
+        <attr name="text_image_view_text_title_size" format="dimension" />
+        <attr name="text_image_view_text_number_size" format="dimension" />
+        <attr name="text_image_view_text_icon" format="reference" />
+        <attr name="text_image_view_text_show_icon" format="boolean" />
+        <attr name="text_image_view_text_show_title_value" format="boolean" />
+        <attr name="text_image_view_text_show_number_value" format="boolean" />
+
+
+    </declare-styleable>
+
+    <declare-styleable name="VerticalItemView">
+        <attr name="certenValue" format="reference|string" />
+        <attr name="certenValueColor" format="color" />
+        <attr name="certenValueTextSize" format="dimension" />
+        <attr name="certenUnitValue" format="reference|string" />
+        <attr name="certenUnitColor" format="color" />
+        <attr name="certenUnitTextSize" format="dimension" />
+        <attr name="unitValue" format="reference|string" />
+        <attr name="unitValueColor" format="color" />
+        <attr name="unitValueTextSize" format="dimension" />
+        <attr name="unitEnValue" format="reference|string" />
+        <attr name="unitEnValueColor" format="color" />
+        <attr name="unitEnValueTextSize" format="dimension" />
+        <attr name="itemIcon" format="reference" />
+        <attr name="showLayout" format="boolean" />
+        <attr name="showCertenUnitl" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="SelectItemView">
+        <attr name="lableValue" format="reference|string" />
+        <attr name="lableColor" format="color" />
+        <attr name="lableTextSize" format="dimension" />
+        <attr name="contenValue" format="reference|string" />
+        <attr name="contentValueColor" format="color" />
+        <attr name="contentTextSize" format="dimension" />
+        <attr name="arrowIcon" format="reference" />
+        <attr name="contentBgIcon" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="pickerview">
+        <attr name="pickerview_gravity">
+            <enum name="center" value="17" />
+            <enum name="left" value="3" />
+            <enum name="right" value="5" />
+        </attr>
+        <attr name="pickerview_textSize" format="dimension" />
+        <attr name="pickerview_textColorOut" format="color" />
+        <attr name="pickerview_textColorCenter" format="color" />
+        <attr name="pickerview_dividerColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="DatePicker">
+        <attr name="type">
+            <flag name="all" value="0" />
+            <flag name="year_month_day_hour_min" value="1" />
+            <flag name="year_month_day" value="2" />
+        </attr>
+        <attr name="cyclic" format="boolean" />
+        <attr name="showLabel" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="RoundProgressBar">
+        <attr name="roundColor" format="color" />
+        <attr name="roundProgressColor" format="color" />
+        <attr name="roundWidth" format="dimension" />
+        <attr name="pointTextColor" format="color" />
+        <attr name="pointTextSize" format="dimension" />
+        <attr name="max" format="integer" />
+        <attr name="textIsDisplayable" format="boolean" />
+        <attr name="cirIsDisplayable" format="boolean" />
+        <attr name="style">
+            <enum name="STROKE" value="0" />
+            <enum name="FILL" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <!-- 图表样式 -->
+    <declare-styleable name="GraphStyle">
+        <attr name="graphTitle" format="string"></attr>
+        <attr name="xAxisName" format="string"></attr>
+        <attr name="yAxisName" format="string"></attr>
+        <attr name="axisTextSize" format="dimension|float"></attr>
+        <attr name="axisTextColor" format="color|integer"></attr>
+        <attr name="lineColor" format="color|integer"></attr>
+        <attr name="yAxisColor" format="color|integer"></attr>
+        <attr name="yTextColor" format="color|integer"></attr>
+        <attr name="graphBgColor" format="color|integer"></attr>
+        <attr name="startMargin" format="dimension|float"></attr>
+        <attr name="viewMargin" format="dimension|float"></attr>
+        <attr name="lineStartX" format="dimension|float"></attr>
+        <attr name="maxorminColor" format="color|float"></attr>
+    </declare-styleable>
+
+
+</resources>

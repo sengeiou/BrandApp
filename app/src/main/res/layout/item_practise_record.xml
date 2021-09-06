@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/dp15"
+    android:background="@drawable/shape_btn_white_20_bg"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <phone.gym.jkcq.com.socialmodule.shadow.ShadowLayout
+        android:id="@+id/mShadowLayout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_gravity="center_horizontal"
+        app:hl_cornerRadius="20dp"
+        app:hl_shadowColor="#0d000000"
+        app:hl_shadowLimit="10dp"
+        app:hl_shadowOffsetY="5dp">
+
+
+        <RelativeLayout
+            android:id="@+id/layout_head"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp70"
+            android:paddingLeft="@dimen/dp15">
+
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textStyle="bold"
+                android:textColor="@color/common_white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_sum_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/iv_arrow_right"
+                android:text="共3次运动"
+                android:textColor="@color/common_tips_color"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/iv_arrow_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/dp15"
+                android:src="@drawable/icon_rope_down"
+                android:textColor="@color/common_name_profile_color"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+    </phone.gym.jkcq.com.socialmodule.shadow.ShadowLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rec_day"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/item_item_practise_record"></androidx.recyclerview.widget.RecyclerView>
+</LinearLayout>

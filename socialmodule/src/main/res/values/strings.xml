@@ -1,0 +1,146 @@
+<resources>
+    <string name="friend_cancel">Cancel</string>
+
+    <string name="pull_to_refresh">Pull to refresh</string>//下拉刷新
+    <string name="xlistview_header_hint_ready">Release immediate refresh</string>//释放立即刷新
+    <string name="xlistview_header_hint_loading">Refreshing&#8230;</string>//正在刷新
+    <string name="xlistview_header_last_time">Recent updates：</string>//最近更新
+    <string name="xlistview_footer_hint_normal">Load more</string>//加载更多
+    <string name="xlistview_footer_hint_loading">Content loading</string>//内容加载中
+    <string name="xlistview_footer_hint_ready">Release load more</string>
+    <string name="friend_no_match_user">No result</string>
+    <string name="please_input_phone">Enter nickname/tel/email</string>
+    <string name="friend_follow">Following</string>//释放载入更多
+    <string name="friend_open_to_scan">Click “Profile-Scan” to follow me</string>
+    <string name="friend_scan">Scan</string>
+    <string name="friend_input_qrcode_to_frame">Please put the qr code into the box</string>
+    <string name="friend_open_light">Flash on</string>
+    <string name="friend_close_light">Flash Off</string>
+    <string name="ensure_unfollow">Confirm to unfollow the user？</string>
+    <string name="friend_each_follow">Friends</string>
+    <string name="friend_already_follow">Following</string>
+    <string name="friend_change_photo">Change</string>
+    <string name="friend_to_follow">Follow</string>//释放载入更多
+    <string name="edit_user_save">Save</string>
+    <string name="friend_enter_nickname">Please enter nickname</string>//请输入昵称
+    <string name="friend_option_success">Successful operation!</string>//请输入昵称
+
+    <string name="friend_dynamic_del">Delete</string>
+    <string name="friend_dynamic_report">Report</string>
+    <string name="friend_dynamic_save_location">Save video to photos</string>
+    <string name="friend_dynamic_save__video_location">Save video to photos</string>
+    <string name="friend_dynamic_hite">Say something</string>
+    <string name="friend_exit_no_save_content">Content will not be saved after exit？</string>
+    <string name="friend_exit">Exit</string>
+    <string name="friend_send_dynamic_success">Post success</string>
+    <string name="friend_send_dynamic_fail">Post failed</string>
+    <string name="friend_send_dynamic">Post</string>
+    <string name="friend_send_content_edit">Edit Content</string>
+    <string name="friend_report_adv">Advertisement</string>
+    <string name="friend_report_other">Else</string>
+    <string name="friend_video_down_succss">download successfully</string>
+    <string name="dynamic_sen">Now</string>
+    <string name="dynamic_min">%1s minutes ago</string>
+    <string name="dynamic_hour">%1s hours ago</string>
+    <string name="dynamic_day">%1s days ago</string>
+
+
+    <string name="empty_data">No data</string>
+    <string name="find">Search</string>
+
+    //cut
+    <string name="trimmed_done">Video clipping completed！</string>
+    <string name="trimming">Clipping the video...</string>
+    <string name="compressing">Compressing the video...</string>
+    <string name="compressed_done">Video compression completed！</string>
+    <string name="video_shoot_tip">Drag to select the clip you want to post in %d seconds or less</string>
+    <string name="open_permission">Open access</string>
+    <string name="video_record_des">To record video, you need to grant access to the camera and microphone.</string>
+    <string name="recording">transcribe</string>
+    <string name="back">go back</string>
+    <string name="finish">complete</string>
+    <string name="no_netWork_try_again">Retry</string>
+    <string name="friend_no_netWork">Unconnected network</string>
+    <string name="friend_cheack_netWork">Please check the network connection</string>
+    <string name="friend_video_play_tip">When enabled, the videos in each stream will play automatically</string>
+    <string name="friend_video_play_wifi">Only WiFi</string>
+    <string name="friend_video_play_wifi_4g">4G And WiFi</string>
+    <string name="friend_video_play_close">Turn off autoplay</string>
+    <string name="friend_current_play_4g">This is a non-WiFi mode,will use cellular data</string>
+    <string name="friend_no_content">There is no content</string>
+    <string name="friend_all">All</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="ensure_delete">Are you sure to delete</string>
+    <string name="friend_edit">Edit</string>
+    <string name="read_failed">Read failed, please re-open</string>
+    <string name="friend_videos">Videos</string>
+    <string name="friend_like">Likes</string>
+    <string name="friend_community_guide_ok">OK</string>
+    <string name="friend_community_guide_tips">Click here\nto post your videos</string>
+    <string name="friend_community_refresh">Is refreshing....</string>
+    <string name="friend_community_refresh_success">Refresh the success</string>
+    <string name="friend_cut_next">Next</string>
+    <string name="friend_cut_back">Back</string>
+    <string name="friend_dynamic_posting">You have a dynamic release in progress, please wait</string>
+
+    <string name="rank_friend">Friends Ranking</string>
+    <string name="stop_use">Disable</string>
+    <string name="ensure_stop_use">Sure to disable?</string>
+    <string name="ensure_stop_tips">After being disabled,your sports data will not appear on the friends list,and your sports ranking function will be turned off</string>
+    <string name="launch_friend_sport_rank">Enable the friend sports ranking function？</string>
+    <string name="launch_you_can">When enabled you can：</string>
+    <string name="see_friend_sport_rank">1.View friend is sports data and ranking</string>
+    <string name="friend_see_your_rank">2.Friends can see your sports data in the rankings</string>
+    <string name="launch_rank">Enable</string>
+    <string name="unit_step">steps</string>
+    <string name="unit_distance">km</string>
+    <string name="unit_kcal">kacl</string>
+    <string name="data_from">Data source：</string>
+    <string name="data_from_watch">Watch/Band</string>
+    <string name="data_from_app">APP</string>
+    <string name="last_week_ranking">Ranking last week</string>
+    <string name="friend_report_send">Send</string>
+    <string name="friend_report_edit_tips">Come and post your comments</string>
+    <string name="comment_number">%1s Comments</string>
+    <string name="comment_reply_number">%1s Reply</string>
+    <string name="comment_author">Author</string>
+    <string name="comment_host">Landlord</string>
+    <string name="comment_reply">Reply\t</string>
+    <string name="invalide_video_can_not_upload">This video is too short,shoot a bit more</string>
+
+
+    <string name="friend_outdoor_step">Step</string>
+    <string name="friend_outdoor_calorie">Calorie</string>
+    <string name="friend_outdoor_running">Outdoor running</string>
+    /**单位名称**/
+    <string name="friend_outdoor_running1">Outdoor\nrunning</string>//深圳市小香蕉科技有限公司
+
+    /**运动**/
+    <string name="friend_treadmill">Treadmill</string>
+    <string name="friend_walking">Walking</string>
+    <string name="friend_tdoor_cycling">Outdoor cycling</string>
+
+    <string name="no_commend">No comments</string>
+    <string name="no_replay">No reply</string>
+    <string name="no_message">No message</string>
+    <string name="commend">Comment</string>
+    <string name="copy_text">Copy</string>
+    <string name="ensure_rope_tips">After being disabled, your skipping data will not appear on the friends list, and your skipping ranking function will be turned off</string>
+    <string name="launch_friend_rope_rank">Enable the skipping ranking function？</string>
+    <string name="see_friend_rope_rank">1、You can view the rope skipping data and ranking of your friends. </string>
+    <string name="friend_see_your_roperank">2、Your friends can see your rope skipping data in the ranking</string>
+    <string name="rope_ranking">Rope skipping ranking</string>
+    <string name="rope_number">Skip numbers</string>
+    <string name="rope_ranking_time">Skip duration</string>
+    <string name="rope_ranking_data_from">Data source:jump rope</string>
+    <string name="rope_unit">Jumps</string>
+    <string name="rope_avg_unit">BPM</string>
+    <string name="rope_challeg_success">Challenge success</string>
+    <string name="rope_challeg_fail">Challenge fail</string>
+    <string name="rope_challeg_type_success">Challenge \"%1s\" success</string>
+    <string name="rope_challeg_type_fail">Challenge \"%1s\" failed</string>
+    <string name="rope_setting_count_unit">%1s numbers</string>
+    <string name="rope_setting_time_unit">%1s seconds</string>
+    <string name="last_measurement">Last Measurement:</string>
+</resources>

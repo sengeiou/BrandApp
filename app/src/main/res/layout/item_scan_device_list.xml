@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginTop="@dimen/dp8"
+        android:layout_marginRight="@dimen/dp15"
+        android:layout_marginBottom="@dimen/dp8"
+        android:background="@drawable/shape_btn_white_20_bg"
+        android:paddingLeft="@dimen/dp15"
+        android:paddingRight="@dimen/dp15">
+
+
+        <TextView
+            android:id="@+id/tv_device_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:textColor="@color/common_white"
+            android:textSize="@dimen/sp16" />
+
+        <TextView
+            android:id="@+id/tv_device_bind"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="11dp"
+            android:layout_marginBottom="11dp"
+            android:background="@drawable/shape_layout_green_bg_19"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dp20"
+            android:paddingRight="@dimen/dp20"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp16" />
+    </RelativeLayout>
+
+</LinearLayout>

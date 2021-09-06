@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_share_content_step"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blank_40"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/dp15"
+    android:visibility="visible">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp80">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp8"
+            android:layout_toRightOf="@id/iv_user_head_step"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_nickname_step"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp15"
+                tools:text="昵称"></TextView>
+
+            <TextView
+                android:id="@+id/tv_time_step"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp4"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp13"
+                tools:text="2020-03-30"></TextView>
+        </LinearLayout>
+
+        <bike.gymproject.viewlibray.CircleImageView
+            android:id="@+id/iv_user_head_step"
+            android:layout_width="@dimen/dp70"
+            android:layout_height="@dimen/dp70"
+            android:layout_centerVertical="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/default_avatar_picture"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="@dimen/dp2" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_step"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp27"
+        android:text="@string/today_step1"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp13"></TextView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp25"
+        android:orientation="horizontal">
+
+        <bike.gymproject.viewlibray.BebasNeueTextView
+            android:id="@+id/tv_step_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dp_64"
+            tools:text="7788"></bike.gymproject.viewlibray.BebasNeueTextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/unit_steps"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp18"></TextView>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp5"
+            android:src="@drawable/icon_distance" />
+
+        <TextView
+            android:id="@+id/tv_dis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/today_dis1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp13"></TextView>
+
+        <bike.gymproject.viewlibray.BebasNeueTextView
+            android:id="@+id/tv_today_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp20"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp22"
+            tools:text="6.00"></bike.gymproject.viewlibray.BebasNeueTextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp5"
+            android:text="@string/watch_step_unite_distance"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp13"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="@dimen/dp10"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp5"
+            android:src="@drawable/icon_cal" />
+
+        <TextView
+            android:id="@+id/tv_cal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="@string/today_cal1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp13"></TextView>
+
+        <bike.gymproject.viewlibray.BebasNeueTextView
+            android:id="@+id/tv_today_consume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp20"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp22"
+            tools:text="373"></bike.gymproject.viewlibray.BebasNeueTextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp5"
+            android:text="@string/unit_kcal"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp13"></TextView>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="@dimen/dp15"
+            android:layout_marginBottom="@dimen/dp15"
+            android:src="@drawable/share_app_logo"></ImageView>
+    </RelativeLayout>
+
+</LinearLayout>
+

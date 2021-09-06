@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">viewlibray</string>
+
+    <string name="pickerview_year">年</string>//年
+    <string name="pickerview_month">月</string>//月
+    <string name="pickerview_day">日</string>//日
+    <string name="pickerview_hours">时</string>//时
+    <string name="pickerview_minutes">分</string>//分
+    <string name="watch_unite_step">步</string>
+    <string name="pickerview_seconds">秒</string>//秒
+
+    <string name="pull_to_refresh">下拉刷新</string>//下拉刷新
+    <string name="xlistview_header_hint_ready">释放立即刷新</string>//释放立即刷新
+    <string name="xlistview_header_hint_loading">正在刷新&#8230;</string>//正在刷新
+    <string name="xlistview_header_last_time">最近更新：</string>//最近更新
+    <string name="xlistview_footer_hint_normal">加载更多</string>//加载更多
+    <string name="xlistview_footer_hint_loading">内容加载中</string>//内容加载中
+    <string name="xlistview_footer_hint_ready">释放载入更多</string>//释放载入更多
+
+    <string name="compared_to_last_time">比上一次</string>
+    <string name="auto_mode">自动模式</string>
+    <string name="active_mode">主动模式</string>
+    <string name="today">今天</string>
+
+    <string name="sleep_awake">清醒</string>
+    <string name="light_1sleep">快速眼动</string>
+    <string name="light_2sleep">浅睡</string>
+    <string name="sleep_deep">深睡</string>
+    <string name="bar_w311_tips">步数：%1$s 步</string>
+    <string name="view_dis_unit">%1$s 公里</string>
+    <string name="rope_ranking_me">(我)</string>
+</resources>

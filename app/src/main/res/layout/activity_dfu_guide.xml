@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/dp10"
+    android:paddingRight="@dimen/dp10">
+
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:paddingBottom="@dimen/dp8"
+        android:text="@string/def_guide"
+        android:textColor="#101D37"
+        android:textSize="@dimen/sp17" />
+
+    <TextView
+        android:id="@+id/tv_conttent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/iv_pic"
+        android:layout_below="@+id/tv_title"
+        android:gravity="center"
+        android:text="@string/w813dfu_guide"
+        android:textColor="#101D37"
+        android:textSize="@dimen/sp15" />
+
+
+    <!-- <ImageView
+         android:id="@+id/iv_pic"
+         android:layout_width="375dp"
+         android:layout_height="314dp"
+         android:layout_centerInParent="true"
+         android:visibility="visible" />-->
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/iv_pic"
+        android:layout_width="375dp"
+        android:layout_height="314dp"
+        android:layout_centerInParent="true"
+        android:visibility="visible" />
+
+
+    <TextView
+        android:id="@+id/btn_known"
+        android:layout_width="225dp"
+        android:layout_height="@dimen/dp46"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/view_three"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/dp25"
+        android:layout_marginTop="@dimen/dp10"
+        android:background="@drawable/app_frame_green"
+        android:gravity="center"
+        android:text="@string/def_know"
+        android:textColor="@drawable/app_frame_view_color_text"
+        android:textSize="@dimen/sp17" />
+
+
+</RelativeLayout>

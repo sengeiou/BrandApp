@@ -1,0 +1,85 @@
+<resources>
+    <string name="common_app_name">basicres</string>
+    <string name="common_please_wait">Loading....</string>
+    <string name="common_sync">Synchronizing data</string>
+    <string name="common_please_check_that_your_network_is_connected">Unconnected network</string>
+    <string name="common_dialog_cancel">Cancel</string>
+    <string name="common_dialog_ok">Done</string>
+    <string name="common_no_network">No network at present, whether to open the network immediately</string>
+
+    <string name="permission_photograph">Please allow access to the camera function so that you can use the scan and camera functions normally</string>
+    <string name="permission_contacts">Please allow access to the address book so that you can save contacts to the address book</string>
+    <string name="permission_recording">Please allow voice access so that you can normally use the send voice function in chat</string>
+    <string name="permission_phone">Please allow phone permissions to be enabled</string>
+    <string name="permission_shortcut">Allow shortcut permissions to be enabled to create check-in shortcuts</string>
+
+    <string name="permission_location0">Please allow the location permission to be enabled so that you can normally use the bluetooth search connection function</string>
+    <string name="permission_location1">Please allow location permissions to be enabled so that you can use the bluetooth search connection and map location functions normally</string>
+    <string name="permission_storage">Please allow the storage permission to be enabled so that you can use the avatar setup function normally</string>
+    <string name="permission_location">location</string>
+    <string name="permission_location2">Please allow the necessary permissions so that you can use the caller alert function normally</string>
+    <string name="permission_location3">Allow the necessary permissions so that you can use the message reminder function properly</string>
+    <string name="permission_vibrate">Please allow vibration permissions to be enabled so that you can normally use the search phone function</string>
+
+    <string name="permission_storage_camera">Allow photo and storage permissions to be enabled so that you can use the profile picture setup function normally</string>
+
+    <string name="permission_tips">Permission to remind</string>
+    <string name="permission_gosetting">Ok,Go Set</string>
+
+    <string name="error_Connection_timeout">Connection timeout</string>
+
+    <string name="login_again">Please login again</string>
+    <string name="comm_sync_data">It is estimated that %1$ss will complete data synchronization</string>
+
+    <!--已整理-->
+
+    <string name="pull_to_refresh">Pull down to sync</string>
+    <string name="parse_error">Parse error</string>
+    <string name="net_err_parse_error">The connection fails</string>
+    <string name="net_err_verification">Certificate verification failed</string>
+    <string name="net_err_unknown">An unknown error</string>
+    <string name="loginout_tips">Logoff notification</string>
+    <string name="battery_tips">电量不足</string>
+    <string name="battery_content">跳绳电量不足，可能会导致连接异常和数据同步失败，请及时为您的跳绳充电</string>
+    <string name="loginout_content">Your account has been taken offline, please log in again</string>
+    <string name="loginout_button_content">Ok,Sign in</string>
+    <string name="take_photo_no_camara_surpport">No camera support</string>
+    <string name="take_photo_no_camara_permission">No camera permissions</string>
+    <string name="take_photo_no_storage_permission">No storage permissions</string>
+
+
+    <string name="friend">Friends</string>
+    <string name="attention">Following</string>
+    <string name="fans_club">Fans</string>
+    <string name="feed">Feed</string>
+
+
+    /**用户个人信息**/
+    <string name="done">Done</string>//完成
+    <string name="head">Photo</string>//头像
+    <string name="set_user_info">User Info</string>//基本信息
+    <string name="enter_nickname">Please enter nickname</string>//请输入昵称
+    <string name="nickname">Nickname</string>//昵称
+    <string name="gender">Gender</string>//性别
+    <string name="gender_male">Male</string>//男
+    <string name="gender_female">Female</string>//女
+    <string name="body_height">Height</string>//身高
+    <string name="birthday">Birthday</string>//出生年月
+    <string name="not_save_alert">You have modified the content whether to save?</string>
+    <string name="edit_info_save">Save</string>
+    <string name="edit_info_not_save">No</string>
+    //确定不保存更改的资料
+    <string name="body_weight">Weight</string>//体重
+    <string name="individual_resume">Personal profile</string>//体重
+    <string name="change_bg">Change</string>//更换背景
+    <string name="edit_user_info">Edit</string>//编辑资料
+    <string name="edit_person_page">Edit</string>//编辑
+    <string name="friend_state_fans">Friends</string>//互相关注
+    <string name="friend_state_follow">Follow</string>//关注
+    <string name="friend_state_friend">Following</string>//取消关注
+    <string name="friend_eidt_user_succsss">Modified successfully</string>
+    <string name="friend_eidt_user_fail">Failed to modify</string>
+    <string name="friend_feed_no_content">No feed</string>
+    <string name="friend_enter_myprofile">Introduce yourself briefly</string>//请输入个人简介
+    <string name="friend_message">Message</string>
+</resources>

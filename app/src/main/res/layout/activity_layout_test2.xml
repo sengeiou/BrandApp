@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp40"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:text="发送数据"
+        android:layout_height="wrap_content"
+        android:onClick="test2SendData1"/>
+
+
+    <bike.gymproject.viewlibray.WatchStepChartView
+        android:layout_marginTop="@dimen/dp30"
+        app:leftColor="@color/red_f3323b"
+        app:rightColor="@color/dark_green"
+        app:leftColorBottom="@color/blue_00aaee"
+        app:rightColorBottom="@color/common_stande_yello"
+        app:xyColor="@color/blank_40"
+        app:selectLeftColor="@color/color_aerobic_exercise"
+        android:id="@+id/testWatchStepChartView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp150"/>
+
+
+
+
+    <EditText
+        android:id="@+id/testInputEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="输入序号"/>
+
+    <Button
+        android:id="@+id/testSendBtn"
+        android:onClick="testSendNotice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="发送"/>
+</LinearLayout>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp8"
+    android:layout_marginBottom="@dimen/dp8"
+    android:background="@drawable/shape_btn_white_20_bg"
+    android:paddingRight="@dimen/dp15"
+    android:paddingBottom="@dimen/dp10">
+
+    <brandapp.isport.com.basicres.commonview.RoundImageView
+        android:id="@+id/iv_head_photo"
+        android:layout_width="@dimen/friend_dp40"
+        android:layout_height="@dimen/friend_dp40"
+        android:layout_alignTop="@+id/tv_nickname"
+        android:layout_marginLeft="@dimen/friend_dp15"
+        android:layout_marginRight="@dimen/friend_dp10"
+        android:scaleType="centerCrop"
+        android:src="@drawable/friend_icon_default_photo"
+        app:border_inside_color="@color/white"
+        app:border_outside_color="#ffe7e8eb"
+        app:border_thickness="@dimen/friend_dp2" />
+
+    <TextView
+        android:id="@+id/tv_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp20"
+        android:layout_marginRight="@dimen/friend_dp10"
+        android:layout_toRightOf="@id/iv_head_photo"
+        android:ellipsize="end"
+        android:textStyle="bold"
+        android:maxWidth="165dp"
+        android:singleLine="true"
+        android:textColor="@color/common_name_color"
+        android:textSize="@dimen/sp16"
+        tools:text="nicknicknicknicknicknicknicknick" />
+
+    <TextView
+        android:id="@+id/tv_acti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp20"
+        android:layout_marginRight="@dimen/friend_dp18"
+        android:layout_toRightOf="@+id/tv_nickname"
+        android:background="@drawable/app_frame_all_green_4radio"
+        android:textStyle="bold"
+        android:paddingLeft="@dimen/dp6"
+        android:paddingTop="@dimen/dp3"
+        android:paddingRight="@dimen/dp6"
+        android:paddingBottom="@dimen/dp3"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/friend_sp11"
+        tools:text="作者" />
+
+
+    <TextView
+        android:id="@+id/tv_send_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_nickname"
+        android:layout_marginTop="@dimen/dp5"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@id/iv_head_photo"
+        android:textColor="@color/common_tips_color"
+        android:textSize="@dimen/sp15"
+        tools:text="3xiaosh" />
+
+    <TextView
+        android:id="@+id/tv_content"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_send_time"
+        android:layout_marginTop="@dimen/dp5"
+        android:layout_marginRight="@dimen/dp70"
+        android:layout_marginBottom="@dimen/dp5"
+        android:layout_toRightOf="@id/iv_head_photo"
+        android:text=""
+        android:textColor="@color/common_white"
+        android:textSize="@dimen/sp15" />
+
+    <TextView
+        android:id="@+id/tv_replay_nikename"
+        android:layout_width="@dimen/dp150"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_nickname"
+        android:layout_marginLeft="@dimen/dp30"
+        android:layout_marginTop="@dimen/dp5"
+        android:layout_toRightOf="@id/iv_head_photo"
+        android:background="@color/transparent"
+        android:textSize="@dimen/sp15" />
+
+    <TextView
+        android:id="@+id/tv_repeat_number"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_below="@+id/tv_content"
+        android:layout_toRightOf="@id/iv_head_photo"
+        android:background="@drawable/shape_gray_bg"
+        android:drawableRight="@drawable/icon_report_right"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp15"
+        android:paddingRight="@dimen/dp15"
+        android:textColor="@color/common_tips_color"
+        android:textSize="@dimen/sp12"
+        tools:text="0条回复" />
+
+    <TextView
+        android:id="@+id/tv_del"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:layout_below="@+id/tv_content"
+        android:layout_toLeftOf="@+id/tv_repeat_number"
+        android:gravity="center"
+        android:paddingLeft="@dimen/dp15"
+        android:paddingRight="@dimen/dp15"
+        android:text="@string/friend_dynamic_del"
+        android:textColor="#ADADBB"
+        android:textSize="@dimen/sp12" />
+
+
+    <ImageView
+        android:id="@+id/iv_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_like_number"
+        android:layout_alignParentRight="true"
+        android:paddingLeft="@dimen/dp15"
+        android:paddingBottom="@dimen/dp20"
+        android:src="@drawable/icon_report_like_nor" />
+
+    <TextView
+        android:id="@+id/tv_like_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tv_nickname"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="@dimen/dp20"
+        android:layout_marginRight="@dimen/dp5"
+        android:text="0"
+        android:textColor="@color/common_name_color"
+        android:textSize="@dimen/sp12"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

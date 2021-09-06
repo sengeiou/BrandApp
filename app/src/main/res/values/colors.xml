@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorAccent">@color/common_bind_title</color>
+    <color name="colorPrimary">@color/common_bind_title</color>
+    <color name="colorPrimaryDark">@color/common_bind_title</color>
+
+    <color name="transparent">#00ffffff</color>
+
+    <color name="blue_78d2f6">#78D2F6</color>
+    <color name="blue_00aaee">#00AAEE</color>
+    <color name="red_f3323b">#F3323B</color>
+</resources>

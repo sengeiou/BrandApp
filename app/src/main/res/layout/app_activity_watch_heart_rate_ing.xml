@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/view_top"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_close_detect"
+        android:layout_below="@+id/view_top">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp15"
+            android:background="@drawable/shape_btn_white_20_bg"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dp28">
+
+
+            <phone.gym.jkcq.com.socialmodule.shadow.ShadowLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:hl_cornerRadius="20dp"
+                app:hl_shadowColor="#0d000000"
+                app:hl_shadowLimit="10dp"
+                app:hl_shadowOffsetY="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="249dp"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/dp20">
+
+                    <pl.droidsonroids.gif.GifImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/bg_measure_hr" />
+
+                    <bike.gymproject.viewlibray.AkrobatNumberTextView
+                        android:id="@+id/tv_watch_heart_rate_bpm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/tv_unitl"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/no_data"
+                        android:textColor="@color/common_view_color"
+                        android:textSize="@dimen/sp46" />
+
+                    <TextView
+                        android:id="@+id/tv_unitl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:textStyle="bold"
+                        android:text="@string/BPM"
+                        android:textColor="@color/common_white"
+                        android:textSize="@dimen/sp16" />
+
+                </RelativeLayout>
+            </phone.gym.jkcq.com.socialmodule.shadow.ShadowLayout>
+
+            <TextView
+                android:id="@+id/tv_watch_heart_rate_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="@dimen/dp19"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@color/common_white"
+                android:textSize="@dimen/sp16" />
+
+            <bike.gymproject.viewlibray.HeartRateIngView
+                android:id="@+id/heartRateIngView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp150"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginRight="@dimen/dp15"
+                app:bgColor="@color/white"
+                app:firstScale="0"
+                app:isBgRoundRect="true"
+                app:largeScaleColor="@color/common_rec"
+                app:largeScaleStroke="2dp"
+                app:midScaleColor="@color/common_rec"
+                app:resultNumColor="@color/common_rec"
+                app:resultNumTextSize="@dimen/sp20"
+                app:rulerHeight="120dp"
+                app:rulerToResultgap="30dp"
+                app:scaleCount="1"
+                app:scaleGap="10dp"
+                app:scaleNumColor="#666666"
+                app:scaleNumTextSize="@dimen/sp16"
+                app:showScaleResult="true" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/tv_close_detect"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp50"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15"
+        android:layout_marginBottom="@dimen/dp15"
+        android:background="@drawable/shape_btn_white_20_bg"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:textStyle="bold"
+        android:text="@string/watch_heart_rate_close_detect"
+        android:textColor="@color/common_white"
+        android:textSize="@dimen/sp18" />
+</RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

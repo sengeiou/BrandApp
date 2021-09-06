@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="friend_grey_line_color">#E7E8EB</color>
+    <color name="friend_text_black_color">#101D37</color>
+    <color name="friend_black_bg">#101D37</color>
+    <color name="shadow_color">#7F000000</color>
+</resources>

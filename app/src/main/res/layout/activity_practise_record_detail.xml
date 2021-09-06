@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".wu.activity.PractiseRecordActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp60"
+        android:gravity="center"
+        android:paddingLeft="@dimen/dp15"
+        android:paddingRight="@dimen/dp15">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/icon_back" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="羽毛球"
+            android:textColor="@color/common_white"
+            android:textSize="@dimen/sp18" />
+
+        <ImageView
+            android:id="@+id/iv_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp5"
+            android:src="@drawable/icon_device_share" />
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_title"
+        android:background="@color/common_bg"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@color/common_bg"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_watch_step_recode_fat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_marginBottom="13dp"
+                android:textStyle="bold"
+                android:text="@string/watch_heart_rate_title_chart"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/sp17" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_btn_white_20_bg"
+                android:orientation="vertical">
+
+
+                <phone.gym.jkcq.com.socialmodule.shadow.ShadowLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    app:hl_cornerRadius="20dp"
+                    app:hl_shadowColor="#0d000000"
+                    app:hl_shadowLimit="10dp"
+                    app:hl_shadowOffsetY="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <bike.gymproject.viewlibray.LineRecChartPractiseView
+                            android:id="@+id/lineChartView"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:layout_marginLeft="@dimen/dp15"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="@dimen/dp15" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="-5dp"
+                            android:layout_marginBottom="@dimen/dp15"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <bike.gymproject.viewlibray.AkrobatNumberTextView
+                                    android:id="@+id/tv_max_hr"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/no_data"
+                                    android:textColor="@color/common_text_color"
+                                    android:textSize="@dimen/sp22" />
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/watch_heart_rate_max"
+                                    android:textColor="@color/common_text_color"
+                                    android:textSize="@dimen/sp12" />
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <bike.gymproject.viewlibray.AkrobatNumberTextView
+                                    android:id="@+id/tv_min_hr"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/no_data"
+                                    android:textColor="@color/common_text_color"
+                                    android:textSize="@dimen/sp22" />
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/watch_heart_rate_min"
+                                    android:textColor="@color/common_text_color"
+                                    android:textSize="@dimen/sp12" />
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <bike.gymproject.viewlibray.AkrobatNumberTextView
+                                    android:id="@+id/tv_sport_time"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/no_data"
+                                    android:textColor="@color/common_text_color"
+                                    android:textSize="@dimen/sp22" />
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/watch_heart_rate_avg"
+                                    android:textColor="@color/common_text_color"
+                                    android:textSize="@dimen/sp12" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </phone.gym.jkcq.com.socialmodule.shadow.ShadowLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerview_itme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+            <!--图表-->
+            <include layout="@layout/item_practise_step_view"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:background="@color/common_bg"
+                android:layout_marginBottom="13dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="@string/practise_heart_anli"
+                    android:textColor="@color/common_white"
+                    android:textSize="@dimen/sp17" />
+
+                <ImageView
+                    android:id="@+id/iv_help"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp5"
+                    android:src="@drawable/icon_help" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="217dp"
+                android:background="@drawable/shape_btn_white_20_bg"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <bike.gymproject.viewlibray.chart.PieChartViewHeart
+                    android:id="@+id/pieChartView"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="0.1" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <bike.gymproject.viewlibray.WatchHourMinuteView
+                        android:id="@+id/view_limit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:WatchTitleSize="@dimen/sp11"
+                        app:WatchtextMinUnitlcolor="@color/common_tips_color"
+                        app:WatchtextMincolor="@color/common_tips_color"
+                        app:Watchtexttitlecolor="@color/common_tips_color"
+                        app:Watchtextvalue="@string/heart_limit"
+                        app:iconColor="@color/color_limit" />
+
+
+                    <bike.gymproject.viewlibray.WatchHourMinuteView
+                        android:id="@+id/view_anaerobic_exercise"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:WatchTitleSize="@dimen/sp11"
+                        app:WatchtextMinUnitlcolor="@color/common_tips_color"
+                        app:WatchtextMincolor="@color/common_tips_color"
+                        app:Watchtexttitlecolor="@color/common_tips_color"
+                        app:Watchtextvalue="@string/heart_anaerobic_exercise"
+                        app:iconColor="@color/color_anaerobic_exercise" />
+
+                    <bike.gymproject.viewlibray.WatchHourMinuteView
+                        android:id="@+id/view_aerobic_exercise"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:WatchTitleSize="@dimen/sp11"
+                        app:WatchtextMinUnitlcolor="@color/common_tips_color"
+                        app:WatchtextMincolor="@color/common_tips_color"
+                        app:Watchtexttitlecolor="@color/common_tips_color"
+                        app:Watchtextvalue="@string/heart_aerobic_exercise"
+                        app:iconColor="@color/color_aerobic_exercise" />
+
+                    <bike.gymproject.viewlibray.WatchHourMinuteView
+                        android:id="@+id/view_fat_burning_exercise"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:WatchTitleSize="@dimen/sp11"
+                        app:WatchtextMinUnitlcolor="@color/common_tips_color"
+                        app:WatchtextMincolor="@color/common_tips_color"
+                        app:Watchtexttitlecolor="@color/common_tips_color"
+                        app:Watchtextvalue="@string/heart_fat_burning_exercise"
+                        app:iconColor="@color/color_fat_burning_exercise" />
+
+                    <bike.gymproject.viewlibray.WatchHourMinuteView
+                        android:id="@+id/view_warm_up"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:WatchTitleSize="@dimen/sp11"
+                        app:WatchtextMinUnitlcolor="@color/common_tips_color"
+                        app:WatchtextMincolor="@color/common_tips_color"
+                        app:Watchtexttitlecolor="@color/common_tips_color"
+                        app:Watchtextvalue="@string/heart_warm_up"
+                        app:iconColor="@color/color_warm_up" />
+
+                    <bike.gymproject.viewlibray.WatchHourMinuteView
+                        android:id="@+id/view_leisure"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:WatchTitleSize="@dimen/sp11"
+                        app:WatchtextMinUnitlcolor="@color/common_tips_color"
+                        app:WatchtextMincolor="@color/common_tips_color"
+                        app:Watchtexttitlecolor="@color/common_tips_color"
+                        app:Watchtextvalue="@string/heart_leisure"
+                        app:iconColor="@color/color_leisure" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_marginBottom="13dp"
+                android:textStyle="bold"
+                android:text="@string/practise_detail_heart_tips_title"
+                android:textColor="@color/common_white"
+                android:textSize="@dimen/sp18" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_btn_white_20_bg"
+                android:orientation="vertical"
+                android:padding="@dimen/dp10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/dp10"
+                    android:text="@string/practise_detail_heart_tips_content1"
+                    android:textColor="@color/common_white"
+                    android:textSize="@dimen/sp14" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/dp10"
+                    android:text="@string/practise_detail_heart_tips_content2"
+                    android:textColor="@color/common_white"
+                    android:textSize="@dimen/sp14" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:id="@+id/ll_history_share"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:visibility="invisible">
+
+        <include layout="@layout/sharing_interface" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/friend_dp80"
+    android:layout_marginLeft="@dimen/dp15"
+    android:layout_marginTop="@dimen/dp8"
+    android:layout_marginRight="@dimen/dp15"
+    android:layout_marginBottom="@dimen/dp8"
+    android:background="@drawable/shape_btn_white_20_bg">
+
+    <brandapp.isport.com.basicres.commonview.RoundImageView
+        android:id="@+id/iv_head_photo"
+        android:layout_width="@dimen/friend_dp50"
+        android:layout_height="@dimen/friend_dp50"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/friend_dp15"
+        android:scaleType="centerCrop"
+        android:src="@drawable/friend_icon_default_photo"
+        app:border_inside_color="@color/white"
+        app:border_outside_color="#ffe7e8eb"
+        app:border_thickness="@dimen/friend_dp2" />
+
+    <TextView
+        android:id="@+id/tv_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/friend_dp10"
+        android:layout_marginRight="@dimen/friend_dp18"
+        android:layout_toLeftOf="@id/tv_follow"
+        android:layout_toRightOf="@id/iv_head_photo"
+        android:singleLine="true"
+        android:textColor="@color/friend_text_black_color"
+        android:textSize="@dimen/friend_sp15"
+        tools:text="nickname" />
+
+    <TextView
+        android:id="@+id/tv_follow"
+        android:layout_width="@dimen/friend_dp100"
+        android:layout_height="@dimen/friend_dp30"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/friend_dp15"
+        android:background="@drawable/friend_shape_text_green_bg"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/friend_sp13"
+        tools:text="@string/friend_follow" />
+
+    <ImageView
+        android:id="@+id/iv_arrow_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/friend_dp15"
+        android:src="@drawable/icon_arrow_left"
+        android:visibility="gone"></ImageView>
+</RelativeLayout>

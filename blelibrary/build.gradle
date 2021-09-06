@@ -1,0 +1,77 @@
+apply plugin: 'com.android.library'
+apply plugin: 'org.greenrobot.greendao'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 20190107
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+    compileOptions {
+
+        sourceCompatibility JavaVersion.VERSION_1_8
+
+        targetCompatibility JavaVersion.VERSION_1_8
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    /*sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+            java.srcDirs = ['src/main/java', 'src/main/java-gen']
+        }
+    }*/
+}
+
+greendao {
+    schemaVersion 28
+    daoPackage 'com.isport.blelibrary.gen'
+    targetGenDir 'src/main/java'
+}
+repositories {
+    flatDir {
+        // dirs 'libs'
+        dirs '../basiclib/libs','libs'
+    }
+}
+
+dependencies {
+    implementation project(':basiclib')
+    api 'androidx.annotation:annotation:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    /*implementation files('libs/heartbreathdevicecore_3.4.1.jar')
+            implementation files('libs/restonsdk_3.4.1.jar')
+            implementation files('libs/sdkalgorithm_3.4.0.jar')
+            implementation files('libs/sdkcore_3.4.1.jar')*/
+    /** W
+     *     数据库存储
+     */
+
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
+
+    // implementation 'com.twitter.sdk.android:twitter-core:3.1.1'
+    // implementation 'com.twitter.sdk.android:tweet-composer:3.1.1'
+    //implementation 'com.sina.weibo.sdk:core:4.4.3:openDefaultRelease@aar'
+    /*api  'com.umeng.umsdk:analytics:8.0.0'
+            api  'com.umeng.umsdk:common:2.0.0'
+            api  'com.umeng.umsdk:common:1.5.4'
+            api  'com.umeng.umsdk:utdid:1.1.5.3'*/
+
+}

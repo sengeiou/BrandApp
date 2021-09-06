@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/dp10"
+    android:id="@+id/itemPractiseChartLayout"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:background="@drawable/shape_btn_white_20_bg"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="13dp"
+            android:textStyle="bold"
+            android:text="步数曲线图"
+            android:textColor="@color/common_text_color"
+            android:textSize="@dimen/sp17" />
+
+        <TextView
+            android:id="@+id/practiseStepCurrTv"
+            android:layout_width="wrap_content"
+            android:text=""
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="@dimen/sp15"
+            android:layout_height="wrap_content"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="@dimen/dp150">
+
+
+            <bike.gymproject.viewlibray.LineChartView
+                android:id="@+id/practiseLineChartView"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginRight="@dimen/dp15"
+                android:layout_height="150dp" />
+
+
+            <bike.gymproject.viewlibray.LineRecChartView
+                android:id="@+id/practiseLineRecChartView1"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginRight="@dimen/dp15"
+                android:layout_height="150dp" />
+
+            <bike.gymproject.viewlibray.LineRecChartView
+                android:id="@+id/practiseLineRecChartView2"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginRight="@dimen/dp15"
+                android:layout_height="150dp" />
+
+            <bike.gymproject.viewlibray.LineRecChartView
+                android:id="@+id/practiseLineRecChartView3"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginRight="@dimen/dp15"
+                android:layout_height="150dp" />
+
+            <bike.gymproject.viewlibray.LineRecChartView
+                android:id="@+id/practiseLineRecChartView4"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginRight="@dimen/dp15"
+                android:layout_height="150dp" />
+
+            <bike.gymproject.viewlibray.LineRecChartView
+                android:id="@+id/practiseLineRecChartView5"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginRight="@dimen/dp15"
+                android:layout_height="150dp" />
+
+            <bike.gymproject.viewlibray.LineRecChartView
+                android:id="@+id/practiseLineRecChartView6"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginRight="@dimen/dp15"
+                android:layout_height="150dp" />
+
+            <bike.gymproject.viewlibray.LineScrollChartView
+                android:id="@+id/itemPractiseStepView"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginRight="@dimen/dp15"
+                android:layout_height="150dp" />
+        </FrameLayout>
+
+
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:background="@drawable/shape_btn_white_20_bg"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="13dp"
+            android:textStyle="bold"
+            android:text="距离柱状图"
+            android:textColor="@color/common_text_color"
+            android:textSize="@dimen/sp17" />
+
+
+        <bike.gymproject.viewlibray.WeekBarChartView
+            android:id="@+id/itemPractiseDistanceBarView"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:focusable="false"
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_marginRight="@dimen/dp15"
+            android:background="@color/white" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:padding="5dp"
+        android:background="@drawable/shape_btn_white_20_bg"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/itemPractiseKcalTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="13dp"
+            android:textStyle="bold"
+            android:text="卡路里曲线图"
+            android:textColor="@color/common_text_color"
+            android:textSize="@dimen/sp17" />
+
+        <TextView
+            android:id="@+id/practiseCaloriesCurrTv"
+            android:layout_width="wrap_content"
+            android:text=""
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="@dimen/sp15"
+            android:layout_height="wrap_content"/>
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp150">
+
+            <bike.gymproject.viewlibray.LineChartView
+                android:id="@+id/caloriesLineChartView"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginRight="@dimen/dp15"
+                android:layout_height="150dp" />
+
+
+            <bike.gymproject.viewlibray.LineRecChartView
+                android:id="@+id/caloriesLineRecChartView1"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginRight="@dimen/dp15"
+                android:layout_height="150dp" />
+
+            <bike.gymproject.viewlibray.LineRecChartView
+                android:id="@+id/caloriesLineRecChartView2"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginRight="@dimen/dp15"
+                android:layout_height="150dp" />
+
+            <bike.gymproject.viewlibray.LineRecChartView
+                android:id="@+id/caloriesLineRecChartView3"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginRight="@dimen/dp15"
+                android:layout_height="150dp" />
+
+            <bike.gymproject.viewlibray.LineRecChartView
+                android:id="@+id/caloriesLineRecChartView4"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginRight="@dimen/dp15"
+                android:layout_height="150dp" />
+
+            <bike.gymproject.viewlibray.LineRecChartView
+                android:id="@+id/caloriesLineRecChartView5"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginRight="@dimen/dp15"
+                android:layout_height="150dp" />
+
+            <bike.gymproject.viewlibray.LineRecChartView
+                android:id="@+id/caloriesLineRecChartView6"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginRight="@dimen/dp15"
+                android:layout_height="150dp" />
+
+            <bike.gymproject.viewlibray.LineScrollChartView
+                android:id="@+id/itemPractiseCaloriesView"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginRight="@dimen/dp15"
+                android:layout_height="150dp" />
+
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

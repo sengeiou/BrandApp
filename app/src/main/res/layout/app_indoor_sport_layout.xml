@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/top_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"></View>
+
+    <RelativeLayout
+        android:id="@+id/layout_head"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+
+        <ImageView
+            android:id="@+id/iv_setting"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp15"
+            android:src="@drawable/icon_sport_setting" />
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp15"
+            android:src="@drawable/icon_back" />
+
+        <ImageView
+            android:id="@+id/iv_map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp15"
+            android:src="@drawable/icon_location" />
+
+        <TextView
+            android:id="@+id/tv_sport_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/health_report"
+            android:textColor="@color/common_name_color"
+            android:textSize="@dimen/sp18" />
+    </RelativeLayout>
+
+    <include
+        layout="@layout/view_map_layout"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/layout_dis"
+        android:layout_width="match_parent"
+        android:layout_height="245dp"
+        android:layout_margin="@dimen/dp15"
+        android:background="@drawable/shape_btn_white_20_bg"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/layout_bottom_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <bike.gymproject.viewlibray.AkrobatNumberTextView
+                    android:id="@+id/tv_dis"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="0.00"
+                    android:textColor="@color/common_white"
+                    android:textSize="86sp"
+                    android:textStyle="bold"></bike.gymproject.viewlibray.AkrobatNumberTextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dis_unit"
+                    android:textColor="@color/common_white"
+                    android:textSize="@dimen/sp20"
+                    android:textStyle="bold"></TextView>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/dp15">
+
+            <TextView
+                android:id="@+id/tv_bottom_title"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/watch_step_type_distance"
+                android:textColor="@color/common_name_profile_color"
+                android:textSize="@dimen/sp18"></TextView>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/iems"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <bike.gymproject.viewlibray.ShareItemView
+                android:id="@+id/item_speed"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:sharebottomColor="@color/common_tips_color"
+                app:sharebottomSize="@dimen/sp14"
+                app:sharebottomText="@string/pace"
+                app:shareisShowLine="true"
+                app:shareisUnit="false"
+                app:shareunitColor="@color/common_text_color"
+                app:shareunitSize="@dimen/sp12"
+                app:shareunitText="@string/time_to_fall_sleep"
+                app:sharevaluseColor="@color/common_white"
+                app:sharevaluseSize="24sp"
+                app:sharevaluseText="00'00''" />
+
+            <bike.gymproject.viewlibray.ShareItemView
+                android:id="@+id/item_time"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:sharebottomColor="@color/common_tips_color"
+                app:sharebottomSize="@dimen/sp14"
+                app:sharebottomText="@string/user_time"
+                app:shareisShowLine="true"
+                app:shareisUnit="false"
+                app:shareunitColor="@color/common_text_color"
+                app:shareunitSize="@dimen/sp12"
+                app:shareunitText="@string/deep_sleep"
+                app:sharevaluseColor="@color/common_white"
+                app:sharevaluseSize="24sp"
+                app:sharevaluseText="00:00:00" />
+
+            <bike.gymproject.viewlibray.ShareItemView
+                android:id="@+id/item_cal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:sharebottomColor="@color/common_tips_color"
+                app:sharebottomSize="@dimen/sp14"
+                app:sharebottomText="@string/consumption"
+                app:shareisShowLine="true"
+                app:shareisUnit="false"
+                app:shareunitColor="@color/common_text_color"
+                app:shareunitSize="@dimen/sp12"
+                app:sharevaluseColor="@color/common_white"
+                app:sharevaluseSize="24sp"
+                app:sharevaluseText="0" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/layout_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_indoor_sport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg_indoor" />
+
+        <RelativeLayout
+            android:id="@+id/layout_bg_hr"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_marginTop="@dimen/dp20"
+            android:background="@drawable/shape_btn_white_20_bg">
+
+
+            <bike.gymproject.viewlibray.AkrobatNumberTextView
+                android:id="@+id/tv_hr_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:drawableBottom="@drawable/icon_sport_hr"
+                android:text="88"
+                android:textColor="#FA5F5F"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/layout_bg_gps"
+            android:layout_width="@dimen/dp75"
+            android:layout_height="@dimen/dp75"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dp20"
+            android:layout_marginRight="@dimen/dp15"
+            android:background="@drawable/shape_btn_white_20_bg"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/iv_gps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_gps_nor" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp8"
+                android:text="GPS"
+                android:textColor="@color/common_text_color"
+                android:textSize="@dimen/sp16"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/layout_option"
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/dp30"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+
+            <com.isport.brandapp.view.AnimSporEndView
+                android:id="@+id/view_start"
+                android:layout_width="wrap_content"
+                android:layout_height="125dp"
+                android:layout_marginBottom="@dimen/dp30"
+                app:AnimSporisShowProgress="false" />
+
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+
+            <com.isport.brandapp.view.AnimSporEndView
+                android:id="@+id/view_stop"
+                android:layout_width="wrap_content"
+                android:layout_height="125dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/dp30"
+                app:AnimSporisShowProgress="true" />
+
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_unlock"
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/dp30"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+
+            <com.isport.brandapp.view.AnimSporEndView
+                android:id="@+id/view_unlock"
+                android:layout_width="wrap_content"
+                android:layout_height="125dp"
+                android:layout_marginBottom="@dimen/dp30"
+                app:AnimSporisShowProgress="true" />
+
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/layout_pause"
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/dp30"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+
+            <com.isport.brandapp.view.AnimSporEndView
+                android:id="@+id/view_pause"
+                android:layout_width="wrap_content"
+                android:layout_height="125dp"
+                android:layout_marginBottom="@dimen/dp30"
+                app:AnimSporisShowProgress="false" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_lock_set"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_lock" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>
+

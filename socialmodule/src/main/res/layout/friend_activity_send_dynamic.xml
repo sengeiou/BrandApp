@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_top"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp20"
+        android:layout_marginRight="@dimen/dp20"
+        android:layout_marginBottom="@dimen/dp20"
+        android:background="@drawable/shape_btn_white_20_bg"
+        android:orientation="vertical"
+        android:padding="@dimen/dp15">
+
+
+        <EditText
+            android:id="@+id/et_content"
+            style="@style/edit_page_style"
+            android:layout_height="210dp"
+            android:background="@drawable/shape_gray_bg"
+            android:gravity="left"
+            android:hint="@string/friend_dynamic_hite"
+            android:inputType="text"
+            android:maxLength="500"
+            android:padding="@dimen/dp15"
+            android:textColorHint="#D6D6DD" />
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp15">
+
+            <phone.gym.jkcq.com.socialmodule.video.cut.ZVideoView
+                android:id="@+id/video_loader"
+                android:layout_width="108dp"
+                android:layout_centerVertical="true"
+                android:layout_height="108dp" />
+
+            <ImageView
+                android:id="@+id/iv_bg_video"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:layout_centerVertical="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/friend_bg_homepage" />
+
+            <ImageView
+                android:id="@+id/iv_start_player"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp35"
+                android:src="@drawable/video_play_normal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/iv_bg_video"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dp15"
+                android:paddingRight="@dimen/dp15">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/tv_currentcount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/common_text_color"
+                    android:textSize="@dimen/sp16" />
+
+                <TextView
+                    android:id="@+id/tv_sumcount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="/500"
+                    android:textColor="@color/common_text_color"
+                    android:textSize="@dimen/sp16" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/iv_bg_video"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/friend_dynamic_save__video_location"
+                    android:textColor="@color/common_text_color"
+                    android:textSize="@dimen/dp16" />
+
+                <ImageView
+                    android:id="@+id/iv_save_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp5"
+                    android:src="@drawable/friend_icon_save_location" />
+
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/btn_send"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp46"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/dp30"
+        android:layout_marginTop="@dimen/dp14"
+        android:layout_marginRight="@dimen/dp30"
+        android:layout_marginBottom="@dimen/dp20"
+        android:background="@drawable/dynamic_shape_login_button_enable"
+        android:gravity="center"
+        android:text="@string/friend_send_dynamic"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp17" />
+</LinearLayout>
+
+

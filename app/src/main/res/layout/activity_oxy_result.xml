@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".wu.activity.OxyResultActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_result_title"></include>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_marginRight="@dimen/dp15"
+            android:layout_marginBottom="@dimen/dp74"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/dp15"
+                    android:paddingTop="@dimen/dp10"
+                    android:paddingRight="@dimen/dp15"
+                    android:paddingBottom="13dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_horizontal"
+                        android:textStyle="bold"
+                        android:text="@string/oxy"
+                        android:textColor="@color/common_white"
+                        android:textSize="@dimen/sp18"
+                        tools:text="@string/heart_rate" />
+
+                    <TextView
+                        android:id="@+id/tv_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_horizontal"
+                        android:textStyle="bold"
+                        android:textColor="@color/common_tips_color"
+                        android:textSize="@dimen/sp14"
+                        tools:text="2019-11-06 18:52:22" />
+
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_btn_white_20_bg"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/dp20">
+
+                    <phone.gym.jkcq.com.socialmodule.shadow.ShadowLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        app:hl_cornerRadius="20dp"
+                        app:hl_shadowColor="#0d000000"
+                        app:hl_shadowLimit="10dp"
+                        app:hl_shadowOffsetY="5dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="@dimen/dp30">
+
+                            <RelativeLayout
+                                android:layout_width="105dp"
+                                android:layout_height="105dp">
+
+                                <View
+                                    android:layout_width="105dp"
+                                    android:layout_height="105dp"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/shape_oval_gray_bg" />
+                            </RelativeLayout>
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp55"
+                                android:layout_centerInParent="true"
+                                android:layout_marginLeft="@dimen/dp15"
+                                android:layout_marginRight="@dimen/dp15"
+                                android:padding="@dimen/dp2">
+
+                                <ProgressBar
+                                    android:id="@+id/progress_value"
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/dp50"
+                                    android:layout_centerInParent="true"
+                                    android:progressDrawable="@drawable/progress_oxy_bg"
+                                    android:visibility="visible" />
+                            </FrameLayout>
+
+
+                            <RelativeLayout
+                                android:id="@+id/layout_small_circle"
+                                android:layout_width="105dp"
+                                android:layout_height="105dp"
+                                android:layout_centerVertical="true">
+
+                                <View
+                                    android:layout_width="@dimen/dp85"
+                                    android:layout_height="@dimen/dp85"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/shape_oval_bg" />
+
+                                <LinearLayout
+                                    android:layout_width="@dimen/dp85"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="horizontal">
+
+                                    <bike.gymproject.viewlibray.AkrobatNumberTextView
+                                        android:id="@+id/tv_oxy_value"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/dp35"
+                                        tools:text="97" />
+
+                                    <TextView
+                                        android:id="@+id/tv_percent"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="@dimen/dp5"
+                                        android:text="%"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/sp10" />
+                                </LinearLayout>
+                            </RelativeLayout>
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp30"
+                                android:layout_centerInParent="true"
+                                android:layout_marginLeft="-25dp"
+                                android:layout_marginRight="@dimen/dp25"
+                                android:layout_toRightOf="@+id/layout_small_circle"
+                                android:padding="@dimen/dp2">
+
+                                <brandapp.isport.com.basicres.commonalertdialog.ProgressOxyView
+                                    android:id="@+id/progressBar"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dp5"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="@dimen/dp5"
+                                        android:textStyle="bold"                                        android:text="80"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/sp12" />
+
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:textStyle="bold"                                        android:gravity="center"
+                                        android:text="85"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/sp12" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textStyle="bold"                                        android:text="90"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/sp12" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:textStyle="bold"                                        android:gravity="center"
+                                        android:text="95"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/sp12" />
+
+                                </LinearLayout>
+
+                            </FrameLayout>
+
+                        </RelativeLayout>
+                    </phone.gym.jkcq.com.socialmodule.shadow.ShadowLayout>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="13dp"
+                        android:textStyle="bold"                        android:gravity="center"
+                        android:text="@string/oxyresult_oxy_measure_trend"
+                        android:textColor="@color/common_text_color"
+                        android:textSize="@dimen/dp12" />
+
+                    <com.isport.brandapp.wu.view.OxyTrendView
+                        android:id="@+id/trendview_oxy"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp150"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="@dimen/dp10" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:paddingTop="13dp"
+                    android:paddingBottom="13dp"
+                    android:text="@string/oxyresult_about_oxy"
+                    android:textColor="@color/common_text_color"
+                    android:textSize="@dimen/sp18" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_btn_white_20_bg"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/dp15"
+                    android:paddingTop="13dp"
+                    android:paddingRight="@dimen/dp15"
+                    android:paddingBottom="13dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/oxyresult_oxy_des"
+                        android:textColor="@color/common_white"
+                        android:textSize="@dimen/sp14" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp74"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/dp10"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/btn_measure"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_marginTop="@dimen/dp15"
+            android:layout_marginRight="@dimen/dp15"
+            android:layout_marginBottom="@dimen/dp15"
+            android:background="@drawable/shape_btn_bg"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="@string/start_measure"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp18" />
+    </LinearLayout>
+</RelativeLayout>

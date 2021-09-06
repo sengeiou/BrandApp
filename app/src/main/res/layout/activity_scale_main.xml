@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    android:orientation="vertical"
+    tools:context="com.isport.brandapp.device.scale.ScaleMainActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp15"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/dp10"
+        android:paddingBottom="13dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/scale_chart"
+            android:textStyle="bold"
+            android:textColor="@color/common_white"
+            android:textSize="@dimen/sp18"
+            tools:text="@string/heart_rate" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/common_tips_color"
+            android:textSize="@dimen/sp14"
+            tools:text="" />
+
+
+    </RelativeLayout>
+
+
+    <include
+        android:id="@+id/layout_no_data"
+        layout="@layout/app_fragment_data_device_no_data_item"
+        android:visibility="gone"/>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewpage2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/btn_measure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15"
+        android:layout_marginBottom="@dimen/dp15"
+        android:background="@drawable/shape_btn_bg"
+        android:textStyle="bold"
+        android:paddingTop="@dimen/dp5"
+        android:paddingBottom="@dimen/dp5"
+        android:text="@string/weigh"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp18" />
+
+</LinearLayout>

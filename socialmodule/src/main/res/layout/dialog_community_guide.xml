@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/blank_40"/>
+
+    <ImageView
+        android:layout_marginRight="@dimen/dp15"
+        android:layout_marginTop="@dimen/dp12"
+        android:id="@+id/iv_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/icon_guide_post" />
+
+    <ImageView
+        android:id="@+id/iv_path"
+        android:layout_marginRight="@dimen/dp15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/iv_post"
+        android:src="@drawable/icon_guide_path" />
+
+    <TextView
+        android:id="@+id/tv_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_path"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text="@string/friend_community_guide_tips"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp17" />
+
+    <TextView
+        android:id="@+id/tv_known"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_tips"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp100"
+        android:background="@drawable/app_frame_all_green"
+        android:paddingBottom="@dimen/dp10"
+        android:paddingLeft="@dimen/dp55"
+        android:paddingRight="@dimen/dp55"
+        android:paddingTop="@dimen/dp10"
+        android:text="@string/friend_community_guide_ok"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp17" />
+
+
+</RelativeLayout>

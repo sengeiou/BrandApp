@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_video"
+    android:orientation="vertical">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager_community"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+    <include layout="@layout/layout_home_title_community" />
+
+    <RelativeLayout
+        android:id="@+id/layout_send_fail"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:visibility="gone"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tv_dynamic_fail_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp80"
+            android:text="@string/friend_send_dynamic_fail"
+            android:textSize="17sp"
+            android:layout_marginBottom="@dimen/dp35"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/common_stande_red"/>
+
+        <ImageView
+            android:id="@+id/iv_dynamic_fail_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/dp20"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/icon_dynamic_fail_close"/>
+
+        <TextView
+            android:id="@+id/btn_try_again"
+            android:paddingLeft="@dimen/dp30"
+            android:layout_toLeftOf="@+id/iv_dynamic_fail_close"
+            android:paddingRight="@dimen/dp30"
+            android:layout_marginRight="@dimen/dp10"
+            android:layout_width="wrap_content"
+            android:layout_marginBottom="@dimen/dp25"
+            android:paddingTop="@dimen/dp8"
+            android:paddingBottom="@dimen/dp8"
+            android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/app_frame_all_red"
+            android:gravity="center"
+            android:text="@string/no_netWork_try_again"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp17" />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/layout_start_send"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/dp80"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/iv_send_thum"
+        android:layout_width="@dimen/dp50"
+        android:layout_height="66dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/friend_bg_homepage"/>
+        <View
+            android:layout_width="@dimen/dp50"
+            android:layout_height="66dp"
+            android:background="@color/common_black_30"/>
+        <TextView
+            android:id="@+id/tv_progess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0%"
+            android:textSize="13sp"
+            android:textColor="@color/white_50"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+</RelativeLayout>

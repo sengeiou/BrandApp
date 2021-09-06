@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp15">
+
+        <TextView
+            android:id="@+id/tv_detail_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/shape_btn_gray_20_bg"
+            android:paddingLeft="@dimen/dp15"
+            android:paddingTop="@dimen/dp8"
+            android:paddingRight="@dimen/dp15"
+            android:paddingBottom="@dimen/dp8"
+            android:text="2020-11-8"
+            android:textColor="@color/common_white"
+            android:textSize="@dimen/sp10" />
+    </RelativeLayout>
+
+
+</LinearLayout>

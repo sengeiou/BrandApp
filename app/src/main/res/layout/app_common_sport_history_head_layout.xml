@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/layout_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+
+            <bike.gymproject.viewlibray.AkrobatNumberTextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.00"
+                android:textColor="@color/common_view_color"
+                android:textSize="86sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="@string/unit_distance"
+                android:textSize="@dimen/sp20" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp18"
+            android:text=""
+            android:textColor="@color/common_white"
+            android:textSize="@dimen/sp18" />
+
+
+    </LinearLayout>
+
+
+    <phone.gym.jkcq.com.socialmodule.shadow.ShadowLayout
+        android:id="@+id/mShadowLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp70"
+        android:layout_below="@+id/layout_top"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginRight="@dimen/dp15"
+        app:hl_cornerRadius="20dp"
+        app:hl_shadowColor="#0d000000"
+        app:hl_shadowLimit="10dp"
+        app:hl_shadowOffsetY="5dp">
+
+        <RadioGroup
+            android:id="@+id/tab"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginBottom="@dimen/dp8"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <RadioButton
+                android:id="@+id/rb_day"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:button="@null"
+                android:checked="true"
+                android:drawableBottom="@drawable/radio_rope_selector"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="@string/sport_all"
+                android:textColor="@drawable/text_color_rope_report_tab"
+                android:textSize="@dimen/sp22" />
+
+
+            <RadioButton
+                android:id="@+id/rb_week"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:button="@null"
+                android:drawableBottom="@drawable/radio_rope_selector"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="@string/week"
+                android:textColor="@drawable/text_color_rope_report_tab"
+                android:textSize="@dimen/sp22" />
+
+
+            <RadioButton
+                android:id="@+id/rb_month"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:button="@null"
+                android:drawableBottom="@drawable/radio_rope_selector"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="@string/sport_month"
+                android:textColor="@drawable/text_color_rope_report_tab"
+                android:textSize="@dimen/sp22" />
+
+
+        </RadioGroup>
+    </phone.gym.jkcq.com.socialmodule.shadow.ShadowLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_data_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp10"
+            android:src="@drawable/icon_data_left"></ImageView>
+
+        <TextView
+            android:id="@+id/tv_update_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:focusable="true"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dp15"
+            android:paddingTop="@dimen/dp5"
+            android:paddingRight="@dimen/dp15"
+            android:paddingBottom="@dimen/dp5"
+            android:text="2019-5-15"
+            android:textColor="@color/common_white"
+            android:textSize="@dimen/sp12" />
+
+        <ImageView
+            android:id="@+id/iv_data_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp10"
+            android:src="@drawable/icon_data_right"></ImageView>
+    </LinearLayout>
+</LinearLayout>
+
+
