@@ -6,6 +6,7 @@
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
+    <uses-permission android:name="android.permission.BODY_SENSORS"/>
 
     <!-- 允许程序打开网络套接字 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -52,6 +53,8 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+
 
     <application
         android:name=".App"
@@ -103,7 +106,7 @@
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
-        <activity android:name=".Home.MainActivity" />
+        <activity android:name=".home.MainActivity" />
         <activity
             android:name=".login.ActivityLogin"
             android:launchMode="singleTask" />
@@ -113,7 +116,7 @@
         <activity android:name=".bind.ActivityBindWrishBrand" />
         <activity android:name=".login.ActivityBindMobilePhone" />
         <activity android:name=".login.ActivitySettingUserInfo" />
-        <activity android:name=".Home.SettingActivity" />
+        <activity android:name=".home.SettingActivity" />
         <activity android:name=".login.ActivityImageShow" />
         <activity android:name=".bind.ActivityDeviceSetting" />
         <activity android:name=".device.scale.ActivityScaleRealTimeData" />
@@ -122,7 +125,7 @@
         <activity android:name=".device.history.ActivityHistory" />
         <activity android:name=".login.ActivityUserAgreement" />
         <activity android:name=".login.ActivityprivacyAgreement" />
-        <activity android:name=".Home.AboutActivity" />
+        <activity android:name=".home.AboutActivity" />
         <activity android:name=".LogActivity" />
         <activity android:name=".device.bracelet.playW311.PlayW311Activity" />
         <activity android:name=".device.sleep.CharDemo" />
@@ -258,11 +261,11 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />-->
         <activity android:name=".Third_party_access.GoogleFitActivity" />
-        <activity android:name=".Home.AccessThridAppActivity" />
+        <activity android:name=".home.AccessThridAppActivity" />
         <activity android:name=".device.bracelet.W307JSleepSetting" />
         <activity android:name=".ropeskipping.RopeSkippingActivity" />
         <activity android:name=".ropeskipping.history.RopeReportActivity"/>
-        <activity android:name=".Home.DeviceMainActivity"/>
+        <activity android:name=".home.DeviceMainActivity"/>
         <activity android:name=".device.scale.ScaleMainActivity" />
         <activity android:name=".ropeskipping.setting.RopeDeviceSettingActivity" />
         <activity android:name=".ropeskipping.setting.RopeAppSettingActivity" />
@@ -378,6 +381,9 @@
                 <action android:name="android.service.notification.NotificationListenerService" />
             </intent-filter>
         </service>
+
+
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
     </application>
 
 </manifest>

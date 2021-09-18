@@ -5,7 +5,7 @@ import com.isport.blelibrary.utils.DateUtil;
 import com.isport.blelibrary.utils.Logger;
 import com.isport.blelibrary.utils.TimeUtils;
 import com.isport.brandapp.AppConfiguration;
-import com.isport.brandapp.Home.bean.http.Wristbandstep;
+import com.isport.brandapp.home.bean.http.Wristbandstep;
 import com.isport.brandapp.device.W81Device.IW81DeviceDataModel;
 import com.isport.brandapp.device.W81Device.W81DeviceDataModelImp;
 import com.isport.brandapp.device.bracelet.braceletModel.IW311DataModel;

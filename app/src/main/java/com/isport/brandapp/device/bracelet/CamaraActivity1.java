@@ -92,12 +92,13 @@ public class CamaraActivity1 extends BaseActivity implements View.OnClickListene
         @Override
         public void onPictureTaken(@NonNull PictureResult result) {
             super.onPictureTaken(result);
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    isTakeSuccess = true;
-                }
-            }, 500);
+            isTakeSuccess = true;
+//            handler.postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
+//                    isTakeSuccess = true;
+//                }
+//            }, 500);
             Log.e(TAG, "onPictureTaken");
 
             Message message = handler.obtainMessage();
@@ -286,7 +287,7 @@ public class CamaraActivity1 extends BaseActivity implements View.OnClickListene
         File file;
         String brand = Build.BRAND;
         brand = brand.toLowerCase();
-        if (brand.equals("xiaomi")) { // 小米手机brand.equals("xiaomi")
+        if (brand.toLowerCase().equals("xiaomi")) { // 小米手机brand.equals("xiaomi")
             fileName = Environment.getExternalStorageDirectory().getPath() + "/DCIM/Camera/" + bitName;
         } else if (brand.equalsIgnoreCase("Huawei")) {
             fileName = Environment.getExternalStorageDirectory().getPath() + "/DCIM/Camera/" + bitName;

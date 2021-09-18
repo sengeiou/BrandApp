@@ -2,13 +2,10 @@ package com.isport.brandapp.wu.mvp.presenter;
 
 import com.isport.blelibrary.utils.Logger;
 import com.isport.brandapp.AppConfiguration;
-import com.isport.brandapp.Home.presenter.UpgradeDataPresenter;
+import com.isport.brandapp.home.presenter.UpgradeDataPresenter;
 import com.isport.brandapp.repository.OnceHrRepository;
-import com.isport.brandapp.repository.OxygenRepository;
 import com.isport.brandapp.wu.bean.OnceHrInfo;
-import com.isport.brandapp.wu.bean.OxyInfo;
 import com.isport.brandapp.wu.mvp.OnceHrHistoryView;
-import com.isport.brandapp.wu.mvp.OxyHistoryView;
 
 import java.util.List;
 

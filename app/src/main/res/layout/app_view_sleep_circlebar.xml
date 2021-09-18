@@ -10,13 +10,13 @@
         android:layout_centerInParent="true"
         android:src="@drawable/bg_watch" />
 
-    <com.isport.brandapp.Home.view.circlebar.SleepTimeView
+    <com.isport.brandapp.home.view.circlebar.SleepTimeView
         android:id="@+id/objectAnimatorView"
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_centerInParent="true" />
 
-    <com.isport.brandapp.Home.view.circlebar.DeepSleepTimeView
+    <com.isport.brandapp.home.view.circlebar.DeepSleepTimeView
         android:id="@+id/view_sleep"
         android:layout_width="250dp"
         android:layout_height="250dp"

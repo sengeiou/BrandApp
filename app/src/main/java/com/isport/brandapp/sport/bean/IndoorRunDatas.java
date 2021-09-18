@@ -3,10 +3,9 @@ package com.isport.brandapp.sport.bean;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.isport.brandapp.Home.fragment.LatLongData;
+import com.isport.brandapp.home.fragment.LatLongData;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 
 public class IndoorRunDatas implements Parcelable {

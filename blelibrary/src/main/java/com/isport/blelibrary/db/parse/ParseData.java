@@ -824,7 +824,7 @@ public class ParseData {
         //将去除第一位的数据全部存储到集合中
         for(int i = 2;i<m24HDATA.size();i++){
             byte[] itemByte = m24HDATA.get(i);
-            for(int k = 1;k<itemByte.length-1;k++){
+            for(int k = 0;k<itemByte.length-1;k++){
                 sourceList.add(itemByte[k]&0xff);
             }
         }
@@ -832,7 +832,7 @@ public class ParseData {
         Logger.myLog(TAG,"---sourceList="+new Gson().toJson(sourceList));
 
         //0xFA第一次出现的位置
-        int positionFA = sourceList.indexOf(250);
+        int positionFA = sourceList.indexOf(250); //18
         //0xFF第一次出现的位置
         int positionFF = sourceList.indexOf(255);
 
@@ -890,12 +890,28 @@ public class ParseData {
         Logger.myLog(TAG,"--------W560锻炼数据 心率="+new Gson().toJson(allHeartList)+"\n"+new Gson().toJson(stepList)+"\n"+new Gson().toJson(distanceList)+"\n"+new Gson().toJson(caloriesList));
 
 
+        //不为0的心率总和
+        int sumHeart = 0;
+        //个数
+        int countHeart = 0;
+
+        //计算平均心率
+        for(int i = 0;i<allHeartList.size();i++){
+            int tmpHeart = allHeartList.get(i);
+            if(tmpHeart != 0){
+                countHeart++;
+                sumHeart += tmpHeart;
+            }
+        }
+
+        int avgHeart = sumHeart == 0 ? 0 :  sumHeart / countHeart;
+
         W81DeviceEexerciseAction action = new W81DeviceEexerciseAction();
         w81DeviceExerciseData.setHrArray(new Gson().toJson(allHeartList));
         w81DeviceExerciseData.setStepArray(new Gson().toJson(stepList));
         w81DeviceExerciseData.setDistanceArray(new Gson().toJson(distanceList));
         w81DeviceExerciseData.setCalorieArray(new Gson().toJson(caloriesList));
-
+        w81DeviceExerciseData.setAvgHr(avgHeart == 0 ? "--":avgHeart+"");
         action.saveDefExerciseData(w81DeviceExerciseData);
 
         bluetoothListener.onSyncSuccessPractiseData(-1);

@@ -10,8 +10,8 @@ public class AllocationApi {
     //内网
     //public static final String BaseUrl = "http://192.168.10.15:8038";
     //外网
-//    public static final String BaseUrl = "https://api.mini-banana.com";
-    public static final String BaseUrl = "https://test.api.mini-banana.com";
+    public static final String BaseUrl = "https://api.mini-banana.com";
+//    public static final String BaseUrl = "https://test.api.mini-banana.com";
     public static final String BaseScaleUrl = "http://192.168.10.203:8110";
     public static final String EXTRA_WEBVIEW_LOAD_URL = "extra_webview_load_url";
     public static final String EXTRA_NOTICATION_BUNDLE = "extra_notication_bundle";

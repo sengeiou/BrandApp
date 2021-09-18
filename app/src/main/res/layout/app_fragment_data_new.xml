@@ -14,13 +14,13 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"/>
 
-    <com.isport.brandapp.Home.customview.MainHeadLayout
+    <com.isport.brandapp.home.customview.MainHeadLayout
         android:id="@+id/layout_mainHeadLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp10">
 
-    </com.isport.brandapp.Home.customview.MainHeadLayout>
+    </com.isport.brandapp.home.customview.MainHeadLayout>
 
 
     <com.scwang.smartrefresh.layout.SmartRefreshLayout

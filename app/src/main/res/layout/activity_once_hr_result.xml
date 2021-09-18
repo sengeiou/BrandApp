@@ -13,7 +13,7 @@
 
     <include
         android:id="@+id/head"
-        layout="@layout/include_result_title"></include>
+        layout="@layout/include_result_title"/>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"

@@ -68,9 +68,9 @@ class PractiseAdapter(data: MutableList<PractiseRecordInfo>) :
                 holder.setBackgroundColor(R.id.layout_view, Color.TRANSPARENT)
             }
         } else {
-            if (item!!.currentShowList != null) {
-                item!!.currentShowList.clear()
-                setItemRecyclerView(rec, item!!.currentShowList)
+            if (item.currentShowList != null) {
+                item.currentShowList.clear()
+                setItemRecyclerView(rec, item.currentShowList)
             }
             holder.setVisible(R.id.rec_day, false)
             holder.setImageResource(R.id.iv_arrow_right, R.drawable.icon_rope_down)

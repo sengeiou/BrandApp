@@ -10,10 +10,6 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemChildClickListener;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
@@ -46,6 +42,9 @@ import org.greenrobot.eventbus.ThreadMode;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import bike.gymproject.viewlibray.ItemView;
 import bike.gymproject.viewlibray.pickerview.DatePickerView;
 import brandapp.isport.com.basicres.BaseApp;
@@ -210,7 +209,7 @@ public class ActivityBraceletAlarmList extends BaseMVPTitleActivity<AlarmView, A
         ISportAgent.getInstance().unregisterListener(mBleReciveListener);
     }
 
-    private BleReciveListener mBleReciveListener = new BleReciveListener() {
+    private final BleReciveListener mBleReciveListener = new BleReciveListener() {
         @Override
         public void onConnResult(boolean isConn, boolean isConnectByUser, BaseDevice baseDevice) {
 

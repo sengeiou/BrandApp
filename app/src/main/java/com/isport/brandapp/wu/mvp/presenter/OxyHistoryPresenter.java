@@ -2,7 +2,7 @@ package com.isport.brandapp.wu.mvp.presenter;
 
 import com.isport.blelibrary.utils.Logger;
 import com.isport.brandapp.AppConfiguration;
-import com.isport.brandapp.Home.presenter.UpgradeDataPresenter;
+import com.isport.brandapp.home.presenter.UpgradeDataPresenter;
 import com.isport.brandapp.repository.OxygenRepository;
 import com.isport.brandapp.wu.bean.OxyInfo;
 import com.isport.brandapp.wu.mvp.OxyHistoryView;

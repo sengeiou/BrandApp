@@ -1,6 +1,7 @@
 package com.isport.brandapp.repository;
 
 
+import com.google.gson.Gson;
 import com.isport.blelibrary.db.table.w811w814.W81DeviceExerciseData;
 import com.isport.blelibrary.utils.Logger;
 import com.isport.brandapp.App;
@@ -145,16 +146,14 @@ public class ExerciseRepository {
                         for (int i = 0; i < list.size(); i++) {
                             info = new ExerciseInfo();
                             exerciseData = list.get(i);
-                            Logger.myLog(TAG,"-----111--requstUpgradeExerciseData App.getWatchBindTime():" + App.getDeviceBindTime() + "info.getStartTimestamp():" + exerciseData.getStartTimestamp() + "sum:" + (App.getDeviceBindTime() - exerciseData.getStartTimestamp()));
 
+                            Logger.myLog(TAG,"---update锻炼数据="+new Gson().toJson(exerciseData));
 //                            if (App.getDeviceBindTime() == 0) {
 //                                continue;
 //                            }
 //                            if ((App.getDeviceBindTime() - exerciseData.getStartTimestamp() > 0)) {
 //                                continue;
 //                            }
-                            Logger.myLog(TAG,"----2---requstUpgradeExerciseData App.getWatchBindTime():" + App.getDeviceBindTime() + "info.getStartTimestamp():" + exerciseData.getStartTimestamp() + "sum:" + (App.getDeviceBindTime() - exerciseData.getStartTimestamp()) + "上传--------");
-
                             info.setAveRate(exerciseData.getAvgHr());
                             info.setDeviceId(exerciseData.getDeviceId());
                             info.setUserId(exerciseData.getUserId());

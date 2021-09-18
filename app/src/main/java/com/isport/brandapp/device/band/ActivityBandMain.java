@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.core.content.ContextCompat;
-
 import com.gyf.immersionbar.ImmersionBar;
 import com.isport.blelibrary.ISportAgent;
 import com.isport.blelibrary.deviceEntry.impl.BaseDevice;
@@ -14,18 +12,19 @@ import com.isport.blelibrary.result.IResult;
 import com.isport.blelibrary.result.impl.watch.WatchRealTimeResult;
 import com.isport.blelibrary.utils.CommonDateUtil;
 import com.isport.blelibrary.utils.FormatUtils;
-import com.isport.brandapp.Home.bean.db.WatchSportMainData;
-import com.isport.brandapp.Home.bean.http.Wristbandstep;
-import com.isport.brandapp.Home.view.circlebar.BandCirclebarAnimatorLayout;
 import com.isport.brandapp.R;
 import com.isport.brandapp.device.history.ActivityHistory;
 import com.isport.brandapp.device.share.NewShareActivity;
 import com.isport.brandapp.device.share.ShareBean;
+import com.isport.brandapp.home.bean.db.WatchSportMainData;
+import com.isport.brandapp.home.bean.http.Wristbandstep;
+import com.isport.brandapp.home.view.circlebar.BandCirclebarAnimatorLayout;
 import com.isport.brandapp.util.StringFomateUtil;
 
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import androidx.core.content.ContextCompat;
 import bike.gymproject.viewlibray.BebasNeueTextView;
 import bike.gymproject.viewlibray.pickerview.utils.DateUtils;
 import brandapp.isport.com.basicres.BaseTitleActivity;

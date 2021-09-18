@@ -17,7 +17,7 @@ import com.isport.blelibrary.utils.BleRequest;
 import com.isport.blelibrary.utils.DateUtil;
 import com.isport.brandapp.App;
 import com.isport.brandapp.AppConfiguration;
-import com.isport.brandapp.Home.bean.http.WristbandHrHeart;
+import com.isport.brandapp.home.bean.http.WristbandHrHeart;
 import com.isport.brandapp.R;
 import com.isport.brandapp.bean.DeviceBean;
 import com.isport.brandapp.device.sleep.TimeUtil;

@@ -37,9 +37,9 @@ import com.isport.blelibrary.utils.BleRequest
 import com.isport.blelibrary.utils.Logger
 import com.isport.brandapp.App
 import com.isport.brandapp.AppConfiguration
-import com.isport.brandapp.Home.customview.MainHeadLayout
-import com.isport.brandapp.Home.fragment.FragmentNewData
-import com.isport.brandapp.Home.presenter.DeviceConnPresenter
+import com.isport.brandapp.home.customview.MainHeadLayout
+import com.isport.brandapp.home.fragment.FragmentNewData
+import com.isport.brandapp.home.presenter.DeviceConnPresenter
 import com.isport.brandapp.R
 import com.isport.brandapp.dialog.CommuniteDeviceSyncGuideDialog
 import com.isport.brandapp.login.ActivityWebView

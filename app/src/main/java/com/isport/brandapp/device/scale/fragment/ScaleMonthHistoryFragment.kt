@@ -3,7 +3,6 @@ package com.isport.brandapp.device.scale.fragment
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
-import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,10 +10,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import com.isport.blelibrary.utils.CommonDateUtil
 import com.isport.blelibrary.utils.TimeUtils
-import com.isport.brandapp.Home.customview.BezierView
+import com.isport.brandapp.home.customview.BezierView
 import com.isport.brandapp.R
 import com.isport.brandapp.arithmetic.WeightStandardImpl
-import com.isport.brandapp.device.scale.ActivityScaleHistory
 import com.isport.brandapp.device.scale.ActivityScaleReport
 import com.isport.brandapp.device.scale.ScaleCommon
 import com.isport.brandapp.device.scale.bean.ScaleCharBean

@@ -30,12 +30,6 @@
                 android:orientation="vertical"
                 android:visibility="gone">
 
-                <fragment
-                    android:id="@+id/google_mapview"
-                    android:name="com.google.android.gms.maps.SupportMapFragment"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="0.6" />
             </LinearLayout>
 
             <View
@@ -78,7 +72,7 @@
                 <View
                     android:layout_width="0dp"
                     android:layout_height="1dp"
-                    android:layout_weight="1"></View>
+                    android:layout_weight="1"/>
 
                 <ImageView
                     android:id="@+id/iv_sport_history"

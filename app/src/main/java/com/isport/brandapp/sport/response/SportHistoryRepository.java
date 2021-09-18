@@ -2,7 +2,7 @@ package com.isport.brandapp.sport.response;
 
 
 import com.isport.brandapp.App;
-import com.isport.brandapp.Home.bean.SportLastDataBeanList;
+import com.isport.brandapp.home.bean.SportLastDataBeanList;
 import com.isport.brandapp.device.UpdateSuccessBean;
 import com.isport.brandapp.net.RetrofitClient;
 import com.isport.brandapp.sport.bean.SportSumData;

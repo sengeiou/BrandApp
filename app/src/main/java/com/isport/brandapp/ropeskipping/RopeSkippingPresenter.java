@@ -8,7 +8,7 @@ import com.isport.blelibrary.utils.Constants;
 import com.isport.blelibrary.utils.DateUtil;
 import com.isport.blelibrary.utils.Logger;
 import com.isport.brandapp.AppConfiguration;
-import com.isport.brandapp.Home.bean.RopeDetailBean;
+import com.isport.brandapp.home.bean.RopeDetailBean;
 import com.isport.brandapp.repository.S002DeviceDataRepository;
 import com.isport.brandapp.ropeskipping.history.bean.HistoryDateBean;
 import com.isport.brandapp.ropeskipping.response.ResponseDailySummaries;

@@ -2,8 +2,6 @@ package com.isport.brandapp.util;
 
 import android.text.TextUtils;
 
-import androidx.annotation.NonNull;
-
 import com.google.gson.Gson;
 import com.isport.blelibrary.db.CommonInterFace.WatchData;
 import com.isport.blelibrary.db.action.watch_w516.Watch_W516_24HDataModelAction;
@@ -14,8 +12,6 @@ import com.isport.blelibrary.db.table.watch_w516.Watch_W516_24HDataModel;
 import com.isport.blelibrary.utils.Logger;
 import com.isport.blelibrary.utils.TimeUtils;
 import com.isport.brandapp.AppConfiguration;
-import com.isport.brandapp.Home.bean.http.ScaleHistoryData;
-import com.isport.brandapp.Home.bean.http.SleepHistoryData;
 import com.isport.brandapp.R;
 import com.isport.brandapp.bean.DeviceBean;
 import com.isport.brandapp.device.band.bean.BandDayBean;
@@ -26,6 +22,8 @@ import com.isport.brandapp.device.scale.bean.ScaleHistoryBean;
 import com.isport.brandapp.device.sleep.bean.SleepHistoryList;
 import com.isport.brandapp.device.sleep.bean.SleepHistoryNBean;
 import com.isport.brandapp.device.watch.bean.WatchHistoryNBean;
+import com.isport.brandapp.home.bean.http.ScaleHistoryData;
+import com.isport.brandapp.home.bean.http.SleepHistoryData;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -33,6 +31,7 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 
+import androidx.annotation.NonNull;
 import brandapp.isport.com.basicres.BaseApp;
 import brandapp.isport.com.basicres.commonbean.UserInfoBean;
 import brandapp.isport.com.basicres.commonutil.TokenUtil;

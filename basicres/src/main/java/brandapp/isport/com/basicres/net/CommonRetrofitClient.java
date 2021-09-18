@@ -3,12 +3,11 @@ package brandapp.isport.com.basicres.net;
 
 import android.text.TextUtils;
 
-import androidx.annotation.NonNull;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import androidx.annotation.NonNull;
 import brandapp.isport.com.basicres.commonnet.interceptor.BaseErrorTransformer;
 import brandapp.isport.com.basicres.commonnet.interceptor.ErrorTransformer;
 import brandapp.isport.com.basicres.commonnet.interceptor.Transformer;
@@ -41,10 +40,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class CommonRetrofitClient {
     private final static int timout = 60;
     private final static int writeTimeout = 30;
-    // public static String baseUrl = "https://api.mini-banana.com/";
+     public static String baseUrl = "https://api.mini-banana.com/";
     //test
     //private static String baseUrl = "http://192.168.1.247:8767/";//bonlala的内网测试服务器
-    public static String baseUrl = "https://test.api.mini-banana.com/";//bonlala的外网测试服务器
+//    public static String baseUrl = "https://test.api.mini-banana.com/";//bonlala的外网测试服务器
     public static ErrorTransformer transformer = new ErrorTransformer();//返回子对象
     public static BaseErrorTransformer baseTransformer = new BaseErrorTransformer();//返回String
     public static Transformer desTransformer = new Transformer();//返回顶层的对象

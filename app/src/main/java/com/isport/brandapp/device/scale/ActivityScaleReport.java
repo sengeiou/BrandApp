@@ -19,15 +19,10 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.core.content.FileProvider;
-import androidx.core.widget.NestedScrollView;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import com.isport.blelibrary.db.table.scale.Scale_FourElectrode_DataModel;
 import com.isport.blelibrary.utils.CommonDateUtil;
 import com.isport.blelibrary.utils.Logger;
 import com.isport.brandapp.App;
-import com.isport.brandapp.Home.bean.http.Fatsteelyard;
 import com.isport.brandapp.R;
 import com.isport.brandapp.banner.recycleView.utils.ToastUtil;
 import com.isport.brandapp.device.scale.adpter.AdapterScaleReport;
@@ -37,6 +32,7 @@ import com.isport.brandapp.device.scale.presenter.ScaleReportPresenter;
 import com.isport.brandapp.device.scale.view.BarView;
 import com.isport.brandapp.device.scale.view.ScaleReportView;
 import com.isport.brandapp.device.share.PackageUtil;
+import com.isport.brandapp.home.bean.http.Fatsteelyard;
 import com.isport.brandapp.login.ActivityLogin;
 import com.isport.brandapp.util.AppSP;
 import com.isport.brandapp.util.ShareHelper;
@@ -54,6 +50,9 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.core.content.FileProvider;
+import androidx.core.widget.NestedScrollView;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import bike.gymproject.viewlibray.pickerview.utils.DateUtils;
 import brandapp.isport.com.basicres.ActivityManager;
 import brandapp.isport.com.basicres.commonbean.UserInfoBean;

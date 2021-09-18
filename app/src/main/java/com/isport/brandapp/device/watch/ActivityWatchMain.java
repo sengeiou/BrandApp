@@ -37,7 +37,7 @@ import com.isport.blelibrary.utils.SyncCacheUtils;
 import com.isport.blelibrary.utils.TimeUtils;
 import com.isport.brandapp.App;
 import com.isport.brandapp.AppConfiguration;
-import com.isport.brandapp.Home.bean.http.WatchSleepDayData;
+import com.isport.brandapp.home.bean.http.WatchSleepDayData;
 import com.isport.brandapp.R;
 import com.isport.brandapp.banner.recycleView.utils.ToastUtil;
 import com.isport.brandapp.bean.DeviceBean;
@@ -122,7 +122,9 @@ import phone.gym.jkcq.com.commonres.commonutil.CommonDateUtil;
  * 手表设置页面
  */
 public class ActivityWatchMain extends BaseMVPTitleActivity<WatchView, WatchPresenter> implements WatchView, W311RealTimeDataView, LiftWristView, View.OnClickListener, ItemDeviceSettingView.OnItemViewCheckedChangeListener, DeviceUpgradeView, DeviceBackLightTimeAndScrenLeveView, DeviceGoalStepView, DeviceGoalDistanceView, DeviceGoalCalorieView, AlarmView, NoDisturbView, Device24HrView {
+
     private final static String TAG = ActivityWatchMain.class.getSimpleName();
+
     private ItemDeviceSettingView ivWatchStepTarget, ivWatchDistanceTarget, ivWatchCalorieTarget, ivWatchStableRemind, ivWatch24HeartRate, ivWatchAlarmSetting, ivWatchSleepSetting, ivWatchDisturbSetting,
             ivWatchCallRemind, ivWatchMsgSetting, ivWatchPointerCali, ivWatchDefaultSetting, ivWatchStableVersion, iv_watch_take_photo, iv_watch_temp_sub;
 
@@ -187,7 +189,7 @@ public class ActivityWatchMain extends BaseMVPTitleActivity<WatchView, WatchPres
             isOpenOnPausePageNotityState = true;
         }
 
-        Logger.myLog("isOpenPageNotityState:" + isOpenPageNotityState + ",isOpenOnPausePageNotityState:" + isOpenOnPausePageNotityState);
+        Logger.myLog(TAG,"isOpenPageNotityState:" + isOpenPageNotityState + ",isOpenOnPausePageNotityState:" + isOpenOnPausePageNotityState);
 
         //重新启动服务器接收消息
         if (isOpenPageNotityState == false && isOpenOnPausePageNotityState == true) {
@@ -548,7 +550,7 @@ public class ActivityWatchMain extends BaseMVPTitleActivity<WatchView, WatchPres
         ISportAgent.getInstance().registerListener(mBleReciveListener);
     }
 
-    private BleReciveListener mBleReciveListener = new BleReciveListener() {
+    private final BleReciveListener mBleReciveListener = new BleReciveListener() {
         @Override
         public void onConnResult(boolean isConn, boolean isConnectByUser, BaseDevice baseDevice) {
             if (isConn) {
@@ -1369,6 +1371,7 @@ public class ActivityWatchMain extends BaseMVPTitleActivity<WatchView, WatchPres
 
     @Override
     public void successGetGoalStep(int Step) {
+        JkConfiguration.WATCH_GOAL = Step;
         ivWatchStepTarget.setContentText(Step + " " + UIUtils.getString(R.string.unit_steps));
     }
 
@@ -1402,13 +1405,14 @@ public class ActivityWatchMain extends BaseMVPTitleActivity<WatchView, WatchPres
                 ISportAgent.getInstance().requsetW311Ble(BleRequest.device_target_distance, distance);
             }
         }
-
+        JkConfiguration.WATCH_GOAL = distance;
         JkConfiguration.WATCH_GOAL_DISTANCE = distance;
         EventBus.getDefault().post(new MessageEvent(MessageEvent.UPDATE_WATCH_TARGET));
     }
 
     @Override
     public void successGetGoalCalorie(int calorie) {
+        JkConfiguration.WATCH_GOAL = calorie;
         ivWatchCalorieTarget.setContentText(calorie + " " + UIUtils.getString(R.string.unit_kcal));
     }
 

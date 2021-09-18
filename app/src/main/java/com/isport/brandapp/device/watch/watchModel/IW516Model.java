@@ -1,12 +1,11 @@
 package com.isport.brandapp.device.watch.watchModel;
 
-import com.isport.blelibrary.db.table.bracelet_w311.Bracelet_W311_RealTimeData;
-import com.isport.brandapp.Home.bean.db.HeartRateMainData;
-import com.isport.brandapp.Home.bean.db.StandardMainData;
-import com.isport.brandapp.Home.bean.db.WatchSportMainData;
-import com.isport.brandapp.Home.bean.http.WatchSleepDayData;
-import com.isport.brandapp.Home.bean.http.WristbandHrHeart;
-import com.isport.brandapp.Home.bean.http.Wristbandstep;
+import com.isport.brandapp.home.bean.db.HeartRateMainData;
+import com.isport.brandapp.home.bean.db.StandardMainData;
+import com.isport.brandapp.home.bean.db.WatchSportMainData;
+import com.isport.brandapp.home.bean.http.WatchSleepDayData;
+import com.isport.brandapp.home.bean.http.WristbandHrHeart;
+import com.isport.brandapp.home.bean.http.Wristbandstep;
 
 import java.util.ArrayList;
 

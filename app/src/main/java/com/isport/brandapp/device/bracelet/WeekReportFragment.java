@@ -15,7 +15,7 @@ import androidx.annotation.Nullable;
 import com.gyf.immersionbar.ImmersionBar;
 import com.isport.blelibrary.utils.CommonDateUtil;
 import com.isport.blelibrary.utils.StepArithmeticUtil;
-import com.isport.brandapp.Home.bean.http.Wristbandstep;
+import com.isport.brandapp.home.bean.http.Wristbandstep;
 import com.isport.brandapp.R;
 import com.isport.brandapp.bean.DeviceBean;
 import com.isport.brandapp.device.bracelet.braceletPresenter.BraceletStepPresenter;

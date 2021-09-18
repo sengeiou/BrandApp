@@ -253,10 +253,12 @@ public class BraceletW811W814Manager extends BaseManager {
     }
 
 
-    private BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
+    private final BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
+            if(action == null)
+                return;
             if (action.equals(Intent.ACTION_TIME_CHANGED) || action.equals(Intent.ACTION_TIMEZONE_CHANGED)) {
 
             } else if (action.equals(BluetoothAdapter.ACTION_STATE_CHANGED)) {
@@ -287,6 +289,7 @@ public class BraceletW811W814Manager extends BaseManager {
                     if (mBleDevice != null) {
                         mBleDevice.disconnect();
                     }
+                    mHandler.sendEmptyMessage(HandlerContans.mHandlerConnetFailState);
                     mReHandler.removeMessages(HandlerContans.mDevcieReconnect);
                     BLU_STATE = BluetoothAdapter.STATE_OFF;
                     // mReconnectHandler.removeCallbacksAndMessages(null);
@@ -1295,7 +1298,7 @@ public class BraceletW811W814Manager extends BaseManager {
                 Logger.myLog(TAG + "FirmwareVersion=" + s + ",versionCode" + "version[version.length - 1]=" + version[version.length - 1] + ",currentV=" + currentV + "versionCode=" + versionCode);
 
             } catch (Exception e) {
-
+                e.printStackTrace();
             } finally {
                 mDeviceInformationTable.setVersion(s);
                 ParseData.saveOrUpdateDeviceInfo(mDeviceInformationTable, 1);
@@ -1695,6 +1698,8 @@ public class BraceletW811W814Manager extends BaseManager {
 
         @Override
         public void onMovementMeasureResult(List<CRPMovementHeartRateInfo> list) {
+            Logger.myLog(TAG,"------锻炼数据="+new Gson().toJson(list));
+
             Long currentTime = isSameOption(movementMeasureResult);
             if (currentTime == movementMeasureResult) {
                 return;

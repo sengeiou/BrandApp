@@ -27,6 +27,7 @@ public class AppSP {
 
     //目标类型key,0：运动目标；1：距离目标：2：卡路里目标
     public static final String DEVICE_GOAL_KEY = "device_goal_key";
+    //目标
 
 
     public static HashMap macMap = new HashMap<String, String>();

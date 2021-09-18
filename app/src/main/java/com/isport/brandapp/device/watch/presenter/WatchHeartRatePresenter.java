@@ -2,7 +2,7 @@ package com.isport.brandapp.device.watch.presenter;
 
 import com.isport.blelibrary.utils.DateUtil;
 import com.isport.brandapp.AppConfiguration;
-import com.isport.brandapp.Home.bean.http.WristbandHrHeart;
+import com.isport.brandapp.home.bean.http.WristbandHrHeart;
 import com.isport.brandapp.device.W81Device.IW81DeviceDataModel;
 import com.isport.brandapp.device.W81Device.W81DeviceDataModelImp;
 import com.isport.brandapp.device.bracelet.braceletModel.IW311DataModel;
@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import brandapp.isport.com.basicres.BaseApp;
-import phone.gym.jkcq.com.commonres.common.JkConfiguration;
 import brandapp.isport.com.basicres.commonnet.interceptor.BaseObserver;
 import brandapp.isport.com.basicres.commonnet.interceptor.ExceptionHandle;
 import brandapp.isport.com.basicres.mvp.BasePresenter;

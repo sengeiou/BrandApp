@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 
 import com.isport.blelibrary.utils.Constants;
-import com.isport.brandapp.Home.MainActivity;
+import com.isport.brandapp.home.MainActivity;
 import com.isport.brandapp.bind.ActivityAllDevice;
 import com.isport.brandapp.bind.ActivityScan;
 import com.isport.brandapp.device.scale.ActivityScaleRealTimeData;

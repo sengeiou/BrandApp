@@ -35,9 +35,9 @@ import com.isport.blelibrary.utils.DateUtil;
 import com.isport.blelibrary.utils.Logger;
 import com.isport.blelibrary.utils.TimeUtils;
 import com.isport.brandapp.AppConfiguration;
-import com.isport.brandapp.Home.bean.http.WristbandHrHeart;
-import com.isport.brandapp.Home.presenter.DeviceHistotyDataPresenter;
-import com.isport.brandapp.Home.presenter.W81DataPresenter;
+import com.isport.brandapp.home.bean.http.WristbandHrHeart;
+import com.isport.brandapp.home.presenter.DeviceHistotyDataPresenter;
+import com.isport.brandapp.home.presenter.W81DataPresenter;
 import com.isport.brandapp.R;
 import com.isport.brandapp.banner.recycleView.utils.ToastUtil;
 import com.isport.brandapp.bean.DeviceBean;
@@ -326,12 +326,12 @@ public class ActivityWatchHeartRate extends BaseMVPTitleActivity<WatchHeartRateV
 
     //时长最小单位为分钟
     private void setSleepSummary(int limint, int anaerobic_exercise, int aerobic_exercise, int fat_burning_exercise, int warm_up, int leisure) {
-        view_limit.setData(new HourMinuteData(UIUtils.getColor(R.color.color_limit), UIUtils.getString(R.string.heart_limit), UIUtils.getString(R.string.no_data), DateUtil.getFormatTimehhmmss(limint), "1"));
-        view_anaerobic_exercise.setData(new HourMinuteData(UIUtils.getColor(R.color.color_anaerobic_exercise), UIUtils.getString(R.string.heart_anaerobic_exercise), UIUtils.getString(R.string.no_data), DateUtil.getFormatTimehhmmss(anaerobic_exercise), "1"));
-        view_aerobic_exercise.setData(new HourMinuteData(UIUtils.getColor(R.color.color_aerobic_exercise), UIUtils.getString(R.string.heart_aerobic_exercise), UIUtils.getString(R.string.no_data), DateUtil.getFormatTimehhmmss(aerobic_exercise), "1"));
-        view_fat_burning_exercise.setData(new HourMinuteData(UIUtils.getColor(R.color.color_fat_burning_exercise), UIUtils.getString(R.string.heart_fat_burning_exercise), UIUtils.getString(R.string.no_data), DateUtil.getFormatTimehhmmss(fat_burning_exercise), "1"));
-        view_warm_up.setData(new HourMinuteData(UIUtils.getColor(R.color.color_warm_up), UIUtils.getString(R.string.heart_warm_up), UIUtils.getString(R.string.no_data), DateUtil.getFormatTimehhmmss(warm_up), "1"));
-        view_leisure.setData(new HourMinuteData(UIUtils.getColor(R.color.color_leisure), UIUtils.getString(R.string.heart_leisure), UIUtils.getString(R.string.no_data), DateUtil.getFormatTimehhmmss(leisure), "1"));
+        view_limit.setData(new HourMinuteData(UIUtils.getColor(R.color.color_limit), UIUtils.getString(R.string.heart_limit), UIUtils.getString(R.string.no_data), DateUtil.getFormatTimehhmmss(deviceBean.deviceType == 812 ? limint * 5:limint), "1"));
+        view_anaerobic_exercise.setData(new HourMinuteData(UIUtils.getColor(R.color.color_anaerobic_exercise), UIUtils.getString(R.string.heart_anaerobic_exercise), UIUtils.getString(R.string.no_data), DateUtil.getFormatTimehhmmss(mCurrentType == 812 ? anaerobic_exercise*5 : anaerobic_exercise), "1"));
+        view_aerobic_exercise.setData(new HourMinuteData(UIUtils.getColor(R.color.color_aerobic_exercise), UIUtils.getString(R.string.heart_aerobic_exercise), UIUtils.getString(R.string.no_data), DateUtil.getFormatTimehhmmss(mCurrentType == 812 ? aerobic_exercise : aerobic_exercise * 5), "1"));
+        view_fat_burning_exercise.setData(new HourMinuteData(UIUtils.getColor(R.color.color_fat_burning_exercise), UIUtils.getString(R.string.heart_fat_burning_exercise), UIUtils.getString(R.string.no_data), DateUtil.getFormatTimehhmmss(mCurrentType == 812 ? fat_burning_exercise* 5 : fat_burning_exercise), "1"));
+        view_warm_up.setData(new HourMinuteData(UIUtils.getColor(R.color.color_warm_up), UIUtils.getString(R.string.heart_warm_up), UIUtils.getString(R.string.no_data), DateUtil.getFormatTimehhmmss(mCurrentType == 812 ? warm_up * 5 : warm_up), "1"));
+        view_leisure.setData(new HourMinuteData(UIUtils.getColor(R.color.color_leisure), UIUtils.getString(R.string.heart_leisure), UIUtils.getString(R.string.no_data), DateUtil.getFormatTimehhmmss(mCurrentType == 812 ? leisure * 5 : leisure), "1"));
     }
 
     @Override

@@ -4,7 +4,7 @@ package com.isport.brandapp.net;
 import com.isport.blelibrary.db.table.s002.DailyBrief;
 import com.isport.blelibrary.db.table.s002.DailySummaries;
 import com.isport.blelibrary.db.table.s002.Summary;
-import com.isport.brandapp.Home.bean.RopeDetailBean;
+import com.isport.brandapp.home.bean.RopeDetailBean;
 
 import java.util.List;
 

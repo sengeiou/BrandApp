@@ -1,6 +1,7 @@
 package com.isport.brandapp.sport.modle;
 
-import com.isport.brandapp.Home.fragment.LatLongData;
+import com.isport.blelibrary.utils.CommonDateUtil;
+import com.isport.brandapp.home.fragment.LatLongData;
 import com.isport.brandapp.sport.bean.HrBean;
 import com.isport.brandapp.sport.bean.IndoorRunDatas;
 import com.isport.brandapp.sport.bean.PaceBean;
@@ -18,11 +19,10 @@ import java.util.Map;
 
 import brandapp.isport.com.basicres.BaseApp;
 import brandapp.isport.com.basicres.action.SportDataAction;
-import phone.gym.jkcq.com.commonres.common.JkConfiguration;
-import com.isport.blelibrary.utils.CommonDateUtil;
 import brandapp.isport.com.basicres.commonutil.Logger;
 import brandapp.isport.com.basicres.commonutil.TokenUtil;
 import brandapp.isport.com.basicres.entry.SportBean;
+import phone.gym.jkcq.com.commonres.common.JkConfiguration;
 
 public class SportDataModle {
 

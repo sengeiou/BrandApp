@@ -25,6 +25,9 @@ import com.isport.brandapp.sport.response.SportRepository;
 import com.isport.brandapp.util.AppSP;
 import com.isport.brandapp.util.DeviceTypeUtil;
 import com.tencent.bugly.crashreport.CrashReport;
+import com.umeng.analytics.MobclickAgent;
+import com.umeng.commonsdk.UMConfigure;
+import com.umeng.socialize.PlatformConfig;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -79,17 +82,16 @@ public class App extends BaseApp {
         FileUtil.initFile(this);
         ARouter.init(this);
 
-        //CrashHandler.getInstance().init(this);
         initAppState();
         SpeechUtility.createUtility(this, "appid=" + getString(R.string.app_id));
-//        CrashReport.initCrashReport(getApplicationContext(), "a1832b72-84a7-480d-b26c-41f6ebfba73d", false);
+
         ISportAgent.getInstance().setIsWeight(false);
 
         if (NotificationService.isEnabled(this)) {
             NotificationService.ensureCollectorRunning(this);
         }
 
-        // WbSdk.install(this,new AuthInfo(this, Constants.APP_KEY, Constants.REDIRECT_URL, Constants.SCOPE));
+//         WbSdk.install(this,new AuthInfo(this, Constants.APP_KEY, Constants.REDIRECT_URL, Constants.SCOPE));
         // AccessibilityUtil.checkSetting(this, NotifService.class);
         IntentFilter filter = new IntentFilter("android.provider.Telephony.SMS_RECEIVED");
         registerReceiver(new SmsBroadcastReceiver(), filter);
@@ -101,10 +103,9 @@ public class App extends BaseApp {
 
         CrashReport.initCrashReport(getApplicationContext(), "93283676c4", false);
 
-        char[] target = String.format("%04x", 10000001).toCharArray();
-        Logger.LOGE("char ==", target.length + " target == " + target.toString());
-
         BaseUtils.init(this);
+
+        initUmenData();
     }
 
 
@@ -460,6 +461,32 @@ public class App extends BaseApp {
 
             }
         });
+    }
+
+
+
+    private void initUmenData(){
+        UMConfigure.setLogEnabled(true);
+
+        //初始化组件化基础库, 统计SDK/推送SDK/分享SDK都必须调用此初始化接口
+        UMConfigure.init(this, null, null, UMConfigure.DEVICE_TYPE_PHONE,
+                null);
+        // interval 单位为毫秒，如果想设定为40秒，interval应为 40*1000.
+        MobclickAgent.setSessionContinueMillis(30 * 1000);//黑屏，应用后台运行超过30s启动都算一次启动
+        // 选用AUTO页面采集模式
+        MobclickAgent.setPageCollectionMode(MobclickAgent.PageMode.AUTO);
+
+        // 微信
+        //    public final static String APP_ID_WX = "wx83ad7682b33e28e5";
+        //    public final static String APP_SECRET_WX = "d673af9518942cd8ef8490837502c12e";
+        PlatformConfig.setWeixin("wx83ad7682b33e28e5", "d673af9518942cd8ef8490837502c12e");
+        // 新浪微博 2511584848 8be44eb4339235c451f978d1059c2763
+        PlatformConfig.setSinaWeibo("2511584848", "8be44eb4339235c451f978d1059c2763", "http://sns.whalecloud.com");
+        // QQ APP ID 1108767316
+        //APP KEY bsAfYGPH8dW47RG8
+        // PlatformConfig.setQQZone("1108767316", "bsAfYGPH8dW47RG8");
+        PlatformConfig.setQQZone("1110159454", "Ziwl5Fje7wi3327f");
+        PlatformConfig.setQQFileProvider("com.isport.brandapp.fileProvider");
     }
 
 

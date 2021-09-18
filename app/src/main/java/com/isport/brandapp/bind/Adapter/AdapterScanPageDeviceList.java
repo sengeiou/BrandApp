@@ -1,5 +1,6 @@
 package com.isport.brandapp.bind.Adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.MotionEvent;
 import android.view.View;
@@ -61,6 +62,7 @@ public class AdapterScanPageDeviceList extends BaseCommonRefreshRecyclerAdapter<
     }
 
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void initEvent(ViewHolder viewHolder, int position, final BaseDevice item) {
 

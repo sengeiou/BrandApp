@@ -78,6 +78,7 @@ import com.isport.blelibrary.utils.Utils;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -2257,7 +2258,13 @@ public class WatchW557BleManager extends BaseManager {
         boolean isNull = mGattCallBack.getQueuryLenth() == 0 ? true : false;
         if (mGattCallBack != null && w526Cmd != null) {
             ArrayList<byte[]> messages = w526Cmd.sendMessage(messageType, title, content);
+
+
             for (int i = 0; i < messages.size(); i++) {
+
+                byte[] tmpByte = messages.get(i);
+                Logger.myLog(TAG,"tmpByte="+ Arrays.toString(tmpByte));
+
                 mGattCallBack.addQueuryData(new DataBean(messages.get(i), SETTING_CMD_TIMEOUT, false));
             }
         }

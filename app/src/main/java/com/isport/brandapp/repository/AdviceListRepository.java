@@ -4,7 +4,7 @@ import android.text.TextUtils;
 
 import com.isport.blelibrary.db.parse.RopeDetail;
 import com.isport.brandapp.App;
-import com.isport.brandapp.Home.bean.AdviceBean;
+import com.isport.brandapp.home.bean.AdviceBean;
 import com.isport.brandapp.net.RetrofitClient;
 import com.isport.brandapp.util.InitCommonParms;
 

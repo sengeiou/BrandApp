@@ -102,12 +102,7 @@
         android:orientation="vertical"
         android:visibility="gone">
 
-        <fragment
-            android:id="@+id/google_mapview"
-            android:name="com.google.android.gms.maps.SupportMapFragment"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.8" />
+
     </LinearLayout>
 
     <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"

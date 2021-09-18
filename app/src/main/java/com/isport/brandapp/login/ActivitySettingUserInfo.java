@@ -10,7 +10,7 @@ import com.isport.blelibrary.utils.CommonDateUtil;
 import com.isport.blelibrary.utils.Logger;
 import com.isport.brandapp.App;
 import com.isport.brandapp.AppConfiguration;
-import com.isport.brandapp.Home.MainActivity;
+import com.isport.brandapp.home.MainActivity;
 import com.isport.brandapp.R;
 import com.isport.brandapp.banner.recycleView.utils.ToastUtil;
 import com.isport.brandapp.login.presenter.ActivityDataSettingPresenter;

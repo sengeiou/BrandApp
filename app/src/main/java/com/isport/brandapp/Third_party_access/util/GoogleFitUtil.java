@@ -19,7 +19,7 @@ import com.google.android.gms.fitness.request.DataUpdateRequest;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.isport.blelibrary.utils.StepArithmeticUtil;
-import com.isport.brandapp.Home.bean.http.WatchSleepDayData;
+import com.isport.brandapp.home.bean.http.WatchSleepDayData;
 
 import java.util.ArrayList;
 import java.util.Calendar;

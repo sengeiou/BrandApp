@@ -1,18 +1,15 @@
 package com.isport.brandapp.device.bracelet.braceletPresenter;
 
 import com.isport.blelibrary.db.table.bracelet_w311.Bracelet_W311_RealTimeData;
-import com.isport.blelibrary.result.impl.watch.WatchRealTimeResult;
 import com.isport.blelibrary.utils.Logger;
-import com.isport.blelibrary.utils.StepArithmeticUtil;
 import com.isport.blelibrary.utils.TimeUtils;
 import com.isport.brandapp.AppConfiguration;
-import com.isport.brandapp.Home.bean.db.WatchSportMainData;
+import com.isport.brandapp.home.bean.db.WatchSportMainData;
 import com.isport.brandapp.device.W81Device.IW81DeviceDataModel;
 import com.isport.brandapp.device.W81Device.W81DeviceDataModelImp;
 import com.isport.brandapp.device.bracelet.braceletModel.IW311DataModel;
 import com.isport.brandapp.device.bracelet.braceletModel.W311DataModelImpl;
 import com.isport.brandapp.device.bracelet.view.W311RealTimeDataView;
-import com.isport.brandapp.util.DeviceTypeUtil;
 
 import bike.gymproject.viewlibray.pickerview.utils.DateUtils;
 import brandapp.isport.com.basicres.BaseApp;

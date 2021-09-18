@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.isport.blelibrary.db.table.watch_w516.Watch_W516_SedentaryModel;
 import com.isport.brandapp.App;
-import com.isport.brandapp.Home.bean.http.WatchSleepDayData;
+import com.isport.brandapp.home.bean.http.WatchSleepDayData;
 import com.isport.brandapp.R;
 import com.isport.brandapp.bean.DeviceBean;
 import com.isport.brandapp.device.watch.presenter.WatchPresenter;

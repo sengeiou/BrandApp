@@ -3,8 +3,8 @@ package com.isport.brandapp;
 import com.isport.blelibrary.ISportAgent;
 import com.isport.blelibrary.deviceEntry.impl.BaseDevice;
 import com.isport.blelibrary.utils.TimeUtils;
-import com.isport.brandapp.Home.bean.ScacleBean;
-import com.isport.brandapp.Home.bean.SportLastDataBean;
+import com.isport.brandapp.home.bean.ScacleBean;
+import com.isport.brandapp.home.bean.SportLastDataBean;
 import com.isport.brandapp.bean.DeviceBean;
 
 import java.util.ArrayList;

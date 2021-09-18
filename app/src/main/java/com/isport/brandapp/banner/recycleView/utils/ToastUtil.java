@@ -16,6 +16,8 @@ public class ToastUtil {
     }
 
     public static void showTextToast(String msg) {
+        if(context == null)
+            return;
         if (StringUtil.isBlank(msg) || msg.contains("没有访问权限！")) {
             return;
         }
@@ -27,6 +29,9 @@ public class ToastUtil {
         toast.setGravity(Gravity.CENTER, 0, 0);
         toast.show();
     }
+
+
+
 
     public static void showTextToastById(int msg) {
         if (toast == null) {

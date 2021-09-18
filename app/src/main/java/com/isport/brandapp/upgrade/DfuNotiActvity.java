@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.isport.brandapp.Home.MainActivity;
+import com.isport.brandapp.home.MainActivity;
 
 /**
  * Created by Administrator on 2016/11/1.

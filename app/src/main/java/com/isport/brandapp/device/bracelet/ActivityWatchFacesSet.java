@@ -84,7 +84,7 @@ public class ActivityWatchFacesSet extends BaseMVPTitleActivity<WatchFacesSetVie
             case JkConfiguration.DeviceType.Watch_W560: // xuqian
                 iv_face_1.setImageResource(R.drawable.icon_watch_face_w560_1);
                 iv_face_2.setImageResource(R.drawable.icon_watch_face_w560_2);
-                iv_face_3.setImageResource(R.drawable.icon_watch_face_w560_3);
+                iv_face_3.setImageResource(R.drawable.icon_watch_face_w560_34);
                 break;
             case JkConfiguration.DeviceType.Watch_W819:
                 iv_face_1.setImageResource(R.drawable.icon_watch_face_w819_1);

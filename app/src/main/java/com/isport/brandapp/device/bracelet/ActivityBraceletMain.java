@@ -41,7 +41,7 @@ import com.isport.blelibrary.utils.Constants;
 import com.isport.blelibrary.utils.Logger;
 import com.isport.blelibrary.utils.SyncCacheUtils;
 import com.isport.brandapp.AppConfiguration;
-import com.isport.brandapp.Home.bean.http.WatchSleepDayData;
+import com.isport.brandapp.home.bean.http.WatchSleepDayData;
 import com.isport.brandapp.R;
 import com.isport.brandapp.banner.recycleView.utils.ToastUtil;
 import com.isport.brandapp.bean.DeviceBean;
@@ -82,7 +82,6 @@ import com.isport.brandapp.upgrade.bean.DeviceUpgradeBean;
 import com.isport.brandapp.upgrade.present.DevcieUpgradePresent;
 import com.isport.brandapp.upgrade.view.DeviceUpgradeView;
 import com.isport.brandapp.util.ActivitySwitcher;
-import com.isport.brandapp.util.AppSP;
 import com.isport.brandapp.util.DeviceTypeUtil;
 import com.isport.brandapp.view.VerBatteryView;
 import com.tbruyelle.rxpermissions2.RxPermissions;
@@ -193,7 +192,7 @@ public class ActivityBraceletMain extends BaseMVPTitleActivity<WatchView, WatchP
                 isOpenOnPausePageNotityState = true;
             }
 
-            Logger.myLog("isOpenPageNotityState:" + isOpenPageNotityState + ",isOpenOnPausePageNotityState:" + isOpenOnPausePageNotityState);
+            Logger.myLog(TAG,"isOpenPageNotityState:" + isOpenPageNotityState + ",isOpenOnPausePageNotityState:" + isOpenOnPausePageNotityState);
 
             //重新启动服务器接收消息
             if (isOpenPageNotityState == false && isOpenOnPausePageNotityState == true) {
@@ -589,7 +588,7 @@ public class ActivityBraceletMain extends BaseMVPTitleActivity<WatchView, WatchP
 
     }
 
-    private BleReciveListener mBleReciveListener = new BleReciveListener() {
+    private final BleReciveListener mBleReciveListener = new BleReciveListener() {
         @Override
         public void onConnResult(boolean isConn, boolean isConnectByUser, BaseDevice baseDevice) {
             if (isConn) {
@@ -647,7 +646,7 @@ public class ActivityBraceletMain extends BaseMVPTitleActivity<WatchView, WatchP
                                 }
                             }
                         } catch (Exception e) {
-
+                            e.printStackTrace();
                         }
                         break;
 
@@ -840,6 +839,7 @@ public class ActivityBraceletMain extends BaseMVPTitleActivity<WatchView, WatchP
     public void onCheckedChanged(int id, boolean isChecked) {
         if (!AppConfiguration.isConnected) {
             ToastUtil.showTextToast(context, UIUtils.getString(R.string.app_disconnect_device));
+            ivWatch24HeartRate.setChecked(false);
             if (itemList.containsKey(id) && itemList.get(id) != null) {
                 itemList.get(id).setChecked(!isChecked);
             }
@@ -854,8 +854,19 @@ public class ActivityBraceletMain extends BaseMVPTitleActivity<WatchView, WatchP
                 saveDb(60, Constants.defStartTime, Constants.defEndTime, isChecked);
                 break;
             case R.id.iv_watch_24_heart_rate:
+                Logger.myLog(TAG,"-----24小时心率-"+isChecked);
+
+                if (!AppConfiguration.isConnected) {
+                    ToastUtil.showTextToast(context, UIUtils.getString(R.string.app_disconnect_device));
+                    ivWatch24HeartRate.setChecked(!isChecked);
+                    return;
+                }
+
+                ivWatch24HeartRate.setChecked(isChecked);
                 hrSettingPresenter.saveHrSetting(TokenUtil.getInstance().getPeopleIdInt(BaseApp.getApp()), devcieId, isChecked);
                 ISportAgent.getInstance().requestBle(BleRequest.bracelet_is_open_heartRate, isChecked);
+
+
                 break;
             case R.id.iv_bracelet_dropping_reminder:
                 if (AppConfiguration.hasSynced) {
@@ -913,10 +924,10 @@ public class ActivityBraceletMain extends BaseMVPTitleActivity<WatchView, WatchP
                 }
                 break;
 
-            case R.id.iv_watch_call_remind:
+            case R.id.iv_watch_call_remind:     //电话提醒
                 checkPhonePerssion(isChecked);
                 break;
-            case R.id.iv_watch_msg_setting:
+            case R.id.iv_watch_msg_setting:     //信息提醒
                 cheakMessagePerssion(isChecked);
 
                 break;

@@ -11,7 +11,7 @@ import com.isport.blelibrary.utils.CommonDateUtil;
 import com.isport.blelibrary.utils.Constants;
 import com.isport.blelibrary.utils.Logger;
 import com.isport.brandapp.AppConfiguration;
-import com.isport.brandapp.Home.bean.http.WatchSleepDayData;
+import com.isport.brandapp.home.bean.http.WatchSleepDayData;
 import com.isport.brandapp.R;
 import com.isport.brandapp.banner.recycleView.utils.ToastUtil;
 import com.isport.brandapp.bean.DeviceBean;

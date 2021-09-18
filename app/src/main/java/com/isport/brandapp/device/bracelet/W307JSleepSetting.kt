@@ -1,6 +1,5 @@
 package com.isport.brandapp.device.bracelet
 
-import android.os.Message
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -23,7 +22,7 @@ import com.isport.blelibrary.result.impl.watch.DeviceGetSuccessResult
 import com.isport.blelibrary.utils.BleRequest
 import com.isport.blelibrary.utils.Logger
 import com.isport.brandapp.AppConfiguration
-import com.isport.brandapp.Home.bean.http.WatchSleepDayData
+import com.isport.brandapp.home.bean.http.WatchSleepDayData
 import com.isport.brandapp.R
 import com.isport.brandapp.banner.recycleView.utils.ToastUtil
 import com.isport.brandapp.bean.DeviceBean

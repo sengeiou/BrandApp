@@ -10,8 +10,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import com.isport.blelibrary.ISportAgent;
 import com.isport.blelibrary.deviceEntry.impl.BaseDevice;
 import com.isport.blelibrary.interfaces.BleReciveListener;
@@ -19,13 +17,14 @@ import com.isport.blelibrary.result.IResult;
 import com.isport.blelibrary.utils.Logger;
 import com.isport.blelibrary.utils.Utils;
 import com.isport.brandapp.AppConfiguration;
-import com.isport.brandapp.Home.adpter.AdapterChangeDeiceList;
 import com.isport.brandapp.R;
 import com.isport.brandapp.bean.DeviceBean;
+import com.isport.brandapp.home.adpter.AdapterChangeDeiceList;
 import com.isport.brandapp.util.AppSP;
 
 import java.util.ArrayList;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
 import brandapp.isport.com.basicres.commonrecyclerview.FullyLinearLayoutManager;
 import brandapp.isport.com.basicres.commonrecyclerview.RefreshRecyclerView;
 import brandapp.isport.com.basicres.commonutil.AppUtil;

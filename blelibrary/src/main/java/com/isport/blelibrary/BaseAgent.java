@@ -215,12 +215,7 @@ public class BaseAgent {
             }
         } else {
             Logger.myLog(TAG,"scanFilter:" + scanFilter + "name:" + name + "name.contains(scanFilter):" + name.contains(scanFilter));
-            if(name.contains("FT_ReflexSW")){
-                if (createDevice == null) {
-                    createDevice = new CreateDevice();
-                }
-                return createDevice.createDevcie(name, address, scanFilter, isDFUMode);
-            }
+
 
             if (name.contains(scanFilter) || scanFilter.equals("all")) {
                 if (createDevice == null) {
@@ -228,6 +223,14 @@ public class BaseAgent {
                 }
                 return createDevice.createDevcie(name, address, scanFilter, isDFUMode);
             } else {
+
+                if(name.contains("FT_ReflexSW")){
+                    if (createDevice == null) {
+                        createDevice = new CreateDevice();
+                    }
+                    return createDevice.createDevcie(name, address, scanFilter, isDFUMode);
+                }
+
                 if (name.contains(scanFilter) && name.contains(Constants.BRAND_FILTER)) {
                     if (createDevice == null) {
                         createDevice = new CreateDevice();
@@ -861,7 +864,7 @@ public class BaseAgent {
         if (cancelScan)
             stopLeScan();
 
-        Logger.myLog(TAG,"mBaseManager" + (mBaseManager!=null ? mBaseManager.getCurrentDevice().toString() : "mBaseManager为null了") + "mContext" + mContext + "------------device:" + device);
+       // Logger.myLog(TAG,"mBaseManager" + (mBaseManager!=null ? mBaseManager.getCurrentDevice().toString() : "mBaseManager为null了") + "mContext" + mContext + "------------device:" + device);
         if (mContext != null && device != null) {
             mBaseManager = getManager(device, mContext);
             device.connect(isConnectByUser);
@@ -1826,6 +1829,9 @@ public class BaseAgent {
     protected void findBracelet() {
         if (mBaseManager != null && mBaseManager.getCurrentDevice() != null) {
             BaseDevice currentDevice = mBaseManager.getCurrentDevice();
+            Log.e(TAG,"---baseDevice查找手表="+currentDevice.getDeviceType());
+
+
             if (currentDevice instanceof W311Device) {
                 ((W311Device) currentDevice).find_bracelet();
             } else if (currentDevice instanceof W520Device) {
@@ -1853,6 +1859,8 @@ public class BaseAgent {
             } else if (currentDevice instanceof W560Device) {
                 ((W560Device) currentDevice).findWatch();
             }
+
+            Logger.myLog(TAG,"---没有找到");
         }
     }
 

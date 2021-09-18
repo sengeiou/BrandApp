@@ -1,12 +1,10 @@
 package com.isport.brandapp.device.W81Device;
 
-import com.isport.blelibrary.db.table.w811w814.W81DeviceDetailData;
-import com.isport.brandapp.Home.bean.db.HeartRateMainData;
-import com.isport.brandapp.Home.bean.db.SleepMainData;
-import com.isport.brandapp.Home.bean.db.WatchSportMainData;
-import com.isport.brandapp.Home.bean.http.WatchSleepDayData;
-import com.isport.brandapp.Home.bean.http.WristbandHrHeart;
-import com.isport.brandapp.Home.bean.http.Wristbandstep;
+import com.isport.brandapp.home.bean.db.HeartRateMainData;
+import com.isport.brandapp.home.bean.db.WatchSportMainData;
+import com.isport.brandapp.home.bean.http.WatchSleepDayData;
+import com.isport.brandapp.home.bean.http.WristbandHrHeart;
+import com.isport.brandapp.home.bean.http.Wristbandstep;
 import com.isport.brandapp.device.watch.bean.WatchInsertBean;
 import com.isport.brandapp.wu.bean.BPInfo;
 import com.isport.brandapp.wu.bean.ExerciseInfo;

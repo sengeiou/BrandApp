@@ -1,6 +1,9 @@
 package com.isport.brandapp.wu.activity;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,6 +22,7 @@ import com.isport.brandapp.R;
 
 import org.greenrobot.eventbus.EventBus;
 
+import androidx.annotation.NonNull;
 import brandapp.isport.com.basicres.BaseActivity;
 import brandapp.isport.com.basicres.commonutil.MessageEvent;
 import brandapp.isport.com.basicres.commonutil.ToastUtils;
@@ -30,6 +34,20 @@ public class MeassureActivity extends BaseActivity {
     TextView btn_measure, tv_title;
     GifImageView gifImageView;
     int measueType = JkConfiguration.DeviceMeasureType.hr;
+
+
+
+    private final Handler handler = new Handler(Looper.getMainLooper()){
+        @Override
+        public void handleMessage(@NonNull Message msg) {
+            super.handleMessage(msg);
+            if(msg.what == 0x00){
+                handler.removeMessages(0x00);
+                finishMeasure();
+            }
+        }
+    };
+
 
     @Override
     protected int getLayoutId() {
@@ -45,7 +63,7 @@ public class MeassureActivity extends BaseActivity {
 
     private void getIntentValue() {
         measueType = getIntent().getIntExtra("device_type", 0);
-
+        handler.sendEmptyMessageDelayed(0x00,25 * 1000);
     }
 
     @Override
@@ -66,7 +84,7 @@ public class MeassureActivity extends BaseActivity {
                 gifImageView.setImageResource(R.drawable.bg_measure_oxygen);
             }
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
     }
 
@@ -90,6 +108,7 @@ public class MeassureActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        handler.removeMessages(0x00);
         ISportAgent.getInstance().unregisterListener(mBleReciveListener);
 
     }
@@ -143,7 +162,7 @@ public class MeassureActivity extends BaseActivity {
                                     break;
                             }
                         } catch (Exception e) {
-
+                            e.printStackTrace();
                         }
 
                         break;

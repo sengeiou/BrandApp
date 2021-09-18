@@ -2,6 +2,7 @@ package com.isport.brandapp.bind;
 
 import android.content.Intent;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.text.TextUtils;
 import android.view.View;
@@ -96,7 +97,7 @@ public class ActivityDeviceSetting extends BaseMVPTitleActivity<DeviceSettingVie
         itemFirmwareVersion.setEnabled(false);
     }
 
-    Handler mHandler = new Handler() {
+    private final Handler mHandler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);

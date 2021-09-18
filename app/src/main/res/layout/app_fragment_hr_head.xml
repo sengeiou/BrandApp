@@ -127,7 +127,7 @@
             android:layout_below="@+id/layout_hr_value"
             android:background="@drawable/shape_hr_rec_bgcolor">
 
-            <com.isport.brandapp.Home.fragment.BarChartView
+            <com.isport.brandapp.home.fragment.BarChartView
                 android:id="@+id/bar_hr_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />

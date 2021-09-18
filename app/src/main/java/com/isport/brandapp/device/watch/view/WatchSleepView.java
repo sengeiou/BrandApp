@@ -1,6 +1,6 @@
 package com.isport.brandapp.device.watch.view;
 
-import com.isport.brandapp.Home.bean.http.WatchSleepDayData;
+import com.isport.brandapp.home.bean.http.WatchSleepDayData;
 
 import java.util.ArrayList;
 

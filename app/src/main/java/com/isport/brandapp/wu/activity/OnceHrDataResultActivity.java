@@ -304,7 +304,7 @@ public class OnceHrDataResultActivity extends BaseMVPActivity<OnceHrHistoryView,
                                     break;
                             }
                         } catch (Exception e) {
-
+                            e.printStackTrace();
                         }
 
                         break;

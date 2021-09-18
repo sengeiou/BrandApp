@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1.2">
 
-                <com.isport.brandapp.Home.view.circlebar.CirclebarAnimatorLayout
+                <com.isport.brandapp.home.view.circlebar.CirclebarAnimatorLayout
                     android:id="@+id/layout_data_head"
                     android:layout_width="135dp"
                     android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="0.4" />
 
-                <com.isport.brandapp.Home.customview.MainHeadDataItemView
+                <com.isport.brandapp.home.customview.MainHeadDataItemView
                     android:id="@+id/item_dis"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
@@ -81,7 +81,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="0.2" />
 
-                <com.isport.brandapp.Home.customview.MainHeadDataItemView
+                <com.isport.brandapp.home.customview.MainHeadDataItemView
                     android:id="@+id/item_cal"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"

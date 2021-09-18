@@ -73,7 +73,7 @@
                         android:src="@drawable/bg_scale_emty_zh"
                         android:visibility="invisible" />
 
-                    <com.isport.brandapp.Home.customview.BezierView
+                    <com.isport.brandapp.home.customview.BezierView
                         android:id="@+id/bezier"
                         android:layout_width="match_parent"
                         android:layout_height="170dp"

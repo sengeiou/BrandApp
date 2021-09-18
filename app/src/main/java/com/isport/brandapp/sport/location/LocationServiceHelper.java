@@ -26,6 +26,9 @@ import brandapp.isport.com.basicres.commonutil.MessageEvent;
  */
 
 public class LocationServiceHelper implements ILocation.LocationListener, Closeable {
+
+    private static final String TAG = "LocationServiceHelper";
+    
     private ILocation location;
     private WeakReference<Context> context;
 
@@ -94,6 +97,7 @@ public class LocationServiceHelper implements ILocation.LocationListener, Closea
                 }
             }
             if (location.getLocation() instanceof AMapLocation) {
+
                 AMapLocation addr = location.getLocation();
                 if (addr != null && addr.getLatitude() > 0 && addr.getLongitude() > 0) {
                     city = addr.getCity();
@@ -133,9 +137,9 @@ public class LocationServiceHelper implements ILocation.LocationListener, Closea
         Constants.cityName = city;
         Constants.currentCountry = location.getCounty();
 
-//                        Log.e("BaseApp AmapError", " Constants.cityName:"
-//                                + Constants.cityName + ",  Constants.mLocationLongitude "
-//                                + Constants.mLocationLongitude + "Constants.mLocationLatitude :" + Constants.mLocationLatitude + "type:" + type + "accuracy:" + accuracy);
+                        Log.e(TAG, " Constants.cityName:"
+                                + Constants.cityName + ",   速度" + location.getSpeed()+" Constants.mLocationLongitude"
+                                + Constants.mLocationLongitude + "Constants.mLocationLatitude :" + Constants.mLocationLatitude + "type:" + type );
 
         EventBus.getDefault().post(new MessageEvent(MessageEvent.update_location));
         if (WsManager.logBuilder == null) {

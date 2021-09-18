@@ -21,7 +21,7 @@ import com.isport.blelibrary.result.impl.scale.ScaleLockDataResult;
 import com.isport.blelibrary.result.impl.scale.ScaleUnLockDataResult;
 import com.isport.blelibrary.utils.Logger;
 import com.isport.brandapp.AppConfiguration;
-import com.isport.brandapp.Home.MainActivity;
+import com.isport.brandapp.home.MainActivity;
 import com.isport.brandapp.R;
 import com.isport.brandapp.bind.presenter.ScaleScanPresenter;
 import com.isport.brandapp.bind.view.ScaleScanView;

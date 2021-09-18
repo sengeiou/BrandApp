@@ -5,7 +5,6 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.location.LocationManager;
 import android.os.Build;
@@ -25,8 +24,6 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.lifecycle.LifecycleObserver;
-
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.maps.AMap;
@@ -39,9 +36,6 @@ import com.amap.api.maps.model.Marker;
 import com.amap.api.maps.model.MyLocationStyle;
 import com.amap.api.maps.model.Polyline;
 import com.amap.api.maps.model.PolylineOptions;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
 import com.gyf.immersionbar.ImmersionBar;
 import com.isport.blelibrary.ISportAgent;
 import com.isport.blelibrary.deviceEntry.impl.BaseDevice;
@@ -54,17 +48,16 @@ import com.isport.blelibrary.utils.Constants;
 import com.isport.blelibrary.utils.Logger;
 import com.isport.brandapp.App;
 import com.isport.brandapp.AppConfiguration;
-import com.isport.brandapp.Home.fragment.LatLongData;
 import com.isport.brandapp.R;
 import com.isport.brandapp.device.bracelet.bean.StateBean;
 import com.isport.brandapp.device.sleep.TimeUtil;
 import com.isport.brandapp.device.watch.presenter.Device24HrPresenter;
 import com.isport.brandapp.device.watch.view.Device24HrView;
+import com.isport.brandapp.home.fragment.LatLongData;
 import com.isport.brandapp.ropeskipping.speakutil.SpeakUtil;
 import com.isport.brandapp.sport.bean.HrBean;
 import com.isport.brandapp.sport.bean.PaceBean;
 import com.isport.brandapp.sport.bean.SportSettingBean;
-import com.isport.brandapp.sport.location.utils.PermissionUtils;
 import com.isport.brandapp.sport.service.InDoorService;
 import com.isport.brandapp.util.DeviceTypeUtil;
 import com.isport.brandapp.util.SportAcacheUtil;
@@ -84,6 +77,7 @@ import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 
+import androidx.lifecycle.LifecycleObserver;
 import bike.gymproject.viewlibray.ShareItemView;
 import brandapp.isport.com.basicres.BaseApp;
 import brandapp.isport.com.basicres.commonalertdialog.AlertDialogStateCallBack;
@@ -104,8 +98,11 @@ import io.reactivex.functions.Consumer;
 import phone.gym.jkcq.com.commonres.common.JkConfiguration;
 import phone.gym.jkcq.com.commonres.commonutil.DisplayUtils;
 
+/**
+ * 室内走
+ */
 public class InDoorSportActivity extends BaseMVPActivity<InDoorSportView, InDoorSportPresent> implements
-        InDoorSportView, View.OnClickListener, OnMapReadyCallback, Device24HrView, LifecycleObserver {
+        InDoorSportView, View.OnClickListener,  Device24HrView, LifecycleObserver {
 
     SpeakUtil speakUtil;
 
@@ -386,7 +383,12 @@ public class InDoorSportActivity extends BaseMVPActivity<InDoorSportView, InDoor
     }
 
     private void initGoogleMap() {
-        ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.google_mapview)).getMapAsync(this);
+//        try {
+//            ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.google_mapview)).getMapAsync(this);
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+
     }
 
     private void initGPS() {
@@ -663,15 +665,6 @@ public class InDoorSportActivity extends BaseMVPActivity<InDoorSportView, InDoor
 
     }
 
-    private com.google.android.gms.maps.GoogleMap googlemapView;
-
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        if (googlemapView != null) {
-            return;
-        }
-        googlemapView = googleMap;
-    }
 
     @Override
     public void success24HrSwitch(boolean isOpen) {
@@ -837,25 +830,11 @@ public class InDoorSportActivity extends BaseMVPActivity<InDoorSportView, InDoor
 
 
     protected void drawGoogleLine() {
-        List<com.google.android.gms.maps.model.LatLng> path = getLatLngs();
-        googlemapView.addPolyline(new com.google.android.gms.maps.model.PolylineOptions().addAll(path));
-        googlemapView.moveCamera(com.google.android.gms.maps.CameraUpdateFactory.newLatLngZoom(lastLatLng, 12));//new com.google.android.gms.maps.model.LatLng(-33.8256, 151.2395)
+//        List<com.google.android.gms.maps.model.LatLng> path = getLatLngs();
+//        googlemapView.addPolyline(new com.google.android.gms.maps.model.PolylineOptions().addAll(path));
+//        googlemapView.moveCamera(com.google.android.gms.maps.CameraUpdateFactory.newLatLngZoom(lastLatLng, 12));//new com.google.android.gms.maps.model.LatLng(-33.8256, 151.2395)
     }
 
-    private com.google.android.gms.maps.model.LatLng lastLatLng;
-
-    private List<com.google.android.gms.maps.model.LatLng> getLatLngs() {
-        List<com.google.android.gms.maps.model.LatLng> paths = new ArrayList();
-        for (int i = 0; i < mList.size(); i++) {
-            LatLongData latLongData = mList.get(i);
-            if (i == mList.size() - 1) {
-                lastLatLng = new com.google.android.gms.maps.model.LatLng(latLongData.getLattitude(), latLongData.getLongitude());
-            }
-            paths.add(new com.google.android.gms.maps.model.LatLng(latLongData.getLattitude(), latLongData.getLongitude()));
-
-        }
-        return paths;
-    }
 
     Disposable paceTimer;
 
@@ -1022,11 +1001,13 @@ public class InDoorSportActivity extends BaseMVPActivity<InDoorSportView, InDoor
                     tempListTwo.remove(0);
                     tempListTwo.add(new LatLng(mLocationLatitude, mLocationLongitude));
                 }
+
+                float distance;
                 if (accuracy > 0 && accuracy <= 65) {
                     strCurrentLocation = mLocationLongitude + "," + mLocationLatitude;
                     if (tempListTwo.size() > 1) {
                         //单位为米
-                        float distance = AMapUtils.calculateLineDistance(tempListTwo.get(tempListTwo.size() - 2), tempListTwo.get(tempListTwo.size() - 1));
+                        distance = AMapUtils.calculateLineDistance(tempListTwo.get(tempListTwo.size() - 2), tempListTwo.get(tempListTwo.size() - 1));
 
                         if (distance == 0 || gpsType == -1) {
                             //mList.remove(mList.get(mList.size() - 1));
@@ -1045,10 +1026,14 @@ public class InDoorSportActivity extends BaseMVPActivity<InDoorSportView, InDoor
                             InDoorService.theMomentRunData.setDistance(InDoorService.theMomentRunData.distance + (distance / 1000));
                             //记录的是秒数
                             PaceBean bean = StepsUtils.calPace(distance, dTime, InDoorService.theMomentRunData.timer);
+
                             InDoorService.theMomentRunData.paceBean.put(InDoorService.theMomentRunData.timer, bean);
                             if (sportType == JkConfiguration.SportType.sportBike) {
-                                itemViewSpeed.setValueText(strSpeed);
-                                itemMapViewSpeed.setValueText(strSpeed);
+
+                                String bikeSpeedStr = CommonDateUtil.div((double) distance,3.6d,2)+"";
+
+                                itemViewSpeed.setValueText(bikeSpeedStr+"");
+                                itemMapViewSpeed.setValueText(bikeSpeedStr+"");
                                 palyDis(InDoorService.theMomentRunData.distance);
                                 if (settingBean != null && settingBean.isPlayer && settingBean.isPaceRemind && speed < settingBean.currentPaceValue) {
                                     //低于设置的配速开始语音提醒
@@ -1108,9 +1093,7 @@ public class InDoorSportActivity extends BaseMVPActivity<InDoorSportView, InDoor
 
             unbindService(myServiceConnection);
         }*/
-        if (googlemapView != null) {
-            googlemapView.clear();
-        }
+
         if (aMap != null) {
             aMap.clear();
         }
@@ -1120,29 +1103,7 @@ public class InDoorSportActivity extends BaseMVPActivity<InDoorSportView, InDoor
         IndoorRunObservable.getInstance().deleteObserver(this);
     }
 
-    private void setGoogleMapView(AMapLocation amapLocation) {
-        //  LatLng sydney = new LatLng(amapLocation.getLatitude(), amapLocation.getLongitude());
-        googlemapView.clear();
-        com.google.android.gms.maps.model.LatLng sydney = new com.google.android.gms.maps.model.LatLng(amapLocation.getLatitude(), amapLocation.getLongitude());
-        com.google.android.gms.maps.CameraUpdate cu = com.google.android.gms.maps.CameraUpdateFactory.newLatLngZoom(sydney, 17);
-        googlemapView.moveCamera(cu);
-        /* googlemapView.addMarker(new com.google.android.gms.maps.model.MarkerOptions().position(sydney).title("Marker in Sydney"));*/
-        setGoogleMarkerOptions(sydney);
-        // 将Marker设置为贴地显示，可以双指下拉地图查看效果
-        //googlemapView.moveCamera(com.google.android.gms.maps.CameraUpdateFactory.newLatLng(sydney));
-    }
 
-    private void setGoogleMarkerOptions(com.google.android.gms.maps.model.LatLng sydney) {
-        com.google.android.gms.maps.model.MarkerOptions markerOption = new com.google.android.gms.maps.model.MarkerOptions();
-        markerOption.position(sydney);
-        // markerOption.position(Constants.XIAN);
-        // markerOption.title("西安市").snippet("DefaultMarker");
-
-        markerOption.draggable(true);//设置Marker可拖动
-        markerOption.icon(com.google.android.gms.maps.model.BitmapDescriptorFactory.fromBitmap(BitmapFactory
-                .decodeResource(getResources(), R.drawable.icon_mark)));
-        googlemapView.addMarker(markerOption);
-    }
 
     @Override
     public void onObserverChange(java.util.Observable o, Object arg) {

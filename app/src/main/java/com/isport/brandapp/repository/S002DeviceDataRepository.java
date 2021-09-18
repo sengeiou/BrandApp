@@ -12,7 +12,7 @@ import com.isport.blelibrary.db.table.s002.Summary;
 import com.isport.blelibrary.utils.DateUtil;
 import com.isport.blelibrary.utils.Logger;
 import com.isport.brandapp.App;
-import com.isport.brandapp.Home.bean.RopeDetailBean;
+import com.isport.brandapp.home.bean.RopeDetailBean;
 import com.isport.brandapp.net.RetrofitClient;
 import com.isport.brandapp.ropeskipping.s002DataModel.IS002DeviceDataModel;
 import com.isport.brandapp.util.InitCommonParms;

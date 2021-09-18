@@ -11,6 +11,7 @@ import android.os.Build;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -26,6 +27,7 @@ import com.isport.blelibrary.utils.DateUtil;
 import com.isport.blelibrary.utils.Logger;
 import com.isport.blelibrary.utils.TimeUtils;
 import com.isport.brandapp.App;
+import com.isport.brandapp.AppConfiguration;
 import com.isport.brandapp.R;
 import com.isport.brandapp.banner.recycleView.utils.ToastUtil;
 import com.isport.brandapp.device.share.PackageUtil;
@@ -75,6 +77,7 @@ import brandapp.isport.com.basicres.commonutil.TokenUtil;
 import brandapp.isport.com.basicres.commonutil.UIUtils;
 import brandapp.isport.com.basicres.net.userNet.CommonUserAcacheUtil;
 import brandapp.isport.com.basicres.service.observe.NetProgressObservable;
+import phone.gym.jkcq.com.commonres.common.JkConfiguration;
 import phone.gym.jkcq.com.commonres.commonutil.UserUtils;
 
 
@@ -124,6 +127,12 @@ public class PractiseDetailActivity extends BaseActivity implements View.OnClick
             practiseLineRecChartView4,practiseLineRecChartView5,practiseLineRecChartView6;
     private LineScrollChartView itemPractiseStepView;
     private TextView practiseStepCurrTv;
+
+
+    //w560锻炼的计步、距离、卡路里图表布局
+    private LinearLayout itemPractiseChartLayout;
+
+
 
 
 
@@ -240,6 +249,8 @@ public class PractiseDetailActivity extends BaseActivity implements View.OnClick
             practiseStepCurrTv = findViewById(R.id.practiseStepCurrTv);
 
 
+            itemPractiseChartLayout = findViewById(R.id.itemPractiseChartLayout);
+
             itemPractiseDistanceBarView = findViewById(R.id.itemPractiseDistanceBarView);
 
 
@@ -257,6 +268,15 @@ public class PractiseDetailActivity extends BaseActivity implements View.OnClick
             llHistoryShare = view.findViewById(R.id.ll_history_share);
             iv_back.setOnClickListener(this);
             recyclerview_practise = findViewById(R.id.recyclerview_itme);
+
+            //判断是否是w560
+            if(AppConfiguration.deviceMainBeanList.containsKey(JkConfiguration.DeviceType.Watch_W560)){
+                itemPractiseChartLayout.setVisibility(View.VISIBLE);
+            }else{
+                itemPractiseChartLayout.setVisibility(View.GONE);
+            }
+
+
             getValue();
             recyclerview_practise.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
             List<ExerciseInfo> mExerciseInfos = new ArrayList<>();

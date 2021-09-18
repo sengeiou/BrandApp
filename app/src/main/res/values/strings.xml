@@ -4,6 +4,14 @@
     <string name="app_name">Bonlala</string>//iSport健康管家
 
 
+    <string name="string_practise_yoga">Yoga</string>
+    <string name="string_practise_elliptical">Elliptical</string>
+    <string name="string_practise_spinning">Spinning</string>
+    <string name="string_practise_hiking">Hiking</string>
+    <string name="string_practise_rowing">Rowing</string>
+    <string name="string_practise_other">Other</string>
+    <string name="string_practise_indoor_walk">Indoor walk</string>
+
     //欢迎进入 iSport健康管家
     <string name="app_band_step_number">steps(step)</string>//步数(步)
     //米
@@ -843,7 +851,7 @@
     <string name="unit_backlight_time">s</string>
     <string name="unit_screen_luminance">level</string>
     <string name="activity_sleep_history_exp">Sleep is one of the most important life-sustaining behaviors of biology. By recording your sleep status and analyzing your sleep quality through hardware devices, you can understand and adjust your sleep habits.</string>
-    <string name="activity_hr_history_exp">Heart rate detection is carried out by means of bracelet and other hardware. You can adjust the exercise intensity according to the changes of heart rate and achieve scientific exercise and other purposes.Each point in the heart rate chart represents the current heart rate for 1 minute.</string>
+    <string name="activity_hr_history_exp">Heart rate detection is carried out by means of bracelet and other hardware. You can adjust the exercise intensity according to the changes of heart rate and achieve scientific exercise and other purposes.Each point in the heart rate chart represents the current heart rate for 5 minute.</string>
     <string name="device_unbind_tips">Please unpair the phone with the device</string>
     <string name="device_unbind_content1">After unpairing, the device can be bound to other phones</string>
 

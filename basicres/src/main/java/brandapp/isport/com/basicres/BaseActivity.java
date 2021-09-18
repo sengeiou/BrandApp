@@ -12,6 +12,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,8 +21,6 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
-
-import androidx.core.app.ActivityCompat;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.gyf.immersionbar.ImmersionBar;
@@ -38,6 +37,7 @@ import org.greenrobot.eventbus.ThreadMode;
 import java.util.Observable;
 import java.util.Observer;
 
+import androidx.core.app.ActivityCompat;
 import brandapp.isport.com.basicres.commonalertdialog.AlertDialogStateCallBack;
 import brandapp.isport.com.basicres.commonalertdialog.LoadProgressDialog;
 import brandapp.isport.com.basicres.commonalertdialog.PublicAlertDialog;
@@ -145,7 +145,7 @@ public abstract class BaseActivity extends BasicActivity implements Observer {
     protected Handler mHandlerDeviceSetting;
 
     private void initHandler() {
-        mHandlerDeviceSetting = new Handler() {
+        mHandlerDeviceSetting = new Handler(Looper.getMainLooper()) {
             @Override
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);

@@ -47,7 +47,7 @@ import com.isport.blelibrary.utils.Constants
 import com.isport.blelibrary.utils.DateUtil
 import com.isport.blelibrary.utils.Logger
 import com.isport.brandapp.AppConfiguration
-import com.isport.brandapp.Home.presenter.DeviceConnPresenter
+import com.isport.brandapp.home.presenter.DeviceConnPresenter
 import com.isport.brandapp.R
 import com.isport.brandapp.dialog.RopeCompletyDialog
 import com.isport.brandapp.dialog.RopePkCompletyDialog

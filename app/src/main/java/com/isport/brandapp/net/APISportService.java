@@ -1,13 +1,11 @@
 package com.isport.brandapp.net;
 
 
-import com.isport.brandapp.Home.bean.ResultHomeSportData;
-import com.isport.brandapp.Home.bean.SportLastDataBeanList;
-import com.isport.brandapp.Home.bean.http.WatchHistoryData;
+import com.isport.brandapp.home.bean.SportLastDataBeanList;
+import com.isport.brandapp.home.bean.http.WatchHistoryData;
 import com.isport.brandapp.device.UpdateSuccessBean;
 import com.isport.brandapp.device.watch.bean.WatchHistoryNList;
 import com.isport.brandapp.sport.bean.IphoneSportListVo;
-import com.isport.brandapp.sport.bean.IphoneSportWeekVo;
 import com.isport.brandapp.sport.bean.ResultHistorySportSummarizingData;
 import com.isport.brandapp.sport.bean.ResultSportHistroyList;
 import com.isport.brandapp.sport.bean.SportSumData;

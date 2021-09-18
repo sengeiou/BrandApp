@@ -104,7 +104,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dp15"
             android:layout_marginRight="@dimen/dp15"
-            tools:listitem="@layout/item_practise_record"></androidx.recyclerview.widget.RecyclerView>
+            tools:listitem="@layout/item_practise_record"/>
 
         <com.scwang.smartrefresh.layout.footer.ClassicsFooter
             android:layout_width="match_parent"

@@ -6,9 +6,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
 import com.gyf.immersionbar.ImmersionBar;
 import com.isport.brandapp.App;
 import com.isport.brandapp.R;
@@ -25,6 +22,8 @@ import org.greenrobot.eventbus.ThreadMode;
 import java.util.Calendar;
 import java.util.Observable;
 
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import brandapp.isport.com.basicres.ActivityManager;
 import brandapp.isport.com.basicres.BaseActivity;
 import brandapp.isport.com.basicres.commonutil.MessageEvent;
@@ -68,7 +67,7 @@ public class SportReportActivity extends BaseActivity implements View.OnClickLis
             transaction.commitAllowingStateLoss();
 
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
 
     }
@@ -135,7 +134,7 @@ public class SportReportActivity extends BaseActivity implements View.OnClickLis
                     transaction.commitAllowingStateLoss();
                 }
             } catch (Exception e) {
-
+                e.printStackTrace();
             }
 
 

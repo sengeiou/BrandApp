@@ -34,7 +34,7 @@
         android:background="@color/white"
         android:gravity="center">
 
-        <com.isport.brandapp.Home.view.circlebar.BandCirclebarAnimatorLayout
+        <com.isport.brandapp.home.view.circlebar.BandCirclebarAnimatorLayout
             android:id="@+id/layout_data_head"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

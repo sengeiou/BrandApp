@@ -9,7 +9,7 @@ import com.isport.blelibrary.db.table.scale.Scale_FourElectrode_DataModel;
 import com.isport.blelibrary.utils.CommonDateUtil;
 import com.isport.blelibrary.utils.Logger;
 import com.isport.brandapp.App;
-import com.isport.brandapp.Home.bean.http.Fatsteelyard;
+import com.isport.brandapp.home.bean.http.Fatsteelyard;
 import com.isport.brandapp.R;
 import com.isport.brandapp.device.scale.bean.ScaleBMIResultBean;
 import com.isport.brandapp.login.ActivityLogin;

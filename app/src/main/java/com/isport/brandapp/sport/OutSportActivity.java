@@ -5,7 +5,6 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.location.LocationManager;
 import android.os.Build;
@@ -25,8 +24,6 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.lifecycle.LifecycleObserver;
-
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.maps.AMap;
@@ -39,9 +36,6 @@ import com.amap.api.maps.model.Marker;
 import com.amap.api.maps.model.MyLocationStyle;
 import com.amap.api.maps.model.Polyline;
 import com.amap.api.maps.model.PolylineOptions;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
 import com.gyf.immersionbar.ImmersionBar;
 import com.isport.blelibrary.ISportAgent;
 import com.isport.blelibrary.deviceEntry.impl.BaseDevice;
@@ -54,12 +48,12 @@ import com.isport.blelibrary.utils.Constants;
 import com.isport.blelibrary.utils.Logger;
 import com.isport.brandapp.App;
 import com.isport.brandapp.AppConfiguration;
-import com.isport.brandapp.Home.fragment.LatLongData;
 import com.isport.brandapp.R;
 import com.isport.brandapp.device.bracelet.bean.StateBean;
 import com.isport.brandapp.device.sleep.TimeUtil;
 import com.isport.brandapp.device.watch.presenter.Device24HrPresenter;
 import com.isport.brandapp.device.watch.view.Device24HrView;
+import com.isport.brandapp.home.fragment.LatLongData;
 import com.isport.brandapp.ropeskipping.speakutil.SpeakUtil;
 import com.isport.brandapp.sport.bean.HrBean;
 import com.isport.brandapp.sport.bean.PaceBean;
@@ -83,6 +77,7 @@ import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 
+import androidx.lifecycle.LifecycleObserver;
 import bike.gymproject.viewlibray.ShareItemView;
 import brandapp.isport.com.basicres.BaseApp;
 import brandapp.isport.com.basicres.commonalertdialog.AlertDialogStateCallBack;
@@ -104,7 +99,7 @@ import phone.gym.jkcq.com.commonres.common.JkConfiguration;
 import phone.gym.jkcq.com.commonres.commonutil.DisplayUtils;
 
 public class OutSportActivity extends BaseMVPActivity<InDoorSportView, InDoorSportPresent> implements
-        InDoorSportView, View.OnClickListener, OnMapReadyCallback, Device24HrView, LifecycleObserver {
+        InDoorSportView, View.OnClickListener, Device24HrView, LifecycleObserver {
 
     SpeakUtil speakUtil;
 
@@ -295,6 +290,7 @@ public class OutSportActivity extends BaseMVPActivity<InDoorSportView, InDoorSpo
         IndoorRunObservable.getInstance().addObserver(this);
 
 
+
     }
 
 
@@ -384,7 +380,17 @@ public class OutSportActivity extends BaseMVPActivity<InDoorSportView, InDoorSpo
     }
 
     private void initGoogleMap() {
-        ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.google_mapview)).getMapAsync(this);
+        try {
+
+//            SupportMapFragment supportMapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.google_mapview);
+//            assert supportMapFragment != null;
+//            supportMapFragment.getMapAsync(this);
+
+          //  ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.google_mapview)).getMapAsync(this);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 
     private void initGPS() {
@@ -661,16 +667,6 @@ public class OutSportActivity extends BaseMVPActivity<InDoorSportView, InDoorSpo
 
     }
 
-    private GoogleMap googlemapView;
-
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        if (googlemapView != null) {
-            return;
-        }
-        googlemapView = googleMap;
-    }
-
     @Override
     public void success24HrSwitch(boolean isOpen) {
 
@@ -826,25 +822,25 @@ public class OutSportActivity extends BaseMVPActivity<InDoorSportView, InDoorSpo
 
 
     protected void drawGoogleLine() {
-        List<com.google.android.gms.maps.model.LatLng> path = getLatLngs();
-        googlemapView.addPolyline(new com.google.android.gms.maps.model.PolylineOptions().addAll(path));
-        googlemapView.moveCamera(com.google.android.gms.maps.CameraUpdateFactory.newLatLngZoom(lastLatLng, 12));//new com.google.android.gms.maps.model.LatLng(-33.8256, 151.2395)
+//        List<com.google.android.gms.maps.model.LatLng> path = getLatLngs();
+//        googlemapView.addPolyline(new com.google.android.gms.maps.model.PolylineOptions().addAll(path));
+//        googlemapView.moveCamera(com.google.android.gms.maps.CameraUpdateFactory.newLatLngZoom(lastLatLng, 12));//new com.google.android.gms.maps.model.LatLng(-33.8256, 151.2395)
     }
 
-    private com.google.android.gms.maps.model.LatLng lastLatLng;
-
-    private List<com.google.android.gms.maps.model.LatLng> getLatLngs() {
-        List<com.google.android.gms.maps.model.LatLng> paths = new ArrayList();
-        for (int i = 0; i < mList.size(); i++) {
-            LatLongData latLongData = mList.get(i);
-            if (i == mList.size() - 1) {
-                lastLatLng = new com.google.android.gms.maps.model.LatLng(latLongData.getLattitude(), latLongData.getLongitude());
-            }
-            paths.add(new com.google.android.gms.maps.model.LatLng(latLongData.getLattitude(), latLongData.getLongitude()));
-
-        }
-        return paths;
-    }
+//    private com.google.android.gms.maps.model.LatLng lastLatLng;
+//
+//    private List<com.google.android.gms.maps.model.LatLng> getLatLngs() {
+//        List<com.google.android.gms.maps.model.LatLng> paths = new ArrayList();
+//        for (int i = 0; i < mList.size(); i++) {
+//            LatLongData latLongData = mList.get(i);
+//            if (i == mList.size() - 1) {
+//                lastLatLng = new com.google.android.gms.maps.model.LatLng(latLongData.getLattitude(), latLongData.getLongitude());
+//            }
+//            paths.add(new com.google.android.gms.maps.model.LatLng(latLongData.getLattitude(), latLongData.getLongitude()));
+//
+//        }
+//        return paths;
+//    }
 
     Disposable paceTimer;
 
@@ -976,115 +972,147 @@ public class OutSportActivity extends BaseMVPActivity<InDoorSportView, InDoorSpo
             case MessageEvent.update_location_error:
                 break;
             case MessageEvent.update_location:
-                if (OutSportService.inRunIsPause) {//暂停的时候不需要加点
-                    return;
-                }
-
-                if (sportType == JkConfiguration.SportType.sportIndoor) {
-                    return;
-                }
-//可在其中解析amapLocation获取相应内容。
-                mLocationLatitude = Constants.mLocationLatitude;
-                mLocationLongitude = Constants.mLocationLatitude;
-                speed = Constants.speed;
-                strSpeed = CommonDateUtil.formatOnePoint(speed);
-                // int codePause = mTts.startSpeaking(amapLocation.getCity(), mTtsListener);
-                int type = Constants.locationType;
-                int gpsType = Constants.gpstype;
-                float accuracy = Constants.accuracy;
-                Logger.myLog("update_location:" + "Constants.mLocationLatitude:" + Constants.mLocationLatitude + ":" + Constants.mLocationLatitude + "type:" + type + "accuracy:" + accuracy + "gpsstate:" + Constants.gpstype);
-
-                if (Constants.gpstype == AMapLocation.GPS_ACCURACY_UNKNOWN) {
-                    setGpstaues(0);
-                } else if (Constants.gpstype == AMapLocation.GPS_ACCURACY_BAD) {
-                    setGpstaues(1);
-                } else if (Constants.gpstype == AMapLocation.GPS_ACCURACY_GOOD) {
-                    setGpstaues(3);
-                }
-
-                if (tempListTwo == null) {
-                    tempListTwo = new ArrayList<>();
-                }
-                if (tempListTwo.size() <= 1) {
-                    tempListTwo.add(new LatLng(mLocationLatitude, mLocationLongitude));
-                } else {
-                    tempListTwo.remove(0);
-                    tempListTwo.add(new LatLng(mLocationLatitude, mLocationLongitude));
-                }
-                if (accuracy > 0 && accuracy <= 65) {
-                    strCurrentLocation = mLocationLongitude + "," + mLocationLatitude;
-                    if (tempListTwo.size() > 1) {
-                        //单位为米
-                        float distance = AMapUtils.calculateLineDistance(tempListTwo.get(tempListTwo.size() - 2), tempListTwo.get(tempListTwo.size() - 1));
-
-                        if (distance == 0 || gpsType == -1) {
-                            //mList.remove(mList.get(mList.size() - 1));
-                            // OutSportService.theMomentRunData.Latlists.remove(OutSportService.theMomentRunData.Latlists.get(OutSportService.theMomentRunData.Latlists.size() - 1));
-                            setitemSpeed(sportType);
-                            //** 如果有5个毫秒的数据都为0 配速为0**//*
-                            //如果两个点的距离大于8米就不要了。
-                        } else {
-                            mList.add(mList.size(), addLatLongData(Constants.mLocationLatitude, Constants.mLocationLongitude, Constants.speed, System.currentTimeMillis() / 1000));
-                            OutSportService.theMomentRunData.Latlists.add(addLatLongData(Constants.mLocationLatitude, Constants.mLocationLongitude, Constants.speed, System.currentTimeMillis() / 1000));
-                            //单位为s
-                            long dTime = (mList.get(mList.size() - 1).getTime() - mList.get(mList.size() - 2).getTime());
-                            //拿到位置后重新开始计时 distance是米为单位，保存是已千米为单位
-                            OutSportService.startTimer();
-                            //保存的是公里数据
-                            OutSportService.theMomentRunData.setDistance(OutSportService.theMomentRunData.distance + (distance / 1000));
-                            //记录的是秒数
-                            PaceBean bean = StepsUtils.calPace(distance, dTime, OutSportService.theMomentRunData.timer);
-                            OutSportService.theMomentRunData.paceBean.put(OutSportService.theMomentRunData.timer, bean);
-                            if (sportType == JkConfiguration.SportType.sportBike) {
-                                itemViewSpeed.setValueText(strSpeed);
-                                itemMapViewSpeed.setValueText(strSpeed);
-                                palyDis(OutSportService.theMomentRunData.distance);
-                                if (settingBean != null && settingBean.isPlayer && settingBean.isPaceRemind && speed < settingBean.currentPaceValue) {
-                                    //低于设置的配速开始语音提醒
-                                    if (UserAcacheUtil.isPaceRemind()) {
-                                        UserAcacheUtil.savePaceRemind();
-                                        speakUtil.startSpeaking(UIUtils.getString(R.string.below_the_speed_tips), false);
-                                    }
-                                }
-                                //TODO 这个速度怎么存
-                            } else {
-                                itemViewSpeed.setValueText(bean.getPace());
-                                itemMapViewSpeed.setValueText(bean.getPace());
-                                calCurrentDis(OutSportService.theMomentRunData.distance, bean.getStrPace());
-                            }
-                            OutSportService.theMomentRunData.setCalories(OutSportService.theMomentRunData.calories + StepsUtils.calCalorie(weight, distance, sportType));
-                            itemViewCal.setValueText(CommonDateUtil.formatInterger(OutSportService.theMomentRunData.calories));
-                            tvDis.setText(CommonDateUtil.formatTwoPoint(OutSportService.theMomentRunData.distance));
-                            //如果距离是整数，就去报语音提醒
-                            itemMapViewDis.setValueText(CommonDateUtil.formatTwoPoint(OutSportService.theMomentRunData.distance));
-
-                        }
-                    }
-                }
-                if (isFirstLocation) {
-                    if (mLocationLatitude > 0 && mLocationLongitude > 0) {
-                        //drawMark();
-                        CameraUpdate cu = CameraUpdateFactory.newLatLngZoom(new LatLng(mLocationLatitude, mLocationLongitude), 17);
-                        aMap.moveCamera(cu);
-                        isFirstLocation = false;
-                    } else {
-                        // CameraUpdate cu = CameraUpdateFactory.newLatLngZoom(new LatLng(Constant.DEFAULT_LATITUDE, Constant.DEFAULT_LONGITUDE), 17);
-                        // aMap.moveCamera(cu);
-                    }
-                } else {
-                    //drawLine();
-                    if (isChina) {
-                        drawGreenLine();
-                    } else {
-                        drawGoogleLine();
-                    }
-                    //定位失败时，可通过ErrCode（错误码）信息来确定失败的原因，errInfo是错误信息，详见错误码表。
-                }
-
-
+                analysisSportStatus();
                 break;
         }
     }
+
+
+    //处理运动状态
+    private void analysisSportStatus(){
+        try {
+            if (OutSportService.inRunIsPause) {//暂停的时候不需要加点
+                return;
+            }
+            if (sportType == JkConfiguration.SportType.sportIndoor) {
+                return;
+            }//0.528小时 5.07公里
+//可在其中解析amapLocation获取相应内容。
+            mLocationLatitude = Constants.mLocationLatitude;
+            mLocationLongitude = Constants.mLocationLatitude;
+            speed = Constants.speed;
+
+
+            Logger.myLog(TAG,"------当前返回速度="+speed);
+            //速度是米/秒
+            //strSpeed = CommonDateUtil.formatOnePoint(speed);
+
+
+            strSpeed = CommonDateUtil.formatPaceForSpeed(speed);
+
+            // int codePause = mTts.startSpeaking(amapLocation.getCity(), mTtsListener);
+            int type = Constants.locationType;
+            int gpsType = Constants.gpstype;
+            float accuracy = Constants.accuracy;
+            Logger.myLog(TAG,"update_location:" + "Constants.mLocationLatitude:" + Constants.mLocationLatitude + ":" + Constants.mLocationLatitude + "type:" + type + "accuracy:" + accuracy + "gpsstate:" + Constants.gpstype);
+
+            if (Constants.gpstype == AMapLocation.GPS_ACCURACY_UNKNOWN) {
+                setGpstaues(0);
+            } else if (Constants.gpstype == AMapLocation.GPS_ACCURACY_BAD) {
+                setGpstaues(1);
+            } else if (Constants.gpstype == AMapLocation.GPS_ACCURACY_GOOD) {
+                setGpstaues(3);
+            }
+
+            if (tempListTwo == null) {
+                tempListTwo = new ArrayList<>();
+            }
+            if (tempListTwo.size() <= 1) {
+                tempListTwo.add(new LatLng(mLocationLatitude, mLocationLongitude));
+            } else {
+                tempListTwo.remove(0);
+                tempListTwo.add(new LatLng(mLocationLatitude, mLocationLongitude));
+            }
+            //两个经纬度之间的距离
+            float distance;
+            if (accuracy > 0 && accuracy <= 65) {
+                strCurrentLocation = mLocationLongitude + "," + mLocationLatitude;
+                if (tempListTwo.size() > 1) {
+                    //单位为米 计算两个经纬度之间的距离
+                    distance = AMapUtils.calculateLineDistance(tempListTwo.get(tempListTwo.size() - 2), tempListTwo.get(tempListTwo.size() - 1));
+
+                    Logger.myLog(TAG,"---两个经纬度之间的距离="+distance);
+
+                    //未定位
+                    if (distance == 0 || gpsType == -1) {
+                        //mList.remove(mList.get(mList.size() - 1));
+                        // OutSportService.theMomentRunData.Latlists.remove(OutSportService.theMomentRunData.Latlists.get(OutSportService.theMomentRunData.Latlists.size() - 1));
+                        setitemSpeed(sportType);
+                        //** 如果有5个毫秒的数据都为0 配速为0**//*
+                        //如果两个点的距离大于8米就不要了。
+                    } else {
+                        mList.add(mList.size(), addLatLongData(Constants.mLocationLatitude, Constants.mLocationLongitude, Constants.speed, System.currentTimeMillis() / 1000));
+                        OutSportService.theMomentRunData.Latlists.add(addLatLongData(Constants.mLocationLatitude, Constants.mLocationLongitude, Constants.speed, System.currentTimeMillis() / 1000));
+                        //单位为s
+
+                        long dTime = mList.size() == 1 ? mList.get(0).getTime() : (mList.get(mList.size() - 1).getTime() - mList.get(mList.size() - 2).getTime());
+                        //拿到位置后重新开始计时 distance是米为单位，保存是已千米为单位
+                        OutSportService.startTimer();
+                        //保存的是公里数据
+                        OutSportService.theMomentRunData.setDistance(OutSportService.theMomentRunData.distance + (distance / 1000));
+                        //记录的是秒数
+                        PaceBean bean = StepsUtils.calPace(distance, dTime, OutSportService.theMomentRunData.timer);
+
+                        Logger.myLog(TAG,"-----计算配速="+bean.getPace()+"\n"+bean.getStrPace());
+
+
+                        OutSportService.theMomentRunData.paceBean.put(OutSportService.theMomentRunData.timer, bean);
+                        if (sportType == JkConfiguration.SportType.sportBike) {  //自行车
+
+                            String bikeSpeedStr = CommonDateUtil.div((double) distance,3.6d,2)+"";
+
+                            itemViewSpeed.setValueText(bikeSpeedStr+"");
+                            itemMapViewSpeed.setValueText(bikeSpeedStr+"");
+                            palyDis(OutSportService.theMomentRunData.distance);
+                            if (settingBean != null && settingBean.isPlayer && settingBean.isPaceRemind && speed < settingBean.currentPaceValue) {
+                                //低于设置的配速开始语音提醒
+                                if (UserAcacheUtil.isPaceRemind()) {
+                                    UserAcacheUtil.savePaceRemind();
+                                    speakUtil.startSpeaking(UIUtils.getString(R.string.below_the_speed_tips), false);
+                                }
+                            }
+
+                        } else {
+                            itemViewSpeed.setValueText(bean.getPace());
+                            itemMapViewSpeed.setValueText(bean.getPace());
+                            calCurrentDis(OutSportService.theMomentRunData.distance, bean.getStrPace());
+                        }
+                        OutSportService.theMomentRunData.setCalories(OutSportService.theMomentRunData.calories + StepsUtils.calCalorie(weight, distance, sportType));
+                        itemViewCal.setValueText(CommonDateUtil.formatInterger(OutSportService.theMomentRunData.calories));
+                        tvDis.setText(CommonDateUtil.formatTwoPoint(OutSportService.theMomentRunData.distance));
+                        //如果距离是整数，就去报语音提醒
+                        itemMapViewDis.setValueText(CommonDateUtil.formatTwoPoint(OutSportService.theMomentRunData.distance));
+
+                    }
+                }
+            }
+            if (isFirstLocation) {
+                if (mLocationLatitude > 0 && mLocationLongitude > 0) {
+                    //drawMark();
+                    CameraUpdate cu = CameraUpdateFactory.newLatLngZoom(new LatLng(mLocationLatitude, mLocationLongitude), 17);
+                    aMap.moveCamera(cu);
+                    isFirstLocation = false;
+                } else {
+                    // CameraUpdate cu = CameraUpdateFactory.newLatLngZoom(new LatLng(Constant.DEFAULT_LATITUDE, Constant.DEFAULT_LONGITUDE), 17);
+                    // aMap.moveCamera(cu);
+                }
+            } else {
+                //drawLine();
+                if (isChina) {
+                    drawGreenLine();
+                } else {
+                    drawGoogleLine();
+                }
+                //定位失败时，可通过ErrCode（错误码）信息来确定失败的原因，errInfo是错误信息，详见错误码表。
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+
+
+
 
     @Override
     protected void onDestroy() {
@@ -1097,9 +1125,9 @@ public class OutSportActivity extends BaseMVPActivity<InDoorSportView, InDoorSpo
 
             unbindService(myServiceConnection);
         }*/
-        if (googlemapView != null) {
-            googlemapView.clear();
-        }
+//        if (googlemapView != null) {
+//            googlemapView.clear();
+//        }
         if (aMap != null) {
             aMap.clear();
         }
@@ -1110,26 +1138,14 @@ public class OutSportActivity extends BaseMVPActivity<InDoorSportView, InDoorSpo
 
     private void setGoogleMapView(AMapLocation amapLocation) {
         //  LatLng sydney = new LatLng(amapLocation.getLatitude(), amapLocation.getLongitude());
-        googlemapView.clear();
-        com.google.android.gms.maps.model.LatLng sydney = new com.google.android.gms.maps.model.LatLng(amapLocation.getLatitude(), amapLocation.getLongitude());
-        com.google.android.gms.maps.CameraUpdate cu = com.google.android.gms.maps.CameraUpdateFactory.newLatLngZoom(sydney, 17);
-        googlemapView.moveCamera(cu);
-        /* googlemapView.addMarker(new com.google.android.gms.maps.model.MarkerOptions().position(sydney).title("Marker in Sydney"));*/
-        setGoogleMarkerOptions(sydney);
+//        googlemapView.clear();
+//        com.google.android.gms.maps.model.LatLng sydney = new com.google.android.gms.maps.model.LatLng(amapLocation.getLatitude(), amapLocation.getLongitude());
+//        com.google.android.gms.maps.CameraUpdate cu = com.google.android.gms.maps.CameraUpdateFactory.newLatLngZoom(sydney, 17);
+//        googlemapView.moveCamera(cu);
+//        /* googlemapView.addMarker(new com.google.android.gms.maps.model.MarkerOptions().position(sydney).title("Marker in Sydney"));*/
+//        setGoogleMarkerOptions(sydney);
         // 将Marker设置为贴地显示，可以双指下拉地图查看效果
         //googlemapView.moveCamera(com.google.android.gms.maps.CameraUpdateFactory.newLatLng(sydney));
-    }
-
-    private void setGoogleMarkerOptions(com.google.android.gms.maps.model.LatLng sydney) {
-        com.google.android.gms.maps.model.MarkerOptions markerOption = new com.google.android.gms.maps.model.MarkerOptions();
-        markerOption.position(sydney);
-        // markerOption.position(Constants.XIAN);
-        // markerOption.title("西安市").snippet("DefaultMarker");
-
-        markerOption.draggable(true);//设置Marker可拖动
-        markerOption.icon(com.google.android.gms.maps.model.BitmapDescriptorFactory.fromBitmap(BitmapFactory
-                .decodeResource(getResources(), R.drawable.icon_mark)));
-        googlemapView.addMarker(markerOption);
     }
 
     @Override
@@ -1439,7 +1455,7 @@ public class OutSportActivity extends BaseMVPActivity<InDoorSportView, InDoorSpo
     }
 
     //监听心率值
-    private BleReciveListener mBleReciveListener = new BleReciveListener() {
+    private final BleReciveListener mBleReciveListener = new BleReciveListener() {
         @Override
         public void onConnResult(boolean isConn, boolean isConnectByUser, BaseDevice baseDevice) {
             if (isConn) {

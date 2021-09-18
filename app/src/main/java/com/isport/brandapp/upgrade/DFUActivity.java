@@ -20,10 +20,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.core.app.ActivityCompat;
-import androidx.core.widget.NestedScrollView;
-import androidx.fragment.app.FragmentActivity;
-
 import com.crrepa.ble.conn.CRPBleConnection;
 import com.crrepa.ble.conn.CRPBleDevice;
 import com.crrepa.ble.conn.callback.CRPDeviceDfuAddressCallback;
@@ -44,12 +40,12 @@ import com.isport.blelibrary.utils.Constants;
 import com.isport.blelibrary.utils.Logger;
 import com.isport.blelibrary.utils.SyncCacheUtils;
 import com.isport.blelibrary.utils.Utils;
-import com.isport.brandapp.Home.MainActivity;
-import com.isport.brandapp.Home.fragment.DFUGuidDialog;
 import com.isport.brandapp.R;
 import com.isport.brandapp.banner.recycleView.utils.ToastUtil;
 import com.isport.brandapp.device.bracelet.braceletPresenter.WearPresenter;
 import com.isport.brandapp.device.bracelet.view.WearView;
+import com.isport.brandapp.home.MainActivity;
+import com.isport.brandapp.home.fragment.DFUGuidDialog;
 import com.isport.brandapp.upgrade.bean.DeviceUpgradeBean;
 import com.isport.brandapp.upgrade.present.DevcieUpgradePresent;
 import com.isport.brandapp.upgrade.view.DeviceUpgradeView;
@@ -62,6 +58,9 @@ import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import java.io.File;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.widget.NestedScrollView;
+import androidx.fragment.app.FragmentActivity;
 import brandapp.isport.com.basicres.ActivityManager;
 import brandapp.isport.com.basicres.BaseApp;
 import brandapp.isport.com.basicres.commonalertdialog.AlertDialogStateCallBack;

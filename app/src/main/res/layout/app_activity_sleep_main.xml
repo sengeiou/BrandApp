@@ -29,7 +29,7 @@
             android:textColor="@color/common_white"
             android:visibility="gone" />
 
-        <com.isport.brandapp.Home.view.circlebar.SleepCircleLayout
+        <com.isport.brandapp.home.view.circlebar.SleepCircleLayout
             android:id="@+id/layout_data_head"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

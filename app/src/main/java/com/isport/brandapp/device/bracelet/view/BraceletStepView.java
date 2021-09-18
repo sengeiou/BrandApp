@@ -1,6 +1,6 @@
 package com.isport.brandapp.device.bracelet.view;
 
-import com.isport.brandapp.Home.bean.http.Wristbandstep;
+import com.isport.brandapp.home.bean.http.Wristbandstep;
 
 import java.util.ArrayList;
 import java.util.List;

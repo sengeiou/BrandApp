@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="225dp">
 
-    <com.isport.brandapp.Home.view.circlebar.BandView
+    <com.isport.brandapp.home.view.circlebar.BandView
         android:id="@+id/objectAnimatorView"
         android:layout_width="225dp"
         android:layout_height="225dp"

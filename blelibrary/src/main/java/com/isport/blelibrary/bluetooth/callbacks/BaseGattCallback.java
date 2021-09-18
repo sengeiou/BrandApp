@@ -600,10 +600,12 @@ public class BaseGattCallback extends BluetoothGattCallback {
 
     }
 
-    private BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
+    private final BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
+            if(action == null)
+                return;
             if (action.equals(Intent.ACTION_TIME_CHANGED) || action.equals(Intent.ACTION_TIMEZONE_CHANGED)) {
 
             } else if (action.equals(BluetoothAdapter.ACTION_STATE_CHANGED)) {
@@ -934,6 +936,7 @@ public class BaseGattCallback extends BluetoothGattCallback {
             device = BluetoothAdapter.getDefaultAdapter().getRemoteDevice(address);
 
         } catch (Exception e) {
+            e.printStackTrace();
             device = null;
 
         } finally {

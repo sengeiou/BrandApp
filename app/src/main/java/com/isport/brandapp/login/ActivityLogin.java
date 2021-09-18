@@ -37,7 +37,7 @@ import com.isport.blelibrary.db.action.DeviceTypeTableAction;
 import com.isport.blelibrary.utils.Logger;
 import com.isport.blelibrary.utils.SyncCacheUtils;
 import com.isport.brandapp.App;
-import com.isport.brandapp.Home.MainActivity;
+import com.isport.brandapp.home.MainActivity;
 import com.isport.brandapp.R;
 import com.isport.brandapp.device.share.PackageUtil;
 import com.isport.brandapp.dialog.PriDialog;

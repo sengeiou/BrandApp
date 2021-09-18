@@ -69,6 +69,12 @@ public class CreateDevice {
             baseDevice = createS002(name, address);
             Logger.myLog(TAG,"返回手表" + baseDevice.deviceType);
         } else if (name.startsWith(Constants.WATCH_812_FILTER)) {
+            if(name.length() == 4 && name.toLowerCase().equals("w812")){
+                baseDevice = createW812(name, address);
+                return baseDevice;
+            }
+
+
             String[] names = name.split(" ");
             if (names[0].equals(Constants.WATCH_812_FILTER) && Constants.WATCH_812_FILTER.equals(filterStr)) {
                 baseDevice = createW812(name, address);

@@ -22,7 +22,7 @@ import com.isport.blelibrary.utils.BleRequest;
 import com.isport.blelibrary.utils.Logger;
 import com.isport.brandapp.App;
 import com.isport.brandapp.AppConfiguration;
-import com.isport.brandapp.Home.bean.http.SleepBel;
+import com.isport.brandapp.home.bean.http.SleepBel;
 import com.isport.brandapp.R;
 import brandapp.isport.com.basicres.commonbean.UserInfoBean;
 import com.isport.brandapp.device.UpdateSuccessBean;

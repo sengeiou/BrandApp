@@ -3,6 +3,14 @@
     /**app**/
     <string name="app_name">奔啦啦</string>//iSport健康管家
 
+    <string name="string_practise_yoga">瑜伽</string>
+    <string name="string_practise_elliptical">椭圆机</string>
+    <string name="string_practise_spinning">动感单车</string>
+    <string name="string_practise_hiking">远足</string>
+    <string name="string_practise_rowing">划船</string>
+    <string name="string_practise_other">其它</string>
+    <string name="string_practise_indoor_walk">室内走</string>
+
     //欢迎进入 iSport健康管家
     //米
     <string name="unit_speed">公里/时</string>//
@@ -830,7 +838,7 @@
     <string name="heart_data_title">心率颜色区间强度对应表</string>
     //睡眠详情页面名词解释
     <string name="activity_sleep_history_exp">睡眠是生物维持生命的重要行为之一，通过硬件设备记录您的睡眠状况，对睡眠质量进行分析，帮助您了解和调整睡眠习惯。</string>
-    <string name="activity_hr_history_exp">心率检测是通过手环等硬件进行心率检测，您可以根据心率等变化情况来调节运动强度，达到科学运动等目的。心率折线图中每个点代表当前1分钟的心率。</string>
+    <string name="activity_hr_history_exp">心率检测是通过手环等硬件进行心率检测，您可以根据心率等变化情况来调节运动强度，达到科学运动等目的。心率折线图中每个点代表当前5分钟的心率。</string>
 
     //设备解绑引导页面
     <string name="device_unbind_tips">请解除手机与设备的配对</string>

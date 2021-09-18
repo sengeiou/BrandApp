@@ -11,9 +11,9 @@ import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
 
-import com.isport.brandapp.Home.FloatWindowParamManager;
-import com.isport.brandapp.Home.PowerUtil;
-import com.isport.brandapp.Home.RomUtils;
+import com.isport.brandapp.home.FloatWindowParamManager;
+import com.isport.brandapp.home.PowerUtil;
+import com.isport.brandapp.home.RomUtils;
 import com.isport.brandapp.R;
 
 import brandapp.isport.com.basicres.BaseTitleActivity;

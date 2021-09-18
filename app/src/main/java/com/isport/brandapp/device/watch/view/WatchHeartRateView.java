@@ -1,6 +1,6 @@
 package com.isport.brandapp.device.watch.view;
 
-import com.isport.brandapp.Home.bean.http.WristbandHrHeart;
+import com.isport.brandapp.home.bean.http.WristbandHrHeart;
 
 import java.util.ArrayList;
 

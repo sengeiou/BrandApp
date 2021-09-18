@@ -34,7 +34,7 @@ import com.isport.blelibrary.utils.Logger;
 import com.isport.blelibrary.utils.SyncCacheUtils;
 import com.isport.brandapp.App;
 import com.isport.brandapp.AppConfiguration;
-import com.isport.brandapp.Home.MainActivity;
+import com.isport.brandapp.home.MainActivity;
 import com.isport.brandapp.R;
 import com.isport.brandapp.banner.recycleView.utils.ToastUtil;
 import com.isport.brandapp.bean.DeviceBean;
@@ -55,6 +55,8 @@ import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -362,6 +364,14 @@ public class ActivityScan extends BaseMVPTitleActivity<ScanBaseView, ScanPresent
         // this.baseViewList = baseViewList;
         Logger.myLog(TAG,"onScan List");
         this.baseViewList.clear();
+
+        Collections.sort(baseViewList, new Comparator<BaseDevice>() {
+            @Override
+            public int compare(BaseDevice baseDevice, BaseDevice t1) {
+                return baseDevice.getRssi();
+            }
+        });
+
         this.baseViewList.addAll(baseViewList);
         adapterScanPageDeviceList.notifyDataSetChanged();
     }

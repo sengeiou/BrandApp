@@ -2,7 +2,7 @@ package com.isport.brandapp.device.watch.presenter;
 
 import com.isport.blelibrary.utils.TimeUtils;
 import com.isport.brandapp.AppConfiguration;
-import com.isport.brandapp.Home.bean.http.Wristbandstep;
+import com.isport.brandapp.home.bean.http.Wristbandstep;
 import com.isport.brandapp.device.watch.view.WatchStepView;
 import com.isport.brandapp.device.watch.watchModel.IW516Model;
 import com.isport.brandapp.device.watch.watchModel.W516Model;

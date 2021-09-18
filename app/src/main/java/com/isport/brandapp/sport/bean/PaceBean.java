@@ -1,13 +1,22 @@
 package com.isport.brandapp.sport.bean;
 
-import androidx.annotation.NonNull;
-
 import com.google.gson.Gson;
+
+import androidx.annotation.NonNull;
 
 public class PaceBean implements Comparable<PaceBean> {
     int strPace;
     long time;
     String pace;
+
+
+
+
+    public PaceBean(int strPace, long time, String pace) {
+        this.strPace = strPace;
+        this.time = time;
+        this.pace = pace;
+    }
 
     public int getStrPace() {
         return strPace;
