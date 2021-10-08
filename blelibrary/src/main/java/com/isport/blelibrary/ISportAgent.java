@@ -503,6 +503,10 @@ public class ISportAgent extends BaseAgent {
         }
     }
 
+    public void setW560DeviceMusicData(String musicName,String allTime,String currTime){
+        setMusicData(musicName,allTime,currTime);
+    }
+
 
 
 

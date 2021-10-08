@@ -313,7 +313,7 @@ public class ActivityWatchMain extends BaseMVPTitleActivity<WatchView, WatchPres
         titleBarView.setLeftIconEnable(true);
         titleBarView.setTitle("--");
         setWatchState(UIUtils.getString(R.string.connected));
-        titleBarView.setRightIcon(R.drawable.icon_device_unbind);
+       // titleBarView.setRightIcon(R.drawable.icon_device_unbind);
         setWatchBattery(0);
         DevicePicUtils.setHeadPic(currentType, ivWatch);
         setShowItems(currentType);
@@ -414,6 +414,7 @@ public class ActivityWatchMain extends BaseMVPTitleActivity<WatchView, WatchPres
             }
         });
 
+        //计步目标设置
         ivWatchStepTarget.setOnContentClickListener(new ItemDeviceSettingView.OnContentClickListener() {
             @Override
             public void onContentClick() {
@@ -702,7 +703,7 @@ public class ActivityWatchMain extends BaseMVPTitleActivity<WatchView, WatchPres
             return;
         }
         switch (v.getId()) {
-            case R.id.iv_watch_take_photo:
+            case R.id.iv_watch_take_photo:  //遥控拍照
                 checkCameraPersiomm();
                 break;
             //温度设置
@@ -894,7 +895,7 @@ public class ActivityWatchMain extends BaseMVPTitleActivity<WatchView, WatchPres
     @Override
     public void onCheckedChanged(int id, boolean isChecked) {
         switch (id) {
-            case R.id.iv_watch_24_heart_rate:
+            case R.id.iv_watch_24_heart_rate:  //24小时心率开关
                 if (!AppConfiguration.isConnected) {
                     ToastUtil.showTextToast(context, UIUtils.getString(R.string.app_disconnect_device));
                     ivWatch24HeartRate.setChecked(!isChecked);
@@ -1015,11 +1016,13 @@ public class ActivityWatchMain extends BaseMVPTitleActivity<WatchView, WatchPres
                 }
                 ISportAgent.getInstance().requestBle(BleRequest.Watch_W516_GENERAL, stateBean.isHrState, stateBean.isCall, stateBean.isMessage, stateBean.tempUnitl);
             }
-        } else if (view == iv_watch_backlight_time) {
+        } else if (view == iv_watch_backlight_time) {  //背光时长
             iv_watch_backlight_time.setContentText(data);
             target = Integer.parseInt(data.split(" " + UIUtils.getString(R.string.unit_backlight_time))[0]);
             w526BackLightTime = target;
             deviceBackLightTimeAndScreenLevePresenter.saveDeviceBackLightTimeOrScreenLeve(TokenUtil.getInstance().getPeopleIdStr(BaseApp.getApp()), AppConfiguration.braceletID, target, 1);
+
+
         } else if (view == iv_watch_screen_luminance) {
             iv_watch_screen_luminance.setContentText(data);
             target = Integer.parseInt(data.split(" " + UIUtils.getString(R.string.unit_screen_luminance))[0]);
@@ -1306,7 +1309,7 @@ public class ActivityWatchMain extends BaseMVPTitleActivity<WatchView, WatchPres
             iv_watch_screen_luminance.setVisibility(View.VISIBLE);
         }
 
-        if (currentType == JkConfiguration.DeviceType.Watch_W560) {
+        if (currentType == JkConfiguration.DeviceType.Watch_W560 || currentType == JkConfiguration.DeviceType.Watch_W560B) {
             ivWatchDistanceTarget.setVisibility(View.VISIBLE);
             ivWatchCalorieTarget.setVisibility(View.VISIBLE);
         }
@@ -1330,6 +1333,8 @@ public class ActivityWatchMain extends BaseMVPTitleActivity<WatchView, WatchPres
         w526screenLeve = screenLeve;
         iv_watch_backlight_time.setContentText(valueBackLightTime + " " + UIUtils.getString(R.string.unit_backlight_time));
         iv_watch_screen_luminance.setContentText(screenLeve + " " + UIUtils.getString(R.string.unit_screen_luminance));
+
+
     }
 
     @Override

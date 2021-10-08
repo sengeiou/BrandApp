@@ -44,7 +44,7 @@
                         android:text="0"
                         android:textColor="@color/common_view_color"
                         android:textSize="@dimen/sp40"
-                        android:textStyle="bold"></bike.gymproject.viewlibray.AkrobatNumberTextView>
+                        android:textStyle="bold"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -52,7 +52,7 @@
                         android:textStyle="bold"
                         android:text="@string/unit_distance"
                         android:textColor="@color/common_white"
-                        android:textSize="@dimen/sp12"></TextView>
+                        android:textSize="@dimen/sp12"/>
                 </LinearLayout>
 
 
@@ -71,7 +71,7 @@
                         android:text="0"
                         android:textColor="@color/common_white"
                         android:textSize="@dimen/sp40"
-                        android:textStyle="bold"></bike.gymproject.viewlibray.AkrobatNumberTextView>
+                        android:textStyle="bold"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -79,7 +79,7 @@
                         android:text="@string/unit_distance"
                         android:textColor="@color/common_white"
                         android:textSize="@dimen/sp12"
-                        android:textStyle="bold"></TextView>
+                        android:textStyle="bold"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -100,7 +100,7 @@
                     android:gravity="center"
                     android:text="-----"
                     android:textColor="@color/common_name_profile_color"
-                    android:textSize="@dimen/sp14"></TextView>
+                    android:textSize="@dimen/sp14"/>
 
 
                 <LinearLayout
@@ -120,7 +120,7 @@
                         android:gravity="center"
                         android:text="@string/ulative_sport_data"
                         android:textColor="@color/common_tips_color"
-                        android:textSize="@dimen/sp14"></TextView>
+                        android:textSize="@dimen/sp14"/>
                 </LinearLayout>
 
 
@@ -139,7 +139,7 @@
                 android:layout_height="wrap_content"
                 android:scaleType="fitXY"
                 android:layout_centerInParent="true"
-                android:src="@drawable/bg_indoor"
+                android:src="@drawable/bg_new_sport"
                 android:visibility="visible" />
 
 

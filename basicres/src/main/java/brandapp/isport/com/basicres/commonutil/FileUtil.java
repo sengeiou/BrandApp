@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -252,7 +253,7 @@ public class FileUtil {
     public static String getPhotoFileName() {
         Date date = new Date(System.currentTimeMillis());
         SimpleDateFormat dateFormat = new SimpleDateFormat(
-                "yyyyMMddHHmmss");
+                "yyyyMMddHHmmss", Locale.CHINA);
         return "share" + dateFormat.format(date) + ".png";
         // return "share" + ".png";
     }
@@ -260,14 +261,14 @@ public class FileUtil {
     public static String getVideoFileName() {
         Date date = new Date(System.currentTimeMillis());
         SimpleDateFormat dateFormat = new SimpleDateFormat(
-                "yyyyMMddHHmmss");
+                "yyyyMMddHHmmss",Locale.CHINA);
         return dateFormat.format(date) + ".mp4";
     }
 
     public static String getVideoImageFileName() {
         Date date = new Date(System.currentTimeMillis());
         SimpleDateFormat dateFormat = new SimpleDateFormat(
-                "yyyyMMddHHmmss");
+                "yyyyMMddHHmmss",Locale.CHINA);
         return dateFormat.format(date) + ".jpg";
     }
 

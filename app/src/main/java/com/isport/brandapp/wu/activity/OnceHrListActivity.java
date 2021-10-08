@@ -1,8 +1,5 @@
 package com.isport.brandapp.wu.activity;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -19,9 +16,15 @@ import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import brandapp.isport.com.basicres.commonview.TitleBarView;
 import brandapp.isport.com.basicres.mvp.BaseMVPTitleActivity;
 
+/**
+ * 测量记录
+ */
 public class OnceHrListActivity extends BaseMVPTitleActivity<OnceHrHistoryView, OnceHrHistoryPresenter> implements OnceHrHistoryView {
 
     LinearLayout ll_nodata;

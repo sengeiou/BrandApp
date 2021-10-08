@@ -46,6 +46,9 @@ import phone.gym.jkcq.com.commonres.common.JkConfiguration
 import phone.gym.jkcq.com.commonres.commonutil.UserUtils
 import java.util.*
 
+/**
+ * 跳绳设置
+ */
 internal class RopeDeviceSettingActivity() : BaseTitleActivity(), DeviceUpgradeView, BindBaseView {
 
 

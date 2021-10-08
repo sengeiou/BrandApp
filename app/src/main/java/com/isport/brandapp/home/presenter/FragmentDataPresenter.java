@@ -175,6 +175,7 @@ public class FragmentDataPresenter extends BasePresenter<FragmentDataView> imple
     @Override
     public void getDeviceList(boolean isFirstDisplayDB, boolean show, boolean setWatchDefault) {
 
+        Logger.myLog(TAG,"-----getDL="+isFirstDisplayDB+"\n"+show+"\n"+setWatchDefault);
        /* if (true) {
             HashMap<Integer, DeviceBean> deviceBeanHashMap = new HashMap<>();
             mActView.get().successGetDeviceListFormHttp(deviceBeanHashMap, show, setWatchDefault);
@@ -197,8 +198,7 @@ public class FragmentDataPresenter extends BasePresenter<FragmentDataView> imple
         deviceIdParms.show = show;
         //没有网络的情况，直接查询本地数据库数据
         //首先判断是否先展示本地
-        mainResposition.requst(commonParms.setPostBody(isFirstDisplayDB ? isFirstDisplayDB : NetUtils.hasNetwork() ?
-                !(App.appType() == App.httpType) : true).setParms(parms)
+        mainResposition.requst(commonParms.setPostBody(isFirstDisplayDB ? isFirstDisplayDB : !NetUtils.hasNetwork() || !(App.appType() == App.httpType)).setParms(parms)
                 .setBaseUrl(baseUrl)
                 .setBaseDbParms(deviceIdParms).setType(JkConfiguration.RequstType
                         .GET_BIND_DEVICELIST)

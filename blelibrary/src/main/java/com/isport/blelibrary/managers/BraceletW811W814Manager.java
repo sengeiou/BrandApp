@@ -98,6 +98,7 @@ import com.isport.blelibrary.result.impl.watch.WatchGOALSTEPResult;
 import com.isport.blelibrary.result.impl.watch.WatchHrHeartResult;
 import com.isport.blelibrary.result.impl.watch.WatchVersionResult;
 import com.isport.blelibrary.utils.AppLanguageUtil;
+import com.isport.blelibrary.utils.BleSPUtils;
 import com.isport.blelibrary.utils.CmdUtil;
 import com.isport.blelibrary.utils.CommonDateUtil;
 import com.isport.blelibrary.utils.Constants;
@@ -247,7 +248,7 @@ public class BraceletW811W814Manager extends BaseManager {
             filter.addAction(BluetoothAdapter.ACTION_STATE_CHANGED);
             mContext.registerReceiver(broadcastReceiver, filter);
         } catch (Exception e) {
-            Logger.myLog(TAG + e.toString());
+           e.printStackTrace();
         }
 
     }
@@ -385,6 +386,9 @@ public class BraceletW811W814Manager extends BaseManager {
                 @Override
                 public void onTimeSystem(final int i) {
 
+                    //保存时间格式
+                    BleSPUtils.putInt(mContext,BleSPUtils.KEY_TIME_FORMAT,i);
+
                     Long currentTime = isSameOption(onTimeSystem);
                     if (currentTime == onTimeSystem) {
                         return;
@@ -468,11 +472,16 @@ public class BraceletW811W814Manager extends BaseManager {
                         watch_w516_sedentaryModels.setLongSitEndTime(Constants.defEndTime);
                         ParseData.saveOrUpdateWatchW516Sedentary(watch_w516_sedentaryModels);
 
+                        //读取久坐提醒
                         mBleConnection.querySedentaryReminderPeriod(new CRPDeviceSedentaryReminderPeriodCallback() {
                             @Override
                             public void onSedentaryReminderPeriod(CRPSedentaryReminderPeriodInfo crpSedentaryReminderPeriodInfo) {
                                 Logger.myLog(TAG + "queryRemindersToMovePeriod");
                                 Logger.myLog(TAG + "queryRemindersToMovePeriod,getStartHour:" + crpSedentaryReminderPeriodInfo.getStartHour() + ",getEndHour:" + crpSedentaryReminderPeriodInfo.getEndHour() + ",getPeriod:" + crpSedentaryReminderPeriodInfo.getPeriod() + ",getSteps:" + crpSedentaryReminderPeriodInfo.getSteps());
+
+                                //保存久坐提醒时间段
+                                BleSPUtils.putString(mContext,BleSPUtils.KEY_LONG_SIT,CommonDateUtil.formatTwoStr(crpSedentaryReminderPeriodInfo.getStartHour()) + ":00"+"-"+CommonDateUtil.formatTwoStr(crpSedentaryReminderPeriodInfo.getEndHour()) + ":00");
+
                                 Watch_W516_SedentaryModel watch_w516_sedentaryModels = new Watch_W516_SedentaryModel();
                                 watch_w516_sedentaryModels.setDeviceId(mCurrentDevice.getDeviceName());
                                 watch_w516_sedentaryModels.setUserId(BaseManager.mUserId);
@@ -544,6 +553,9 @@ public class BraceletW811W814Manager extends BaseManager {
                 mBleConnection.queryTimingMeasureHeartRate(new CRPDeviceTimingMeasureHeartRateCallback() {
                     @Override
                     public void onTimingMeasure(final boolean b) {
+
+                        //24小时心率
+                        BleSPUtils.putBoolean(mContext,BleSPUtils.KEY_HEART_STATUS,b);
 
                         Long currentTime = isSameOption(onTimingMeasure);
                         if (currentTime == onTimingMeasure) {
@@ -1004,9 +1016,11 @@ public class BraceletW811W814Manager extends BaseManager {
                         }
                         break;
 
-                    case HandlerContans.mDevcieGoalStep:
+                    case HandlerContans.mDevcieGoalStep:    //计步目标
                         if (!isListenerNull && mCurrentDevice != null) {
                             Object[] objHr = (Object[]) msg.obj;
+                            //保存计步目标
+                            BleSPUtils.putInt(mContext,BleSPUtils.KEY_STEP_GOAL, (Integer) objHr[0]);
                             for (int i = 0; i < mBleReciveListeners.size(); i++) {
                                 mBleReciveListeners.get(i).receiveData(new WatchGOALSTEPResult((Integer) objHr[0], mCurrentDevice.deviceName));
                             }
@@ -1800,7 +1814,9 @@ public class BraceletW811W814Manager extends BaseManager {
             Log.d(TAG, "onFindPhoneComplete");
         }
     };
-    CRPBloodOxygenChangeListener mBloodOxygenChangeListener = new CRPBloodOxygenChangeListener() {
+
+
+    private final CRPBloodOxygenChangeListener mBloodOxygenChangeListener = new CRPBloodOxygenChangeListener() {
         @Override
         public void onBloodOxygenChange(int bloodOxygen) {
 
@@ -1878,13 +1894,19 @@ public class BraceletW811W814Manager extends BaseManager {
     }
 
 
+    //勿扰模式回调
     CRPDevicePeriodTimeCallback crpDevicePeriodTimeCallback = new CRPDevicePeriodTimeCallback() {
         @Override
         public void onPeriodTime(int i, CRPPeriodTimeInfo crpPeriodTimeInfo) {
 //            QUICK_VIEW_TYPE
 
+
+
             Long currentTime;
             if (i == 2) {
+
+
+
 
                 currentTime = isSameOption(onPeriodTime2);
                 if (currentTime == onPeriodTime2) {
@@ -1894,6 +1916,8 @@ public class BraceletW811W814Manager extends BaseManager {
                 }
 
                 if (crpPeriodTimeInfo.getStartHour() == crpPeriodTimeInfo.getEndHour() && crpPeriodTimeInfo.getEndMinute() == crpPeriodTimeInfo.getEndMinute()) {
+                    //抬腕亮屏 抬腕亮屏的类型	int 0,1,2 0: 全天开,1特定时间段开 2关闭
+                    BleSPUtils.putInt(mContext,BleSPUtils.KEY_TURN_WRIST,0);
 
                     Logger.myLog(TAG + "queryQuickViewTime");
                     Logger.myLog(TAG + "queryQuickViewTime:QUICK_VIEW_TYPE" + i + "，crpPeriodTimeInfo，getStartHour：" + crpPeriodTimeInfo.getStartHour() + ":getStartMinute，" + crpPeriodTimeInfo.getStartMinute() + "，getEndHour：" + crpPeriodTimeInfo.getEndHour() + ",getEndMinute：" + crpPeriodTimeInfo.getEndMinute());
@@ -1908,7 +1932,8 @@ public class BraceletW811W814Manager extends BaseManager {
                     model.setIsNextDay(false);
                     Bracelet_W311_liftwristModelAction.saveOrUpdateBraceletLift(model);
                 } else {
-
+                    //抬腕亮屏
+                    BleSPUtils.putInt(mContext,BleSPUtils.KEY_TURN_WRIST,1);
                     Logger.myLog(TAG + "queryQuickViewTime");
                     Logger.myLog(TAG + "queryQuickViewTime:QUICK_VIEW_TYPE" + i + "，crpPeriodTimeInfo，getStartHour：" + crpPeriodTimeInfo.getStartHour() + ":getStartMinute，" + crpPeriodTimeInfo.getStartMinute() + "，getEndHour：" + crpPeriodTimeInfo.getEndHour() + ",getEndMinute：" + crpPeriodTimeInfo.getEndMinute());
                     Bracelet_W311_LiftWristToViewInfoModel model = new Bracelet_W311_LiftWristToViewInfoModel();
@@ -1927,6 +1952,15 @@ public class BraceletW811W814Manager extends BaseManager {
 
             }
             if (i == 1) {
+
+                //保存勿扰模式
+                String startHS = crpPeriodTimeInfo.getStartHour()<=9 ? String.format("0%s",crpPeriodTimeInfo.getStartHour()):crpPeriodTimeInfo.getStartHour()+"";
+                String startMS = crpPeriodTimeInfo.getStartMinute()<=9 ? String.format("0%s",crpPeriodTimeInfo.getStartMinute()):crpPeriodTimeInfo.getStartMinute()+"";
+                //String startTimeStr = crpPeriodTimeInfo.getStartHour()<=9 ? String.format("0%s",crpPeriodTimeInfo.getStartHour());
+                String endHS = crpPeriodTimeInfo.getEndHour()<=9 ? String.format("0%s",crpPeriodTimeInfo.getEndHour()):crpPeriodTimeInfo.getEndHour()+"";
+                String endMS = crpPeriodTimeInfo.getEndMinute()<=9 ? String.format("0%s",crpPeriodTimeInfo.getEndMinute()):crpPeriodTimeInfo.getEndMinute()+"";
+                BleSPUtils.putString(mContext,BleSPUtils.KEY_DNT_STATUS,startHS+":"+startMS+"-"+endHS+":"+endMS);
+
                 //DO_NOT_DISTRUB_TYPE
                 Logger.myLog(TAG + "queryQuickViewTime:QUICK_VIEW_TYPE" + i + "，crpPeriodTimeInfo，getStartHour：" + crpPeriodTimeInfo.getStartHour() + ":getStartMinute，" + crpPeriodTimeInfo.getStartMinute() + "，getEndHour：" + crpPeriodTimeInfo.getEndHour() + ",getEndMinute：" + crpPeriodTimeInfo.getEndMinute());
                 currentTime = isSameOption(onPeriodTime1);

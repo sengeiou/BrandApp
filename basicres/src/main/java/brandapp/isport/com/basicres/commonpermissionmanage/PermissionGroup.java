@@ -81,7 +81,7 @@ public class PermissionGroup {
 
             CAMERA_STORAGE = new String[]{
                     Manifest.permission.CAMERA,
-                    Manifest.permission.ACCESS_COARSE_LOCATION,
+//                    Manifest.permission.ACCESS_COARSE_LOCATION,
                     Manifest.permission.READ_EXTERNAL_STORAGE,
                     Manifest.permission.WRITE_EXTERNAL_STORAGE
             };

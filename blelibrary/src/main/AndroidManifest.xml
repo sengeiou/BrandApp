@@ -1,11 +1,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.isport.blelibrary">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.isport.blelibrary">
 
 
     <!--您的应用清单请求“通话记录”权限组（例如 READ_CALL_LOG、WRITE_CALL_LOG、ROCESS_OUTGOING_CALLS）	必须由用户主动将应用注册为设备的默认电话或辅助处理程序。-->
     <!--您的应用清单请求“短信”权限组（例如 READ_SMS、SEND_SMS、WRITE_SMS、RECEIVE_SMS、RECEIVE_WAP_PUSH、RECEIVE_MMS）	必须由用户主动将应用注册为设备的默认短信或辅助处理程序。-->
 
-    <uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED"
+        tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.BLUETOOTH"/>
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
 
@@ -16,7 +19,9 @@
         android:name="android.hardware.bluetooth_le"
         android:required="true"/>
 
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application>

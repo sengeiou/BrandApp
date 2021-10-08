@@ -500,7 +500,7 @@
     <string name="bracelet_play">Play on device</string>//防丢提醒
     <string name="bracelet_find">Find Device</string>//抬腕亮屏
     <string name="watch_alarm_setting_str">Alarm</string>//玩转手环
-    <string name="bracelet_display">Display set</string>//查找手环
+    <string name="bracelet_display">Display setg</string>//查找手环
     <string name="watch_backlight_time">Backlight time</string>
     <string name="watch_screen_luminance">Screen brightness</string>//显示设置
     <string name="watch_alarm_setting_title">Alarm</string>

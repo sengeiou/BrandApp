@@ -1,6 +1,7 @@
 package com.isport.brandapp.device.share;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -21,8 +22,6 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.core.content.FileProvider;
-
 import com.blankj.utilcode.util.DeviceUtils;
 import com.blankj.utilcode.util.ImageUtils;
 import com.blankj.utilcode.util.ScreenUtils;
@@ -33,6 +32,7 @@ import com.facebook.share.model.SharePhoto;
 import com.facebook.share.model.SharePhotoContent;
 import com.facebook.share.widget.ShareDialog;
 import com.gyf.immersionbar.ImmersionBar;
+import com.isport.blelibrary.utils.Logger;
 import com.isport.brandapp.App;
 import com.isport.brandapp.R;
 import com.isport.brandapp.device.PremissionUtil;
@@ -55,6 +55,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.FileProvider;
 import bike.gymproject.viewlibray.BebasNeueTextView;
 import bike.gymproject.viewlibray.CircleImageView;
 import bike.gymproject.viewlibray.chart.PieChartData;
@@ -77,6 +79,10 @@ import phone.gym.jkcq.com.commonres.commonutil.BitmapUtils;
 import phone.gym.jkcq.com.commonres.commonutil.DisplayUtils;
 import phone.gym.jkcq.com.commonres.commonutil.PhotoChoosePopUtil;
 
+
+/**
+ * 睡眠分享页面
+ */
 public class NewShareActivity extends BaseActivity implements View.OnClickListener, PremissionUtil.OnResult, UMShareListener {
 
     private FrameLayout fl_share_content;
@@ -289,7 +295,17 @@ public class NewShareActivity extends BaseActivity implements View.OnClickListen
             showRopeView();
         }
         util.setOnResultLister(this);
+
+        requestPermiss();
     }
+
+
+
+
+    private void requestPermiss(){
+        ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE},0x00);
+    }
+
 
     @Override
     protected void initEvent() {
@@ -589,6 +605,7 @@ public class NewShareActivity extends BaseActivity implements View.OnClickListen
                     // 得到图片的全路径
                     Uri uri = data.getData();
                     String path = BitmapUtils.getRealFilePath(context, uri);
+                    Logger.myLog(TAG,"----图片选择path="+path+"\n"+uri);
 //                   setCustomBg(path);
                     if ("Redmi4A".equals(AppUtil.getModel())) {
                         setCustomBg(path);
@@ -621,6 +638,7 @@ public class NewShareActivity extends BaseActivity implements View.OnClickListen
                 }
                 break;
             case PHOTO_CUT:
+                Logger.myLog(TAG,"-------333--mImgPath="+mImgPath);
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
@@ -1054,9 +1072,10 @@ public class NewShareActivity extends BaseActivity implements View.OnClickListen
         }
     }
 
+    @SuppressLint("CheckResult")
     private void checkFileWritePermissions() {
         new RxPermissions(this)
-                .request(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                .request(Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE)
                 .subscribe(new Consumer<Boolean>() {
                     @Override
                     public void accept(Boolean aBoolean) throws Exception {
@@ -1075,7 +1094,8 @@ public class NewShareActivity extends BaseActivity implements View.OnClickListen
     public void gallery() {
 //        NetProgressObservable.getInstance().show(false);
         Intent intent = new Intent(Intent.ACTION_PICK);    // 激活系统图库，选择一张图片
-        intent.setType("image/*");
+        //intent.setType("image/*");
+        intent.setDataAndType(MediaStore.Images.Media.INTERNAL_CONTENT_URI,"image/*");
         startActivityForResult(intent, PHOTO_REQUEST_GALLERY); // 开启一个带有返回值的Activity，请求码为PHOTO_REQUEST_GALLERY
     }
 
@@ -1086,6 +1106,7 @@ public class NewShareActivity extends BaseActivity implements View.OnClickListen
      */
     private void startPhotoZoom(Uri uri) {
         try {
+            Logger.myLog(TAG,"------裁剪uri="+uri.getPath());
             int size = (int) (ScreenUtils.getScreenWidth() * 1.0);
             Intent intent = new Intent("com.android.camera.action.CROP");
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
@@ -1099,10 +1120,13 @@ public class NewShareActivity extends BaseActivity implements View.OnClickListen
                 //            mImgPath=getExternalFilesDir(null).toString()+ "/" + date + ".jpg";
                 //            mImgPath= getExternalFilesDir(Environment.DIRECTORY_PICTURES).toString()+ "/" + date + ".jpg";
                 mImgPath = FileUtil.getImageFile().getAbsolutePath() + "/" + date + ".jpg";
+                Logger.myLog(TAG,"-------11--mImgPath="+mImgPath);
                 cutFile = new File(mImgPath);
                 if (!cutFile.exists()) {
                     FileUtil.createFile(cutFile.getAbsolutePath());
                 }
+
+                Logger.myLog(TAG,"----cutFile="+cutFile.getAbsoluteFile());
                 //所有版本这里都这样调用
                 intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(cutFile));
 //               intent.putExtra(MediaStore.EXTRA_OUTPUT,  getUriForFile(NewShareActivity.this,cutFile));
@@ -1124,7 +1148,7 @@ public class NewShareActivity extends BaseActivity implements View.OnClickListen
                 intent.putExtra("scaleUpIfNeeded", true);
                 intent.putExtra("outputFormat", Bitmap.CompressFormat.JPEG.toString());
                 intent.putExtra("return-data", false);
-
+                Logger.myLog(TAG,"-------222--mImgPath="+mImgPath);
 //                uritempFile = Uri.parse("file://" + "/" + Environment.getExternalStorageDirectory().getPath() + "/brandapp/" + "small.jpg");
 //                intent.putExtra(MediaStore.EXTRA_OUTPUT, uritempFile);
 //                intent.putExtra("outputFormat", Bitmap.CompressFormat.JPEG.toString());
@@ -1147,7 +1171,7 @@ public class NewShareActivity extends BaseActivity implements View.OnClickListen
     public Uri getUriForFile(Context context, File file) {
         Uri fileUri = null;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            fileUri = FileProvider.getUriForFile(context, context.getApplicationContext().getPackageName() + ".fileprovider", file);
+            fileUri = FileProvider.getUriForFile(context, "com.isport.brandapp" + ".fileprovider", file);
         } else {
             fileUri = Uri.fromFile(file);
         }

@@ -5,15 +5,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import androidx.annotation.NonNull;
-import androidx.viewpager2.widget.ViewPager2;
-
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import androidx.annotation.NonNull;
+import androidx.viewpager2.widget.ViewPager2;
 import brandapp.isport.com.basicres.BaseApp;
 import brandapp.isport.com.basicres.BaseTitleActivity;
 import brandapp.isport.com.basicres.commonalertdialog.AlertDialogStateCallBack;
@@ -33,6 +32,9 @@ import phone.gym.jkcq.com.socialmodule.adapter.RankFragmentAdapter;
 import phone.gym.jkcq.com.socialmodule.net.APIService;
 import phone.gym.jkcq.com.socialmodule.net.RetrofitClient;
 
+/**
+ * 好友排行页面
+ */
 public class SportRankActivity extends BaseTitleActivity {
 
     private TabLayout tab_layout;

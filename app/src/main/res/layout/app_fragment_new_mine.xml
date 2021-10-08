@@ -84,7 +84,7 @@
                     app:layout_constraintCircleAngle="45"
                     app:layout_constraintCircleRadius="12dp"
                     app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"></TextView>
+                    app:layout_constraintTop_toTopOf="parent"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </RelativeLayout>
@@ -92,7 +92,7 @@
         <View
             android:id="@+id/view_cmd"
             android:layout_width="@dimen/dp100"
-            android:layout_height="@dimen/dp50"></View>
+            android:layout_height="@dimen/dp50"/>
 
         <RelativeLayout
             android:id="@+id/layout_common_head"

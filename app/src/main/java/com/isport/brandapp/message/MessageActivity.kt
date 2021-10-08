@@ -25,6 +25,7 @@ import phone.gym.jkcq.com.socialmodule.FriendConstant
 import phone.gym.jkcq.com.socialmodule.activity.PersonalHomepageActivity
 import phone.gym.jkcq.com.socialmodule.bean.ListData
 
+//我的消息页面
 internal class MessageActivity() : BaseMVPTitleActivity<MessageView, MessagePresenter>(), MessageView {
 
     var mDataList = mutableListOf<MessageInfo>()
@@ -55,7 +56,7 @@ internal class MessageActivity() : BaseMVPTitleActivity<MessageView, MessagePres
 
         mMessageAdapter.setOnItemClickListener(object : OnItemClickListener {
             override fun onItemClick(adapter: BaseQuickAdapter<*, *>, view: View, position: Int) {
-
+                startPersonal(mDataList.get(position).fromUserId);
             }
         })
 

@@ -5,12 +5,58 @@ import com.isport.blelibrary.utils.Logger;
 import com.isport.blelibrary.utils.Utils;
 
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Calendar;
 
 public class W526Cmd {
 
     private static final String TAG = "W526Cmd";
+
+
+    //W560音乐显示
+    public ArrayList<byte[]> musicByteList(String musicName,String musicCountTime,String musicPlayTime){
+        ArrayList<byte[]> musicListByte = new ArrayList<>();
+
+        //音乐名称
+        byte[] nameByte = musicName.getBytes(StandardCharsets.UTF_8);
+
+        byte[] musicByte = new byte[50];
+        musicByte[0] = 0x01;
+        musicByte[1] = 0x1f;
+        musicByte[2] = 0x01;
+
+        System.arraycopy(nameByte,0,musicByte,3,nameByte.length>45 ? 45 : nameByte.length-1);
+        musicListByte.add(musicByte);
+
+
+        //音乐总时间
+        byte[] countTimeByte = musicCountTime.getBytes(StandardCharsets.UTF_8);
+        byte[] musicCountByte = new byte[50];
+        musicCountByte[0] = 0x01;
+        musicCountByte[1] = 0x1f;
+        musicCountByte[2] = 0x02;
+        System.arraycopy(countTimeByte,0,musicCountByte,3,countTimeByte.length>45 ? 45 : countTimeByte.length-1);
+
+        musicListByte.add(musicCountByte);
+
+        //音乐播放时间
+        byte[] playByteTime = musicPlayTime.getBytes(StandardCharsets.UTF_8);
+
+        byte[] playByte = new byte[50];
+        playByte[0] = 0x01;
+        playByte[1] = 0x1f;
+        playByte[2] = 0x03;
+        System.arraycopy(playByteTime,0,playByte,3,playByteTime.length > 45 ? 45 : playByteTime.length-1);
+        musicListByte.add(playByte);
+        return musicListByte;
+    }
+
+
+
+
+
+
 
     /************************************W526新指令********************************************************************/
     //W526新指令

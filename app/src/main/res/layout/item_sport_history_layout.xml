@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="13dp"
         android:text="12:05"
-        android:textColor="@color/common_rope_time_color"></TextView>
+        android:textColor="@color/common_rope_time_color"/>
 
     <RelativeLayout
         android:layout_width="match_parent"

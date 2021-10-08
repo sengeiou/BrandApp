@@ -27,7 +27,7 @@
             android:layout_centerInParent="true"
             android:text="@string/edit_share"
             android:textColor="@color/common_white"
-            android:textSize="@dimen/sp17"></TextView>
+            android:textSize="@dimen/sp17"/>
     </RelativeLayout>
 
     <androidx.core.widget.NestedScrollView
@@ -56,22 +56,22 @@
                 <include
                     layout="@layout/include_share_step"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"></include>
+                    android:layout_height="match_parent"/>
 
                 <include
                     layout="@layout/include_share_sleep"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"></include>
+                    android:layout_height="match_parent"/>
 
                 <include
                     layout="@layout/include_share_heartrate"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"></include>
+                    android:layout_height="match_parent"/>
 
                 <include
                     layout="@layout/include_share_rope"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"></include>
+                    android:layout_height="match_parent"/>
 
 
             </FrameLayout>
@@ -97,7 +97,7 @@
                         android:layout_height="@dimen/dp75"
                         android:layout_centerInParent="true"
                         android:scaleType="fitXY"
-                        android:src="@drawable/bg_share_step_small_1"></ImageView>
+                        android:src="@drawable/bg_share_step_small_1"/>
 
                     <ImageView
                         android:id="@+id/iv_sure1"
@@ -107,7 +107,7 @@
                         android:layout_marginTop="@dimen/dp5"
                         android:layout_marginRight="@dimen/dp10"
                         android:src="@drawable/share_icon_sure"
-                        android:visibility="visible"></ImageView>
+                        android:visibility="visible"/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -123,7 +123,7 @@
                         android:layout_height="@dimen/dp75"
                         android:layout_centerInParent="true"
                         android:scaleType="fitXY"
-                        android:src="@drawable/bg_share_step_small_2"></ImageView>
+                        android:src="@drawable/bg_share_step_small_2"/>
 
                     <ImageView
                         android:id="@+id/iv_sure2"
@@ -133,7 +133,7 @@
                         android:layout_marginTop="@dimen/dp5"
                         android:layout_marginRight="@dimen/dp10"
                         android:src="@drawable/share_icon_sure"
-                        android:visibility="gone"></ImageView>
+                        android:visibility="gone"/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -149,7 +149,7 @@
                         android:layout_height="@dimen/dp75"
                         android:layout_centerHorizontal="true"
                         android:scaleType="fitXY"
-                        android:src="@drawable/bg_share_step_small_3"></ImageView>
+                        android:src="@drawable/bg_share_step_small_3"/>
 
                     <ImageView
                         android:id="@+id/iv_sure3"
@@ -159,7 +159,7 @@
                         android:layout_marginTop="@dimen/dp5"
                         android:layout_marginRight="@dimen/dp10"
                         android:src="@drawable/share_icon_sure"
-                        android:visibility="gone"></ImageView>
+                        android:visibility="gone"/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -175,7 +175,7 @@
                         android:layout_height="@dimen/dp75"
                         android:layout_centerInParent="true"
                         android:scaleType="fitXY"
-                        android:src="@drawable/bg_share_small_rope_4"></ImageView>
+                        android:src="@drawable/bg_share_small_rope_4"/>
 
                     <ImageView
                         android:id="@+id/iv_sure4"
@@ -185,7 +185,7 @@
                         android:layout_marginTop="@dimen/dp5"
                         android:layout_marginRight="@dimen/dp10"
                         android:src="@drawable/share_icon_sure"
-                        android:visibility="gone"></ImageView>
+                        android:visibility="gone"/>
                 </RelativeLayout>
 
 

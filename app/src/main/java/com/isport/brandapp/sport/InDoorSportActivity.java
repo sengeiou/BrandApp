@@ -306,6 +306,8 @@ public class InDoorSportActivity extends BaseMVPActivity<InDoorSportView, InDoor
         viewEnd.setEndText(UIUtils.getString(R.string.sporting_end), UIUtils.getString(R.string.long_press_end));
         viewUnLock.setEndText(UIUtils.getString(R.string.lock), UIUtils.getString(R.string.long_press_unlock));
 
+        itemViewCal.setUnitText(getResources().getString(R.string.watch_step_unite_calory));
+
         EventBus.getDefault().register(this);
 
 

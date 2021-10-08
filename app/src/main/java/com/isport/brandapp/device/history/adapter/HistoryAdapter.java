@@ -9,8 +9,6 @@ import android.widget.BaseAdapter;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.core.content.ContextCompat;
-
 import com.isport.blelibrary.utils.CommonDateUtil;
 import com.isport.brandapp.R;
 import com.isport.brandapp.device.band.bean.BandDayBean;
@@ -20,15 +18,21 @@ import com.isport.brandapp.device.sleep.bean.SleepDayBean;
 import com.isport.brandapp.device.sleep.bean.SleepHistoryList;
 import com.isport.brandapp.sport.bean.SportSumData;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.core.content.ContextCompat;
 import bike.gymproject.viewlibray.pickerview.utils.DateUtils;
 import brandapp.isport.com.basicres.commonrecyclerview.adapter.ViewHolder;
 import brandapp.isport.com.basicres.commonutil.UIUtils;
 import phone.gym.jkcq.com.commonres.common.JkConfiguration;
 
 public class HistoryAdapter extends BaseAdapter {
+
+
+    private final DecimalFormat decimalFormat = new DecimalFormat("#.##");
+
     protected LayoutInflater mInflater;
     protected Context mContext;
     protected List<HistoryBeanList> mDatas;
@@ -37,6 +41,9 @@ public class HistoryAdapter extends BaseAdapter {
     protected int mMonthLayoutId;
     protected int mDividerLayoutId;
     private int CurrentType;
+
+
+
 
     public HistoryAdapter(Context context, int itemLayoutId, int mTitleLayoutId, int mMonthLayoutId) {
         this.mContext = context;
@@ -207,7 +214,6 @@ public class HistoryAdapter extends BaseAdapter {
         //编写这个字段
         //2018年10月：共减重3.0公斤，减脂
 
-
         String strweight = "";
         if (item.scaleHistoryBean.isUpWeight) {
             strweight = String.format(mContext.getResources().getString(R.string.app_scale_up_weight), item.scaleHistoryBean.strWeight);
@@ -241,47 +247,55 @@ public class HistoryAdapter extends BaseAdapter {
 
     public void convertSleepItem(ViewHolder viewHolder, SleepDayBean item, int position) {
 
-        isShowLine(viewHolder, position);
+        try {
+            isShowLine(viewHolder, position);
 
-        viewHolder.setText(R.id.tv_one, DateUtils.getDateStringByTime(item.getCreatTime()) + "\n" + DateUtils.getTimeStringByTime(item.getCreatTime()));
-        int deepSleepAllTime = Integer.parseInt(item.getDeepSleepAllTime());
-        String deepTime = deepSleepAllTime / 60 + "H" + deepSleepAllTime % 60 + "M";
-        int duration = Integer.parseInt(item.getDuration());
-        String durationT = duration / 60 + "H" + duration % 60 + "M";
-        viewHolder.setText(R.id.tv_two, deepTime + "/\n" + durationT);
-        viewHolder.setText(R.id.tv_three, item.getAverageHeartBeatRate());
-        viewHolder.setText(R.id.tv_four, item.getAverageBreathRate());
-        viewHolder.setText(R.id.tv_five, item.getTrunOverTimes());
-
+            viewHolder.setText(R.id.tv_one, DateUtils.getDateStringByTime(item.getCreatTime()) + "\n" + DateUtils.getTimeStringByTime(item.getCreatTime()));
+            int deepSleepAllTime = Integer.parseInt(item.getDeepSleepAllTime());
+            String deepTime = deepSleepAllTime / 60 + "H" + deepSleepAllTime % 60 + "M";
+            int duration = Integer.parseInt(item.getDuration());
+            String durationT = duration / 60 + "H" + duration % 60 + "M";
+            viewHolder.setText(R.id.tv_two, deepTime + "/\n" + durationT);
+            viewHolder.setText(R.id.tv_three, item.getAverageHeartBeatRate());
+            viewHolder.setText(R.id.tv_four, item.getAverageBreathRate());
+            viewHolder.setText(R.id.tv_five, item.getTrunOverTimes());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
     }
 
 
     public void convertSportItem(ViewHolder viewHolder, SportSumData item, int position) {
-
-        viewHolder.setImageResource(R.id.iv_sport_type, item.getDrawableRes());
-        //viewHolder.setText(R.id.tv_sport_name, item.getSportTypeName());
-        viewHolder.setText(R.id.tv_sport_recode_time, item.getStrTime());
-        viewHolder.setText(R.id.tv_sport_recode_speed, item.getStrSpeed());
-        viewHolder.setText(R.id.tv_sport_recode_cal, item.getCalories());
-        viewHolder.setText(R.id.tv_sport_end_time, item.getStrEndTime());
-        viewHolder.setText(R.id.tv_sport_dis, item.getDistance());
+        try {
+            viewHolder.setImageResource(R.id.iv_sport_type, item.getDrawableRes());
+            //viewHolder.setText(R.id.tv_sport_name, item.getSportTypeName());
+            viewHolder.setText(R.id.tv_sport_recode_time, item.getStrTime());
+            viewHolder.setText(R.id.tv_sport_recode_speed, item.getType() == 2 ? String.format("%.2f",Float.valueOf(item.getAvgSpeed()))+mContext.getResources().getString(R.string.unit_speed):item.getAvgPace()+"");
+            viewHolder.setText(R.id.tv_sport_recode_cal, item.getCalories());
+            viewHolder.setText(R.id.tv_sport_end_time, item.getStrEndTime());
+            viewHolder.setText(R.id.tv_sport_dis, item.getDistance());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
     }
 
     public void convertBandItem(ViewHolder viewHolder, BandDayBean item, int position) {
+        try {
+            isShowLine(viewHolder, position);
 
-        isShowLine(viewHolder, position);
+            viewHolder.setText(R.id.tv_one, DateUtils.getMD(item.buildTime));
+            RelativeLayout layout = viewHolder.getView(R.id.layout);
+            layout.setBackgroundColor(ContextCompat.getColor(mContext, R.color.common_item_bg_color));
 
-        viewHolder.setText(R.id.tv_one, DateUtils.getMD(item.buildTime));
-        RelativeLayout layout = viewHolder.getView(R.id.layout);
-        layout.setBackgroundColor(ContextCompat.getColor(mContext, R.color.common_item_bg_color));
-
-        viewHolder.setText(R.id.tv_two, item.stepNum + "", mContext.getResources().getDimension(R.dimen.sp22), true);
-        viewHolder.setText(R.id.tv_three, CommonDateUtil.formatTwoPoint(Float.valueOf(item.stepKm)), mContext.getResources().getDimension(R.dimen.sp22), true);
-        viewHolder.setText(R.id.tv_four, item.calorie, mContext.getResources().getDimension(R.dimen.sp22), true);
-        viewHolder.setText(R.id.tv_five, "", false);
-
+            viewHolder.setText(R.id.tv_two, item.stepNum + "", mContext.getResources().getDimension(R.dimen.sp22), true);
+            viewHolder.setText(R.id.tv_three, CommonDateUtil.formatTwoPoint(Float.valueOf(item.stepKm)), mContext.getResources().getDimension(R.dimen.sp22), true);
+            viewHolder.setText(R.id.tv_four, item.calorie, mContext.getResources().getDimension(R.dimen.sp22), true);
+            viewHolder.setText(R.id.tv_five, "", false);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
     }
 
@@ -300,46 +314,47 @@ public class HistoryAdapter extends BaseAdapter {
     }
 
     public void convertScaleMonthItem(ViewHolder viewHolder, HistoryBeanList item, int position) {
-
-
-        isShowLine(viewHolder, position);
-        viewHolder.setText(R.id.tv_date, item.scaleDayBean.date);
-        viewHolder.setText(R.id.tv_time, item.scaleDayBean.time);
-        viewHolder.setText(R.id.tv_weight, item.scaleDayBean.strWeight);
-        TextView tvWeightRate = viewHolder.getView(R.id.tv_weight_rate);
-        if (TextUtils.isEmpty(item.scaleDayBean.strWeightRate)) {
-            tvWeightRate.setTextColor(ContextCompat.getColor(mContext, R.color.common_title_button_text_enabled));
-            tvWeightRate.setText(UIUtils.getString(R.string.no_data));
-        } else {
-            if (item.scaleDayBean.isWeightUp) {
-                tvWeightRate.setTextColor(ContextCompat.getColor(mContext, R.color.common_stande_red));
-                tvWeightRate.setText(String.format(mContext.getString(R.string.app_rate_up), item.scaleDayBean.strWeightRate));
+        try {
+            isShowLine(viewHolder, position);
+            viewHolder.setText(R.id.tv_date, item.scaleDayBean.date);
+            viewHolder.setText(R.id.tv_time, item.scaleDayBean.time);
+            viewHolder.setText(R.id.tv_weight, item.scaleDayBean.strWeight);
+            TextView tvWeightRate = viewHolder.getView(R.id.tv_weight_rate);
+            if (TextUtils.isEmpty(item.scaleDayBean.strWeightRate)) {
+                tvWeightRate.setTextColor(ContextCompat.getColor(mContext, R.color.common_title_button_text_enabled));
+                tvWeightRate.setText(UIUtils.getString(R.string.no_data));
             } else {
-                tvWeightRate.setTextColor(ContextCompat.getColor(mContext, R.color.common_stande_green));
-                tvWeightRate.setText(String.format(mContext.getString(R.string.app_rate_down), item.scaleDayBean.strWeightRate));
+                if (item.scaleDayBean.isWeightUp) {
+                    tvWeightRate.setTextColor(ContextCompat.getColor(mContext, R.color.common_stande_red));
+                    tvWeightRate.setText(String.format(mContext.getString(R.string.app_rate_up), item.scaleDayBean.strWeightRate));
+                } else {
+                    tvWeightRate.setTextColor(ContextCompat.getColor(mContext, R.color.common_stande_green));
+                    tvWeightRate.setText(String.format(mContext.getString(R.string.app_rate_down), item.scaleDayBean.strWeightRate));
 
+                }
             }
-        }
 
-        TextView tvBodyRate = viewHolder.getView(R.id.tv_body_rate);
-        viewHolder.setText(R.id.tv_body_prenter, item.scaleDayBean.strBodyPresent);
-        if (TextUtils.isEmpty(item.scaleDayBean.strBodyRate)) {
-            tvBodyRate.setTextColor(ContextCompat.getColor(mContext, R.color.common_title_button_text_enabled));
-            tvBodyRate.setText(UIUtils.getString(R.string.no_data));
-        } else {
-            if (item.scaleDayBean.isBodyRateUp) {
-                tvBodyRate.setTextColor(ContextCompat.getColor(mContext, R.color.common_stande_red));
-                tvBodyRate.setText(String.format(mContext.getString(R.string.app_rate_up), item.scaleDayBean.strBodyRate));
+            TextView tvBodyRate = viewHolder.getView(R.id.tv_body_rate);
+            viewHolder.setText(R.id.tv_body_prenter, item.scaleDayBean.strBodyPresent);
+            if (TextUtils.isEmpty(item.scaleDayBean.strBodyRate)) {
+                tvBodyRate.setTextColor(ContextCompat.getColor(mContext, R.color.common_title_button_text_enabled));
+                tvBodyRate.setText(UIUtils.getString(R.string.no_data));
             } else {
-                tvBodyRate.setTextColor(ContextCompat.getColor(mContext, R.color.common_stande_green));
-                tvBodyRate.setText(String.format(mContext.getString(R.string.app_rate_down), item.scaleDayBean.strBodyRate));
+                if (item.scaleDayBean.isBodyRateUp) {
+                    tvBodyRate.setTextColor(ContextCompat.getColor(mContext, R.color.common_stande_red));
+                    tvBodyRate.setText(String.format(mContext.getString(R.string.app_rate_up), item.scaleDayBean.strBodyRate));
+                } else {
+                    tvBodyRate.setTextColor(ContextCompat.getColor(mContext, R.color.common_stande_green));
+                    tvBodyRate.setText(String.format(mContext.getString(R.string.app_rate_down), item.scaleDayBean.strBodyRate));
 
+                }
             }
+
+            //编写这个字段
+            //2018年10月：共减重3.0公斤，减脂
+        }catch (Exception e){
+            e.printStackTrace();
         }
-
-        //编写这个字段
-        //2018年10月：共减重3.0公斤，减脂
-
 
     }
 

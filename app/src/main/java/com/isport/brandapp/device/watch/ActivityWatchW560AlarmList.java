@@ -52,7 +52,7 @@ import brandapp.isport.com.basicres.mvp.BaseMVPTitleActivity;
 import brandapp.isport.com.basicres.service.observe.BleProgressObservable;
 
 /**
- * 闹钟设置
+ * W560闹钟设置
  */
 public class ActivityWatchW560AlarmList extends BaseMVPTitleActivity<AlarmView, AlarmPresenter> implements AlarmView, View.OnClickListener, ItemView.OnItemViewCheckedChangeListener {
     private final static String TAG = ActivityWatchW560AlarmList.class.getSimpleName();

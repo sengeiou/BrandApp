@@ -11,6 +11,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.telephony.SmsMessage;
 import android.text.TextUtils;
@@ -139,12 +140,12 @@ public class SmsBroadcastReceiver extends BroadcastReceiver {
                                             senderNumber = senderName;
                                         }
 
-                                        if(device.getDeviceType() == IDeviceType.TYPE_WATCH_W560){
+                                        if((device.getDeviceType() == IDeviceType.TYPE_WATCH_W560 || device.getDeviceType() == IDeviceType.TYPE_WATCH_W560B) &&( Build.BOARD.toLowerCase().equals("huawei") || Build.BOARD.toLowerCase().equals("honor"))){
                                             ISportAgent.getInstance().requestBle(BleRequest.w526_send_message, senderNumber, msgTxt, 1);
                                             return;
                                         }
 
-                                        ISportAgent.getInstance().requestBle(BleRequest.w526_send_message, senderNumber, msgTxt, CRPBleMessageType.MESSAGE_SMS + 1);
+                                        //ISportAgent.getInstance().requestBle(BleRequest.w526_send_message, senderNumber, msgTxt, CRPBleMessageType.MESSAGE_SMS + 1);
                                     } else if (DeviceTypeUtil.isContainWatch(deviceType)) {
                                         ISportAgent.getInstance().requestBle(BleRequest.Watch_W516_SEND_NOTIFICATION, 1);
                                     } else if (DeviceTypeUtil.isContainWrishBrand(deviceType)) {

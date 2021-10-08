@@ -6,7 +6,7 @@ public interface BluetoothListener {
 
 //	void discovery(Object obj); // 扫描到设备
 //
-//	void not_discovery(); // 未扫描到
+//	void not_discovery(); // 未扫描到4
 //
 //	void write_message(byte[] data); // 发送数据包
 //

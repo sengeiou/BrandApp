@@ -453,4 +453,9 @@ public class W560Device extends BaseDevice implements IDeviceType, IWatch516, IW
         WatchW557BleManager.getInstance().readDeviceGoal();
     }
 
+    //设置音乐
+    public void setMusic(String musicName,String allTime,String currTime){
+        WatchW557BleManager.getInstance().sendMusicStatus(musicName,allTime,currTime);
+    }
+
 }

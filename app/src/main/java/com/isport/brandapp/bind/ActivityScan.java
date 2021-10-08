@@ -531,7 +531,7 @@ public class ActivityScan extends BaseMVPTitleActivity<ScanBaseView, ScanPresent
     private final BleReciveListener mBleReciveListener = new BleReciveListener() {
         @Override
         public void onConnResult(boolean isConn, boolean isConnectByUser, BaseDevice baseDevice) {
-            Logger.myLog("onConnResult:" + isConn);
+            Logger.myLog(TAG,"连接页面onConnResult:" + isConn+" "+baseDevice.toString());
             mHandler.removeMessages(0x02);
             if (isConn) {
 

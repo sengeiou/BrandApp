@@ -61,7 +61,7 @@ import phone.gym.jkcq.com.commonres.common.JkConfiguration;
 /**
  * @Author 李超凡
  * @Date 2019/2/26
- * @Fuction
+ * @Fuction 睡眠页面
  */
 
 public class ActivityWatchSleep extends BaseMVPActivity<WatchSleepView, WatchSleepPresenter> implements
@@ -403,6 +403,8 @@ public class ActivityWatchSleep extends BaseMVPActivity<WatchSleepView, WatchSle
                 } else if (sleepArry[i] == 251) {
                     s = 2;//浅睡
                 } else if (sleepArry[i] == 253) {
+
+
                     s = 4;//清醒
                 }
                 datas.add(new ContinousBarChartEntity(1, 200, s));
@@ -430,7 +432,8 @@ public class ActivityWatchSleep extends BaseMVPActivity<WatchSleepView, WatchSle
                 datas.add(new ContinousBarChartEntity(1, 200, 0));
             }
         }
-        continousBarChartView.setisDrawBorder();
+
+       // continousBarChartView.setisDrawBorder();
         continousBarChartView.setOnItemBarClickListener(new ContinousBarChartView.OnItemBarClickListener() {
             @Override
             public void onClick(int color, int position, int hour, int minute) {
@@ -576,7 +579,7 @@ public class ActivityWatchSleep extends BaseMVPActivity<WatchSleepView, WatchSle
                 datas.add(new ContinousBarChartEntity(1, 200, 0));
             }
         }
-        continousBarChartView.setisDrawBorder();
+       // continousBarChartView.setisDrawBorder();
         continousBarChartView.setOnItemBarClickListener(new ContinousBarChartView.OnItemBarClickListener() {
             @Override
             public void onClick(int color, int position, int hour, int minute) {
@@ -909,6 +912,13 @@ public class ActivityWatchSleep extends BaseMVPActivity<WatchSleepView, WatchSle
             int sporadicNapSleepTime = watchSleepDayData.getSporadicNapSleepTime();
             int sporadicNapSleepTimes = watchSleepDayData.getSporadicNapSleepTimes();
             //总睡眠时间
+            setHourMinute(0xFF4DDA64, sleepTime/60, sleepTime % 60);
+            //开始和结束时间
+            tv_current_state.setText("");
+        //    tv_current_state.setText(value);
+
+
+
             //图表
             if (DeviceTypeUtil.isContainW81(currentDeviceType)) {
                 Logger.myLog("  successDayDate   sleep");
@@ -955,7 +965,10 @@ public class ActivityWatchSleep extends BaseMVPActivity<WatchSleepView, WatchSle
             }
             setUpdateTime(mCurrentStr);
             //总睡眠时间
-
+            //总睡眠时间
+            setHourMinute(0xFF4DDA64, 0, 0);
+            //开始和结束时间
+            tv_current_state.setText("");
             //图表
             if (DeviceTypeUtil.isContainW81(currentDeviceType)) {
                 Logger.myLog("  successDayDate   sleep");

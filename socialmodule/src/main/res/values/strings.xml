@@ -112,14 +112,14 @@
 
     <string name="friend_outdoor_step">Step</string>
     <string name="friend_outdoor_calorie">Calorie</string>
-    <string name="friend_outdoor_running">Outdoor running</string>
+    <string name="friend_outdoor_running">Running </string>
     /**单位名称**/
     <string name="friend_outdoor_running1">Outdoor\nrunning</string>//深圳市小香蕉科技有限公司
 
     /**运动**/
     <string name="friend_treadmill">Treadmill</string>
     <string name="friend_walking">Walking</string>
-    <string name="friend_tdoor_cycling">Outdoor cycling</string>
+    <string name="friend_tdoor_cycling">Cycling</string>
 
     <string name="no_commend">No comments</string>
     <string name="no_replay">No reply</string>

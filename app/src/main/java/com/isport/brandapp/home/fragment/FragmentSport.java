@@ -57,6 +57,7 @@ import brandapp.isport.com.basicres.mvp.BaseMVPFragment;
 import phone.gym.jkcq.com.commonres.common.JkConfiguration;
 
 /**
+ * 底部菜单，运动页面
  * @Author
  * @Date 2019/1/10
  * @Fuction

@@ -14,11 +14,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 
-import androidx.annotation.Nullable;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.annotation.Nullable;
 import bike.gymproject.viewlibray.chart.BarChartEntity;
 import phone.gym.jkcq.com.commonres.common.JkConfiguration;
 import phone.gym.jkcq.com.commonres.commonutil.CalculateUtil;

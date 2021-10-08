@@ -406,4 +406,17 @@ public class CamaraActivity1 extends BaseActivity implements View.OnClickListene
     }
 
 
+    @Override
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+        if(keyCode == KeyEvent.KEYCODE_VOLUME_UP){
+            return true;
+        }
+
+        if(keyCode == KeyEvent.KEYCODE_VOLUME_DOWN){
+            return true;
+        }
+        return super.onKeyUp(keyCode, event);
+    }
+
+
 }

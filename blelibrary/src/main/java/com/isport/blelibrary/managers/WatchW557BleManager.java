@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.text.format.DateFormat;
 
 import com.crrepa.ble.conn.type.CRPWeatherId;
+import com.google.gson.Gson;
 import com.isport.blelibrary.ISportAgent;
 import com.isport.blelibrary.bluetooth.callbacks.DataBean;
 import com.isport.blelibrary.bluetooth.callbacks.WatchW557GattCallBack;
@@ -2253,6 +2254,7 @@ public class WatchW557BleManager extends BaseManager {
         }
     }
 
+
     public void sendW526Message(int messageType, String title, String content) {
         // title = "测试a";
         boolean isNull = mGattCallBack.getQueuryLenth() == 0 ? true : false;
@@ -2478,9 +2480,28 @@ public class WatchW557BleManager extends BaseManager {
 
     //读取设备目标数据
     public void readDeviceGoal(){
-        if(mGattCallBack != null && w557Cmd != null)
+        if(mGattCallBack != null && w557Cmd != null){}
             mGattCallBack.writeTXCharacteristicItem(w557Cmd.readW560Goal());
     }
 
+
+
+    //音乐显示
+    public void sendMusicStatus(String musicName,String musicCountTime,String musicCurrentTime){
+        ArrayList<byte[]> musicByteList = w526Cmd.musicByteList(musicName,musicCountTime,musicCurrentTime);
+//        for(byte[] bt : musicByteList){
+//            mGattCallBack.addQueuryData(new DataBean(bt, SETTING_CMD_TIMEOUT, false));
+//        }
+
+
+        Logger.myLog(TAG,"-----写入音乐状态="+new Gson().toJson(musicByteList));
+        mGattCallBack.addQueuryData(new DataBean(musicByteList.get(0), SETTING_CMD_TIMEOUT, false));
+        mGattCallBack.addQueuryData(new DataBean(musicByteList.get(1), SETTING_CMD_TIMEOUT, false));
+        mGattCallBack.addQueuryData(new DataBean(musicByteList.get(2), SETTING_CMD_TIMEOUT, false));
+
+        boolean isNull = mGattCallBack.getQueuryLenth() == 0;
+        Logger.myLog(TAG,"---isNull="+isNull);
+        sendQueryData(true);
+    }
 
 }

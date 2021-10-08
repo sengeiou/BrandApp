@@ -94,7 +94,8 @@ public class InDoorSportPresent extends BasePresenter<InDoorSportView> {
             @Override
             public void onNext(UpdateSuccessBean sumData) {
                 NetProgressObservable.getInstance().hide();
-
+                if(sumData == null)
+                    return;
                 if (inDoorSportView != null) {
                     //去服务器上传数据，是后台自动去上传的，上传都成功把本地数据的数据删除
                     App.saveSportDtail(id, sumData.getPublicId());

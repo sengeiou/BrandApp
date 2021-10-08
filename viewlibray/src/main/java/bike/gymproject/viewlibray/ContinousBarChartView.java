@@ -20,14 +20,13 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 
-import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
-
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import bike.gymproject.viewlibray.chart.ContinousBarChartEntity;
 import bike.gymproject.viewlibray.chart.ContinousBarChartTotalEntity;
 import phone.gym.jkcq.com.commonres.commonutil.CalculateUtil;
@@ -417,7 +416,7 @@ public class ContinousBarChartView extends View {
         if (isHasSleep) {
             drawTringle(canvas);
         }
-        drawHint();
+//        drawHint();
         gbPaint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG);
         Bitmap girlBitmap = ((BitmapDrawable) mContext.getResources().getDrawable(R.drawable.bg_sleep_mengceng)).getBitmap();
         src = new Rect();
@@ -618,6 +617,7 @@ public class ContinousBarChartView extends View {
     private class RangeBarOnGestureListener implements GestureDetector.OnGestureListener {
         @Override
         public boolean onDown(MotionEvent e) {
+            drawHint();
             return true;
         }
 

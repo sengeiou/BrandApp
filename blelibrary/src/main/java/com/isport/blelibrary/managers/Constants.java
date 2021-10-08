@@ -56,10 +56,13 @@ public class Constants {
     //信息 三星手机信息
     private static final String SAMSUNG_MSG_PACKNAME = "com.samsung.android.messaging";
     private static final String SAMSUNG_MSG_SRVERPCKNAME = "com.samsung.android.communicationservice";
-    private static final String MSG_PACKAGENAME = "com.android.mms";//短信系统短信包名
+    public static final String MSG_PACKAGENAME = "com.android.mms";//短信系统短信包名
     private static final String SYS_SMS = "com.android.mms.service";//短信 --- vivo Y85A
     private static final String XIAOMI_SMS_PACK_NAME = "com.xiaomi.xmsf";
     public static final String SMS_PACKAGE_NAME = "com.google.android.apps.messaging";
+    //一加手机短信包名
+    public static final String SMS_ONEPLUS_PACK_NAME = "com.oneplus.mms";
+
 
     //RedBus  2
     public static final String REDBUS_PACKAGE_NAME = "in.redbus.android";
@@ -160,6 +163,7 @@ public class Constants {
         msgTypeMap.put(SAMSUNG_MSG_SRVERPCKNAME,1);
         msgTypeMap.put(MSG_PACKAGENAME,1);
         msgTypeMap.put(XIAOMI_SMS_PACK_NAME,1);
+        msgTypeMap.put(SMS_ONEPLUS_PACK_NAME,1);
 
         //RedBus
         msgTypeMap.put(REDBUS_PACKAGE_NAME,2);
@@ -245,6 +249,33 @@ public class Constants {
 
 
 
+    //音乐播放器
+    //酷狗
+    private static final String KUGOU_MUSIC_PACK_NAME = "com.kugou.android";
+    //QQ音乐
+    private static final String QQ_MUISC_PACK_NAME = "com.tencent.qqmusic";
+    //网易云
+    private static final String WAGNYI_MUSIC_PACK_NAME = "com.netease.cloudmusic";
+    //酷我音乐
+    private static final String KUWO_MUSIC_PACK_NAME = "cn.kuwo.player";
+    //咪咕音乐
+    private static final String MIGU_MUSIC_PACK_NAME = "cmccwm.mobilemusic";
+    //铃声多的
+    private static final String DUODUO_MUSIC_PACK_NAME = "com.shoujiduoduo.ringtone";
+    //喜马拉雅
+    private static final String XIMALAYA_MUSIC_NAME = "com.ximalaya.ting.android";
+    //虾米音乐
+    private static final String XIAMI_MUSIC_NAME = "fm.xiami.main";
+    //华为音乐
+    private static final String HUAWEI_MUSIC_NAME = "com.android.mediacenter";
+    //小米音乐
+    private static final String XIAOMI_MUSIC_NAME = "com.miui.player";
+    //vivo音乐
+    private static final String VIVO_MUSIC_NAME = "com.android.bbkmusic";
+
+    //音乐集合
+    public static String[] musicArray = new String[]{KUGOU_MUSIC_PACK_NAME,QQ_MUISC_PACK_NAME,WAGNYI_MUSIC_PACK_NAME,KUWO_MUSIC_PACK_NAME,MIGU_MUSIC_PACK_NAME,DUODUO_MUSIC_PACK_NAME,
+            XIMALAYA_MUSIC_NAME,XIAMI_MUSIC_NAME,HUAWEI_MUSIC_NAME,XIAOMI_MUSIC_NAME,VIVO_MUSIC_NAME};
 
 
 

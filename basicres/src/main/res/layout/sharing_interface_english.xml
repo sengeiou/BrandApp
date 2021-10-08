@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
     android:background="@null"
-    android:id="@+id/sharingLayoutCN"
+    android:id="@+id/sharingLayoutEn"
     android:orientation="vertical">
 
     <View
@@ -53,32 +53,13 @@
             android:layout_weight="1" />
 
         <ImageView
-            android:id="@+id/iv_friend"
+            android:id="@+id/iv_facebook_en"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onClick"
-            android:src="@drawable/icon_share_friend" />
+            android:src="@drawable/facebook" />
 
-        <ImageView
-            android:id="@+id/iv_facebook"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onClick"
-            android:src="@drawable/facebook"
-            android:visibility="gone" />
 
-        <View
-            android:id="@+id/view_zh"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_weight="1" />
-
-        <ImageView
-            android:id="@+id/iv_weibo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onClick"
-            android:src="@drawable/icon_share_weibo" />
 
         <View
             android:layout_width="0dp"

@@ -43,6 +43,9 @@ import brandapp.isport.com.basicres.service.observe.TodayObservable;
 import phone.gym.jkcq.com.commonres.common.JkConfiguration;
 import phone.gym.jkcq.com.commonres.commonutil.DisplayUtils;
 
+/**
+ * 地图运动记录页面
+ */
 public class FragmentAllSport extends BaseMVPFragment<SportHistoryView, SportHistoryPresent> implements SportHistoryView, XListView.IXListViewListener, View.OnClickListener {
 
     int offset = 0;
@@ -138,7 +141,7 @@ public class FragmentAllSport extends BaseMVPFragment<SportHistoryView, SportHis
                 }
                 if (lists.get(position - 1).viewType == JkConfiguration.HistoryType.TYPE_CONTENT) {
                     Intent intent = new Intent(context, ActivityWebView.class);
-                    intent.putExtra("title", UIUtils.getString(R.string.sport_dtail));
+                    intent.putExtra("title", R.string.sport_dtail);//UIUtils.getString(R.string.sport_dtail)
                     intent.putExtra("share_url", lists.get(position - 1).sportDetailData.getShareUrl());
                     intent.putExtra("url", lists.get(position - 1).sportDetailData.getDataUrl());
                     intent.putExtra("sumData", lists.get(position - 1).sportDetailData);

@@ -63,7 +63,7 @@ public class MeassureActivity extends BaseActivity {
 
     private void getIntentValue() {
         measueType = getIntent().getIntExtra("device_type", 0);
-        handler.sendEmptyMessageDelayed(0x00,25 * 1000);
+        handler.sendEmptyMessageDelayed(0x00,30 * 1000);
     }
 
     @Override

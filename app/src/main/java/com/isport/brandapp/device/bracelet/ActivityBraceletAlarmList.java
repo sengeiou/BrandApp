@@ -58,10 +58,12 @@ import brandapp.isport.com.basicres.commonview.TitleBarView;
 import brandapp.isport.com.basicres.mvp.BaseMVPTitleActivity;
 
 /**
- * 闹钟设置
+ * 闹钟列表展示页面
  */
 public class ActivityBraceletAlarmList extends BaseMVPTitleActivity<AlarmView, AlarmPresenter> implements AlarmView, View.OnClickListener, ItemView.OnItemViewCheckedChangeListener {
+
     private final static String TAG = ActivityBraceletAlarmList.class.getSimpleName();
+
     private DeviceBean deviceBean;
     private int currentType;
     private String deviceId;
@@ -793,11 +795,15 @@ public class ActivityBraceletAlarmList extends BaseMVPTitleActivity<AlarmView, A
                     return;
                 }
                 Log.e("tvSave", "datePicker.getTime() = " + datePicker.getTime());
+
+
                 currentAlarmModel.setTimeString(datePicker.getTime());
 
                 if (currentAlarmModel.getTimeString().equals(editTime) && currentAlarmModel.getRepeatCount() == editRepeate) {
                     return;
                 }
+
+
                 currentAlarmModel.setIsOpen(true);
                 mActPresenter.updateMode(currentAlarmModel);
                 //这里需要去发送指令个硬件

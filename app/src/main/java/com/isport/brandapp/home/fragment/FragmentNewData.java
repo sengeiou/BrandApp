@@ -14,7 +14,6 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
-
 import com.blankj.utilcode.util.NetworkUtils;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -125,18 +124,15 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.tbruyelle.rxpermissions2.RxPermissions;
-
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Vector;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -190,6 +186,8 @@ public class FragmentNewData extends BaseMVPFragment<FragmentDataView, FragmentD
 
 
     private static final String TAG = FragmentNewData.class.getSimpleName();
+
+
     //***************************************************已整理***********************************************//
     RefrushRecycleView refrushRecycleView;
     DataHeaderHolder dataHeaderHolder;//进度条
@@ -253,10 +251,10 @@ public class FragmentNewData extends BaseMVPFragment<FragmentDataView, FragmentD
         @Override
         public void handleMessage(@NonNull Message msg) {
             super.handleMessage(msg);
-            Logger.myLog("hander 0x05" + msg.what);
+            Logger.myLog(TAG,"scanHandler=" + msg.what);
             switch (msg.what) {
                 case 0x05:
-                    Logger.myLog("hander 0x05 deviceConFail");
+                    Logger.myLog(TAG,"scanHandler 0x05 deviceConFail");
                     //defaultConnectState(true);
                     deviceConFail();
                     break;
@@ -444,7 +442,7 @@ public class FragmentNewData extends BaseMVPFragment<FragmentDataView, FragmentD
             case MessageEvent.EXIT_SCALESCAN:
             case MessageEvent.EXIT_SCALEREALTIME:
             case MessageEvent.EXIT_SCALECONNECTTING:
-                Logger.myLog("EXIT_SCALEREALTIME");
+                Logger.myLog(TAG,"EXIT_SCALEREALTIME");
                 //会重复的去扫描一直会去重新连接。
                 //handler.sendEmptyMessageDelayed(0x04, 0);
                 break;
@@ -679,7 +677,7 @@ public class FragmentNewData extends BaseMVPFragment<FragmentDataView, FragmentD
                 }
             }
 
-            Logger.myLog("isConn" + isConn);
+            Logger.myLog(TAG,"isConn" + isConn);
             AppConfiguration.isConnected = isConn;
             currentStep = -1;
             ISportAgent.getInstance().cancelLeScan();
@@ -783,7 +781,7 @@ public class FragmentNewData extends BaseMVPFragment<FragmentDataView, FragmentD
                                     mFragPresenter.getDeviceHrLastTwoData(JkConfiguration.DeviceType.Watch_W812);
                                     break;
                                 case DeviceMessureData.measure_bloodpre:
-                                    Logger.myLog("measure_bloodpre success");
+                                    Logger.myLog(TAG,"measure_bloodpre success");
                                     mFragPresenter.getDeviceBloodPressure();
                                     upgradeDataPresenter.upgradeBPData(deviceName, TokenUtil.getInstance().getPeopleIdStr(BaseApp.getApp()));
                                     break;
@@ -1087,6 +1085,7 @@ public class FragmentNewData extends BaseMVPFragment<FragmentDataView, FragmentD
     }
 
     public void startqeustData() {
+        Logger.myLog(TAG,"----startqeustData----");
         Observable.create(new ObservableOnSubscribe<Boolean>() {
             @Override
             public void subscribe(ObservableEmitter<Boolean> emitter) throws Exception {
@@ -1177,12 +1176,13 @@ public class FragmentNewData extends BaseMVPFragment<FragmentDataView, FragmentD
     @Override
     public void onHiddenChanged(boolean hidden) {
         super.onHiddenChanged(hidden);
+        Logger.myLog(TAG,"----onHiddenChanged-----");
         //需要对这个mCurrentDevice进行处理
         //  mCurrentDevice = ISportAgent.getInstance().getCurrnetDevice();
         isHidden = hidden;
         if (!isHidden) {
         }
-        Logger.myLog("FragmentNewData onHiddenChanged" + isHidden + "lastclick:" + (currentClickTime - lastClickTime));
+        Logger.myLog(TAG,"FragmentNewData onHiddenChanged" + isHidden + "lastclick:" + (currentClickTime - lastClickTime));
         if (AppConfiguration.deviceBeanList == null || AppConfiguration.deviceBeanList.size() == 0) {
             return;
         }
@@ -1208,7 +1208,7 @@ public class FragmentNewData extends BaseMVPFragment<FragmentDataView, FragmentD
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
-        Logger.myLog("fragmentNewData:setUserVisibleHint" + isVisibleToUser);
+        Logger.myLog(TAG,"fragmentNewData:setUserVisibleHint" + isVisibleToUser);
         if (isVisibleToUser) {
 
             //页面可见时相关逻辑
@@ -1237,6 +1237,7 @@ public class FragmentNewData extends BaseMVPFragment<FragmentDataView, FragmentD
     @Override
     protected void initData() {
         isConnecting = false;
+        mCurrentDevice = ISportAgent.getInstance().getCurrnetDevice();
         W560HrSwtchObservable.getInstance().addObserver(this);
         boolean isFirst = TokenUtil.getInstance().getKeyValue(getActivity(), TokenUtil.DEVICE_SYNC_FIRST);
         Logger.myLog(TAG + isFirst + "TokenUtil.DEVICE_SYNC_FIRST=" + TokenUtil.DEVICE_SYNC_FIRST);
@@ -1451,7 +1452,7 @@ public class FragmentNewData extends BaseMVPFragment<FragmentDataView, FragmentD
             scanHandler.removeMessages(0x05);
         }
         //scanHandler.sendEmptyMessage(0x05);
-        scanHandler.sendEmptyMessageDelayed(0x05, 20000);
+      //  scanHandler.sendEmptyMessageDelayed(0x05, 20000);
         Logger.myLog("setScanTimeOut");
     }
 
@@ -1500,8 +1501,8 @@ public class FragmentNewData extends BaseMVPFragment<FragmentDataView, FragmentD
             mHasSleepDevice = false;
             this.mIsConnectByUser = isConnectByUser;
             Logger.myLog("mFragPresenter.scan(currentType)" + currentType);
-            setScanTimeOut();
             mFragPresenter.scan(currentType, isScale);
+            setScanTimeOut();
         } else {
             Intent intent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(intent, REQCODE_OPEN_BT);
@@ -1751,11 +1752,11 @@ public class FragmentNewData extends BaseMVPFragment<FragmentDataView, FragmentD
     }
 
 
-    public void getDeviceSuccess(HashMap<Integer, DeviceBean> deviceBeanHashMap, boolean show, boolean setWatchDefault, boolean isNet) {
+    public void getDeviceSuccess(HashMap<Integer, DeviceBean> deviceBeanHashMap, boolean show, boolean setWatchDefault, boolean isNet,String tag) {
         AppConfiguration.deviceBeanList = deviceBeanHashMap;
 
-
-        Logger.myLog(TAG,"getDeviceSuccess:-----------------deviceBeanHashMap-----------------------="+deviceBeanHashMap.toString());
+        Logger.myLog(TAG,"getDeviceSuccess:------deviceBeanHashMap---="+isNet+deviceBeanHashMap.toString()
+                +" 是否连接="+AppConfiguration.isConnected+"\n"+"来源="+tag);
 
         //如果不是连接状态才需要这样初始化
         if (AppConfiguration.isConnected && AppConfiguration.currentConnectDevice != null && AppConfiguration.currentConnectDevice.deviceType == JkConfiguration.DeviceType.ROPE_SKIPPING) {
@@ -1781,6 +1782,7 @@ public class FragmentNewData extends BaseMVPFragment<FragmentDataView, FragmentD
             // mainHeadLayout.showChangeImage(false);
         }
         for (int deviceTypeI : AppConfiguration.deviceBeanList.keySet()) {
+            Logger.myLog(TAG,"-----deviceTypeI="+deviceTypeI);
             DeviceBean deviceBean = AppConfiguration.deviceBeanList.get(deviceTypeI);
             Logger.myLog(TAG,"从DB 获取绑定列表成功" + deviceBean.toString());
             //上传未上传的数据，上传成功再拉取服务器上的数据
@@ -1840,12 +1842,14 @@ public class FragmentNewData extends BaseMVPFragment<FragmentDataView, FragmentD
             }*/
             //updateDataScale(false);
         }
-
+        Logger.myLog(TAG,"-----11111--setDeviceBraceletID()-----");
 
         setDeviceBraceletID();
-        if (!DeviceTypeUtil.isContainWatchOrBracelet()) {
-            noDevcieShowDef();
-        }
+//        if (!DeviceTypeUtil.isContainWatchOrBracelet()) {
+//            noDevcieShowDef();
+//        }
+
+        Logger.myLog(TAG,"-----2222--setDeviceBraceletID()-----");
         //获取设备的目标步数
         deviceGoalStepPresenter.getDeviceGoalStep(TokenUtil.getInstance().getPeopleIdInt(context), deviceName);
 
@@ -1937,6 +1941,13 @@ public class FragmentNewData extends BaseMVPFragment<FragmentDataView, FragmentD
             }
         }
 
+        HashMap<Integer, DeviceBean> mm = AppConfiguration.deviceMainBeanList;
+        for(Map.Entry<Integer,DeviceBean> m : mm.entrySet()){
+            Logger.myLog(TAG,"-----map中的key和value="+m.getKey()+" "+m.getValue());
+        }
+
+
+
         // W307J 心率模块需要动态添加
         if (DeviceTypeUtil.isContainW557()) {
             if (!lists.contains(JkConfiguration.BODY_TEMP)) {
@@ -1991,27 +2002,6 @@ public class FragmentNewData extends BaseMVPFragment<FragmentDataView, FragmentD
         }
 
 
-        /*if (DeviceTypeUtil.isContainW307J()) {
-            if (lists.contains(JkConfiguration.BODY_HEARTRATE)) {
-                int index = lists.indexOf(JkConfiguration.BODY_HEARTRATE);
-                lists.remove(index);
-            }
-            //lists.add(JkConfiguration.BODY_HEARTRATE);//心率
-        } else {
-
-            if (DeviceTypeUtil.isContainsHr()) {
-                if (!lists.contains(JkConfiguration.BODY_HEARTRATE)) {
-                    lists.add(3, JkConfiguration.BODY_HEARTRATE);
-                }
-            } else {
-                if (!lists.contains(JkConfiguration.BODY_HEARTRATE)) {
-                    lists.add(2, JkConfiguration.BODY_HEARTRATE);
-                }
-            }
-
-
-        }*/
-
         if (DeviceTypeUtil.isContainW81() || DeviceTypeUtil.isContainW55XX()) {
             if (!lists.contains(JkConfiguration.BODY_EXCERICE)) {
                 lists.add(lists.size(), JkConfiguration.BODY_EXCERICE);
@@ -2040,7 +2030,7 @@ public class FragmentNewData extends BaseMVPFragment<FragmentDataView, FragmentD
 
     private int setDeviceBraceletID() {
 
-
+        Logger.myLog(TAG,"---000--AppConfiguration.deviceBeanList="+new Gson().toJson(AppConfiguration.deviceBeanList));
         int deviceType = JkConfiguration.DeviceType.WATCH_W516;
 
         if (AppConfiguration.deviceBeanList.containsKey(JkConfiguration.DeviceType.SLEEP)) {
@@ -2085,7 +2075,7 @@ public class FragmentNewData extends BaseMVPFragment<FragmentDataView, FragmentD
                 AppConfiguration.braceletID = AppConfiguration.deviceBeanList.get(JkConfiguration.DeviceType.Watch_W812B).deviceName;
                 deviceType = AppConfiguration.deviceBeanList.get(JkConfiguration.DeviceType.Watch_W812B).deviceType;
             } else if (AppConfiguration.deviceBeanList.containsKey(JkConfiguration.DeviceType.Watch_W560B)) {
-                AppConfiguration.braceletID = AppConfiguration.deviceBeanList.get(JkConfiguration.DeviceType.Watch_W560).deviceName;
+                AppConfiguration.braceletID = AppConfiguration.deviceBeanList.get(JkConfiguration.DeviceType.Watch_W560B).deviceName;
                 deviceType = AppConfiguration.deviceBeanList.get(JkConfiguration.DeviceType.Watch_W560B).deviceType;
             } else if (AppConfiguration.deviceBeanList.containsKey(JkConfiguration.DeviceType.Watch_W560)) {
                 AppConfiguration.braceletID = AppConfiguration.deviceBeanList.get(JkConfiguration.DeviceType.Watch_W560).deviceName;
@@ -2093,13 +2083,14 @@ public class FragmentNewData extends BaseMVPFragment<FragmentDataView, FragmentD
             }
         }
 
-
+        Logger.myLog(TAG,"-----dddType="+deviceType);
         return deviceType;
     }
 
     @Override
     public void successGetDeviceListFormDB(HashMap<Integer, DeviceBean> deviceBeanHashMap, boolean show, boolean setWatchDefault) {
-        getDeviceSuccess(deviceBeanHashMap, show, setWatchDefault, false);
+
+        getDeviceSuccess(deviceBeanHashMap, show, setWatchDefault, false,"DB");
     }
 
     /**
@@ -2107,7 +2098,8 @@ public class FragmentNewData extends BaseMVPFragment<FragmentDataView, FragmentD
      */
     @Override
     public void successGetDeviceListFormHttp(HashMap<Integer, DeviceBean> deviceBeanHashMap, boolean show, boolean setWatchDefault) {
-        getDeviceSuccess(deviceBeanHashMap, show, setWatchDefault, true);
+
+        getDeviceSuccess(deviceBeanHashMap, show, setWatchDefault, true,"NET");
     }
 
     public static ArrayList<ScacleBean> scacleBeansList = new ArrayList<>();
@@ -2964,7 +2956,7 @@ public class FragmentNewData extends BaseMVPFragment<FragmentDataView, FragmentD
     protected void initEvent() {
         // ivChange.setOnClickListener(this);
 
-        Logger.myLog("fragmentNewDate initEvent");
+        Logger.myLog("fragmentNewDate initEvent"+AppConfiguration.deviceBeanList.size());
 
 
         ISportAgent.getInstance().registerListener(mBleReciveListener);
@@ -2976,6 +2968,9 @@ public class FragmentNewData extends BaseMVPFragment<FragmentDataView, FragmentD
         home_refresh.setOnRefreshListener(new OnRefreshListener() {
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
+
+
+                Logger.myLog(TAG,"------refresh="+AppConfiguration.deviceBeanList.size()+" mCurrentDevice="+mCurrentDevice.toString()+"AppConfiguration.isConnected="+AppConfiguration.isConnected);
 
                 if (AppConfiguration.deviceBeanList == null || AppConfiguration.deviceBeanList.size() == 0 || mCurrentDevice == null) {
                     refreshLayout.finishRefresh();
@@ -3490,14 +3485,15 @@ public class FragmentNewData extends BaseMVPFragment<FragmentDataView, FragmentD
 
     //头上的按钮是否显示，如果是连接状态就不要显示
     public void isShowOptin() {
-        Logger.myLog("BraceletW811W814Manager isShowOptin");
+        boolean isOpenBlue = AppUtil.isOpenBle();
+        Logger.myLog(TAG,"------isShowOptin"+isOpenBlue);
         mainHeadLayout.showProgressBar(false);
         if (AppConfiguration.deviceBeanList.size() == 0) {
             mainHeadLayout.setIconDeviceIcon(R.drawable.icon_main_no_device);
             mainHeadLayout.showOptionButton(true, UIUtils.getString(R.string.add_device), MainHeadLayout.TAG_ADD, UIUtils.getString(R.string.fragment_main_no_add_device));
         } else {
             mainHeadLayout.setIconDeviceAlp(0.5f);
-            if (!AppUtil.isOpenBle()) {
+            if (!isOpenBlue) {
                 mainHeadLayout.showOptionButton(true, UIUtils.getString(R.string.app_enable), MainHeadLayout.TAG_OPENBLE, UIUtils.getString(R.string.fragment_main_no_connect_open_ble));
             } else {
                 mainHeadLayout.showOptionButton(true, UIUtils.getString(R.string.fragment_main_click_connect), MainHeadLayout.TAG_CONNECT, UIUtils.getString(R.string.disConnect));
@@ -3506,6 +3502,9 @@ public class FragmentNewData extends BaseMVPFragment<FragmentDataView, FragmentD
     }
 
     public void isUnConShowOptin() {
+
+        Logger.myLog(TAG,"-----isUnConShowOptin-----="+AppUtil.isOpenBle()+" "+AppConfiguration.deviceBeanList.size());
+
         if (AppConfiguration.deviceBeanList.size() == 0) {
             mainHeadLayout.setIconDeviceIcon(R.drawable.icon_main_no_device);
             mainHeadLayout.showOptionButton(true, UIUtils.getString(R.string.add_device), MainHeadLayout.TAG_ADD, UIUtils.getString(R.string.fragment_main_no_add_device));

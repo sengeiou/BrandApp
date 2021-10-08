@@ -36,6 +36,9 @@ import phone.gym.jkcq.com.socialmodule.R;
 import phone.gym.jkcq.com.socialmodule.net.APIService;
 import phone.gym.jkcq.com.socialmodule.net.RetrofitClient;
 
+/**
+ * 二维码扫描页面
+ */
 public class FriendScanActivity extends BaseActivity implements View.OnClickListener,
         ScanListener, ScanListener.AnalysisBrightnessListener {
 

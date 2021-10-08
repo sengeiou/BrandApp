@@ -24,6 +24,8 @@ import com.isport.blelibrary.utils.Constants;
 import com.isport.blelibrary.utils.Logger;
 import com.isport.blelibrary.utils.Utils;
 
+import java.util.Arrays;
+
 public class CreateDevice {
 
     private static final String TAG = "CreateDevice";
@@ -74,7 +76,6 @@ public class CreateDevice {
                 return baseDevice;
             }
 
-
             String[] names = name.split(" ");
             if (names[0].equals(Constants.WATCH_812_FILTER) && Constants.WATCH_812_FILTER.equals(filterStr)) {
                 baseDevice = createW812(name, address);
@@ -115,7 +116,9 @@ public class CreateDevice {
             baseDevice = createW817(name, address);
         } else if (name.startsWith(Constants.WATCH_557_FILTER)) {
             baseDevice = createW557(name, address);
-        } else if(name.contains(Constants.WATCH_560_FILTER) || name.contains(Constants.WATCH_W560_FILTER_2)){
+        }
+        //W560
+        else if(name.contains(Constants.WATCH_560_FILTER) || name.contains(Constants.WATCH_W560_FILTER_2)){
             if( name.length()>10){
                 String subStr = name.substring(0,11);
                 if(subStr.equals(Constants.WATCH_W560_FILTER_2)){
@@ -125,6 +128,8 @@ public class CreateDevice {
 
             }
             String[] names = name.split(" ");
+            Logger.myLog(TAG,"-----截取="+ Arrays.toString(names));
+
             if (names[0].equals(Constants.WATCH_560_FILTER) && Constants.WATCH_560_FILTER.equals(filterStr)) {
                 baseDevice = createW560(name, address);
                 Logger.myLog(TAG,"WATCH_560_FILTER filterStr:" + filterStr + "----names[0]" + names[0]);
@@ -134,7 +139,8 @@ public class CreateDevice {
             } else if (filterStr.equals("all")) {
                 if (names[0].equals(Constants.WATCH_560B_FILTER)) {
                     baseDevice = createW560B(name, address);
-                } else if (names[0].equals(Constants.WATCH_560_FILTER)) {
+                }
+                else if (names[0].equals(Constants.WATCH_560_FILTER)) {
                     baseDevice = createW560(name, address);
                 }
             }

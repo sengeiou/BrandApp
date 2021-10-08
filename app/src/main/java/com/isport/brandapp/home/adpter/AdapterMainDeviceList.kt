@@ -9,6 +9,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.isport.brandapp.home.bean.MainDeviceBean
 import com.isport.brandapp.R
+import com.isport.brandapp.banner.recycleView.utils.ToastUtil
 import com.isport.brandapp.util.DeviceTypeUtil
 import com.isport.brandapp.view.VerBatteryView
 
@@ -39,6 +40,8 @@ class AdapterMainDeviceList(data: MutableList<MainDeviceBean>) :
                 setIconAla(true, holder.getView(R.id.iv_pic))
                 holder.getView<ProgressBar>(R.id.pro_deviceing).visibility = View.INVISIBLE
                 // holder.setVisible(R.id.pro_deviceing, false)
+//                ToastUtil.init(context)
+//                ToastUtil.showTextToast(context.resources.getString(R.string.connect_fail))
             } else {
                 setIconAla(false, holder.getView(R.id.iv_pic))
                 holder.setText(R.id.tv_device_conn_state, R.string.app_isconnecting)

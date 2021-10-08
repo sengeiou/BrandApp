@@ -744,7 +744,7 @@ public class LineScrollChartView extends View {
                     rightRec = mTotalWidth - DisplayUtils.dip2px(mContext, 15);
                 }
             }
-            Log.e("addPoint", "lineStart + distance=" + (lineStart + distance) + "i=" + i + ",mData[i]=" + mData.get(i).yValue + ",space=" + space);
+           // Log.e("addPoint", "lineStart + distance=" + (lineStart + distance) + "i=" + i + ",mData[i]=" + mData.get(i).yValue + ",space=" + space);
             // linePoints.add(new Point((int) (lineStart + distance), (int) (mStartY - lineHeight)));
         }
     }

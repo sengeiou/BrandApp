@@ -125,12 +125,14 @@ public class UserDialogSetting extends BasePresenter<UserDialogView> implements
         popupWindow.setAnimationStyle(R.style.popwin_anim_style);
         popupWindow.showAtLocation(view, Gravity.BOTTOM
                 | Gravity.CENTER_HORIZONTAL, 0, 0);
+
         mMenuView.setOnTouchListener(new View.OnTouchListener() {
             public boolean onTouch(View v, MotionEvent event) {
                 if (mMenuView == null) {
                     return true;
                 }
-                int height = mMenuView.findViewById(R.id.pop_layout).getTop();
+                View pV = mMenuView.findViewById(R.id.pop_layout);
+                int height = pV != null ? pV.getTop() : 0;
                 int y = (int) event.getY();
                 if (event.getAction() == MotionEvent.ACTION_UP) {
                     if (y < height) {

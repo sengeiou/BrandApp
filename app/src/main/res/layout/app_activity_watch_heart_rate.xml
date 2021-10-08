@@ -508,6 +508,8 @@
         android:layout_marginBottom="@dimen/dp15"
         android:visibility="invisible">
 
+        <include layout="@layout/sharing_interface_english"/>
+
         <include layout="@layout/sharing_interface" />
     </RelativeLayout>
 </RelativeLayout>

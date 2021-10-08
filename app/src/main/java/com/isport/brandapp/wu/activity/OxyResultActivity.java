@@ -40,6 +40,9 @@ import brandapp.isport.com.basicres.commonutil.UIUtils;
 import brandapp.isport.com.basicres.mvp.BaseMVPActivity;
 import phone.gym.jkcq.com.commonres.common.JkConfiguration;
 
+/**
+ * 单次测量血氧页面
+ */
 public class OxyResultActivity extends BaseMVPActivity<OxyHistoryView, OxyHistoryPresenter> implements OxyHistoryView {
 
     private ArrayList<OxyInfo> mDataList = new ArrayList<>();

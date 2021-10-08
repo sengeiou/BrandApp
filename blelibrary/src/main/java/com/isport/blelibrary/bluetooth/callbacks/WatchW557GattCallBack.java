@@ -1,17 +1,21 @@
 package com.isport.blelibrary.bluetooth.callbacks;
 
 import android.app.Notification;
+import android.app.Service;
 import android.bluetooth.BluetoothGatt;
 import android.bluetooth.BluetoothGattCharacteristic;
 import android.bluetooth.BluetoothGattDescriptor;
 import android.bluetooth.BluetoothGattService;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.SystemClock;
+import android.os.Vibrator;
 import android.util.Log;
 
+import com.isport.blelibrary.BleConstance;
 import com.isport.blelibrary.db.parse.ParseData;
 import com.isport.blelibrary.db.parse.ParseS002Data;
 import com.isport.blelibrary.deviceEntry.impl.BaseDevice;
@@ -295,9 +299,25 @@ public class WatchW557GattCallBack extends BaseGattCallback {
 
               Logger.myLog(TAG,"-------返回="+ Arrays.toString(values));
 
-                //挂断电话
-                if(values.length>2 && (values[0] ==1 && (values[1] &0xff) == 82)  && values[2] == 2){
+                //挂断电话状态
+                if(values.length>2 && (values[0] ==1 && (values[1] &0xff) == 82)){
+                    Intent intent = new Intent();
+                    intent.setAction(BleConstance.W560_DIS_CALL_ACTION);
+                    intent.putExtra(BleConstance.W560_PHONE_STATUS,(values[2] & 0xff));
+                    mContext.sendBroadcast(intent);
+                }
 
+                if(values[0] == 1 && values[1] == 20 && values[2] == 1){    //查找手机
+                    Vibrator vibrator = (Vibrator) mContext.getSystemService(Service.VIBRATOR_SERVICE);
+                    vibrator.vibrate(3 * 1000);
+                }
+
+                //音乐控制
+                if(values[0] == 1 && values[1] == 19){  //音乐控制
+                    Intent intent = new Intent();
+                    intent.setAction(BleConstance.W560_MUSIC_CONTROL_STATUS);
+                    intent.putExtra(BleConstance.W560_MUSIC_STATUS,values[2] & 0xff);
+                    mContext.sendBroadcast(intent);
                 }
 
 

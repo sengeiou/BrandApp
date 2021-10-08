@@ -13,6 +13,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -58,6 +59,7 @@ import com.isport.brandapp.device.watch.presenter.WatchHeartRatePresenter;
 import com.isport.brandapp.device.watch.view.Device24HrView;
 import com.isport.brandapp.device.watch.view.WatchHeartRateView;
 import com.isport.brandapp.dialog.HeartStrongDialog;
+import com.isport.brandapp.sport.run.LanguageUtil;
 import com.isport.brandapp.util.DeviceTypeUtil;
 import com.isport.brandapp.util.ShareHelper;
 import com.isport.brandapp.wu.util.HeartRateConvertUtils;
@@ -76,6 +78,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.FileProvider;
@@ -119,6 +122,8 @@ import phone.gym.jkcq.com.commonres.commonutil.UserUtils;
 
 public class ActivityWatchHeartRate extends BaseMVPTitleActivity<WatchHeartRateView, WatchHeartRatePresenter> implements
         WatchHeartRateView, View.OnClickListener, WatchPopCalendarView.MonthDataListen, HrSettingView, Device24HrView, UMShareListener {
+
+
     TextView tvDetect;
     LineChartView lineChartView;
     LineScrollChartView lineScrollChartView;
@@ -155,7 +160,10 @@ public class ActivityWatchHeartRate extends BaseMVPTitleActivity<WatchHeartRateV
     private File picFile = null;
     private RelativeLayout llHistoryShare;
     private ImageView ivQQ, ivWechat, ivWebo, ivFriend, ivFacebook, ivShareMore;
-    private View viewZh;
+    //英文版的分享布局
+    private LinearLayout sharingLayoutEn;
+    //中文版分享布局
+    private LinearLayout sharingLayoutCN;
     private ImageView iv_help;
 
     private RecyclerView recHr;
@@ -206,14 +214,17 @@ public class ActivityWatchHeartRate extends BaseMVPTitleActivity<WatchHeartRateV
         iv_help = findViewById(R.id.iv_help);
 
 
+        sharingLayoutEn = view.findViewById(R.id.sharingLayoutEn);
+        sharingLayoutCN = view.findViewById(R.id.sharingLayoutCN);
+
         ivQQ = view.findViewById(R.id.iv_qq);
         ivWebo = view.findViewById(R.id.iv_weibo);
         ivWechat = view.findViewById(R.id.iv_wechat);
         ivFriend = view.findViewById(R.id.iv_friend);
         ivShareMore = view.findViewById(R.id.iv_more);
-        viewZh = view.findViewById(R.id.view_zh);
+      //  sharingLayoutCN = view.findViewById(R.id.view_zh);
 
-        ivFacebook = view.findViewById(R.id.iv_facebook);
+        ivFacebook = view.findViewById(R.id.iv_facebook_en);
         llHistoryShare = view.findViewById(R.id.ll_history_share);
 
 
@@ -224,7 +235,7 @@ public class ActivityWatchHeartRate extends BaseMVPTitleActivity<WatchHeartRateV
         view_warm_up = findViewById(R.id.view_warm_up);
         view_leisure = findViewById(R.id.view_leisure);
 
-        ivShareMore.setVisibility(View.GONE);
+      //  ivShareMore.setVisibility(View.GONE);
     }
 
     private void setLineDataAndShow(ArrayList<Integer> hrList) {
@@ -328,7 +339,7 @@ public class ActivityWatchHeartRate extends BaseMVPTitleActivity<WatchHeartRateV
     private void setSleepSummary(int limint, int anaerobic_exercise, int aerobic_exercise, int fat_burning_exercise, int warm_up, int leisure) {
         view_limit.setData(new HourMinuteData(UIUtils.getColor(R.color.color_limit), UIUtils.getString(R.string.heart_limit), UIUtils.getString(R.string.no_data), DateUtil.getFormatTimehhmmss(deviceBean.deviceType == 812 ? limint * 5:limint), "1"));
         view_anaerobic_exercise.setData(new HourMinuteData(UIUtils.getColor(R.color.color_anaerobic_exercise), UIUtils.getString(R.string.heart_anaerobic_exercise), UIUtils.getString(R.string.no_data), DateUtil.getFormatTimehhmmss(mCurrentType == 812 ? anaerobic_exercise*5 : anaerobic_exercise), "1"));
-        view_aerobic_exercise.setData(new HourMinuteData(UIUtils.getColor(R.color.color_aerobic_exercise), UIUtils.getString(R.string.heart_aerobic_exercise), UIUtils.getString(R.string.no_data), DateUtil.getFormatTimehhmmss(mCurrentType == 812 ? aerobic_exercise : aerobic_exercise * 5), "1"));
+        view_aerobic_exercise.setData(new HourMinuteData(UIUtils.getColor(R.color.color_aerobic_exercise), UIUtils.getString(R.string.heart_aerobic_exercise), UIUtils.getString(R.string.no_data), DateUtil.getFormatTimehhmmss(mCurrentType == 812 ? aerobic_exercise*5 : aerobic_exercise), "1"));
         view_fat_burning_exercise.setData(new HourMinuteData(UIUtils.getColor(R.color.color_fat_burning_exercise), UIUtils.getString(R.string.heart_fat_burning_exercise), UIUtils.getString(R.string.no_data), DateUtil.getFormatTimehhmmss(mCurrentType == 812 ? fat_burning_exercise* 5 : fat_burning_exercise), "1"));
         view_warm_up.setData(new HourMinuteData(UIUtils.getColor(R.color.color_warm_up), UIUtils.getString(R.string.heart_warm_up), UIUtils.getString(R.string.no_data), DateUtil.getFormatTimehhmmss(mCurrentType == 812 ? warm_up * 5 : warm_up), "1"));
         view_leisure.setData(new HourMinuteData(UIUtils.getColor(R.color.color_leisure), UIUtils.getString(R.string.heart_leisure), UIUtils.getString(R.string.no_data), DateUtil.getFormatTimehhmmss(mCurrentType == 812 ? leisure * 5 : leisure), "1"));
@@ -551,10 +562,6 @@ public class ActivityWatchHeartRate extends BaseMVPTitleActivity<WatchHeartRateV
 
         //数据进行分组
         for (int i = 0; i < hrList.size(); i++) {
-
-
-            Logger.myLog("setLineDataAndShow hrList.get(i)" + hrList.get(i));
-
             if (hrList.get(i) >= 30) {
                 if (startIndex == -1) {
                     startIndex = i;
@@ -582,8 +589,16 @@ public class ActivityWatchHeartRate extends BaseMVPTitleActivity<WatchHeartRateV
                         min = startIndex * detail.getInvert() % 60;
                     }
                     detail.setStartTime(String.format("%02d", hour) + ":" + String.format("%02d", min));
-                    hour = endIndex * detail.getInvert() / 60;
-                    min = endIndex * detail.getInvert() % 60;
+                    int endTimeInteger = endIndex * detail.getInvert();
+                    //只有一个点
+//                    if(startIndex * detail.getInvert() == endTimeInteger){
+//                        endTimeInteger+=detail.getInvert();
+//                    }
+
+                    endTimeInteger+=detail.getInvert();
+
+                    hour = endTimeInteger / 60;
+                    min = endTimeInteger % 60;
                     detail.setEndTime(String.format("%02d", hour) + ":" + String.format("%02d", min));
 
                     details.add(detail);
@@ -635,7 +650,7 @@ public class ActivityWatchHeartRate extends BaseMVPTitleActivity<WatchHeartRateV
     }
 
 
-    private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM");
+    private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM", Locale.CHINA);
 
 
     private boolean isFirst;
@@ -718,6 +733,10 @@ public class ActivityWatchHeartRate extends BaseMVPTitleActivity<WatchHeartRateV
                                     public void run() {
                                         NetProgressObservable.getInstance().hide();
                                         llHistoryShare.setVisibility(View.VISIBLE);
+                                        boolean isCN = LanguageUtil.isZH();
+                                         sharingLayoutCN.setVisibility(isCN ? View.VISIBLE : View.GONE);
+                                         sharingLayoutEn.setVisibility(isCN ? View.GONE : View.VISIBLE);
+
                                         //ivTestPic.setImageBitmap(BitmapFactory.decodeFile(picFile.getAbsolutePath()));
                                     }
                                 });
@@ -822,7 +841,7 @@ public class ActivityWatchHeartRate extends BaseMVPTitleActivity<WatchHeartRateV
     /**
      * facebook分享状态回调
      */
-    private FacebookCallback facebookCallback = new FacebookCallback() {
+    private final FacebookCallback facebookCallback = new FacebookCallback() {
 
         @Override
         public void onSuccess(Object o) {
@@ -890,7 +909,7 @@ public class ActivityWatchHeartRate extends BaseMVPTitleActivity<WatchHeartRateV
                 }, age, sex);
 
                 break;
-            case R.id.iv_facebook:
+            case R.id.iv_facebook_en:
                 //判断facebook是否安装，没有按钮
                 if (PackageUtil.isWxInstall(ActivityWatchHeartRate.this, PackageUtil.facebookPakage)) {
                     shareFaceBook(picFile);
@@ -937,7 +956,7 @@ public class ActivityWatchHeartRate extends BaseMVPTitleActivity<WatchHeartRateV
                 llHistoryShare.setVisibility(View.GONE);
                 break;
             case R.id.iv_more:
-                llHistoryShare.setVisibility(View.GONE);
+             //   llHistoryShare.setVisibility(View.GONE);
                 shareFile(picFile);
                 //util.checkCameraPersiomm(this, this, layoutAll, "more");
                 break;

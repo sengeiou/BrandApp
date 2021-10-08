@@ -39,6 +39,9 @@ import brandapp.isport.com.basicres.commonutil.TokenUtil;
 import brandapp.isport.com.basicres.mvp.BaseMVPActivity;
 import phone.gym.jkcq.com.commonres.common.JkConfiguration;
 
+/**
+ * 单次测量血压页面
+ */
 public class BPResultActivity extends BaseMVPActivity<BpHistoryView, BpHistoryPresenter> implements BpHistoryView {
 
     private ArrayList<BPInfo> mDataList = new ArrayList<>();
@@ -234,7 +237,7 @@ public class BPResultActivity extends BaseMVPActivity<BpHistoryView, BpHistoryPr
                                     break;
                             }
                         } catch (Exception e) {
-
+                            e.printStackTrace();
                         }
 
                         break;

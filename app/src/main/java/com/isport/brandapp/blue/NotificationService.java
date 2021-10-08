@@ -4,10 +4,14 @@ import android.app.ActivityManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationChannelGroup;
+import android.app.Service;
+import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.media.AudioManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -24,6 +28,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.widget.RemoteViews;
 
+import com.isport.blelibrary.BleConstance;
 import com.isport.blelibrary.ISportAgent;
 import com.isport.blelibrary.db.action.watch_w516.Watch_W516_NotifyModelAction;
 import com.isport.blelibrary.db.table.watch_w516.Watch_W516_NotifyModel;
@@ -54,6 +59,33 @@ public class NotificationService extends NotificationListenerService {
     private static final String TAG = "NotificationService";
     private static final String ENABLED_NOTIFICATION_LISTENERS = "enabled_notification_listeners";
     static boolean isFirst = true;
+
+    private AudioManager audioManager;
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(BleConstance.W560_MUSIC_CONTROL_STATUS);
+        registerReceiver(broadcastReceiver,intentFilter);
+
+        if(audioManager == null)
+            audioManager = (AudioManager) getSystemService(Service.AUDIO_SERVICE);
+
+    }
+
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        try {
+            if(broadcastReceiver != null)
+                unregisterReceiver(broadcastReceiver);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -96,6 +128,8 @@ public class NotificationService extends NotificationListenerService {
             }
         }
     };
+
+
 
     private void sendMsg(StatusBarNotification sbn) {
         Notification notification = sbn.getNotification();
@@ -185,10 +219,6 @@ public class NotificationService extends NotificationListenerService {
     //当系统收到新的通知后出发回调
     @Override
     public void onNotificationPosted(StatusBarNotification sbn) {
-
-        //
-
-
         String pname = sbn.getPackageName();
         Logger.myLog("getPackageName " + pname);
         if (AppConfiguration.isConnected) {
@@ -199,7 +229,9 @@ public class NotificationService extends NotificationListenerService {
                 return;
             }
 
-            NotiManager.getInstance(this).handleNotification(pname,sbn.getNotification());
+            Logger.myLog(TAG,"----ddeveice="+device.toString());
+
+            //NotiManager.getInstance(this).handleNotification(pname,sbn.getNotification());
 
 
             if (device.deviceType == JkConfiguration.DeviceType.WATCH_W516) {
@@ -208,7 +240,8 @@ public class NotificationService extends NotificationListenerService {
                     if (watch_w516_notifyModelByDeviceId.getMsgSwitch())
                         ISportAgent.getInstance().requestBle(BleRequest.Watch_W516_SEND_NOTIFICATION_N, pname);
                 }
-            } else if (device.deviceType == JkConfiguration.DeviceType.BRAND_W311 || device.deviceType == JkConfiguration.DeviceType.Brand_W520) {
+            } else if (device.deviceType == JkConfiguration.DeviceType.BRAND_W311 ||
+                    device.deviceType == JkConfiguration.DeviceType.Brand_W520) {
                 if (isFirst) {
                     isFirst = false;
                     msgVector.add(sbn);
@@ -323,5 +356,40 @@ public class NotificationService extends NotificationListenerService {
         }
         return false;
     }
+
+    /**
+     * 音乐播放状态
+     */
+    private final BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            if(action == null)
+                return;
+            if(action.equals(BleConstance.W560_MUSIC_CONTROL_STATUS)){
+                int statusCode = intent.getIntExtra(BleConstance.W560_MUSIC_STATUS,0);
+                Logger.myLog(TAG,"-code="+statusCode);
+                if(statusCode == 1){    //播放
+                    MusicManager.playMusic(audioManager,NotificationService.this);
+                }
+                if(statusCode == 2){    //暂停
+                    MusicManager.pauseMusic(audioManager,NotificationService.this);
+                }
+
+                if(statusCode == 3){    //上一首
+                    MusicManager.previousMusic(audioManager,NotificationService.this);
+                }
+
+                if(statusCode == 4){    //下一首
+                    MusicManager.nextMusic(audioManager,NotificationService.this);
+                }
+
+                if(statusCode == 5 || statusCode == 6){ //音量+或-
+                    MusicManager.setVoiceStatus(audioManager,statusCode == 5 ? 0x01 : 0x00);
+                }
+
+            }
+        }
+    };
 
 }

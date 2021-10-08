@@ -5,16 +5,13 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.isport.blelibrary.db.table.watch_w516.Watch_W516_SedentaryModel;
 import com.isport.brandapp.App;
-import com.isport.brandapp.home.bean.http.WatchSleepDayData;
 import com.isport.brandapp.R;
 import com.isport.brandapp.bean.DeviceBean;
 import com.isport.brandapp.device.watch.presenter.WatchPresenter;
 import com.isport.brandapp.device.watch.view.WatchView;
+import com.isport.brandapp.home.bean.http.WatchSleepDayData;
 import com.isport.brandapp.login.ActivityLogin;
 import com.isport.brandapp.util.AppSP;
 import com.isport.brandapp.util.UserAcacheUtil;
@@ -25,6 +22,8 @@ import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import bike.gymproject.viewlibray.BebasNeueTextView;
 import bike.gymproject.viewlibray.ItemView;
 import brandapp.isport.com.basicres.ActivityManager;
@@ -37,6 +36,9 @@ import brandapp.isport.com.basicres.mvp.BaseMVPTitleActivity;
 import brandapp.isport.com.basicres.service.observe.BleProgressObservable;
 import brandapp.isport.com.basicres.service.observe.NetProgressObservable;
 
+/**
+ * 零星小睡页面
+ */
 public class ActivityWatchLitterSleep extends BaseMVPTitleActivity<WatchView, WatchPresenter> implements WatchView {
     private final static String TAG = ActivityWatchLitterSleep.class.getSimpleName();
     private BebasNeueTextView tvPointer;

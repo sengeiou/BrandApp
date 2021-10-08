@@ -98,7 +98,7 @@ public class PractiseItemAdapter extends RecyclerView.Adapter<PractiseItemAdapte
         if (Integer.valueOf(aveRate) != 0) {
             holder.tv_average_heart.setText(mContext.getString(R.string.average_heart_value, aveRate));
         } else {
-            holder.tv_average_heart.setText("--");
+            holder.tv_average_heart.setText("--BPM");
         }
 
         holder.tv_consume.setText(mContext.getString(R.string.consume_value, info.getTotalCalories()));

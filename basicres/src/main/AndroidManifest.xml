@@ -2,6 +2,10 @@
           xmlns:tools="http://schemas.android.com/tools"
           package="com.isport.brandapp.basicres">
 
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+
     <application
         android:allowBackup="false"
         tools:replace="android:allowBackup">

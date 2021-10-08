@@ -22,11 +22,7 @@ public class AppUtil {
         if (bleAdapter == null) {
             bleAdapter = BluetoothAdapter.getDefaultAdapter();
         }
-        if (bleAdapter == null || !bleAdapter.isEnabled()) {
-            return false;
-        } else {
-            return true;
-        }
+        return bleAdapter != null && bleAdapter.isEnabled();
     }
 
 

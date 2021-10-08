@@ -4,10 +4,6 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.isport.brandapp.R;
@@ -16,6 +12,9 @@ import com.isport.brandapp.bind.Adapter.DeviceListAdapter;
 
 import java.util.ArrayList;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import brandapp.isport.com.basicres.BaseTitleActivity;
 import brandapp.isport.com.basicres.commonutil.UIUtils;
 import brandapp.isport.com.basicres.commonutil.ViewMultiClickUtil;
@@ -123,7 +122,7 @@ public class ActivityAllDevice extends BaseTitleActivity {
         list.add(new DeviceBean(JkConfiguration.DeviceType.WATCH_W516, R.drawable.shape_scan_bg_watch, UIUtils.getString(R.string.watch), R.drawable.icon_scan_watch));
         list.add(new DeviceBean(JkConfiguration.DeviceType.BRAND_W311, R.drawable.shape_scan_bg_band, context.getString(R.string.wristband), R.drawable.icon_scan_brand));
         list.add(new DeviceBean(JkConfiguration.DeviceType.BODYFAT, R.drawable.shape_scan_bg_scale, UIUtils.getString(R.string.body_fat_scale), R.drawable.icon_scan_scale));
-        list.add(new DeviceBean(JkConfiguration.DeviceType.ROPE_SKIPPING, R.drawable.shape_scan_rope_skipping, UIUtils.getString(R.string.rope_skip), R.drawable.icon_scan_rope_skipping));
+        list.add(new DeviceBean(JkConfiguration.DeviceType.ROPE_SKIPPING, R.drawable.shape_scan_rope_skipping, UIUtils.getString(R.string.rope_device), R.drawable.icon_scan_rope_skipping));
     }
 
 }

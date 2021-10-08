@@ -116,7 +116,7 @@ public class DataHeaderHolder extends CustomHolder<String> {
             if(goalType == 0){  //步数目标
                 heardLayout.setSportStep(step);
                 //距离 title
-                itemDis.setTitleText(context.getResources().getString(R.string.dis_unit));
+                itemDis.setTitleText(context.getResources().getString(R.string.watch_step_type_distance));
                 //距离value
                 itemDis.setValue(dis);
                 //距离unit

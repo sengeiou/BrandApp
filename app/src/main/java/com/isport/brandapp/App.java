@@ -1,7 +1,9 @@
 package com.isport.brandapp;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.telephony.PhoneStateListener;
@@ -9,12 +11,12 @@ import android.telephony.TelephonyManager;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.iflytek.cloud.SpeechUtility;
+import com.isport.blelibrary.BleConstance;
 import com.isport.blelibrary.ISportAgent;
 import com.isport.blelibrary.utils.Logger;
 import com.isport.blelibrary.utils.SyncCacheUtils;
 import com.isport.brandapp.blue.CallListener;
 import com.isport.brandapp.blue.NotificationService;
-import com.isport.brandapp.blue.SmsBroadcastReceiver;
 import com.isport.brandapp.device.UpdateSuccessBean;
 import com.isport.brandapp.net.APIService;
 import com.isport.brandapp.net.RetrofitClient;
@@ -23,6 +25,7 @@ import com.isport.brandapp.sport.bean.SportSumData;
 import com.isport.brandapp.sport.modle.SportDataModle;
 import com.isport.brandapp.sport.response.SportRepository;
 import com.isport.brandapp.util.AppSP;
+import com.isport.brandapp.util.BleUtil;
 import com.isport.brandapp.util.DeviceTypeUtil;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.umeng.analytics.MobclickAgent;
@@ -93,8 +96,13 @@ public class App extends BaseApp {
 
 //         WbSdk.install(this,new AuthInfo(this, Constants.APP_KEY, Constants.REDIRECT_URL, Constants.SCOPE));
         // AccessibilityUtil.checkSetting(this, NotifService.class);
-        IntentFilter filter = new IntentFilter("android.provider.Telephony.SMS_RECEIVED");
-        registerReceiver(new SmsBroadcastReceiver(), filter);
+//        IntentFilter filter = new IntentFilter("android.provider.Telephony.SMS_RECEIVED");
+//        registerReceiver(new SmsBroadcastReceiver(), filter);
+
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(BleConstance.W560_DIS_CALL_ACTION);
+        intentFilter.addAction(BleConstance.W560_PHONE_MUTE_ACTION);
+        registerReceiver(broadcastReceiver,intentFilter);
 
         TelephonyManager telephony = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
 
@@ -488,6 +496,34 @@ public class App extends BaseApp {
         PlatformConfig.setQQZone("1110159454", "Ziwl5Fje7wi3327f");
         PlatformConfig.setQQFileProvider("com.isport.brandapp.fileProvider");
     }
+
+
+    private final BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            if(action == null)
+                return;
+            Logger.myLog("APP","-----action="+action);
+            if(action.equals(BleConstance.W560_DIS_CALL_ACTION)){   //挂断电话
+               int code = intent.getIntExtra(BleConstance.W560_PHONE_STATUS,0);
+                Logger.myLog("APP","----    -code="+code);
+                if(code == 3){  //静音
+                    BleUtil.setPhoneMute(instance);
+                }
+                if(code == 2){  //挂断
+                    BleUtil.dPhone();
+                    BleUtil.endCall(instance);
+                }
+                if(code == 1){  //接
+//                    TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Service.TELEPHONY_SERVICE);
+//                    BleUtil.autoAnswerPhone(instance,telephonyManager);
+                }
+            }
+
+
+        }
+    };
 
 
 }

@@ -737,8 +737,8 @@
     <string name="hr_select_times">时间段:</string>
     <string name="oncehrresult_oncehr_des">安静心率：正常人在安静状态下每分钟心跳次数一般为60～100次。 \n运动心率：运动过程中根据心率区间可以判断身体的运动状态，选择合适的心率区间才能达到较佳的运动效果。</string>
     <string name="oncehrresult_once_measure_trend">近7次心率测量趋势</string>
-    <string name="start_measure">点击开始测量</string>
-    <string name="stop_measure">点击结束测量</string>
+    <string name="start_measure">开始测量</string>
+    <string name="stop_measure">结束测量</string>
     <string name="bpresult_about_bp_data">关于血压数据</string>
     <string name="bpresult_bp_des">血压正常值:\n90mmHg \u003C 收缩压 \u003C 140mmHg \n60mmHg \u003C 舒张压 \u003C 90mmHg</string>
     <string name="bpresult_bp_measure_trend">近7次血压测量趋势</string>

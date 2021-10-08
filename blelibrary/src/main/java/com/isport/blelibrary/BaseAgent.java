@@ -1002,6 +1002,10 @@ public class BaseAgent {
             } else if (currentDevice instanceof W560Device) {
                 ((W560Device) currentDevice).set_general(open24HeartRate, isCall, isMessage);
             }
+
+            else if(currentDevice instanceof W560BDevice){
+                ((W560BDevice) currentDevice).set_general(open24HeartRate, isCall, isMessage);
+            }
         }
     }
 
@@ -1097,6 +1101,11 @@ public class BaseAgent {
         if (mBaseManager != null && mBaseManager.getCurrentDevice() != null) {
             BaseDevice currentDevice = mBaseManager.getCurrentDevice();
             if (currentDevice instanceof W560Device) {
+                ((W560Device) currentDevice).set_w560_alarm(eanble, day, hour, min, index, name);
+                return;
+            }
+
+            if(currentDevice instanceof W560BDevice){
                 ((W560Device) currentDevice).set_w560_alarm(eanble, day, hour, min, index, name);
             }
         }
@@ -1211,6 +1220,10 @@ public class BaseAgent {
             } else if (currentDevice instanceof W560Device) {
                 ((W560Device) currentDevice).senddisturb(open, startHour, startMin, endHour, endMin);
             }
+
+            else if(currentDevice instanceof W560BDevice){
+                ((W560BDevice) currentDevice).senddisturb(open, startHour, startMin, endHour, endMin);
+            }
         }
     }
 
@@ -1286,7 +1299,10 @@ public class BaseAgent {
 
             } else if (currentDevice instanceof W560Device) {
                 ((W560Device) currentDevice).set_sedentary_time(time, startHour, startMin, endHour, endMin);
+            }
 
+            else if(currentDevice instanceof W560BDevice){
+                ((W560BDevice) currentDevice).set_sedentary_time(time, startHour, startMin, endHour, endMin);
             }
         }
     }
@@ -1355,6 +1371,9 @@ public class BaseAgent {
                 ((W812BDevice) currentDevice).get_daily_record(day);
             } else if (currentDevice instanceof W560Device) {
                 ((W560Device) currentDevice).get_daily_record(day);
+            }
+            else if(currentDevice instanceof W560BDevice){
+                ((W560BDevice) currentDevice).get_daily_record(day);
             }
         }
     }
@@ -1860,6 +1879,10 @@ public class BaseAgent {
                 ((W560Device) currentDevice).findWatch();
             }
 
+            else if(currentDevice instanceof  W560BDevice){
+                ((W560BDevice) currentDevice).findWatch();
+            }
+
             Logger.myLog(TAG,"---没有找到");
         }
     }
@@ -2004,6 +2027,9 @@ public class BaseAgent {
             } else if (currentDevice instanceof W560Device) {
                 ((W560Device) currentDevice).set_w526_raise_hand(type, startHour, startMin, endHour, endMin);
             }
+            else if(currentDevice instanceof W560BDevice){
+                ((W560BDevice) currentDevice).set_w526_raise_hand(type, startHour, startMin, endHour, endMin);
+            }
         }
     }
 
@@ -2141,6 +2167,9 @@ public class BaseAgent {
             if(baseDevice instanceof W560Device){
                 ((W560Device) baseDevice).sendW526Messge(title, msg, type);
             }
+            else if(baseDevice instanceof W560BDevice){
+                ((W560BDevice) baseDevice).sendW526Messge(title,msg,type);
+            }
         }
     }
 
@@ -2204,12 +2233,17 @@ public class BaseAgent {
             } else if (currentDevice instanceof W526Device) {
                 ((W526Device) currentDevice).meassureOxy(isStart);
             }
+
+            else if(currentDevice instanceof W560BDevice){
+                ((W560BDevice) currentDevice).meassureOxy(isStart);
+            }
         }
     }
 
     public void w81SendMeasureOneceHrData(boolean isStart) {
         if (mBaseManager != null && mBaseManager.getCurrentDevice() != null) {
             BaseDevice currentDevice = mBaseManager.getCurrentDevice();
+            Logger.myLog(TAG,"--------测量血压="+(currentDevice instanceof W560BDevice));
             if (currentDevice instanceof W812Device) {
                 ((W812Device) currentDevice).measureOnceHrData(isStart);
             } else if (currentDevice instanceof W817Device) {
@@ -2230,6 +2264,10 @@ public class BaseAgent {
                 ((W560Device) currentDevice).meassureOneHr(isStart);
             } else if (currentDevice instanceof W812BDevice) {
                 ((W812BDevice) currentDevice).meassureOneHr(isStart);
+            }
+
+            else if(currentDevice instanceof W560BDevice){
+                ((W560BDevice) currentDevice).meassureOneHr(isStart);
             }
         }
     }
@@ -2314,6 +2352,10 @@ public class BaseAgent {
             } else if (currentDevice instanceof W526Device) {
                 ((W526Device) currentDevice).meassureBlood(isStart);
             }
+
+            else if(currentDevice instanceof W560BDevice){
+                ((W560BDevice) currentDevice).meassureBlood(isStart);
+            }
         }
     }
 
@@ -2374,6 +2416,9 @@ public class BaseAgent {
                 ((W560Device) currentDevice).sendphoto();
             } else if (currentDevice instanceof W557Device) {
                 ((W557Device) currentDevice).sendphoto();
+            }
+            else if(currentDevice instanceof W560BDevice){
+                ((W560BDevice) currentDevice).sendphoto();
             }
         }
     }
@@ -2463,6 +2508,10 @@ public class BaseAgent {
             } else if (currentDevice instanceof W560Device) {
                 ((W560Device) currentDevice).w520SetDial(enable);
             }
+
+            else if(currentDevice instanceof W560BDevice){
+                ((W560BDevice) currentDevice).w520SetDial(enable);
+            }
         }
     }
 
@@ -2526,14 +2575,18 @@ public class BaseAgent {
             Log.e("currentDevice", "" + currentDevice);
 
 
-            if (currentDevice instanceof W560Device) {
+            if (currentDevice instanceof W560Device ) {
                 Log.e("currentDevice", "W560Device" + currentDevice);
                 ((W560Device) currentDevice).getRealHrSwitch();
             } else if (currentDevice instanceof W557Device) {
                 ((W557Device) currentDevice).getRealHrSwitch();
             } else if (currentDevice instanceof W812BDevice) {
                 ((W812BDevice) currentDevice).getRealHrSwitch();
-            } else if (currentDevice instanceof W311Device) {
+            } else if(currentDevice instanceof W560BDevice){
+                ((W560BDevice) currentDevice).get_general();
+            }
+
+            else if (currentDevice instanceof W311Device) {
 
             }
         }
@@ -2637,6 +2690,17 @@ public class BaseAgent {
             BaseDevice currentDevice = mBaseManager.getCurrentDevice();
             if (currentDevice instanceof W557Device) {
                 ((W557Device) currentDevice).getTempSub();
+            }
+        }
+    }
+
+
+    //设置音乐
+    protected void setMusicData(String mName,String allTime,String currTime){
+        if(mBaseManager != null && mBaseManager.getCurrentDevice() != null){
+            BaseDevice baseDevice = mBaseManager.getCurrentDevice();
+            if(baseDevice instanceof W560Device){
+                ((W560Device) baseDevice).setMusic(mName,allTime,currTime);
             }
         }
     }

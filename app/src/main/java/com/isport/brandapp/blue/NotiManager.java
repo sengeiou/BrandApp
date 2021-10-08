@@ -6,6 +6,7 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.SpannableString;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -26,6 +27,7 @@ import com.isport.brandapp.AppConfiguration;
 import com.isport.brandapp.util.DeviceTypeUtil;
 
 import java.io.UnsupportedEncodingException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -146,7 +148,7 @@ public class NotiManager {
 
             Logger.myLog(TAG,"-----baseDevice="+baseDevice.toString());
             //判断是否是W560
-            if(baseDevice.deviceType == IDeviceType.TYPE_WATCH_W560){
+            if(baseDevice.deviceType == IDeviceType.TYPE_WATCH_W560 || baseDevice.deviceType == IDeviceType.TYPE_WATCH_W560B){
                 sendW560MsgTypeMsg(packagename,notification);
                 return;
             }
@@ -246,16 +248,16 @@ public class NotiManager {
             if(extras == null)
                 return;
             CharSequence tickerText = notification.tickerText;
-
+            SpannableString spannableString;
             String content = "";
             String title = "";
 
             Object objectStr = extras.get(Notification.EXTRA_TITLE);
             if(objectStr != null){
                 if(objectStr instanceof  String){
-                    title = extras.getString(Notification.EXTRA_TITLE, "");
+                    title = extras.getString(Notification.EXTRA_TITLE, "")+"";
                     // 获取通知内容
-                    content = extras.getString(Notification.EXTRA_TEXT, "");
+                    content = extras.getString(Notification.EXTRA_TEXT, "")+"";
                 }else{
                     content = objectStr.toString();
                 }
@@ -264,9 +266,25 @@ public class NotiManager {
                     content = tickerText.toString();
                 }
             }
-            //Logger.myLog(TAG,"----title="+title+" content="+content+" msgContent=");
+            Logger.myLog(TAG,"----title="+title+" content="+content+" msgContent=");
+
+            if(title != null && (title.contains("Messaging is running") || title.contains("正在运行")) )
+                return;
+            //过滤音乐
+            if(Arrays.asList(Constants.musicArray).contains(packName)){
+                Logger.myLog(TAG,"-----过滤音乐="+packName+" "+title+content);
+                ISportAgent.getInstance().setW560DeviceMusicData(title+content,"0","0");
+                return;
+            }
 
             if(Constants.msgTypeMap.containsKey(packName)){
+                String buildName = Build.MANUFACTURER;
+
+                Logger.myLog(TAG,"--bname="+buildName);
+                if(packName.equals(Constants.MSG_PACKAGENAME) && (buildName.toLowerCase().equals("huawei") || buildName.toLowerCase().equals("honor"))){
+                    return;
+
+                }
                 ISportAgent.getInstance().requestBle(BleRequest.w526_send_message, title, content, Constants.msgTypeMap.get(packName));
             }
 

@@ -7,16 +7,15 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
 
 import java.util.ArrayList;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import brandapp.isport.com.basicres.commonalertdialog.AlertDialogStateCallBack;
 import brandapp.isport.com.basicres.commonalertdialog.PublicAlertDialog;
 import brandapp.isport.com.basicres.mvp.BaseMVPActivity;
@@ -28,7 +27,11 @@ import phone.gym.jkcq.com.socialmodule.bean.ListData;
 import phone.gym.jkcq.com.socialmodule.mvp.presenter.FriendPresenter;
 import phone.gym.jkcq.com.socialmodule.mvp.view.FriendView;
 
+/**
+ * 好友页面
+ */
 public class FriendActivity extends BaseMVPActivity<FriendView, FriendPresenter> implements FriendView {
+
     private LinearLayout ll_no_user;
     private TextView tv_title;
     private ImageView iv_back;
@@ -59,7 +62,7 @@ public class FriendActivity extends BaseMVPActivity<FriendView, FriendPresenter>
             }
         });
         ll_search=findViewById(R.id.ll_search);
-        ll_search.setVisibility(View.VISIBLE);
+        ll_search.setVisibility(View.INVISIBLE);
         ll_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

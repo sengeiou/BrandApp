@@ -87,7 +87,7 @@
             <RadioButton
                 android:id="@+id/rbtn_empty"
                 android:layout_width="0dp"
-                android:layout_height="0dp"></RadioButton>
+                android:layout_height="0dp"/>
        <!--     <RadioButton
                 android:id="@+id/tv_mine"
                 android:layout_width="0dp"
@@ -135,7 +135,7 @@
                     android:visibility="invisible"
                     app:layout_constraintCircleRadius="@dimen/dp20"
                     android:layout_height="@dimen/dp8"
-                    android:background="@drawable/shape_point_red"></View>
+                    android:background="@drawable/shape_point_red"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </RadioGroup>
     </LinearLayout>

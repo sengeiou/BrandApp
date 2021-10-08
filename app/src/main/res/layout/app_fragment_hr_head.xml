@@ -39,7 +39,7 @@
             <View
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:layout_weight="1"></View>
+                android:layout_weight="1"/>
 
 
             <ImageView
@@ -85,7 +85,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_gravity="bottom"
                 android:layout_marginBottom="@dimen/dp15"
-                android:src="@drawable/icon_main_real_hr"></ImageView>
+                android:src="@drawable/icon_main_real_hr"/>
 
             <bike.gymproject.viewlibray.AkrobatNumberTextView
                 android:id="@+id/tv_hr_value"
@@ -129,6 +129,7 @@
 
             <com.isport.brandapp.home.fragment.BarChartView
                 android:id="@+id/bar_hr_view"
+                android:focusable="false"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
         </LinearLayout>

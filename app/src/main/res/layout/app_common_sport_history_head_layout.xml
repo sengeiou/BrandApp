@@ -137,7 +137,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/dp10"
-            android:src="@drawable/icon_data_left"></ImageView>
+            android:src="@drawable/icon_data_left"/>
 
         <TextView
             android:id="@+id/tv_update_time"
@@ -160,7 +160,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/dp10"
-            android:src="@drawable/icon_data_right"></ImageView>
+            android:src="@drawable/icon_data_right"/>
     </LinearLayout>
 </LinearLayout>
 

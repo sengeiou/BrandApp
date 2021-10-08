@@ -11,9 +11,6 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.core.widget.NestedScrollView;
-
 import com.blankj.utilcode.util.NetworkUtils;
 import com.gyf.immersionbar.ImmersionBar;
 import com.isport.blelibrary.ISportAgent;
@@ -21,13 +18,13 @@ import com.isport.blelibrary.utils.Constants;
 import com.isport.blelibrary.utils.Logger;
 import com.isport.brandapp.App;
 import com.isport.brandapp.AppConfiguration;
+import com.isport.brandapp.LogActivity;
+import com.isport.brandapp.R;
+import com.isport.brandapp.Third_party_access.util.GoogleFitUtil;
 import com.isport.brandapp.home.AccessThridAppActivity;
 import com.isport.brandapp.home.SettingActivity;
 import com.isport.brandapp.home.presenter.FragmentMinePresenter;
 import com.isport.brandapp.home.view.FragmentMineView;
-import com.isport.brandapp.LogActivity;
-import com.isport.brandapp.R;
-import com.isport.brandapp.Third_party_access.util.GoogleFitUtil;
 import com.isport.brandapp.message.MessageActivity;
 import com.isport.brandapp.util.ActivitySwitcher;
 import com.tbruyelle.rxpermissions2.RxPermissions;
@@ -36,6 +33,8 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import androidx.annotation.NonNull;
+import androidx.core.widget.NestedScrollView;
 import bike.gymproject.viewlibray.FriendItemView;
 import bike.gymproject.viewlibray.ItemView;
 import brandapp.isport.com.basicres.BaseApp;
@@ -77,6 +76,7 @@ import phone.gym.jkcq.com.socialmodule.net.APIService;
 import phone.gym.jkcq.com.socialmodule.net.RetrofitClient;
 
 /**
+ * 底部菜单，我的页面
  * Created by huashao on 2017/10/24.
  */
 public class NewMineFragment extends BaseMVPFragment<FragmentMineView, FragmentMinePresenter> implements View

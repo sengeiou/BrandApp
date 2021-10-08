@@ -127,12 +127,12 @@ public class W560BDevice extends BaseDevice implements IDeviceType, IWatch516, I
 
     @Override
     public void set_general(boolean open24HeartRate, boolean isHeart) {
-
-        if (isHeart) {
-            WatchW557BleManager.getInstance().set_general(open24HeartRate, isHeart);
-        } else {
-            WatchW557BleManager.getInstance().set_general(open24HeartRate, isHeart);
-        }
+        WatchW557BleManager.getInstance().set_general(open24HeartRate, isHeart);
+//        if (isHeart) {
+//            WatchW557BleManager.getInstance().set_general(open24HeartRate, isHeart);
+//        } else {
+//            WatchW557BleManager.getInstance().set_general(open24HeartRate, isHeart);
+//        }
         // WatchW557BleManager.getInstance().set_general(open24HeartRate, isHeart);
 
     }

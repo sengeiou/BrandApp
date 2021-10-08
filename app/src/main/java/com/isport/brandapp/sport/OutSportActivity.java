@@ -17,7 +17,6 @@ import android.os.RemoteException;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -96,8 +95,10 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import phone.gym.jkcq.com.commonres.common.JkConfiguration;
-import phone.gym.jkcq.com.commonres.commonutil.DisplayUtils;
 
+/**
+ * 户外跑
+ */
 public class OutSportActivity extends BaseMVPActivity<InDoorSportView, InDoorSportPresent> implements
         InDoorSportView, View.OnClickListener, Device24HrView, LifecycleObserver {
 
@@ -175,10 +176,6 @@ public class OutSportActivity extends BaseMVPActivity<InDoorSportView, InDoorSpo
 
     @Override
     protected void initView(View view) {
-
-
-        LinearLayout.LayoutParams ivSsettingLP = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, DisplayUtils.dip2px(context, 40));
-
 
         viewPause = view.findViewById(R.id.view_pause);
         viewStart = view.findViewById(R.id.view_start);
@@ -302,6 +299,8 @@ public class OutSportActivity extends BaseMVPActivity<InDoorSportView, InDoorSpo
         viewStart.setStartText(UIUtils.getString(R.string.sporting_continue));
         viewEnd.setEndText(UIUtils.getString(R.string.sporting_end), UIUtils.getString(R.string.long_press_end));
         viewUnLock.setEndText(UIUtils.getString(R.string.lock), UIUtils.getString(R.string.long_press_unlock));
+
+        itemViewCal.setUnitText(getResources().getString(R.string.watch_step_unite_calory));
 
         EventBus.getDefault().register(this);
 

@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.crrepa.ble.conn.type.CRPTimeSystemType;
+import com.google.gson.Gson;
 import com.isport.blelibrary.ISportAgent;
 import com.isport.blelibrary.db.parse.ParseData;
 import com.isport.blelibrary.db.table.DeviceInformationTable;
@@ -41,7 +42,6 @@ import com.isport.blelibrary.utils.Constants;
 import com.isport.blelibrary.utils.Logger;
 import com.isport.blelibrary.utils.SyncCacheUtils;
 import com.isport.brandapp.AppConfiguration;
-import com.isport.brandapp.home.bean.http.WatchSleepDayData;
 import com.isport.brandapp.R;
 import com.isport.brandapp.banner.recycleView.utils.ToastUtil;
 import com.isport.brandapp.bean.DeviceBean;
@@ -78,6 +78,7 @@ import com.isport.brandapp.device.watch.view.CallAndMessageNotiView;
 import com.isport.brandapp.device.watch.view.WatchView;
 import com.isport.brandapp.dialog.UnBindDeviceDialog;
 import com.isport.brandapp.dialog.UnbindStateCallBack;
+import com.isport.brandapp.home.bean.http.WatchSleepDayData;
 import com.isport.brandapp.upgrade.bean.DeviceUpgradeBean;
 import com.isport.brandapp.upgrade.present.DevcieUpgradePresent;
 import com.isport.brandapp.upgrade.view.DeviceUpgradeView;
@@ -325,6 +326,7 @@ public class ActivityBraceletMain extends BaseMVPTitleActivity<WatchView, WatchP
         setWatchState(UIUtils.getString(R.string.connected));
         setWatchBattery(0);
         titleBarView.setRightIcon(R.drawable.icon_device_unbind);
+        titleBarView.setRightTextViewStateIsShow(false);
         // setValueText("0", "80", 0);
         titleBarView.setTitle(devcieId);
         mRxPermission = new RxPermissions(this);
@@ -500,62 +502,7 @@ public class ActivityBraceletMain extends BaseMVPTitleActivity<WatchView, WatchP
 
             @Override
             public void onRightClicked(View view) {
-                if (!AppConfiguration.isConnected) {
-                    ToastUtil.showTextToast(context, UIUtils.getString(R.string.app_disconnect_device));
-                    return;
-                }
-                if (!AppConfiguration.hasSynced) {
-                    ToastUtil.showTextToast(context, UIUtils.getString(R.string.sync_data));
-                    return;
-                }
-                isDerictUnBind = false;
-                new UnBindDeviceDialog(ActivityBraceletMain.this, JkConfiguration.DeviceType.WATCH_W516, true, new UnbindStateCallBack() {
-                    @Override
-                    public void synUnbind() {
-
-                        if (!NetUtils.hasNetwork(BaseApp.getApp())) {
-                            ToastUtils.showToast(context, UIUtils.getString(R.string.common_please_check_that_your_network_is_connected));
-                            return;
-                        }
-                        BaseDevice device = ISportAgent.getInstance().getCurrnetDevice();
-
-                        if (AppConfiguration.isConnected && device != null) {
-                            // TODO: 2018/11/8 同步解绑的逻辑
-//                                        if (FragmentData.mWristbandstep != null) {
-//                                            mActPresenter.updateSportData(FragmentData.mWristbandstep, mDeviceBean);
-//                                        }
-                            int devcieType = device.deviceType;
-                            if (device != null) {
-                                Constants.isSyncUnbind = true;
-                                if (DeviceTypeUtil.isContainWrishBrand(devcieType) || DeviceTypeUtil.isContainW81(devcieType)) {
-                                    //睡眠带连接
-                                    ISportAgent.getInstance().requestBle(BleRequest.bracelet_sync_data);
-                                    canUnBind = true;
-                                /*NetProgressObservable.getInstance().show(UIUtils.getString(R.string.common_please_wait),
-                                        false);*/
-                                } else {
-                                    ToastUtils.showToast(context, UIUtils.getString(R.string.app_disconnect_device));
-                                }
-                            }
-                        } else {
-                            ToastUtils.showToast(context, UIUtils.getString(R.string.app_disconnect_device));
-                        }
-                    }
-
-                    @Override
-                    public void dirctUnbind() {
-                        if (!NetUtils.hasNetwork(BaseApp.getApp())) {
-                            ToastUtils.showToast(context, UIUtils.getString(R.string.common_please_check_that_your_network_is_connected));
-                            return;
-                        }
-                        unBindDevice(deviceBean, true);
-                    }
-
-                    @Override
-                    public void cancel() {
-
-                    }
-                }, JkConfiguration.DeviceType.SLEEP);
+               unbindOperate();
             }
         });
       /*  wdvStep.setOnItemViewCheckedChangeListener(new WatchTypeDataView.OnItemViewCheckedChangeListener() {
@@ -586,6 +533,66 @@ public class ActivityBraceletMain extends BaseMVPTitleActivity<WatchView, WatchP
             }
         });*/
 
+    }
+
+    //解绑操作
+    private void unbindOperate() {
+        if (!AppConfiguration.isConnected) {
+            ToastUtil.showTextToast(context, UIUtils.getString(R.string.app_disconnect_device));
+            return;
+        }
+        if (!AppConfiguration.hasSynced) {
+            ToastUtil.showTextToast(context, UIUtils.getString(R.string.sync_data));
+            return;
+        }
+        isDerictUnBind = false;
+        new UnBindDeviceDialog(ActivityBraceletMain.this, JkConfiguration.DeviceType.WATCH_W516, true, new UnbindStateCallBack() {
+            @Override
+            public void synUnbind() {
+
+                if (!NetUtils.hasNetwork(BaseApp.getApp())) {
+                    ToastUtils.showToast(context, UIUtils.getString(R.string.common_please_check_that_your_network_is_connected));
+                    return;
+                }
+                BaseDevice device = ISportAgent.getInstance().getCurrnetDevice();
+
+                if (AppConfiguration.isConnected && device != null) {
+                    // TODO: 2018/11/8 同步解绑的逻辑
+//                                        if (FragmentData.mWristbandstep != null) {
+//                                            mActPresenter.updateSportData(FragmentData.mWristbandstep, mDeviceBean);
+//                                        }
+                    int devcieType = device.deviceType;
+                    if (device != null) {
+                        Constants.isSyncUnbind = true;
+                        if (DeviceTypeUtil.isContainWrishBrand(devcieType) || DeviceTypeUtil.isContainW81(devcieType)) {
+                            //睡眠带连接
+                            ISportAgent.getInstance().requestBle(BleRequest.bracelet_sync_data);
+                            canUnBind = true;
+                                /*NetProgressObservable.getInstance().show(UIUtils.getString(R.string.common_please_wait),
+                                        false);*/
+                        } else {
+                            ToastUtils.showToast(context, UIUtils.getString(R.string.app_disconnect_device));
+                        }
+                    }
+                } else {
+                    ToastUtils.showToast(context, UIUtils.getString(R.string.app_disconnect_device));
+                }
+            }
+
+            @Override
+            public void dirctUnbind() {
+                if (!NetUtils.hasNetwork(BaseApp.getApp())) {
+                    ToastUtils.showToast(context, UIUtils.getString(R.string.common_please_check_that_your_network_is_connected));
+                    return;
+                }
+                unBindDevice(deviceBean, true);
+            }
+
+            @Override
+            public void cancel() {
+
+            }
+        }, JkConfiguration.DeviceType.SLEEP);
     }
 
     private final BleReciveListener mBleReciveListener = new BleReciveListener() {
@@ -706,7 +713,7 @@ public class ActivityBraceletMain extends BaseMVPTitleActivity<WatchView, WatchP
                 intentWeather.putExtra("deviceType", deviceBean.currentType);
                 startActivity(intentWeather);
                 break;
-            case R.id.iv_watch_take_photo:
+            case R.id.iv_watch_take_photo: //拍照
                 //需要发送一条指令到拍照的页面
                 checkCameraPersiomm();
                 break;
@@ -816,7 +823,7 @@ public class ActivityBraceletMain extends BaseMVPTitleActivity<WatchView, WatchP
                 }
                 break;
             case R.id.tv_unbind:
-
+                unbindOperate();
                 break;
         }
     }
@@ -841,7 +848,7 @@ public class ActivityBraceletMain extends BaseMVPTitleActivity<WatchView, WatchP
             ToastUtil.showTextToast(context, UIUtils.getString(R.string.app_disconnect_device));
             ivWatch24HeartRate.setChecked(false);
             if (itemList.containsKey(id) && itemList.get(id) != null) {
-                itemList.get(id).setChecked(!isChecked);
+                itemList.get(id).setChecked(false);
             }
             return;
         }
@@ -865,7 +872,6 @@ public class ActivityBraceletMain extends BaseMVPTitleActivity<WatchView, WatchP
                 ivWatch24HeartRate.setChecked(isChecked);
                 hrSettingPresenter.saveHrSetting(TokenUtil.getInstance().getPeopleIdInt(BaseApp.getApp()), devcieId, isChecked);
                 ISportAgent.getInstance().requestBle(BleRequest.bracelet_is_open_heartRate, isChecked);
-
 
                 break;
             case R.id.iv_bracelet_dropping_reminder:
@@ -1108,6 +1114,7 @@ public class ActivityBraceletMain extends BaseMVPTitleActivity<WatchView, WatchP
 
     @Override
     public void seccessGetDeviceSedentaryReminder(Watch_W516_SedentaryModel watch_w516_sedentaryModel) {
+        Logger.myLog(TAG,"--久坐="+new Gson().toJson(watch_w516_sedentaryModel));
         if (watch_w516_sedentaryModel != null) {
             if (DeviceTypeUtil.isContainW814W813W819(currentType)) {
                 iv_w814_sedentary_reminder.setChecked(watch_w516_sedentaryModel.getIsEnable());
@@ -1749,6 +1756,7 @@ public class ActivityBraceletMain extends BaseMVPTitleActivity<WatchView, WatchP
     @Override
     public void successDisturb(Watch_W516_SleepAndNoDisturbModel isOpen) {
 
+        Logger.myLog(TAG,"-------勿扰数据="+isOpen.toString());
         if (isOpen != null) {
             if (isOpen.getOpenNoDisturb()) {
                 ivWatchDisturbSetting.setContentText(isOpen.getNoDisturbStartTime() + "-" + isOpen.getNoDisturbEndTime());

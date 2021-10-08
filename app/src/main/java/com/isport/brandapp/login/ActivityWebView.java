@@ -71,7 +71,7 @@ public class ActivityWebView extends BaseTitleActivity implements UMShareListene
     private LinearLayout layout_bottom_us;
     private View viewZh;
     private ImageView ivQQ, ivWechat, ivWebo, ivFriend, ivFacebook, ivShareMore;
-    ;
+
 
 
     @Override
@@ -107,6 +107,7 @@ public class ActivityWebView extends BaseTitleActivity implements UMShareListene
         }
 
         strTitle = getIntent().getStringExtra("title");
+       // Log.e(TAG,"---title="+getResources().getString(strTitle));
         shareUrl = getIntent().getStringExtra("share_url");
         sumData = (SportSumData) getIntent().getSerializableExtra("sumData");
 
@@ -369,8 +370,8 @@ public class ActivityWebView extends BaseTitleActivity implements UMShareListene
         @Override
         public void onReceivedTitle(WebView view, String titlet) {
             super.onReceivedTitle(view, titlet);
-            strTitle = titlet;
-            titleBarView.setTitle(strTitle);
+//            strTitle = titlet;
+//            titleBarView.setTitle(strTitle);
 
         }
 
