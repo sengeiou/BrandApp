@@ -41,10 +41,10 @@ public class SportDataModle {
             bean.setStep(indoorRunDatas.totalStep + "");
         } else {
             //如果步数相差太大就用距离转换成步数
-            if (indoorRunDatas.totalStep - indoorRunDatas.disToStep > 500) {
-                bean.setStep(indoorRunDatas.totalStep + "");
+            if (indoorRunDatas.getTotalStep() - indoorRunDatas.getDisToStep() > 500) {
+                bean.setStep(indoorRunDatas.getTotalStep() + "");
             } else {
-                bean.setStep(indoorRunDatas.totalStep + "");
+                bean.setStep(indoorRunDatas.getTotalStep() + "");
             }
         }
         bean.setTimeLong((int) indoorRunDatas.timer);

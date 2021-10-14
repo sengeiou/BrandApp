@@ -145,7 +145,6 @@ public class ActivityUserAgreement extends BaseTitleActivity {
     private void initSettings(WebView mWebView) {
         if (mWebView != null) {
 
-
             mWebView.setHorizontalScrollBarEnabled(false);//水平不显示
             mWebView.setVerticalScrollBarEnabled(false);//垂直不显示
             WebSettings webSettings = mWebView.getSettings();
@@ -154,10 +153,10 @@ public class ActivityUserAgreement extends BaseTitleActivity {
             // mWebView.addJavascriptInterface(new mHandler(), "mHandler");
             // 启用localStorage 和 essionStorage
             webSettings.setDomStorageEnabled(true);
-
+            webSettings.setDisplayZoomControls(false);
             // 开启应用程序缓存
             webSettings.setAppCacheEnabled(true);
-            webSettings.setSupportZoom(true);
+            webSettings.setSupportZoom(false);
             webSettings.setBuiltInZoomControls(true);
             webSettings.setLayoutAlgorithm(LayoutAlgorithm.SINGLE_COLUMN);
             String appCacheDir = this.getApplicationContext().getDir("cache", Context.MODE_PRIVATE).getPath();

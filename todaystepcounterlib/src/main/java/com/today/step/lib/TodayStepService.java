@@ -18,7 +18,6 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.RemoteException;
-import androidx.core.app.NotificationCompat;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -27,6 +26,9 @@ import org.json.JSONArray;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+
+import androidx.core.app.NotificationCompat;
 
 import static com.today.step.lib.SportStepJsonUtils.getCalorieByStep;
 import static com.today.step.lib.SportStepJsonUtils.getDistanceByStep;
@@ -415,7 +417,7 @@ public class TodayStepService extends Service implements Handler.Callback {
 
     private String getTodayDate() {
         Date date = new Date(System.currentTimeMillis());
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.CHINA);
         return sdf.format(date);
     }
 
@@ -442,7 +444,7 @@ public class TodayStepService extends Service implements Handler.Callback {
         return getPackageManager().hasSystemFeature(PackageManager.FEATURE_SENSOR_STEP_DETECTOR);
     }
 
-    private OnStepCounterListener mOnStepCounterListener = new OnStepCounterListener() {
+    private final OnStepCounterListener mOnStepCounterListener = new OnStepCounterListener() {
         @Override
         public void onChangeStepCounter(int step) {
             updateTodayStep(step);

@@ -738,33 +738,33 @@ class FragmnetMainDeviceList() : Fragment(), DeviceListView, Observer, View.OnTo
 
     override fun successGetDeviceListFormDB(deviceBeanHashMap: HashMap<Int, DeviceBean>?, list: ArrayList<MainDeviceBean>?, show: Boolean, reConnect: Boolean, isNeedConn: Boolean) {
 
-//        Logger.myLog("successGetDeviceListFormDB---" + list?.size+" "+Gson().toJson(deviceBeanHashMap)+" "+Gson().toJson(list))
-//
-//        AppConfiguration.deviceMainBeanList = deviceBeanHashMap
-//        AppConfiguration.deviceBeanList = HashMap<Int, DeviceBean>()
-//
-//        if (AppConfiguration.deviceMainBeanList != null) {
-//            for (deviceType in AppConfiguration.deviceMainBeanList.keys) {
-//                val deviceBean = AppConfiguration.deviceMainBeanList[deviceType]
-//                if (deviceBean!!.currentType == JkConfiguration.DeviceType.ROPE_SKIPPING) {
-//                    continue
-//                }
-//                if (deviceBean!!.currentType == JkConfiguration.DeviceType.BODYFAT) {
-//                    continue
-//                }
-//                AppConfiguration.deviceBeanList.put(deviceType, deviceBean)
-//            }
-//        }
-//        mDataList.clear()
-//        if (DeviceTypeUtil.isContainWatch() || DeviceTypeUtil.isContainBrand() || DeviceTypeUtil.isContainRope()) {
-//            connectDevice()
-//            mFragPresenter.getDeviceList(false, false, true, false)
-//        } else {
-//            mFragPresenter.getDeviceList(false, false, true, true)
-//        }
-//
-//        //
-//        updateItem(list)
+        Logger.myLog("successGetDeviceListFormDB---" + list?.size+" "+Gson().toJson(deviceBeanHashMap)+" "+Gson().toJson(list))
+
+        AppConfiguration.deviceMainBeanList = deviceBeanHashMap
+        AppConfiguration.deviceBeanList = HashMap<Int, DeviceBean>()
+
+        if (AppConfiguration.deviceMainBeanList != null) {
+            for (deviceType in AppConfiguration.deviceMainBeanList.keys) {
+                val deviceBean = AppConfiguration.deviceMainBeanList[deviceType]
+                if (deviceBean!!.currentType == JkConfiguration.DeviceType.ROPE_SKIPPING) {
+                    continue
+                }
+                if (deviceBean!!.currentType == JkConfiguration.DeviceType.BODYFAT) {
+                    continue
+                }
+                AppConfiguration.deviceBeanList.put(deviceType, deviceBean)
+            }
+        }
+        mDataList.clear()
+        if (DeviceTypeUtil.isContainWatch() || DeviceTypeUtil.isContainBrand() || DeviceTypeUtil.isContainRope()) {
+            connectDevice()
+            mFragPresenter.getDeviceList(false, false, true, false)
+        } else {
+            mFragPresenter.getDeviceList(false, false, true, true)
+        }
+
+        //
+        updateItem(list)
         // TODO("Not yet implemented")
     }
 

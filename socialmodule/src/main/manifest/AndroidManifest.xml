@@ -21,7 +21,7 @@
         <activity android:name=".activity.FriendSearchActivity">
 
         </activity>
-        <activity android:name=".activity.ScanActivity"></activity>
+        <activity android:name=".activity.ScanActivity"/>
         <activity android:name=".activity.FansActivity" />
         <activity android:name=".personal.Personalhomepage" />
         <activity android:name=".report.FriendMainReportActivity"/>

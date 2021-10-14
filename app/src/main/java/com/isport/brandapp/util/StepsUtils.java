@@ -14,6 +14,11 @@ public class StepsUtils {
     private static final String TAG = "StepsUtils";
     
     public static double countStepDis(String gender, float bodyHeight) {
+        if(gender == null)
+            gender = "Male";
+        if(bodyHeight==0.0){
+            bodyHeight = 175f;
+        }
         double stepDistance = 0;
         if (gender.equals("Male")) {
             stepDistance = bodyHeight / 100.00 * 0.415;//步距，单位m
@@ -28,6 +33,19 @@ public class StepsUtils {
         step = (int) (dis * 1000 / countStepDis(gender, bodyHeight));
         return step;
     }
+
+    public static double countStepDis(String gender, float bodyHeight,int normal) {
+        double stepDistance = 0;
+        if (gender.equals("Male")) {
+            stepDistance = bodyHeight / 100.00 * 0.415;//步距，单位m
+        } else {
+            stepDistance = bodyHeight / 100.00 * 0.413;//步距，单位m
+        }
+        return stepDistance;
+    }
+
+
+
 
     public static double countDistanceUseStep(long step, String gender, float bodyHeight) {
         double distance = 0;

@@ -22,7 +22,7 @@ public class TodayStepBootCompleteReceiver extends BroadcastReceiver {
 
             Logger.e(TAG, "TodayStepBootCompleteReceiver");
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
 
     }

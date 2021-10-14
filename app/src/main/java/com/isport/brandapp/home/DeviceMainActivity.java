@@ -1,6 +1,8 @@
 package com.isport.brandapp.home;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.view.View;
@@ -21,6 +23,7 @@ import java.util.Observable;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import brandapp.isport.com.basicres.BaseActivity;
@@ -83,6 +86,8 @@ public class DeviceMainActivity extends BaseActivity implements OnClickListener 
 
             //  isSave = false;
         }
+
+        requestPermission();
     }
 
     private void addToList(Fragment fragment) {
@@ -198,5 +203,13 @@ public class DeviceMainActivity extends BaseActivity implements OnClickListener 
         super.update(o, arg);
     }
 
+
+
+    //请求位置权限，用于搜索扫描
+    private void requestPermission(){
+        boolean isRequest = ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED;
+        if(!isRequest)
+            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},0x00);
+    }
 
 }

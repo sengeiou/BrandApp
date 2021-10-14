@@ -9,13 +9,13 @@
     android:orientation="vertical"
     tools:context=".activity.FriendActivity">
 
-    <include layout="@layout/friend_title"></include>
+    <include layout="@layout/friend_title"/>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <include layout="@layout/include_no_user"></include>
+        <include layout="@layout/include_no_user"/>
 
         <com.scwang.smartrefresh.layout.SmartRefreshLayout
             android:id="@+id/smart_refresh"
@@ -27,7 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/friend_dp15"
-                tools:listitem="@layout/friend_item_follow"></androidx.recyclerview.widget.RecyclerView>
+                tools:listitem="@layout/friend_item_follow"/>
 
             <com.scwang.smartrefresh.layout.footer.ClassicsFooter
                 android:layout_width="match_parent"

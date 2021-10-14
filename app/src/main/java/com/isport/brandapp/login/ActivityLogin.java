@@ -79,6 +79,7 @@ import phone.gym.jkcq.com.commonres.common.AllocationApi;
 import phone.gym.jkcq.com.commonres.commonutil.AnimationUtil;
 
 /**
+ * 登录页面
  * Created by Administrator on 2017/10/16.
  */
 @Route(path = "/main/LoginActivity")

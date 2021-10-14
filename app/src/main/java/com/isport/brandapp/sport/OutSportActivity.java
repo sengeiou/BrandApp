@@ -546,7 +546,11 @@ public class OutSportActivity extends BaseMVPActivity<InDoorSportView, InDoorSpo
                     }
                     //把距离转换成步数
                     endHr();
-                    OutSportService.theMomentRunData.disToStep = StepsUtils.countDistToStep(OutSportService.theMomentRunData.distance, userInfo.getGender(), Float.parseFloat(userInfo.getHeight()));
+                    int countStep = StepsUtils.countDistToStep(OutSportService.theMomentRunData.distance, userInfo.getGender(), Float.parseFloat(userInfo.getHeight()));;
+                    Logger.myLog(TAG,"----OutSportService.theMomentRunData="+OutSportService.theMomentRunData.toString()+" countStep="+countStep);
+
+                    OutSportService.theMomentRunData.setTotalStep(countStep);// = StepsUtils.countDistToStep(OutSportService.theMomentRunData.distance, userInfo.getGender(), Float.parseFloat(userInfo.getHeight()));
+
                     mActPresenter.saveSportData(OutSportService.argsForInRunService, OutSportService.theMomentRunData, sportType);
                 }
 

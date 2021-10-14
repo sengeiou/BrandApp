@@ -528,6 +528,8 @@ public class BraceletW811W814Manager extends BaseManager {
             mBleConnection.queryGoalStep(new CRPDeviceGoalStepCallback() {
                 @Override
                 public void onGoalStep(int step) {
+                    //保存计步目标
+                    BleSPUtils.putInt(mContext,BleSPUtils.KEY_STEP_GOAL, step);
                     Long currentTime = isSameOption(onGoalStep);
                     if (currentTime == onGoalStep) {
                         return;
@@ -1021,6 +1023,7 @@ public class BraceletW811W814Manager extends BaseManager {
                             Object[] objHr = (Object[]) msg.obj;
                             //保存计步目标
                             BleSPUtils.putInt(mContext,BleSPUtils.KEY_STEP_GOAL, (Integer) objHr[0]);
+                            Logger.myLog(TAG,"-----目标目标原始="+ objHr[0]);
                             for (int i = 0; i < mBleReciveListeners.size(); i++) {
                                 mBleReciveListeners.get(i).receiveData(new WatchGOALSTEPResult((Integer) objHr[0], mCurrentDevice.deviceName));
                             }

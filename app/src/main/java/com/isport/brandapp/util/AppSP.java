@@ -15,6 +15,10 @@ import java.util.HashMap;
 
 public class AppSP {
 
+    //是否查看过隐私政策或第一次打开app
+    public static String IS_FIRST_OPEN_APP = "is_first_app";
+
+
     public static String APP_CONFIG = "SCALE_CONFIG";
     public static String DEVICE_CURRENTDEVICETYPE = "DEVICE_CURRENTDEVICETYPE";//当前设备type
     public static String DEVICE_CURRENTNAME = "DEVICE_CURRENTNAME";//当前设备的name

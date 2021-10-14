@@ -4,8 +4,8 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application>
-        <activity android:name="phone.gym.jkcq.com.socialmodule.activity.SportRankActivity"></activity>
-        <activity android:name=".activity.TestActivity"></activity>
+        <activity android:name="phone.gym.jkcq.com.socialmodule.activity.SportRankActivity"/>
+        <activity android:name=".activity.TestActivity"/>
         <activity android:name=".activity.PersonalHomepageActivity" />
         <activity android:name=".video.cut.FriendCutActivity" />
         <activity android:name=".community.ActivitySendDynamic" />

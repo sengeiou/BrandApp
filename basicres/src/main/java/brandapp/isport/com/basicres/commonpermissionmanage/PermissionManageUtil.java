@@ -7,9 +7,6 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.Settings;
-import androidx.annotation.NonNull;
-import androidx.core.app.AppOpsManagerCompat;
-import androidx.core.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -18,6 +15,9 @@ import com.isport.brandapp.basicres.R;
 import com.tbruyelle.rxpermissions2.Permission;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
+import androidx.annotation.NonNull;
+import androidx.core.app.AppOpsManagerCompat;
+import androidx.core.content.ContextCompat;
 import brandapp.isport.com.basicres.commonalertdialog.AlertDialogStateCallBack;
 import brandapp.isport.com.basicres.commonalertdialog.PublicAlertDialog;
 import brandapp.isport.com.basicres.commonutil.StringUtil;
@@ -302,35 +302,35 @@ public class PermissionManageUtil {
             return;
         }
         PublicAlertDialog.getInstance().showDialogWithContentAndTitle(mContext.getString(R.string.permission_tips),
-                                                                      desc, mContext, mContext.getString(R.string.permission_gosetting), mContext.getString(R.string.common_dialog_cancel), new
-                                                                              AlertDialogStateCallBack() {
+                desc, mContext, mContext.getString(R.string.permission_gosetting), mContext.getString(R.string.common_dialog_cancel), new
+                        AlertDialogStateCallBack() {
 
-                                                                                  @Override
-                                                                                  public void determine() {
+                            @Override
+                            public void determine() {
                                 goSetting();
 //                                                                                      PermissionSettingPage.start
 //                                                                                              (mContext, false);
-                                                                                      lastDesc = null;
+                                lastDesc = null;
 
 //                                                                                      if (setPermissionListener !=
 // null)
 //                                                                                          setPermissionListener
 //
 // .onSetPermissionNo();
-                                                                                      if (permissionListener != null)
-                                                                                          permissionListener
-                                                                                                  .onGetPermissionNo();
-                                                                                  }
+                                if (permissionListener != null)
+                                    permissionListener
+                                            .onGetPermissionNo();
+                            }
 
-                                                                                  @Override
-                                                                                  public void cancel() {
-                                                                                      Log.e(TAG, "cancel");
-                                                                                      lastDesc = null;
-                                                                                      if (permissionListener != null)
-                                                                                          permissionListener
-                                                                                                  .onGetPermissionNo();
-                                                                                  }
-                                                                              });
+                            @Override
+                            public void cancel() {
+                                Log.e(TAG, "cancel");
+                                lastDesc = null;
+                                if (permissionListener != null)
+                                    permissionListener
+                                            .onGetPermissionNo();
+                            }
+                        });
         lastDesc = desc;
     }
 

@@ -151,6 +151,18 @@ public class IndoorRunDatas implements Parcelable {
         return this;
     }
 
+    public int getTotalStep() {
+        return totalStep;
+    }
+
+    public int getDisToStep() {
+        return disToStep;
+    }
+
+    public void setDisToStep(int disToStep) {
+        this.disToStep = disToStep;
+    }
+
     @Override
     public String toString() {
         return "IndoorRunDatas [timer=" + timer + ", time=" + strTime + ", distance=" + distance

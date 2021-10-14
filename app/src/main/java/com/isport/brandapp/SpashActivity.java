@@ -4,29 +4,29 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.util.Log;
 import android.view.View;
-
 import com.isport.blelibrary.ISportAgent;
 import com.isport.blelibrary.managers.Constants;
 import com.isport.blelibrary.utils.Logger;
 import com.isport.blelibrary.utils.TimeUtils;
 import com.isport.brandapp.login.ActivityLogin;
+import com.isport.brandapp.login.ShowPermissionActivity;
+import com.isport.brandapp.login.ShowPrivacyDialogView;
 import com.isport.brandapp.util.ActivitySwitcher;
 import com.isport.brandapp.util.AppSP;
 import com.isport.brandapp.util.DeviceTypeUtil;
-import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
 import com.umeng.socialize.PlatformConfig;
-
 import java.lang.reflect.Field;
-
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import brandapp.isport.com.basicres.BaseActivity;
 import brandapp.isport.com.basicres.action.UserInformationBeanAction;
 import brandapp.isport.com.basicres.commonbean.UserInfoBean;
-import brandapp.isport.com.basicres.commonpermissionmanage.PermissionGroup;
-import brandapp.isport.com.basicres.commonpermissionmanage.PermissionManageUtil;
 import brandapp.isport.com.basicres.commonutil.TokenUtil;
 import brandapp.isport.com.basicres.commonutil.UIUtils;
 import brandapp.isport.com.basicres.entry.UserInformationBean;
@@ -36,7 +36,21 @@ public class SpashActivity extends BaseActivity implements Runnable {
 
     private final long time_delayed = 1000 * 3;
 
-    private Handler handler = new Handler();
+    private final Handler handler = new Handler(Looper.getMainLooper()){
+        @Override
+        public void handleMessage(@NonNull Message msg) {
+            super.handleMessage(msg);
+            if(msg.what == 0x00){
+                DeviceTypeUtil.clearDevcieInfo(SpashActivity.this);
+
+                handler.removeCallbacks(SpashActivity.this);
+                handler.postDelayed(SpashActivity.this, time_delayed);
+            }
+        }
+    };
+
+
+    private ShowPrivacyDialogView showPrivacyDialogView;
 
     @Override
     protected int getLayoutId() {
@@ -74,86 +88,53 @@ public class SpashActivity extends BaseActivity implements Runnable {
 
     @Override
     protected void initData() {
-        DeviceTypeUtil.clearDevcieInfo(this);
-        //跳转引导页面
-        //SharedPreferencesUtil.deleteSharedPreferences(FriendConfig.UPDATEFRIEND);
-        //SharedPreferencesUtil.deleteSharedPreferences(FriendConfig.UPDATEATTEND);
-      /*  if (GuideUtil.judgeFirstOpen(context)) {
-            startActivity(new Intent(context, ActivityWelcome.class));
-            finish();
+
+        boolean isFirst = AppSP.getBoolean(this,AppSP.IS_FIRST_OPEN_APP,false);
+
+        if(!isFirst){  //没有打开过
+            if(showPrivacyDialogView == null)
+                showPrivacyDialogView = new ShowPrivacyDialogView(this);
+            showPrivacyDialogView.show();
+            showPrivacyDialogView.setCancelable(false);
+            showPrivacyDialogView.setOnPrivacyClickListener(new ShowPrivacyDialogView.OnPrivacyClickListener() {
+                @Override
+                public void onCancelClick() {
+                    showPrivacyDialogView.dismiss();
+                    finish();
+                }
+
+                @Override
+                public void onConfirmClick() {
+                    showPrivacyDialogView.dismiss();
+                    AppSP.putBoolean(SpashActivity.this,AppSP.IS_FIRST_OPEN_APP,true);
+                    showPermission();
+                }
+            });
+
             return;
-        }*/
-
- /*       PermissionManageUtil permissionManage = new PermissionManageUtil(this);
-        if (!permissionManage.hasPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)) {
-            permissionManage.requestPermissionsGroup(new RxPermissions(this),
-                    PermissionGroup.LOCATION, new PermissionManageUtil
-                            .OnGetPermissionListener() {
-                        @Override
-                        public void onGetPermissionYes() {
-                            handler.removeCallbacks(SpashActivity.this);
-                            handler.postDelayed(SpashActivity.this, time_delayed);
-                        }
-
-                        @Override
-                        public void onGetPermissionNo() {
-                            finish();
-                           *//* handler.removeCallbacks(SpashActivity.this);
-                            handler.postDelayed(SpashActivity.this, time_delayed);*//*
-                        }
-
-                    });
-        } else {
-            handler.removeCallbacks(SpashActivity.this);
-            handler.postDelayed(SpashActivity.this, time_delayed);
         }
-        checkStoragePersiomm();*/
 
-//        Calendar calendar = Calendar.getInstance();
-//        calendar.add(Calendar.DAY_OF_MONTH, -1);
-//        Logger.myLog("calendar == "+TimeUtils.getTimeByyyyyMMdd(calendar));
+        DeviceTypeUtil.clearDevcieInfo(this);
 
-
-        /*try {
-            test();
-        } catch (Throwable throwable) {
-            throwable.printStackTrace();
-        }*/
         handler.removeCallbacks(SpashActivity.this);
         handler.postDelayed(SpashActivity.this, time_delayed);
     }
 
-    private void test() throws Throwable {
-        Class<?> activityThread = Class.forName("android.app.ActivityThread");
-        Class<?> hclass = Class.forName("android.app.ActivityThread$H");
-        Field[] declaredFields = hclass.getDeclaredFields();
-        for (Field declaredField : declaredFields) {
-            Log.i(TAG, "declareField: " + declaredField);
+
+
+    private void showPermission(){
+        Intent intent = new Intent(SpashActivity.this,ShowPermissionActivity.class);
+        startActivityForResult(intent,0x02);
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 0x02){
+            handler.sendEmptyMessage(0x00);
         }
     }
-
-    /**
-     * 打开存储权限
-     */
-
-    private void checkStoragePersiomm() {
-        PermissionManageUtil permissionManage = new PermissionManageUtil(this);
-        permissionManage.requestPermissionsGroup(new RxPermissions(this),
-                PermissionGroup.STORAGE, new PermissionManageUtil
-                        .OnGetPermissionListener() {
-                    @Override
-                    public void onGetPermissionYes() {
-
-                    }
-
-                    @Override
-                    public void onGetPermissionNo() {
-
-                    }
-                });
-
-    }
-
 
     @Override
     protected void initEvent() {

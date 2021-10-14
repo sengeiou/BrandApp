@@ -1,6 +1,7 @@
 package com.isport.brandapp.device.bracelet;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -38,6 +39,7 @@ import com.isport.blelibrary.result.IResult;
 import com.isport.blelibrary.result.impl.w311.BraceletW311SyncComplete;
 import com.isport.blelibrary.result.impl.watch.WatchVersionResult;
 import com.isport.blelibrary.utils.BleRequest;
+import com.isport.blelibrary.utils.BleSPUtils;
 import com.isport.blelibrary.utils.Constants;
 import com.isport.blelibrary.utils.Logger;
 import com.isport.blelibrary.utils.SyncCacheUtils;
@@ -842,6 +844,7 @@ public class ActivityBraceletMain extends BaseMVPTitleActivity<WatchView, WatchP
 
     Handler handler = new Handler();
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onCheckedChanged(int id, boolean isChecked) {
         if (!AppConfiguration.isConnected) {
@@ -1012,7 +1015,6 @@ public class ActivityBraceletMain extends BaseMVPTitleActivity<WatchView, WatchP
     @Override
     public void dataSetSuccess(View view, String select, String data) {
 
-
         if ((view == iv_bracelet_lift_up_screen_307j)) {
             if (UIUtils.getString(R.string.lift_to_view_info_all_day).equals(data)) {
                 stateType = 0;
@@ -1056,15 +1058,25 @@ public class ActivityBraceletMain extends BaseMVPTitleActivity<WatchView, WatchP
                 }
             }
 
-        } else {
-            if (view instanceof ItemDeviceSettingView) {
-                ((ItemDeviceSettingView) view).setContentText(data);
-                int target = Integer.parseInt(data.split(" " + UIUtils.getString(R.string.unit_steps))[0]);
-                deviceGoalStepPresenter.saveDeviceGoalStep(TokenUtil.getInstance().getPeopleIdInt(this), AppConfiguration.braceletID, target);
-
-                //这里 需要去请求蓝牙
-            }
         }
+        else if(view == ivWatchStepTarget){     //计步目标
+            ((ItemDeviceSettingView) view).setContentText(data);
+            int target = Integer.parseInt(data.split(" " + UIUtils.getString(R.string.unit_steps))[0]);
+            deviceGoalStepPresenter.saveDeviceGoalStep(TokenUtil.getInstance().getPeopleIdInt(this), AppConfiguration.braceletID, target);
+            BleSPUtils.putInt(this,BleSPUtils.KEY_STEP_GOAL, target);
+            ISportAgent.getInstance().requsetW311Ble(BleRequest.device_target_step,target);
+        }
+
+//        else {
+//            if (view instanceof ItemDeviceSettingView) {
+//                Logger.myLog(TAG,"---222----到这里了------");
+//                ((ItemDeviceSettingView) view).setContentText(data);
+//                int target = Integer.parseInt(data.split(" " + UIUtils.getString(R.string.unit_steps))[0]);
+//                deviceGoalStepPresenter.saveDeviceGoalStep(TokenUtil.getInstance().getPeopleIdInt(this), AppConfiguration.braceletID, target);
+//                AppSP.putInt(this,AppSP.DEVICE_GOAL_KEY,target);
+//                //这里 需要去请求蓝牙
+//            }
+//        }
 
     }
 
@@ -1466,7 +1478,11 @@ public class ActivityBraceletMain extends BaseMVPTitleActivity<WatchView, WatchP
         //目标步数
         ivWatchStepTarget.setContentText(Step + " " + UIUtils.getString(R.string.unit_steps));
 
+        int goalStep = BleSPUtils.getInt(this,BleSPUtils.KEY_STEP_GOAL, 0);
+        if(goalStep != 0 )
+            ivWatchStepTarget.setContentText(goalStep + " " + UIUtils.getString(R.string.unit_steps));
 
+        Logger.myLog(TAG,"-----目标步数="+Step+" 第二个 "+goalStep);
     }
 
     @Override
@@ -1487,7 +1503,7 @@ public class ActivityBraceletMain extends BaseMVPTitleActivity<WatchView, WatchP
 
     @Override
     public void successGetTimeFormat(int format) {
-        Logger.myLog("successGetTimeFormat,format:" + format);
+        Logger.myLog(TAG,"-----successGetTimeFormat,format:" + format);
         if (format == CRPTimeSystemType.TIME_SYSTEM_12) {
             iv_watch_time_formate.setContentText(UIUtils.getString(R.string.time_format_12));
         } else {
@@ -1614,6 +1630,7 @@ public class ActivityBraceletMain extends BaseMVPTitleActivity<WatchView, WatchP
 
     @Override
     public void success24HrSettingState(Bracelet_W311_24H_hr_SettingModel bracelet_w311_24H_hr_settingModel) {
+        Logger.myLog(TAG,"----24小时心率="+bracelet_w311_24H_hr_settingModel.getHeartRateSwitch());
         ivWatch24HeartRate.setChecked(bracelet_w311_24H_hr_settingModel.getHeartRateSwitch());
     }
 
@@ -1744,7 +1761,7 @@ public class ActivityBraceletMain extends BaseMVPTitleActivity<WatchView, WatchP
 
     @Override
     public void successDisturb(boolean isOpen) {
-
+        Logger.myLog(TAG,"----勿扰模式="+isOpen);
         if (isOpen) {
             ivWatchDisturbSetting.setContentText(UIUtils.getString(R.string.setting_start));
         } else {
