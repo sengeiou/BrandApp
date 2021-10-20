@@ -105,7 +105,7 @@ public class ScanManager implements BleLeScanCallback.BleScanCallback.OnScanCall
                     }
 
                 } catch (Exception e) {
-
+                    e.printStackTrace();
                 }
 
 

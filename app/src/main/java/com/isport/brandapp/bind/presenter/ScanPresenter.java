@@ -10,6 +10,7 @@ import com.isport.blelibrary.utils.Constants;
 import com.isport.blelibrary.utils.Logger;
 import com.isport.blelibrary.utils.TimeUtils;
 import com.isport.brandapp.App;
+import com.isport.brandapp.AppConfiguration;
 import com.isport.brandapp.bind.bean.BindInsertOrUpdateBean;
 import com.isport.brandapp.bind.bean.DeviceState;
 import com.isport.brandapp.bind.model.DeviceOptionImple;
@@ -151,11 +152,10 @@ public class ScanPresenter extends BasePresenter<ScanBaseView> {
                                 }
 
 
-
-
                                 ISportAgent.getInstance().bindDevice(baseDevice.deviceType, baseDevice.address, deviceId,
                                         TokenUtil.getInstance().getPeopleIdStr
                                                 (BaseApp.getApp()), baseDevice.deviceName);
+                                AppConfiguration.isConnected = true;
                                 if (isViewAttached()) {
                                     mActView.get().bindSuccess(bindBean);
                                 }

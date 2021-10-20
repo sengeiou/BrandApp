@@ -81,6 +81,10 @@ import phone.gym.jkcq.com.commonres.common.JkConfiguration
 import java.util.*
 import kotlin.collections.HashMap
 
+
+/**
+ * 数据主页面
+ */
 class FragmnetMainDeviceList() : Fragment(), DeviceListView, Observer, View.OnTouchListener {
 
      var tg  = "FragmnetMainDeviceList"
@@ -142,7 +146,6 @@ class FragmnetMainDeviceList() : Fragment(), DeviceListView, Observer, View.OnTo
     private val mBleReciveListener: BleReciveListener = object : BleReciveListener {
         override fun onConnResult(isConn: Boolean, isConnectByUser: Boolean, baseDevice: BaseDevice) {
 
-
             Logger.myLog(tg,"fragmentMainDeviceList isConn$isConn baseDevice=${baseDevice.toString()}")
 
             if (!isConn) {
@@ -156,6 +159,12 @@ class FragmnetMainDeviceList() : Fragment(), DeviceListView, Observer, View.OnTo
             } else {
                 var deviceB = DeviceBean(baseDevice.getDeviceType(),baseDevice.getDeviceName())
                 AppConfiguration.deviceMainBeanList.put(baseDevice.deviceType,deviceB)
+
+
+                mDataList.forEach {
+                    Logger.myLog(tg,"--------保存的集合="+it.toString())
+                }
+
 
                 var macStr = baseDevice.address;
                 AppSP.putString(context, AppSP.WATCH_MAC, macStr)
@@ -176,13 +185,15 @@ class FragmnetMainDeviceList() : Fragment(), DeviceListView, Observer, View.OnTo
                 //把连接状态都改成false 再去重新赋值现在连接的状态
                 mDataList.forEach {
                     it.isConn = false
-                    it?.connState = 0;
+                    it.connState = 0;
                 }
+
+                Logger.myLog(tg,"------bean==nul="+(bean == null))
                 if (bean != null) {
                     val battery = getVersionOrBattery(bean?.deviceType, bean?.devicename)
-                    bean!!.isConn = isConn
-                    bean?.connState = 1;
-                    bean!!.battery = battery
+                    bean.isConn = isConn
+                    bean.connState = 1;
+                    bean.battery = battery
                     mMessageAdapter.notifyDataSetChanged()
                 }
             }
@@ -254,7 +265,7 @@ class FragmnetMainDeviceList() : Fragment(), DeviceListView, Observer, View.OnTo
                 it.deviceType == baseDevice.deviceType
             }
             if (bean != null) {
-                bean.battery = getVersionOrBattery(bean!!.deviceType, bean!!.devicename)
+                bean.battery = getVersionOrBattery(bean.deviceType, bean.devicename)
 
             }
             mMessageAdapter.notifyDataSetChanged()
@@ -650,7 +661,7 @@ class FragmnetMainDeviceList() : Fragment(), DeviceListView, Observer, View.OnTo
 
         if (list != null && list.size > 0) {
             var baseDevice = ISportAgent.getInstance().currnetDevice;
-            Logger.myLog(tg,"updateItem------baseDevice=" + baseDevice)
+            Logger.myLog(tg,"updateItem------baseDevice=" + baseDevice+"isConn="+AppConfiguration.isConnected)
             if (baseDevice != null) {
                 var bean = list.findLast {
                     it.deviceType == baseDevice.deviceType
@@ -738,7 +749,7 @@ class FragmnetMainDeviceList() : Fragment(), DeviceListView, Observer, View.OnTo
 
     override fun successGetDeviceListFormDB(deviceBeanHashMap: HashMap<Int, DeviceBean>?, list: ArrayList<MainDeviceBean>?, show: Boolean, reConnect: Boolean, isNeedConn: Boolean) {
 
-        Logger.myLog("successGetDeviceListFormDB---" + list?.size+" "+Gson().toJson(deviceBeanHashMap)+" "+Gson().toJson(list))
+        Logger.myLog("successGetDeviceListFormDB---=" + list?.size+" map="+Gson().toJson(deviceBeanHashMap)+" list="+Gson().toJson(list))
 
         AppConfiguration.deviceMainBeanList = deviceBeanHashMap
         AppConfiguration.deviceBeanList = HashMap<Int, DeviceBean>()
@@ -765,7 +776,7 @@ class FragmnetMainDeviceList() : Fragment(), DeviceListView, Observer, View.OnTo
 
         //
         updateItem(list)
-        // TODO("Not yet implemented")
+
     }
 
     fun connectDevice() {
@@ -793,7 +804,8 @@ class FragmnetMainDeviceList() : Fragment(), DeviceListView, Observer, View.OnTo
             connectWatchOrBracelet(false, JkConfiguration.DeviceType.Watch_W560B)
         } else if (AppConfiguration.deviceMainBeanList.containsKey(JkConfiguration.DeviceType.Watch_W560)) {
             connectWatchOrBracelet(false, JkConfiguration.DeviceType.Watch_W560)
-        } else if (AppConfiguration.deviceMainBeanList.containsKey(JkConfiguration.DeviceType.Watch_W812)) {
+        }
+        else if (AppConfiguration.deviceMainBeanList.containsKey(JkConfiguration.DeviceType.Watch_W812)) {
             connectWatchOrBracelet(false, JkConfiguration.DeviceType.Watch_W812)
         } else if (AppConfiguration.deviceMainBeanList.containsKey(JkConfiguration.DeviceType.Watch_W817)) {
             connectWatchOrBracelet(false, JkConfiguration.DeviceType.Watch_W817)

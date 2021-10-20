@@ -43,7 +43,7 @@ import phone.gym.jkcq.com.commonres.common.JkConfiguration;
 public class NotiManager {
     Boolean IS_DEBUG = true;
 
-    private static final String TAG = NotiManager.class.getSimpleName();
+    private static final String TAG = "NotiManager";
 
     public static String[] pkNames = null;
     public static Map<String, Integer> notiType = null;
@@ -194,7 +194,7 @@ public class NotiManager {
                 }
                 boolean isMessageSwitch = watch_w516_notifyModelByDeviceId.getMsgSwitch();
 
-                if (isMessageSwitch == false) {
+                if (isMessageSwitch) {
                     return;
                 }
                 // handlerW311Msg(true, msgTxt, senderNumber, senderName, 18);

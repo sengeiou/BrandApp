@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Build;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
@@ -37,6 +38,7 @@ import org.greenrobot.eventbus.ThreadMode;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -306,6 +308,7 @@ public class ActivityWatchSleep extends BaseMVPActivity<WatchSleepView, WatchSle
 
     public void setContinousBarChartViewW311(int[] sleepArry) {
 
+        Logger.myLog(TAG,"-------睡眠字段="+Arrays.toString(sleepArry));
       /*  if (true) {
             return;
         }*/
@@ -336,7 +339,8 @@ public class ActivityWatchSleep extends BaseMVPActivity<WatchSleepView, WatchSle
                 calendar.set(Calendar.MILLISECOND, 0);
                 calendar.add(Calendar.MINUTE, startIndex);
                 startIndex = startIndex;
-                barChartTotalEntity.startTime = DateUtil.dataToString(new Date(calendar.getTimeInMillis()), "HH:mm");
+                String startTimeStr = DateUtil.dataToString(new Date(calendar.getTimeInMillis()), "HH:mm");
+                barChartTotalEntity.startTime = startTimeStr ;
                 barChartTotalEntity.starCalendar = calendar;
                 String str = DateUtil.dataToString(calendar.getTime(), "yyyy-MM-dd HH:mm:ss");
                 //Logger.myLog("str:" + str + ",startTime:" + barChartTotalEntity.startTime + ":index:" + i + "sleepArry[]:" + sleepArry[startIndex]);
@@ -361,7 +365,9 @@ public class ActivityWatchSleep extends BaseMVPActivity<WatchSleepView, WatchSle
                 calendar.set(Calendar.SECOND, 0);
                 calendar.set(Calendar.MILLISECOND, 0);
                 calendar.add(Calendar.MINUTE, -(sleepArry.length - endIndex + 1));
-                barChartTotalEntity.endTime = DateUtil.dataToString(new Date(calendar.getTimeInMillis()), "HH:mm");
+                String endTimeStr = DateUtil.dataToString(new Date(calendar.getTimeInMillis()), "HH:mm");
+                Logger.myLog(TAG,"----结束时间="+endTimeStr);
+                barChartTotalEntity.endTime = endTimeStr;
                 String str = DateUtil.dataToString(calendar.getTime(), "yyyy-MM-dd HH:mm:ss");
                 // Logger.myLog("str:" + str + ",barChartTotalEntity.endTime:" + barChartTotalEntity.endTime + ":endIndex:" + i + ":sleepArry.length:" + sleepArry.length);
                 //barChartTotalEntity.endTime = DateUtil.dataToString(new Date(calendar.getTimeInMillis() - endIndex * 1000), "hh:mm");
@@ -433,27 +439,34 @@ public class ActivityWatchSleep extends BaseMVPActivity<WatchSleepView, WatchSle
             }
         }
 
-       // continousBarChartView.setisDrawBorder();
-        continousBarChartView.setOnItemBarClickListener(new ContinousBarChartView.OnItemBarClickListener() {
-            @Override
-            public void onClick(int color, int position, int hour, int minute) {
-                setHourMinute(color, hour, minute);
-            }
 
-            @Override
-            public void onSelectSleepState(String value) {
-                tv_current_state.setText(value);
-            }
-        });
         //barChartTotalEntity.startTime = "20";
         //barChartTotalEntity.endTime = "20";
         barChartTotalEntity.continousBarChartEntitys = datas;
 
         continousBarChartView.setData(barChartTotalEntity, "分组", "数量");
         continousBarChartView.startAnimation();
+
+       // continousBarChartView.setisDrawBorder();
+        continousBarChartView.setOnItemBarClickListener(new ContinousBarChartView.OnItemBarClickListener() {
+            @Override
+            public void onClick(int color, int position, int hour, int minute) {
+                Log.e(TAG,"-----点击时间段="+hour+"minute="+minute);
+                setHourMinute(color, hour, minute);
+            }
+
+            @Override
+            public void onSelectSleepState(String value) {
+                Log.e(TAG,"-----点击内容="+value);
+                tv_current_state.setText(value);
+            }
+        });
+
     }
 
     public void setContinousBarChartViewW81(int[] sleepArry) {
+
+        Logger.myLog(TAG,"-------睡眠="+ Arrays.toString(sleepArry));
 
       /*  if (true) {
             return;

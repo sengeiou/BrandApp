@@ -36,6 +36,9 @@ import phone.gym.jkcq.com.commonres.commonutil.DisplayUtils;
  *
  */
 public class ContinousBarChartView extends View {
+
+    private static final String TAG = "ContinousBarChartView";
+    
     private int deviceType = 0;
     /**
      * //第一阶段  清醒
@@ -459,7 +462,11 @@ public class ContinousBarChartView extends View {
 
     private Calendar startCalendar;
 
-    private void drawHint() {
+    private void drawHint(MotionEvent e) {
+        int position = identifyWhichItemClick(e.getX(), e.getY());
+        setClicked(position);
+        setHourAndMinute();
+       // Log.e(TAG,"----drawHint----="+position);
         if (mData != null && mClickPosition >= mData.size()) {
             return;
         }
@@ -476,6 +483,8 @@ public class ContinousBarChartView extends View {
         //这里画已个点击的矩形区域
         String text = type[barChartEntity.type] + startTime + "～" + endTime;//barChartEntity.getxLabel()+":00  "+barChartEntity.getyValue();
 
+
+        
         if (mOnItemBarClickListener != null) {
             if (isHasSleep) {
                 mOnItemBarClickListener.onSelectSleepState(text);
@@ -617,7 +626,8 @@ public class ContinousBarChartView extends View {
     private class RangeBarOnGestureListener implements GestureDetector.OnGestureListener {
         @Override
         public boolean onDown(MotionEvent e) {
-            drawHint();
+           // Log.e(TAG,"-----onDown----="+e.getAction());
+            drawHint(e);
             return true;
         }
 
@@ -627,8 +637,9 @@ public class ContinousBarChartView extends View {
 
         @Override
         public boolean onSingleTapUp(MotionEvent e) {
+            //Log.e(TAG,"-----onSingleTapUp----="+e.getAction());
             int position = identifyWhichItemClick(e.getX(), e.getY());
-
+           // Log.e(TAG,"----position="+position);
             //如果是清醒状态是不能点
             if (position != INVALID_POSITION && mOnItemBarClickListener != null && mData.size() > 1) {
 

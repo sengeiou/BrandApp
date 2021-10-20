@@ -143,7 +143,7 @@ public class ActivitySendDynamic extends BaseTitleActivity implements CommonAliV
                 }
             });
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
 
 
@@ -327,6 +327,7 @@ public class ActivitySendDynamic extends BaseTitleActivity implements CommonAliV
                                 ImageVideoFileUtils.saveVideo(ActivitySendDynamic.this, file);
                             }
                         } catch (Exception e) {
+                            e.printStackTrace();
                             OSSLog.logInfo(e.toString());
                         } finally {
                             handler.post(new Runnable() {

@@ -2714,7 +2714,7 @@ public class FragmentNewData extends BaseMVPFragment<FragmentDataView, FragmentD
 
         //重新升级后需要重新扫描连接 所以还是先扫描再连接计较方便
         if (DeviceTypeUtil.isContainW55X(deviceType) && AppSP.getString(context, AppSP.FORM_DFU, "false").equals("false")) {
-            if(deviceType != JkConfiguration.DeviceType.Watch_W560){
+            if(deviceType != JkConfiguration.DeviceType.Watch_W560 ){
                 String watchMac = DeviceTypeUtil.getW526Mac(currentName, deviceType);
                 Logger.myLog(TAG,"------0000--watchMac="+watchMac);
                 if (!TextUtils.isEmpty(watchMac)) {

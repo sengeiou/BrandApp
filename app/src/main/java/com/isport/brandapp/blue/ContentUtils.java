@@ -52,7 +52,7 @@ public class ContentUtils {
                 if (TextUtils.isEmpty(name)) {
                     name = incomingNumber;
                 }
-                if(device.getDeviceType() == IDeviceType.TYPE_WATCH_W560){
+                if(device.getDeviceType() == IDeviceType.TYPE_WATCH_W560 || device.getDeviceType() == IDeviceType.TYPE_WATCH_W560B){
                     ISportAgent.getInstance().requestBle(BleRequest.w526_send_message, name, UIUtils.getString(R.string.incomingNumber), 29);
                     return;
                 }

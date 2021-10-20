@@ -1031,6 +1031,7 @@ public class BaseGattCallback extends BluetoothGattCallback {
                 }
 
             } catch (Exception ignored) {
+                ignored.printStackTrace();
             }
 
         }

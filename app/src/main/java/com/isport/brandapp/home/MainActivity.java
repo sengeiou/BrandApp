@@ -1,5 +1,6 @@
 package com.isport.brandapp.home;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -10,6 +11,7 @@ import android.os.PersistableBundle;
 import android.os.PowerManager;
 import android.provider.Settings;
 import android.text.TextUtils;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -24,12 +26,12 @@ import com.isport.blelibrary.utils.SyncCacheUtils;
 import com.isport.blelibrary.utils.ThreadPoolUtils;
 import com.isport.brandapp.App;
 import com.isport.brandapp.AppConfiguration;
+import com.isport.brandapp.R;
+import com.isport.brandapp.blue.NotificationService;
 import com.isport.brandapp.home.fragment.FragmentSport;
 import com.isport.brandapp.home.fragment.FragmnetMainDeviceList;
 import com.isport.brandapp.home.fragment.NewMineFragment;
 import com.isport.brandapp.home.fragment.ScaleDialog;
-import com.isport.brandapp.R;
-import com.isport.brandapp.blue.NotificationService;
 import com.isport.brandapp.login.ActivityLogin;
 import com.isport.brandapp.message.MessageCount;
 import com.isport.brandapp.net.APIService;
@@ -58,6 +60,7 @@ import java.util.Observable;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -492,17 +495,39 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 
     }
 
+//
+//    @Override
+//    public void onBackPressed() {
+//        if ((System.currentTimeMillis() - mExitTime) > 2000) {
+//            mExitTime = System.currentTimeMillis();
+//            ToastUtils.showToast(context, R.string.press_again_exit);
+//        } else {
+//            ISportAgent.getInstance().disConDevice(false);
+//            ISportAgent.getInstance().exit();
+//            finish();
+//        }
+//    }
+
 
     @Override
     public void onBackPressed() {
-        if ((System.currentTimeMillis() - mExitTime) > 2000) {
-            mExitTime = System.currentTimeMillis();
-            ToastUtils.showToast(context, R.string.press_again_exit);
-        } else {
-            ISportAgent.getInstance().disConDevice(false);
-            ISportAgent.getInstance().exit();
-            finish();
+        moveTaskToBack(true);
+        super.onBackPressed();
+    }
+
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        // 过滤按键动作
+        if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
+            moveTaskToBack(true);
+
+        } else if (keyCode == KeyEvent.KEYCODE_MENU) {
+            moveTaskToBack(true);
+        } else if (keyCode == KeyEvent.KEYCODE_HOME) {
+            moveTaskToBack(true);
         }
+        return super.onKeyDown(keyCode, event);
     }
 
     @Override
@@ -620,6 +645,9 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 
                     }
                 });
+
+
+        ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},0x00);
 
     }
 

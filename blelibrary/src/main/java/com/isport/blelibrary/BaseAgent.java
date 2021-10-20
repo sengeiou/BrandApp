@@ -503,7 +503,7 @@ public class BaseAgent {
                     .getMethod("removeBond", (Class[]) null);
             m.invoke(device, (Object[]) null);
         } catch (Exception e) {
-            Log.e(TAG, e.getMessage());
+           e.printStackTrace();
         }
     }
 
@@ -2370,6 +2370,9 @@ public class BaseAgent {
                 ((W812BDevice) currentDevice).sendW526Messge(title, message, messageType);
             } else if (currentDevice instanceof W560Device) {
                 ((W560Device) currentDevice).sendW526Messge(title, message, messageType);
+            }
+            else if(currentDevice instanceof W560BDevice){
+                ((W560BDevice) currentDevice).sendW526Messge(title,message,messageType);
             }
         }
     }

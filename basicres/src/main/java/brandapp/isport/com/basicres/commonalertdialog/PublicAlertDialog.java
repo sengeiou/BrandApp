@@ -117,8 +117,6 @@ public class PublicAlertDialog {
         }
 
         try {
-
-
             showDialogWithContentAndTitledialog = new AlertDialog.Builder(context)
                     .setTitle(title)
                     .setMessage(contenxtMessage)
@@ -149,7 +147,7 @@ public class PublicAlertDialog {
             showDialogWithContentAndTitledialog.getButton(showDialogWithContentAndTitledialog.BUTTON_POSITIVE).setTextSize(16);
             showDialogWithContentAndTitledialog.getButton(showDialogWithContentAndTitledialog.BUTTON_POSITIVE).setTextColor(Color.parseColor("#8C8C8C"));
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
     }
 
@@ -191,7 +189,7 @@ public class PublicAlertDialog {
             NoCancledialog.getButton(NoCancledialog.BUTTON_POSITIVE).setTextSize(16);
             NoCancledialog.getButton(NoCancledialog.BUTTON_POSITIVE).setTextColor(Color.parseColor("#1DCE74"));
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
     }
 

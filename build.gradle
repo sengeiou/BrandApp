@@ -9,7 +9,9 @@ buildscript {
         jcenter()
         maven { url 'https://dl.bintray.com/umsdk/release' }
         maven { url "https://dl.bintray.com/thelasterstar/maven/" }
-
+        maven {
+            url 'http://maven.aliyun.com/nexus/content/repositories/releases/'
+        }
     }
 
     dependencies {

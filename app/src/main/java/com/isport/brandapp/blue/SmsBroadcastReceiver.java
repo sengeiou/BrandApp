@@ -164,7 +164,6 @@ public class SmsBroadcastReceiver extends BroadcastReceiver {
                     }
                     return;
                 }
-                return;
             }
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();

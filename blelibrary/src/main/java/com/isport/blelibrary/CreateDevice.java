@@ -133,10 +133,19 @@ public class CreateDevice {
             if (names[0].equals(Constants.WATCH_560_FILTER) && Constants.WATCH_560_FILTER.equals(filterStr)) {
                 baseDevice = createW560(name, address);
                 Logger.myLog(TAG,"WATCH_560_FILTER filterStr:" + filterStr + "----names[0]" + names[0]);
+                return baseDevice;
             } else if (names[0].equals(Constants.WATCH_560B_FILTER) && Constants.WATCH_560B_FILTER.equals(filterStr)) {
                 baseDevice = createW560B(name, address);
                 Logger.myLog(TAG,"WATCH_560B_FILTER filterStr:" + filterStr + "----names[0]" + names[0]);
-            } else if (filterStr.equals("all")) {
+                return baseDevice;
+            }
+            //W560C与560B同样功能
+            else if(names[0].toLowerCase().equals("w560c")){
+                baseDevice = createW560B(name, address);
+                return baseDevice;
+            }
+
+            else if (filterStr.equals("all")) {
                 if (names[0].equals(Constants.WATCH_560B_FILTER)) {
                     baseDevice = createW560B(name, address);
                 }
