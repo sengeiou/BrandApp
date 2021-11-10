@@ -112,7 +112,6 @@
                             android:ellipsize="middle"
                             android:textStyle="bold"
                             android:singleLine="true"
-                            android:text="55525555222"
                             android:textColor="@color/common_white"
                             android:textSize="28sp" />
 
@@ -128,7 +127,6 @@
                             android:maxLines="2"
                             android:textColor="@color/common_tips_color"
                             android:textSize="13sp"
-                            android:text="1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
                             android:visibility="visible" />
 
                         <LinearLayout

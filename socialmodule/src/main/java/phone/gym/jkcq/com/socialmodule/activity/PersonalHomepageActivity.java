@@ -18,14 +18,13 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import androidx.viewpager2.widget.ViewPager2;
-
 import com.blankj.utilcode.util.ConvertUtils;
 import com.google.android.material.appbar.AppBarLayout;
 import com.gyf.immersionbar.ImmersionBar;
 
+import androidx.annotation.NonNull;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.viewpager2.widget.ViewPager2;
 import bike.gymproject.viewlibray.FriendItemView;
 import brandapp.isport.com.basicres.BaseActivity;
 import brandapp.isport.com.basicres.BaseApp;
@@ -54,6 +53,7 @@ import phone.gym.jkcq.com.socialmodule.mvp.view.FriendView;
 import phone.gym.jkcq.com.socialmodule.personal.EditUserInfo;
 import phone.gym.jkcq.com.socialmodule.personal.ShowImageActivity;
 
+//个人资料页面
 public class PersonalHomepageActivity extends BaseActivity implements CommonUserView, FriendView, AppBarLayout.OnOffsetChangedListener {
 
 

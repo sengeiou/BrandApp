@@ -87,12 +87,15 @@ public class JkConfiguration {
     public static String CurrentFollowDynamaId = "";
 
     public interface RopeSportType {
-        int Ranking = 3;
-        int Count = 2;
-        int Time = 1;
-        int Free = 0;
-        int Challenge = 4;
-        int Course = 5;
+        int Ranking = 3;  //排行榜
+        int Count = 2;  //计数训练
+        int Time = 1;  //计时训练
+        int Free = 0;  //自有训练
+        int Challenge = 4;   //挑战
+        int Course = 5;   //跳绳课程
+
+        //当前挑战成功后分享
+        int ROPE_CHALLENGE = 6;
     }
 
     public interface DeviceType {
@@ -396,6 +399,9 @@ public class JkConfiguration {
         int challeng = 76;
         int challengRecords = 77;
         int adviceList = 78;
+
+        //查询排行
+        int rope_challenge_rank =80;
 
 
     }

@@ -25,6 +25,8 @@
             app:hl_shadowColor="#0d000000"
             app:hl_shadowLimit="10dp"
             app:hl_shadowOffsetY="5dp">
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,17 +36,17 @@
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tab_layout"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/friend_dp50"
-                app:tabGravity="center"
+                android:layout_height="wrap_content"
+                app:tabGravity="fill"
                 app:tabIndicatorColor="@color/common_view_color"
-                app:tabIndicatorFullWidth="false"
+                app:tabIndicatorFullWidth="true"
                 app:tabIndicatorHeight="@dimen/friend_dp2"
-                app:tabMode="scrollable"
+                app:tabMode="fixed"
                 app:tabPaddingBottom="@dimen/friend_dp2"
                 app:tabRippleColor="@android:color/transparent"
                 app:tabSelectedTextColor="@color/common_text_color"
                 app:tabTextAppearance="@style/tabStyle"
-                app:tabTextColor="@color/common_gray_color"></com.google.android.material.tabs.TabLayout>
+                app:tabTextColor="@color/common_gray_color"/>
         </LinearLayout>
         </phone.gym.jkcq.com.socialmodule.shadow.ShadowLayout>
 
@@ -52,7 +54,7 @@
             android:id="@+id/viewpager_rank"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"></androidx.viewpager2.widget.ViewPager2>
+            android:orientation="horizontal"/>
 
     </LinearLayout>
 
@@ -60,7 +62,8 @@
         android:id="@+id/ll_launch"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="@dimen/dp16"
+        android:layout_marginLeft="20dp"
+        android:paddingLeft="10dp"
         android:orientation="vertical"
         android:visibility="gone">
 
@@ -98,15 +101,20 @@
             android:textSize="@dimen/sp15" />
 
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
         <Button
             android:id="@+id/btn_launch"
-            android:layout_width="@dimen/dp240"
-            android:layout_height="@dimen/dp46"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/dp220"
             android:background="@drawable/shape_sleep_start_bg"
-            android:text="@string/launch_rank"
+            android:text="开启"
             android:textColor="@color/white"
-            android:textSize="@dimen/sp18"></Button>
+            android:textSize="@dimen/sp18"/>
     </LinearLayout>
 </FrameLayout>

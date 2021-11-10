@@ -15,18 +15,28 @@ import android.widget.TextView;
 import com.isport.blelibrary.utils.Logger;
 import com.isport.brandapp.R;
 
+import bike.gymproject.viewlibray.AkrobatNumberTextView;
 import brandapp.isport.com.basicres.commonutil.UIUtils;
 
+
+//训练弹窗
 public class RopeCompletyDialog {
+
     private OnTypeClickListenter onTypeClickListenter;
     private Activity mActivity;
     public AlertDialog dialog;
     private TextView tvBack, tv_rope_sum_count, tv_rope_cal, tv_rope_sum_time, tv_rope_type;
     private ImageView iv_rope_type;
 
-    public RopeCompletyDialog(Activity activity, String sumcout,String ropetime, String ropeTypeName, String cal,int ropeType, final OnTypeClickListenter onTypeClickListenter) {
+    //平均心率
+    private AkrobatNumberTextView dialogTrainHeartTv;
+
+
+
+    public RopeCompletyDialog(Activity activity, String sumcout, String ropetime, String ropeTypeName, String cal, int ropeType,int avgHeart, final OnTypeClickListenter onTypeClickListenter) {
         this.mActivity = activity;
         this.onTypeClickListenter = onTypeClickListenter;
+
         dialog = new AlertDialog.Builder(mActivity, R.style.alert_dialog).create();
         dialog.show();
         dialog.getWindow().setContentView(R.layout.dialog_rope);
@@ -36,17 +46,22 @@ public class RopeCompletyDialog {
         tvBack = dialog.getWindow().findViewById(R.id.tv_back);
         tv_rope_sum_count = dialog.getWindow().findViewById(R.id.tv_rope_sum_count);
         iv_rope_type = dialog.getWindow().findViewById(R.id.iv_rope_type);
+        dialogTrainHeartTv = dialog.getWindow().findViewById(R.id.dialogTrainHeartTv);
+
+
         iv_rope_type.setImageResource(ropeType);
         tv_rope_sum_count.setText(sumcout);
         tv_rope_sum_time.setText(ropetime);
         tv_rope_type.setText(ropeTypeName);
         tv_rope_cal.setText(cal);
 
+        dialogTrainHeartTv.setText(avgHeart+"");
+
 
         tvBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialog.cancel();
+                dialog.dismiss();
                 if (onTypeClickListenter != null) {
                     onTypeClickListenter.changeDevcieonClick(0);
                 }

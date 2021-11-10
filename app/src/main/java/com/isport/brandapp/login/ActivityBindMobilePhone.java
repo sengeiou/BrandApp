@@ -32,7 +32,7 @@ import phone.gym.jkcq.com.commonres.common.JkConfiguration;
 
 
 /**
- *
+ *第三方登录绑定手机号
  */
 public class ActivityBindMobilePhone extends BaseMVPWhiteTitleActivity<ActivityBindMobilePhoneView, ActivityBindMobilePhonePresenter> implements ActivityBindMobilePhoneView, View.OnClickListener {
 

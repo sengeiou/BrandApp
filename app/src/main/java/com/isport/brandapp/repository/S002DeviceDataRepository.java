@@ -36,6 +36,8 @@ import phone.gym.jkcq.com.commonres.common.JkConfiguration;
 
 public class S002DeviceDataRepository {
 
+    private static final String TAG = "S002DeviceDataRepositor";
+
 
     public S002DeviceDataRepository() {
     }
@@ -625,7 +627,7 @@ public class S002DeviceDataRepository {
 
             @Override
             public Observable<String> getRemoteSource() {
-
+                Logger.myLog(TAG,"-----getRemoteSource");
 
                 /**
                  {
@@ -639,9 +641,49 @@ public class S002DeviceDataRepository {
                 InitCommonParms<ChallengeItem, BaseUrl, BaseDbPar> parInitCommonParms = new InitCommonParms<>();
                 BaseUrl baseUrl = new BaseUrl();
 
-                return (Observable<String>) RetrofitClient.getInstance().postS002(parInitCommonParms
-                        .setPostBody(!(App.appType() == App.httpType)).setBaseUrl(baseUrl).setParms(challengeItem).setType(JkConfiguration.RequstType.challengRecords).getPostBody());
+                return (Observable<String>) RetrofitClient.getInstance().postS002(parInitCommonParms.setPostBody(!(App.appType() == App.httpType)).setBaseUrl(baseUrl).setParms(challengeItem).setType(JkConfiguration.RequstType.challengRecords).getPostBody());
 
+            }
+
+            @Override
+            public void saveRemoteSource(String remoteSource) {
+                Logger.myLog(TAG,"-----saveRemoteSource="+remoteSource);
+            }
+        }.getAsObservable();
+    }
+
+
+    //获取排行
+    public static  Observable<String> getRopeChallengeRank(String id){
+
+        return new NetworkBoundResource<String>(){
+            @Override
+            public Observable<String> getFromDb() {
+                return null;
+            }
+
+            @Override
+            public Observable<String> getNoCacheData() {
+                return null;
+            }
+
+            @Override
+            public boolean shouldFetchRemoteSource() {
+                return false;
+            }
+
+            @Override
+            public boolean shouldStandAlone() {
+                return false;
+            }
+
+            @Override
+            public Observable<String> getRemoteSource() {
+
+                InitCommonParms<String, BaseUrl, BaseDbPar> parInitCommonParms = new InitCommonParms<>();
+                BaseUrl baseUrl = new BaseUrl();
+                baseUrl.extend2 = id;
+                return (Observable<String>) RetrofitClient.getInstance().postS002(parInitCommonParms.setPostBody(!(App.appType() == App.httpType)).setBaseUrl(baseUrl).setParms(id).setType(JkConfiguration.RequstType.rope_challenge_rank).getPostBody());
             }
 
             @Override
@@ -649,6 +691,8 @@ public class S002DeviceDataRepository {
 
             }
         }.getAsObservable();
+
+
     }
 
 

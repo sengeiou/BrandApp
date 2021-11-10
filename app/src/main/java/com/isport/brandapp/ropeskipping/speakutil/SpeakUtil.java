@@ -126,7 +126,7 @@ public class SpeakUtil {
                         readList.remove(1);
                     }
                 }
-            } else if (error != null) {
+            } else {
                 Logger.myLog(error.getPlainDescription(true));
             }
         }
@@ -149,7 +149,7 @@ public class SpeakUtil {
     };
 
 
-    private InitListener mTtsInitListener = new InitListener() {
+    private final InitListener mTtsInitListener = new InitListener() {
         @Override
         public void onInit(int code) {
             Logger.myLog(TAG + " mTtsInitListener InitListener init() code = " + code);

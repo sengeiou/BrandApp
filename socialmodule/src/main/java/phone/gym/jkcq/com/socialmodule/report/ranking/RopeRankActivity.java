@@ -4,15 +4,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import androidx.annotation.NonNull;
-import androidx.viewpager2.widget.ViewPager2;
-
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import androidx.annotation.NonNull;
+import androidx.viewpager2.widget.ViewPager2;
 import brandapp.isport.com.basicres.BaseApp;
 import brandapp.isport.com.basicres.BaseTitleActivity;
 import brandapp.isport.com.basicres.commonalertdialog.AlertDialogStateCallBack;
@@ -32,6 +31,9 @@ import phone.gym.jkcq.com.socialmodule.adapter.RopeRankFragmentAdapter;
 import phone.gym.jkcq.com.socialmodule.net.APIService;
 import phone.gym.jkcq.com.socialmodule.net.RetrofitClient;
 
+/**
+ * 跳绳排行榜
+ */
 public class RopeRankActivity extends BaseTitleActivity {
 
     private TabLayout tab_layout;
@@ -75,6 +77,7 @@ public class RopeRankActivity extends BaseTitleActivity {
     private void initViewPager() {
         mRankAdapter = new RopeRankFragmentAdapter(RopeRankActivity.this);
         viewpager_rank.setAdapter(mRankAdapter);
+        tab_layout.setSelectedTabIndicatorHeight(0);
         TabLayoutMediator tabLayoutMediator = new TabLayoutMediator(tab_layout, viewpager_rank, new TabLayoutMediator.TabConfigurationStrategy() {
             @Override
             public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {

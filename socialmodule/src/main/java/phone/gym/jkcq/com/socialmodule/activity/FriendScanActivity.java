@@ -185,7 +185,13 @@ public class FriendScanActivity extends BaseActivity implements View.OnClickList
             startActivity(intent);
             finish();
         } else {
-            Toast.makeText(FriendScanActivity.this, "QRCode=" + result, Toast.LENGTH_LONG).show();
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Toast.makeText(FriendScanActivity.this, "QRCode=" + result, Toast.LENGTH_LONG).show();
+                }
+            });
+
 
         }
 

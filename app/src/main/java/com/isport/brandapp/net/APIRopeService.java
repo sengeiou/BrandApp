@@ -14,6 +14,7 @@ import okhttp3.RequestBody;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 /**
@@ -88,4 +89,7 @@ public interface APIRopeService {
     @POST("user-challenge-records")
     Observable<BaseResponse<String>> postChallengeRecords(@Body RequestBody body);
 
+    //获取挑战排行榜
+    @GET("user-challenge-records/rank/{id}")
+    Observable<BaseResponse<String>> getRopeChallengeRank(@Path("id") String id);
 }

@@ -31,6 +31,7 @@ import com.facebook.FacebookException;
 import com.facebook.share.model.SharePhoto;
 import com.facebook.share.model.SharePhotoContent;
 import com.facebook.share.widget.ShareDialog;
+import com.google.gson.Gson;
 import com.gyf.immersionbar.ImmersionBar;
 import com.isport.blelibrary.utils.Logger;
 import com.isport.brandapp.App;
@@ -57,6 +58,7 @@ import java.util.List;
 
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.FileProvider;
+import bike.gymproject.viewlibray.AkrobatNumberTextView;
 import bike.gymproject.viewlibray.BebasNeueTextView;
 import bike.gymproject.viewlibray.CircleImageView;
 import bike.gymproject.viewlibray.chart.PieChartData;
@@ -81,7 +83,7 @@ import phone.gym.jkcq.com.commonres.commonutil.PhotoChoosePopUtil;
 
 
 /**
- * 睡眠分享页面
+ * 分享页面
  */
 public class NewShareActivity extends BaseActivity implements View.OnClickListener, PremissionUtil.OnResult, UMShareListener {
 
@@ -99,6 +101,20 @@ public class NewShareActivity extends BaseActivity implements View.OnClickListen
     //跳绳
     private TextView tv_rope_number, tv_rope_sum_time, tv_rope_sum_number, tv_rope_sum_cal, tv_rope_nikename, tv_rope_time;
     private ImageView iv_user_head_rope;
+    //跳绳的累计次数文字
+    private TextView shareRopeRecordCountTv;
+    //完成全网挑战的整个布局
+    private LinearLayout shareRopeLayout;
+    //排行
+    private TextView ropeSortTv;
+    //描述
+    private TextView ropeDescTv;
+    //平均心率
+    private AkrobatNumberTextView tv_rope_avgHeartTv;
+    //平均心率的布局
+    private LinearLayout shareRopeHeartLayout;
+    //时长的文字描述，挑战分享为 用时
+    private TextView shareTimeTitleTv;
 
 
     //心率
@@ -186,7 +202,7 @@ public class NewShareActivity extends BaseActivity implements View.OnClickListen
         tv_nickname_hr = findViewById(R.id.tv_nickname_hr);
         tv_time_hr = findViewById(R.id.tv_time_hr);
         iv_user_head_hr = findViewById(R.id.iv_user_head_hr);
-
+        shareRopeHeartLayout = findViewById(R.id.shareRopeHeartLayout);
 
         tv_today_hr = findViewById(R.id.tv_today_hr);
         tv_max_hr = findViewById(R.id.tv_max_hr);
@@ -231,6 +247,16 @@ public class NewShareActivity extends BaseActivity implements View.OnClickListen
         iv_user_head_rope = findViewById(R.id.iv_user_head_rope);
         tv_rope_nikename = findViewById(R.id.tv_rope_nikename);
         tv_rope_time = findViewById(R.id.tv_rope_time);
+        shareRopeRecordCountTv = findViewById(R.id.shareRopeRecordCountTv);
+        shareTimeTitleTv = findViewById(R.id.shareTimeTitleTv);
+
+
+        shareRopeLayout = findViewById(R.id.shareRopeLayout);
+        ropeSortTv = findViewById(R.id.shareRopeSortTv);
+        ropeDescTv = findViewById(R.id.shareRopeDescTv);
+        tv_rope_avgHeartTv = findViewById(R.id.tv_rope_avgHeartTv);
+
+
 
 
         //
@@ -929,9 +955,21 @@ public class NewShareActivity extends BaseActivity implements View.OnClickListen
     }
 
     /**
-     * 显示调试UI
+     * 显示跳绳UI
      */
     public void showRopeView() {
+
+        //判断是否是跳绳当前挑战成功的分享
+        boolean isChallenge = currentShareDeviceType == JkConfiguration.RopeSportType.ROPE_CHALLENGE;
+        shareRopeLayout.setVisibility( isChallenge? View.VISIBLE : View.GONE);
+        tv_rope_sum_number.setVisibility(isChallenge ? View.INVISIBLE : View.VISIBLE);
+        shareRopeRecordCountTv.setVisibility(isChallenge ? View.INVISIBLE : View.VISIBLE);
+        shareRopeHeartLayout.setVisibility(isChallenge ? View.VISIBLE : View.GONE);
+
+        shareTimeTitleTv.setText(isChallenge ? "用时" : getResources().getString(R.string.rope_share_sum_time));
+
+
+
         ll_share_content_step.setVisibility(View.GONE);
         ll_share_content_sleep.setVisibility(View.GONE);
         ll_share_content_hr.setVisibility(View.GONE);
@@ -953,11 +991,19 @@ public class NewShareActivity extends BaseActivity implements View.OnClickListen
         }
 
         if (shareBean != null) {
+
+            Logger.myLog(TAG,"------分享bean="+new Gson().toJson(shareBean));
+
             tv_rope_number.setText(shareBean.centerValue);
             tv_rope_sum_time.setText(shareBean.one);
             tv_rope_sum_number.setText(shareBean.two);
             tv_rope_sum_cal.setText(shareBean.three);
             tv_rope_time.setText(shareBean.time);
+            if(currentShareDeviceType == JkConfiguration.RopeSportType.ROPE_CHALLENGE){
+                ropeDescTv.setText("'"+shareBean.getChallengeDesc()+"'");
+                ropeSortTv.setText(shareBean.getChallengeRank()+"");
+                tv_rope_avgHeartTv.setText(shareBean.getRopeAvgHeart()+"");
+            }
         }
     }
 

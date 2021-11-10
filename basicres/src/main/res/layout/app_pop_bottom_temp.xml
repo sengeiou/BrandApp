@@ -31,29 +31,31 @@
 
             <TextView
                 android:id="@+id/tv_determine"
-                android:layout_width="@dimen/dp100"
-                android:layout_height="@dimen/dp30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="@dimen/dp15"
                 android:gravity="center"
                 android:onClick="onClick"
+                android:padding="5dp"
                 android:text="@string/common_dialog_ok"
                 android:textColor="@color/common_text_color"
-                android:textSize="@dimen/sp16" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/tv_cancel"
-                android:layout_width="@dimen/dp100"
-                android:layout_height="@dimen/dp30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/dp15"
+                android:padding="5dp"
                 android:gravity="center"
                 android:onClick="onClick"
                 android:text="@string/cancel"
                 android:textColor="@color/common_text_color"
-                android:textSize="@dimen/sp16" />
+                android:textSize="18sp" />
 
         </RelativeLayout>
 
@@ -77,7 +79,7 @@
             <bike.gymproject.viewlibray.pickerview.ArrayPickerView
                 android:id="@+id/datePicker2"
                 android:layout_width="0dp"
-                android:layout_height="150dp"
+                android:layout_height="170dp"
                 android:layout_below="@id/tv_determine"
                 android:layout_weight="0.5"
                 android:gravity="center" />
@@ -85,7 +87,7 @@
             <bike.gymproject.viewlibray.pickerview.ArrayPickerView
                 android:id="@+id/datePicker3"
                 android:layout_width="0dp"
-                android:layout_height="150dp"
+                android:layout_height="170dp"
                 android:layout_below="@id/tv_determine"
                 android:layout_weight="0.5"
                 android:gravity="center" />

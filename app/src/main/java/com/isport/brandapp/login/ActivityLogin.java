@@ -167,6 +167,7 @@ public class ActivityLogin extends BaseMVPActivity<LoginBaseView, LoginPresenter
             LoginManager.getInstance().registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
                 @Override
                 public void onSuccess(LoginResult loginResult) {
+                    Logger.myLog(TAG,"-----loginResult="+loginResult.getAccessToken());
                     Profile currentProfile = Profile.getCurrentProfile();
                     AccessToken accessToken = AccessToken.getCurrentAccessToken();
                     /*if (!accessToken.getPermissions().isEmpty()) {
@@ -198,7 +199,7 @@ public class ActivityLogin extends BaseMVPActivity<LoginBaseView, LoginPresenter
 
                 @Override
                 public void onError(FacebookException error) {
-
+                    Logger.myLog(TAG,"------error="+error.getLocalizedMessage());
                 }
             });
         } else {

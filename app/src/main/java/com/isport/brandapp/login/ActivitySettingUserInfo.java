@@ -45,7 +45,7 @@ import brandapp.isport.com.basicres.mvp.BaseMVPTitleActivity;
 import brandapp.isport.com.basicres.service.observe.BleProgressObservable;
 import brandapp.isport.com.basicres.service.observe.NetProgressObservable;
 
-
+//登录后完善用户个人信息
 public class ActivitySettingUserInfo extends BaseMVPTitleActivity<ActivitySettingUserInfoView,
         ActivityDataSettingPresenter> implements ActivitySettingUserInfoView, View.OnClickListener, UserDialogView {
     ItemView itemSex, itemWeight, itemHeight, itemBirthday;

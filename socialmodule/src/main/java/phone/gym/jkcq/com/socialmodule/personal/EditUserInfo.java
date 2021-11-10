@@ -22,9 +22,6 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.core.content.FileProvider;
-import androidx.core.widget.NestedScrollView;
-
 import com.blankj.utilcode.util.DeviceUtils;
 import com.blankj.utilcode.util.ScreenUtils;
 import com.tbruyelle.rxpermissions2.RxPermissions;
@@ -39,6 +36,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import androidx.core.content.FileProvider;
+import androidx.core.widget.NestedScrollView;
 import bike.gymproject.viewlibray.ItemView;
 import brandapp.isport.com.basicres.BaseApp;
 import brandapp.isport.com.basicres.BaseTitleActivity;
@@ -76,7 +75,9 @@ import phone.gym.jkcq.com.socialmodule.R;
 import phone.gym.jkcq.com.socialmodule.personal.presenter.UpgradeImagePresenter;
 import phone.gym.jkcq.com.socialmodule.personal.view.UpgradeImageView;
 
+//编辑个人资料页面
 public class EditUserInfo extends BaseTitleActivity implements View.OnClickListener, UserDialogView, UpgradeImageView, CommonAliView, View.OnLayoutChangeListener, View.OnFocusChangeListener {
+
     private UserInfoBean srcUserBean;
     boolean isHeightChage, isWeightChange, isBirthdayChage, ismyProfile;
     RelativeLayout layout_bgiamge;
@@ -711,7 +712,6 @@ public class EditUserInfo extends BaseTitleActivity implements View.OnClickListe
         loadBgImage(url);
 
 
-
         // LoadImageUtil.getInstance().loadCirc(EditUserInfo.this, url, ivBg, R.drawable.friend_bg_homepage_defaut);
         //finish();
     }
@@ -742,7 +742,7 @@ public class EditUserInfo extends BaseTitleActivity implements View.OnClickListe
 
     public void loadBgImage(String url) {
         if (TextUtils.isEmpty(url)) {
-            LoadImageUtil.getInstance().loadCirc(EditUserInfo.this,  R.drawable.friend_bg_homepage_defaut, ivBg, DisplayUtils.dip2px(EditUserInfo.this, 20));
+            LoadImageUtil.getInstance().loadCirc(EditUserInfo.this, R.drawable.friend_bg_homepage_defaut, ivBg, DisplayUtils.dip2px(EditUserInfo.this, 20));
 
         } else {
             LoadImageUtil.getInstance().loadCircs(EditUserInfo.this, url, ivBg, DisplayUtils.dip2px(EditUserInfo.this, 20));

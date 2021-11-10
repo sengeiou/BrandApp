@@ -4,6 +4,7 @@ import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.os.Message
 import android.text.TextUtils
 import android.util.Log
@@ -30,7 +31,7 @@ class TrainVideoActivity : AppCompatActivity() {
         val HIDE_PROGRESS = 10
     }
 
-    var mHandler = object : Handler() {
+    var mHandler = object : Handler(Looper.getMainLooper()) {
         override fun handleMessage(msg: Message) {
             when (msg.what) {
                 HIDE_PROGRESS -> {

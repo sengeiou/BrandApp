@@ -799,6 +799,9 @@ public class RetrofitClient {
             case JkConfiguration.RequstType.challengRecords:
                 return getRopeRetrofit().create(APIRopeService.class).postChallengeRecords(requestBody).compose(RxScheduler.Obs_io_main()).compose(transformer);
 
+                //查询排行
+            case JkConfiguration.RequstType.rope_challenge_rank:
+                return getRopeRetrofit().create(APIRopeService.class).getRopeChallengeRank(url.extend2).compose(RxScheduler.Obs_io_main()).compose(transformer);
         }
 
         return null;

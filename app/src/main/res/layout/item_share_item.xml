@@ -29,7 +29,7 @@
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
                 android:maxWidth="@dimen/dp220"
-                android:scaleType="fitStart"></ImageView>
+                android:scaleType="fitStart"/>
 
         </com.isport.brandapp.login.LockableNestedScrollView>
 

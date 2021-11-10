@@ -27,6 +27,7 @@ public class CommonUserAcacheUtil {
             }
             return userInfo;
         } catch (Exception e) {
+            e.printStackTrace();
             return null;
         }
 

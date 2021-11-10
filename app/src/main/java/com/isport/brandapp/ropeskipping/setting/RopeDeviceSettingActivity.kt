@@ -252,11 +252,11 @@ internal class RopeDeviceSettingActivity() : BaseTitleActivity(), DeviceUpgradeV
         Logger.myLog("noDataUpdate1")
         if (o is RopeSyncDataObservable) {
             SyncProgressObservable.getInstance().hide()
-            unBindDevice(mDeviceBean, false)
+            mDeviceBean?.let { unBindDevice(it, false) }
         } else if (o is RopeNoDataObservable) {
             Logger.myLog("noDataUpdate2")
             SyncProgressObservable.getInstance().hide()
-            unBindDevice(mDeviceBean, false)
+            mDeviceBean?.let { unBindDevice(it, false) }
         }
 
     }
@@ -315,7 +315,7 @@ internal class RopeDeviceSettingActivity() : BaseTitleActivity(), DeviceUpgradeV
     }
 
 
-    lateinit var mDeviceBean: DeviceBean
+     var mDeviceBean: DeviceBean? = null
     fun showUnbindDialog() {
         //w516 w311 w520只会存在一个
 
@@ -354,7 +354,7 @@ internal class RopeDeviceSettingActivity() : BaseTitleActivity(), DeviceUpgradeV
                     ToastUtils.showToast(context, UIUtils.getString(R.string.common_please_check_that_your_network_is_connected))
                     return
                 }
-                unBindDevice(mDeviceBean, true)
+                unBindDevice(mDeviceBean!!, true)
             }
 
             override fun cancel() {}

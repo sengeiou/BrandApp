@@ -76,6 +76,7 @@ public class ToastUtils {
                 }
             });
         } catch (Exception e) {
+            e.printStackTrace();
             Logger.e("showToast e = " + e.getMessage());
         }
     }

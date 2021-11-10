@@ -388,7 +388,7 @@ class FragmnetMainDeviceList() : Fragment(), DeviceListView, Observer, View.OnTo
                             /* } else {
                                 ToastUtils.showToast(context, R.string.sync_data)
                             }*/
-                        } else if (deviceType == JkConfiguration.DeviceType.ROPE_SKIPPING) {
+                        } else if (deviceType == JkConfiguration.DeviceType.ROPE_SKIPPING) {   //跳绳设置
                             startActivity(Intent(activity, RopeDeviceSettingActivity::class.java))
                         } else if (deviceType == JkConfiguration.DeviceType.BODYFAT) {
                             val intent = Intent(context, ActivityDeviceSetting::class.java)

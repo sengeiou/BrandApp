@@ -141,4 +141,24 @@ public class RopeSportTypeBean {
     public void setDucation(int ducation) {
         this.ducation = ducation;
     }
+
+
+    @Override
+    public String toString() {
+        return "RopeSportTypeBean{" +
+                "topTitle='" + topTitle + '\'' +
+                ", topTargetTips='" + topTargetTips + '\'' +
+                ", isClick=" + isClick +
+                ", isStart=" + isStart +
+                ", bottomTitle='" + bottomTitle + '\'' +
+                ", bottomValue='" + bottomValue + '\'' +
+                ", topValue='" + topValue + '\'' +
+                ", topUnit='" + topUnit + '\'' +
+                ", bottomUnit='" + bottomUnit + '\'' +
+                ", currentRopeType=" + currentRopeType +
+                ", ducation=" + ducation +
+                ", countdownDucation=" + countdownDucation +
+                ", currentCount=" + currentCount +
+                '}';
+    }
 }

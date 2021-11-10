@@ -73,7 +73,7 @@
             android:textStyle="bold"
             android:text="@string/rope_hr_setting"
             android:textColor="@color/common_text_color"
-            android:textSize="@dimen/sp18"></TextView>
+            android:textSize="@dimen/sp18"/>
 
         <bike.gymproject.viewlibray.ItemDeviceSettingView
             android:id="@+id/item_hr"
@@ -103,7 +103,7 @@
             android:textStyle="bold"
             android:text="@string/rope_screen_setting"
             android:textColor="@color/common_text_color"
-            android:textSize="@dimen/sp18"></TextView>
+            android:textSize="@dimen/sp18"/>
 
         <bike.gymproject.viewlibray.ItemDeviceSettingView
             android:id="@+id/item_backlight_time"
@@ -155,7 +155,7 @@
             android:textStyle="bold"
             android:text="@string/about_us"
             android:textColor="@color/common_text_color"
-            android:textSize="@dimen/sp18"></TextView>
+            android:textSize="@dimen/sp18"/>
 
         <bike.gymproject.viewlibray.ItemDeviceSettingView
             android:id="@+id/iv_braclet_play"

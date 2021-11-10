@@ -6,9 +6,6 @@ import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
 import com.isport.blelibrary.db.action.s002.S002_DailyBriefAction;
 import com.isport.blelibrary.db.action.s002.S002_DailySummaryAction;
 import com.isport.blelibrary.db.action.s002.S002_SummaryAction;
@@ -25,6 +22,8 @@ import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.Observable;
 
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import brandapp.isport.com.basicres.BaseActivity;
 import brandapp.isport.com.basicres.commonutil.MessageEvent;
 import brandapp.isport.com.basicres.commonutil.ToastUtils;
@@ -35,6 +34,9 @@ import brandapp.isport.com.basicres.service.observe.NetProgressObservable;
 import brandapp.isport.com.basicres.service.observe.TodayObservable;
 import phone.gym.jkcq.com.commonres.common.JkConfiguration;
 
+/**
+ * 跳绳历史记录页面
+ */
 public class RopeReportActivity extends BaseActivity implements View.OnClickListener {
 
     private DeviceBean deviceBean;
@@ -83,7 +85,7 @@ public class RopeReportActivity extends BaseActivity implements View.OnClickList
             transaction.replace(R.id.content, fragmentList);
             transaction.commitAllowingStateLoss();
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
 
        /* try {
@@ -225,7 +227,7 @@ public class RopeReportActivity extends BaseActivity implements View.OnClickList
                 }
 
             } catch (Exception e) {
-
+                e.printStackTrace();
             }
 
 

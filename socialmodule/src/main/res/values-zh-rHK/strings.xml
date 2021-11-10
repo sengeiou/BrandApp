@@ -2,6 +2,8 @@
     <string name="app_name">socialmodule</string>
     <string name="friend_cancel">取消</string>
 
+
+    <string name="rope_avg_unit_lower">bmp</string>
     <string name="pull_to_refresh">下拉刷新</string>//下拉刷新
     <string name="xlistview_header_hint_ready">释放立即刷新</string>//释放立即刷新
     <string name="xlistview_header_hint_loading">正在刷新&#8230;</string>//正在刷新

@@ -7,6 +7,7 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.graphics.BitmapFactory
 import android.os.Handler
+import android.os.Looper
 import android.os.Message
 import android.text.TextUtils
 import android.util.Log
@@ -62,7 +63,12 @@ import phone.gym.jkcq.com.commonres.commonutil.UserUtils
 import phone.gym.jkcq.com.socialmodule.report.ranking.RopeRankActivity
 import java.util.*
 
+
+/**
+ * 跳绳主页面
+ */
 internal class RopeSkippingActivity() : BaseMVPActivity<RopeSkippingView, RopeSkippingPresenter>(), RopeSkippingView, CommonUserView, MainHeadLayout.ViewMainHeadClickLister {
+
     var commonUserPresenter: CommonUserPresenter? = null
     var mDeviceConnPresenter: DeviceConnPresenter? = null
     var mDataList = mutableListOf<RopeSkippingBean>()
@@ -151,6 +157,7 @@ internal class RopeSkippingActivity() : BaseMVPActivity<RopeSkippingView, RopeSk
         layout_mainHeadLayout.setViewClickLister(this)
 
 
+        //历史记录
         tv_history.setOnClickListener {
             startActivity(Intent(this, RopeReportActivity::class.java))
         }
@@ -253,27 +260,27 @@ internal class RopeSkippingActivity() : BaseMVPActivity<RopeSkippingView, RopeSk
 
                 Logger.myLog("mDataList.get(position).ropeSportType" + mDataList.get(position).ropeSportType)
                 when (mDataList.get(position).ropeSportType) {
-                    JkConfiguration.RopeSportType.Free -> {
+                    JkConfiguration.RopeSportType.Free -> {   //自由训练
                         var intent = Intent(this@RopeSkippingActivity, RealRopeSkippingActivity::class.java)
                         intent.putExtra("ropeSportType", JkConfiguration.RopeSportType.Free)
                         startActivity(intent)
                     }
-                    JkConfiguration.RopeSportType.Time -> {
+                    JkConfiguration.RopeSportType.Time -> {    //计时训练
                         var intent = Intent(this@RopeSkippingActivity, RealRopeSkippingActivity::class.java)
                         intent.putExtra("ropeSportType", JkConfiguration.RopeSportType.Time)
                         startActivity(intent)
                     }
-                    JkConfiguration.RopeSportType.Count -> {
+                    JkConfiguration.RopeSportType.Count -> {   //计数训练
                         var intent = Intent(this@RopeSkippingActivity, RealRopeSkippingActivity::class.java)
                         intent.putExtra("ropeSportType", JkConfiguration.RopeSportType.Count)
                         startActivity(intent)
                     }
 
-                    JkConfiguration.RopeSportType.Ranking -> {
+                    JkConfiguration.RopeSportType.Ranking -> {   //排行榜
                         var intent = Intent(this@RopeSkippingActivity, RopeRankActivity::class.java)
                         startActivity(intent)
                     }
-                    JkConfiguration.RopeSportType.Challenge -> {
+                    JkConfiguration.RopeSportType.Challenge -> {    //关卡挑战
                         var intent = Intent(this@RopeSkippingActivity, ActivityWebView::class.java)
                         intent.putExtra("title", UIUtils.getString(R.string.rope_change))
                         intent.putExtra("url", AppConfiguration.challegeurl)
@@ -284,7 +291,7 @@ internal class RopeSkippingActivity() : BaseMVPActivity<RopeSkippingView, RopeSk
                              ToastUtils.showToast(context, UIUtils.getString(R.string.app_disconnect_device))
                          }*/
                     }
-                    JkConfiguration.RopeSportType.Course -> {
+                    JkConfiguration.RopeSportType.Course -> {   //跳绳课程
                         var intent = Intent(this@RopeSkippingActivity, ActivityWebView::class.java)
                         intent.putExtra("title", UIUtils.getString(R.string.rope_courese))
                         intent.putExtra("url", AppConfiguration.ropeCourseUrl)
@@ -409,6 +416,7 @@ internal class RopeSkippingActivity() : BaseMVPActivity<RopeSkippingView, RopeSk
                 }
             }
         } catch (e: Exception) {
+            e.printStackTrace()
             Logger.myLog(e.toString())
         }
 
@@ -451,11 +459,11 @@ internal class RopeSkippingActivity() : BaseMVPActivity<RopeSkippingView, RopeSk
 
     override fun successgetSummaryData(summary: Summary?) {
         tv_rope_count.text = summary!!.totalSkippingNum
-        tv_exeCount.text = summary!!.totalTimes
-        tv_cal.text = summary!!.totalCalories
+        tv_exeCount.text = summary.totalTimes
+        tv_cal.text = summary.totalCalories
 
-        var hour = summary!!.hour.toInt() / 60
-        var min = summary!!.hour.toInt() % 60
+        var hour = summary.hour.toInt() / 60
+        var min = summary.hour.toInt() % 60
 
         /* if (hour == 0) {
              tv_hour_unit.visibility = View.GONE
@@ -505,7 +513,7 @@ internal class RopeSkippingActivity() : BaseMVPActivity<RopeSkippingView, RopeSk
         }
     }
 
-    var handler: Handler = object : Handler() {
+    var handler: Handler = object : Handler(Looper.getMainLooper()) {
         override fun handleMessage(msg: Message) {
             super.handleMessage(msg)
             when (msg.what) {

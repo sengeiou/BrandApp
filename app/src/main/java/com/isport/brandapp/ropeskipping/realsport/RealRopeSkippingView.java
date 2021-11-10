@@ -6,7 +6,9 @@ import brandapp.isport.com.basicres.mvp.BaseView;
  * Created by BeyondWorlds
  * on 2020/6/30
  */
-interface RealRopeSkippingView extends BaseView {
-    void successChallegUpdate();
+public interface RealRopeSkippingView extends BaseView {
+    void successChallegUpdate(String challengeId);
+    
+    void getAllRopeChallengeRank(String rank);
 
 }

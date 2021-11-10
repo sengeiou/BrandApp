@@ -19,7 +19,7 @@
         android:id="@+id/layout_mainHeadLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp10"></com.isport.brandapp.home.customview.MainHeadLayout>
+        android:layout_marginTop="@dimen/dp10"/>
 
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
         android:id="@+id/home_refresh"
@@ -39,6 +39,7 @@
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
+            android:layout_marginBottom="20dp"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
@@ -130,14 +131,14 @@
                                 android:text="0"
                                 android:textColor="#4DDA64"
                                 android:textSize="@dimen/sp46"
-                                android:textStyle="bold"></bike.gymproject.viewlibray.AkrobatNumberTextView>
+                                android:textStyle="bold"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/common_white"
                                 android:textSize="@dimen/sp16"
-                                android:textStyle="bold"></TextView>
+                                android:textStyle="bold"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -155,16 +156,16 @@
                                 android:text="@string/no_data"
                                 android:textColor="@color/common_text_color"
                                 android:textSize="@dimen/sp46"
-                                android:textStyle="bold"></bike.gymproject.viewlibray.AkrobatNumberTextView>
+                                android:textStyle="bold"/>
 
                             <TextView
                                 android:id="@+id/tv_hr_unit"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/BPM"
+                                android:text="bpm"
                                 android:textColor="@color/common_white"
                                 android:textSize="@dimen/sp16"
-                                android:textStyle="bold"></TextView>
+                                android:textStyle="bold"/>
 
                         </LinearLayout>
 
@@ -185,7 +186,7 @@
                             android:gravity="center"
                             android:text="@string/rope_sum_count"
                             android:textColor="@color/common_name_profile_color"
-                            android:textSize="@dimen/sp14"></TextView>
+                            android:textSize="@dimen/sp14"/>
 
                         <TextView
                             android:layout_width="0dp"
@@ -194,7 +195,7 @@
                             android:gravity="center"
                             android:text="@string/real_time_hr"
                             android:textColor="@color/common_name_profile_color"
-                            android:textSize="@dimen/sp14"></TextView>
+                            android:textSize="@dimen/sp14"/>
 
                     </LinearLayout>
 
@@ -220,7 +221,7 @@
                                 android:text="0"
                                 android:textColor="@color/common_white"
                                 android:textSize="@dimen/sp24"
-                                android:textStyle="bold"></bike.gymproject.viewlibray.AkrobatNumberTextView>
+                                android:textStyle="bold"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -228,7 +229,7 @@
                                 android:text="@string/unit_times"
                                 android:textColor="@color/common_white"
                                 android:textSize="@dimen/sp12"
-                                android:textStyle="bold"></TextView>
+                                android:textStyle="bold"/>
                         </LinearLayout>
 
 
@@ -247,7 +248,7 @@
                                 android:text="0"
                                 android:textColor="@color/common_white"
                                 android:textSize="@dimen/sp24"
-                                android:textStyle="bold"></bike.gymproject.viewlibray.AkrobatNumberTextView>
+                                android:textStyle="bold"/>
 
                             <TextView
                                 android:id="@+id/tv_hour_unit"
@@ -256,7 +257,7 @@
                                 android:text="@string/unit_hour"
                                 android:textColor="@color/common_white"
                                 android:textSize="@dimen/sp12"
-                                android:textStyle="bold"></TextView>
+                                android:textStyle="bold"/>
 
                             <bike.gymproject.viewlibray.AkrobatNumberTextView
                                 android:id="@+id/tv_min"
@@ -266,7 +267,7 @@
                                 android:text="0"
                                 android:textColor="@color/common_white"
                                 android:textSize="@dimen/sp24"
-                                android:textStyle="bold"></bike.gymproject.viewlibray.AkrobatNumberTextView>
+                                android:textStyle="bold"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -274,7 +275,7 @@
                                 android:text="@string/unit_min"
                                 android:textColor="@color/common_white"
                                 android:textSize="@dimen/sp12"
-                                android:textStyle="bold"></TextView>
+                                android:textStyle="bold"/>
 
 
                         </LinearLayout>
@@ -294,7 +295,7 @@
                                 android:text="0"
                                 android:textColor="@color/common_white"
                                 android:textSize="@dimen/sp24"
-                                android:textStyle="bold"></bike.gymproject.viewlibray.AkrobatNumberTextView>
+                                android:textStyle="bold"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -302,7 +303,7 @@
                                 android:text="@string/unit_kcal"
                                 android:textColor="@color/common_white"
                                 android:textSize="@dimen/sp12"
-                                android:textStyle="bold"></TextView>
+                                android:textStyle="bold"/>
                         </LinearLayout>
 
                     </LinearLayout>
@@ -321,7 +322,7 @@
                             android:gravity="center"
                             android:text="@string/rope_training_times"
                             android:textColor="@color/common_name_profile_color"
-                            android:textSize="@dimen/sp14"></TextView>
+                            android:textSize="@dimen/sp14"/>
 
                         <TextView
                             android:layout_width="0dp"
@@ -330,7 +331,7 @@
                             android:gravity="center"
                             android:text="@string/rope_trainning_time"
                             android:textColor="@color/common_name_profile_color"
-                            android:textSize="@dimen/sp14"></TextView>
+                            android:textSize="@dimen/sp14"/>
 
                         <TextView
                             android:layout_width="0dp"
@@ -339,7 +340,7 @@
                             android:gravity="center"
                             android:text="@string/rope_traninning_cal"
                             android:textColor="@color/common_name_profile_color"
-                            android:textSize="@dimen/sp14"></TextView>
+                            android:textSize="@dimen/sp14"/>
 
                     </LinearLayout>
 

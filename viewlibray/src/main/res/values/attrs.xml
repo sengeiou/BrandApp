@@ -372,20 +372,24 @@
 
     <!-- 图表样式 -->
     <declare-styleable name="GraphStyle">
-        <attr name="graphTitle" format="string"></attr>
-        <attr name="xAxisName" format="string"></attr>
-        <attr name="yAxisName" format="string"></attr>
-        <attr name="axisTextSize" format="dimension|float"></attr>
-        <attr name="axisTextColor" format="color|integer"></attr>
-        <attr name="lineColor" format="color|integer"></attr>
-        <attr name="yAxisColor" format="color|integer"></attr>
-        <attr name="yTextColor" format="color|integer"></attr>
-        <attr name="graphBgColor" format="color|integer"></attr>
-        <attr name="startMargin" format="dimension|float"></attr>
-        <attr name="viewMargin" format="dimension|float"></attr>
-        <attr name="lineStartX" format="dimension|float"></attr>
-        <attr name="maxorminColor" format="color|float"></attr>
+        <attr name="graphTitle" format="string"/>
+        <attr name="xAxisName" format="string"/>
+        <attr name="yAxisName" format="string"/>
+        <attr name="axisTextSize" format="dimension|float"/>
+        <attr name="axisTextColor" format="color|integer"/>
+        <attr name="lineColor" format="color|integer"/>
+        <attr name="yAxisColor" format="color|integer"/>
+        <attr name="yTextColor" format="color|integer"/>
+        <attr name="graphBgColor" format="color|integer"/>
+        <attr name="startMargin" format="dimension|float"/>
+        <attr name="viewMargin" format="dimension|float"/>
+        <attr name="lineStartX" format="dimension|float"/>
+        <attr name="maxorminColor" format="color|float"/>
     </declare-styleable>
 
+    <declare-styleable name="CusScheduleView">
+        <attr name="cus_all_schedule_color" format="color"/>
+        <attr name="cus_curr_schedule_color" format="color"/>
 
+    </declare-styleable>
 </resources>

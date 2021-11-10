@@ -401,7 +401,7 @@ public abstract class BaseActivity extends BasicActivity implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-        Logger.d("huashao", o.getClass().getName() + " , " + arg.toString());
+        Logger.e("huashao", o.getClass().getName() + " , " + arg.toString());
         if (o instanceof TakePhotObservable) {
             showCamaraActivity();
 

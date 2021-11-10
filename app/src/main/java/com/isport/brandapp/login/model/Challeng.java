@@ -3,6 +3,8 @@ package com.isport.brandapp.login.model;
 import java.io.Serializable;
 
 public class Challeng implements Serializable {
+
+
     String challengeItemId;
     String name;
     int challengeType;

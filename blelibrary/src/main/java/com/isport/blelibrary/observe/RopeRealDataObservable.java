@@ -84,7 +84,7 @@ public class RopeRealDataObservable extends Observable {
             RopeRealDataObservable.getInstance().notifyObservers(ropeRealDataBean);
 
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
     }
 

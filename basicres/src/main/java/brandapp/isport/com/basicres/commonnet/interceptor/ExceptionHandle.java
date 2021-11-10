@@ -60,7 +60,7 @@ public class ExceptionHandle {
                     ToastUtils.showToast(UIUtils.getContext(), ex.message);
                 }
             } catch (Exception exception) {
-
+                exception.printStackTrace();
             } finally {
                 return ex;
             }

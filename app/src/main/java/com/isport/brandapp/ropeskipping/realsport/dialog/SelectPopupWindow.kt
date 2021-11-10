@@ -1,5 +1,6 @@
 package com.isport.brandapp.ropeskipping.realsport.dialog
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.drawable.ColorDrawable
 import android.view.*
@@ -48,6 +49,7 @@ class SelectPopupWindow(var mSelectPopupListener: OnSelectPopupListener?) : Arra
      * @param type
      * @param lastData 上次的数据
      */
+    @SuppressLint("ClickableViewAccessibility")
     fun popWindowSelect(
             context: Context,
             view: View?,
@@ -131,9 +133,15 @@ class SelectPopupWindow(var mSelectPopupListener: OnSelectPopupListener?) : Arra
                 view, Gravity.BOTTOM
                 or Gravity.CENTER_HORIZONTAL, 0, 0
         )
+
+        if(mMenuView == null)
+            return
+
         mMenuView!!.setOnTouchListener { v, event ->
+
+            val linView = mMenuView!!.findViewById<View>(R.id.pop_layout) ?: return@setOnTouchListener false
             val height =
-                    mMenuView!!.findViewById<View>(R.id.pop_layout).top
+                    linView.top
             val y = event.y.toInt()
             if (event.action == MotionEvent.ACTION_UP) {
                 if (y < height) {
@@ -150,6 +158,7 @@ class SelectPopupWindow(var mSelectPopupListener: OnSelectPopupListener?) : Arra
         tv_cancel.setOnClickListener { popupWindow!!.dismiss() }
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     fun popWindowSelect(
             context: Context,
             view: View?,
@@ -205,9 +214,16 @@ class SelectPopupWindow(var mSelectPopupListener: OnSelectPopupListener?) : Arra
                 view, Gravity.BOTTOM
                 or Gravity.CENTER_HORIZONTAL, 0, 0
         )
+
+        if(mMenuView == null)
+            return
+
         mMenuView!!.setOnTouchListener { v, event ->
+
+            val linView = mMenuView!!.findViewById<View>(R.id.pop_layout) ?: return@setOnTouchListener false
+
             val height =
-                    mMenuView!!.findViewById<View>(R.id.pop_layout).top
+                    linView.top
             val y = event.y.toInt()
             if (event.action == MotionEvent.ACTION_UP) {
                 if (y < height) {
@@ -235,6 +251,7 @@ class SelectPopupWindow(var mSelectPopupListener: OnSelectPopupListener?) : Arra
     // 时间选择器
 
     // 时间选择器
+    @SuppressLint("ClickableViewAccessibility")
     fun setPopupWindowTemp(
             context: Context,
             view: View?,
@@ -291,9 +308,14 @@ class SelectPopupWindow(var mSelectPopupListener: OnSelectPopupListener?) : Arra
         datePicker3.setCyclic(false)
         datePicker3.setItemOnclick(this)
         datePicker3.setSelectItem(showIndex3)
+
+
         mTmeapView!!.setOnTouchListener { v, event ->
-            val height =
-                    mTmeapView!!.findViewById<View>(R.id.pop_layout).top
+
+            val linView = mTmeapView!!.findViewById<View>(R.id.pop_layout) ?: return@setOnTouchListener false
+
+
+            val height = linView.top
             val y = event.y.toInt()
             if (event.action == MotionEvent.ACTION_UP) {
                 if (y < height) {
@@ -319,6 +341,7 @@ class SelectPopupWindow(var mSelectPopupListener: OnSelectPopupListener?) : Arra
     // 时间选择器
 
     // 时间选择器
+    @SuppressLint("ClickableViewAccessibility")
     fun setPopupWindow(
             context: Context,
             view: View?,
@@ -353,8 +376,11 @@ class SelectPopupWindow(var mSelectPopupListener: OnSelectPopupListener?) : Arra
                 or Gravity.CENTER_HORIZONTAL, 0, 0
         )
         mMenuViewBirth!!.setOnTouchListener { v, event ->
-            val height =
-                    mMenuViewBirth!!.findViewById<View>(R.id.pop_layout).top
+
+            val linView = mMenuViewBirth!!.findViewById<View>(R.id.pop_layout)
+                    ?: return@setOnTouchListener false
+
+            val height =  linView.top
             val y = event.y.toInt()
             if (event.action == MotionEvent.ACTION_UP) {
                 if (y < height) {

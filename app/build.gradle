@@ -115,8 +115,8 @@ android {
         http {
             dimension "color"
             applicationId "com.isport.brandapp"
-            versionCode 106
-            versionName "2.0"
+            versionCode 107
+            versionName "2.0.1"
             buildConfigField 'String', 'PRODUCT', '"http"'
         }
     }

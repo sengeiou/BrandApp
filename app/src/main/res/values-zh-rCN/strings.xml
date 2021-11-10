@@ -927,12 +927,12 @@
     <string name="rope_end">结束</string>
     <string name="rope_real_hr_chart">实时心率柱状图</string>
     <string name="rope_real_rope_number">跳绳个数</string>
-    <string name="rope_real_setting_taget_number">点击设置目标个数</string>
+    <string name="rope_real_setting_taget_number">设置目标个数</string>
     <string name="rope_real_setting_taget_number_start">目标个数</string>
     <string name="rope_real_setting_countdown_start">倒计时</string>
     <string name="rope_real_rope_time">用时</string>
     <string name="rope_count_unitl">个</string>
-    <string name="rope_real_setting_taget_time">点击设置目标时间</string>
+    <string name="rope_real_setting_taget_time">设置目标时间</string>
     <string name="rope_share_sum_time">累计时长</string>
     <string name="rope_share_sum_count">累计次数</string>
 

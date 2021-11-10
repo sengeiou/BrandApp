@@ -39,8 +39,8 @@ public class UserDialogSetting extends BasePresenter<UserDialogView> implements
     private String genderDatas[] = new String[]{"男", "女"};
     private String heightData[] = new String[101]; // 身高
     private String heightDataNoUnit[] = new String[101]; // 身高不带单位
-    private String weightData[] = new String[300];    // 体重
-    private String weightDataNoUnit[] = new String[300];    // 体重不带单位
+    private String weightData[] = new String[301];    // 体重
+    private String weightDataNoUnit[] = new String[301];    // 体重不带单位
     private PopupWindow popupWindow;
     private String localChooseStr;
     private String selectType;
@@ -82,7 +82,7 @@ public class UserDialogSetting extends BasePresenter<UserDialogView> implements
                 localDataNoUnit = heightDataNoUnit;
                 break;
             case JkConfiguration.GymUserInfo.WEIGHT:
-                for (int j = 0; j < 300; j++) {
+                for (int j = 0; j < 301; j++) {
                     weightDataNoUnit[j] = String.valueOf(j);
                     weightData[j] = j + " kg";
                     if (weightData[j].equals(lastData)) {
@@ -121,17 +121,21 @@ public class UserDialogSetting extends BasePresenter<UserDialogView> implements
         popupWindow.setContentView(mMenuView);
         popupWindow.setBackgroundDrawable(new ColorDrawable(0x00000000));
         popupWindow.setOutsideTouchable(false);
-        popupWindow.setFocusable(true);
+        popupWindow.setFocusable(false);
         popupWindow.setAnimationStyle(R.style.popwin_anim_style);
         popupWindow.showAtLocation(view, Gravity.BOTTOM
                 | Gravity.CENTER_HORIZONTAL, 0, 0);
 
+        if(mMenuView == null)
+            return;
         mMenuView.setOnTouchListener(new View.OnTouchListener() {
             public boolean onTouch(View v, MotionEvent event) {
                 if (mMenuView == null) {
-                    return true;
+                    return false;
                 }
                 View pV = mMenuView.findViewById(R.id.pop_layout);
+                if(pV == null )
+                    return false;
                 int height = pV != null ? pV.getTop() : 0;
                 int y = (int) event.getY();
                 if (event.getAction() == MotionEvent.ACTION_UP) {
@@ -255,10 +259,14 @@ public class UserDialogSetting extends BasePresenter<UserDialogView> implements
         datePicker3.setItemOnclick(this);
         datePicker3.setSelectItem(showIndex3);
 
-
+        if(mTmeapView == null)
+            return;
         mTmeapView.setOnTouchListener(new View.OnTouchListener() {
             public boolean onTouch(View v, MotionEvent event) {
-                int height = mTmeapView.findViewById(R.id.pop_layout).getTop();
+                View linView = mTmeapView.findViewById(R.id.pop_layout);
+                if(linView == null)
+                    return false;
+                int height =linView.getTop();
                 int y = (int) event.getY();
                 if (event.getAction() == MotionEvent.ACTION_UP) {
                     if (y < height) {
@@ -284,6 +292,7 @@ public class UserDialogSetting extends BasePresenter<UserDialogView> implements
         tv_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(popupWindowTemp != null)
                 popupWindowTemp.dismiss();
             }
         });
@@ -316,9 +325,16 @@ public class UserDialogSetting extends BasePresenter<UserDialogView> implements
         popupWindowBirth.setAnimationStyle(R.style.popwin_anim_style);
         popupWindowBirth.showAtLocation(view, Gravity.BOTTOM
                 | Gravity.CENTER_HORIZONTAL, 0, 0);
+
+
         mMenuViewBirth.setOnTouchListener(new View.OnTouchListener() {
             public boolean onTouch(View v, MotionEvent event) {
-                int height = mMenuViewBirth.findViewById(R.id.pop_layout).getTop();
+                if(mMenuViewBirth == null)
+                    return false;
+                View linView = mMenuViewBirth.findViewById(R.id.pop_layout);
+                if(linView == null)
+                    return false;
+                int height = linView.getTop();
                 int y = (int) event.getY();
                 if (event.getAction() == MotionEvent.ACTION_UP) {
                     if (y < height) {

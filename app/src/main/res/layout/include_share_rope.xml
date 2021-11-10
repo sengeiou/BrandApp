@@ -21,13 +21,13 @@
         android:layout_height="wrap_content">
 
 
-       <bike.gymproject.viewlibray.CircleImageView
+        <bike.gymproject.viewlibray.CircleImageView
             android:id="@+id/iv_user_head_rope"
             android:layout_width="@dimen/dp40"
             android:layout_height="@dimen/dp40"
             android:layout_centerVertical="true"
-            android:scaleType="centerCrop"
             android:layout_marginRight="@dimen/dp5"
+            android:scaleType="centerCrop"
             android:src="@drawable/default_avatar_picture"
             app:civ_border_color="@color/white"
             app:civ_border_width="@dimen/dp0" />
@@ -43,7 +43,7 @@
             android:singleLine="true"
             android:textColor="@color/white"
             android:textSize="@dimen/sp15"
-            tools:text="昵称"></TextView>
+            tools:text="昵称" />
 
         <TextView
             android:id="@+id/tv_rope_time"
@@ -54,7 +54,7 @@
             android:layout_toRightOf="@+id/iv_user_head_rope"
             android:textColor="@color/white"
             android:textSize="@dimen/sp14"
-            tools:text="2020-03-30"></TextView>
+            tools:text="2020-03-30" />
 
 
     </RelativeLayout>
@@ -68,10 +68,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/dp5"
-        android:textStyle="bold"
         android:text="@string/rope_real_rope_number"
         android:textColor="@color/common_rope_time_color"
-        android:textSize="@dimen/sp10"></TextView>
+        android:textSize="@dimen/sp10"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -84,16 +84,16 @@
             android:layout_height="wrap_content"
             android:text="9999"
             android:textColor="@color/white"
-            android:textSize="44sp"></bike.gymproject.viewlibray.AkrobatNumberTextView>
+            android:textSize="44sp" />
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
             android:text="@string/rope_unit"
             android:textColor="@color/white"
-            android:textSize="@dimen/sp18"></TextView>
+            android:textSize="@dimen/sp18"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <View
@@ -108,23 +108,25 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/shareTimeTitleTv"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textStyle="bold"
             android:text="@string/rope_share_sum_time"
             android:textColor="@color/common_rope_time_color"
-            android:textSize="@dimen/sp10"></TextView>
+            android:textSize="@dimen/sp10"
+            android:textStyle="bold" />
 
 
         <TextView
+            android:id="@+id/shareRopeRecordCountTv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:textStyle="bold"
             android:text="@string/rope_share_sum_count"
             android:textColor="@color/common_rope_time_color"
-            android:textSize="@dimen/sp10"></TextView>
+            android:textSize="@dimen/sp10"
+            android:textStyle="bold" />
 
         <View
             android:layout_width="0dp"
@@ -144,7 +146,7 @@
             android:layout_weight="1"
             android:text="00"
             android:textColor="@color/white"
-            android:textSize="22sp"></bike.gymproject.viewlibray.AkrobatNumberTextView>
+            android:textSize="22sp" />
 
 
         <bike.gymproject.viewlibray.AkrobatNumberTextView
@@ -152,9 +154,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:text="9999"
+            android:text="--"
             android:textColor="@color/white"
-            android:textSize="22sp"></bike.gymproject.viewlibray.AkrobatNumberTextView>
+            android:textSize="22sp" />
 
         <View
             android:layout_width="0dp"
@@ -167,36 +169,150 @@
         android:layout_height="0dp"
         android:layout_weight="0.1" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/dp5"
-        android:textStyle="bold"
-        android:text="@string/rope_traninning_cal"
-        android:textColor="@color/common_rope_time_color"
-        android:textSize="@dimen/sp10"></TextView>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <bike.gymproject.viewlibray.AkrobatNumberTextView
-            android:id="@+id/tv_rope_sum_cal"
+
+        <LinearLayout
+            android:id="@+id/shareRopeHeartLayout"
+            android:layout_width="0dp"
+
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp5"
+                android:text="@string/average_heart"
+                android:textColor="@color/common_rope_time_color"
+                android:textSize="@dimen/sp10"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <bike.gymproject.viewlibray.AkrobatNumberTextView
+                    android:id="@+id/tv_rope_avgHeartTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--"
+                    android:textColor="@color/white"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="bpm"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp12"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="9999"
-            android:textColor="@color/white"
-            android:textSize="22sp"></bike.gymproject.viewlibray.AkrobatNumberTextView>
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp5"
+                android:text="@string/rope_traninning_cal"
+                android:textColor="@color/common_rope_time_color"
+                android:textSize="@dimen/sp10"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <bike.gymproject.viewlibray.AkrobatNumberTextView
+                    android:id="@+id/tv_rope_sum_cal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9999"
+                    android:textColor="@color/white"
+                    android:textSize="22sp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sport_cal_unit"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp12"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1.5" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/shareRopeLayout"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
 
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="@string/sport_cal_unit"
             android:textColor="@color/white"
-            android:textSize="@dimen/sp12"></TextView>
+            android:textSize="17sp"
+            android:layout_height="wrap_content"
+            android:text="全网第"/>
+
+
+        <TextView
+            android:id="@+id/shareRopeSortTv"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:textSize="17sp"
+            android:layout_height="wrap_content"
+            android:text=" 8888 "/>
+
+
+        <TextView
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="人完成挑战"/>
+
+
+
+
+        <TextView
+            android:id="@+id/shareRopeDescTv"
+            android:textColor="@color/white"
+            android:textSize="23sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="''氪金之心''"/>
+
+
+
     </LinearLayout>
 
 
@@ -210,7 +326,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/share_app_logo"></ImageView>
+            android:src="@drawable/share_app_logo" />
     </RelativeLayout>
 </LinearLayout>
 

@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
@@ -299,14 +300,14 @@ public class ActivityWebView extends BaseTitleActivity implements UMShareListene
     @Override
     public void postMessage(String data) {
         Gson gson = new Gson();
-        // Logger.e("data", data);
+         Logger.e(TAG,"----data"+ data);
         ResultWebData webData = gson.fromJson(data, ResultWebData.class);
-        Logger.e("postMessage webData=" + webData);
+        Logger.e(TAG,"postMessage webData=" + webData);
         //Logger.e("data", "" + webData);
         if (webData != null) {
             if (webData.getType().equals("onlineCourse")) {
                 Intent intent = new Intent(this, ActivityWebView.class);
-                intent.putExtra("title", UIUtils.getString(R.string.rope_courese));
+                intent.putExtra("title", "线上课程");
                 intent.putExtra("url", webData.getUrl());
                 intent.putExtra("share_url", webData.getUrl());
                 startActivity(intent);
@@ -373,6 +374,7 @@ public class ActivityWebView extends BaseTitleActivity implements UMShareListene
 //            strTitle = titlet;
 //            titleBarView.setTitle(strTitle);
 
+            Log.e(TAG,"-----webTitle="+titlet);
         }
 
         @Override
@@ -399,6 +401,8 @@ public class ActivityWebView extends BaseTitleActivity implements UMShareListene
                 load_pro.setProgress(newProgress);
             }
         }
+
+
 
     };
 

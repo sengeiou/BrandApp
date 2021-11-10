@@ -2138,6 +2138,8 @@ public class BraceletW811W814Manager extends BaseManager {
         }
     }
 
+
+    //查询闹钟
     public void getAlarList() {
         if (mBleDevice != null && mBleDevice.isConnected() && mBleConnection != null) {
             mBleConnection.queryAllAlarmClock(new CRPDeviceAlarmClockCallback() {
