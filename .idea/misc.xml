@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/WorkPlace/BrandApp/app/src/main/res/layout/activity_home_rope_skpping.xml" value="0.34692028985507245" />
+        <entry key="..\:/WorkPlace/BrandApp/app/src/main/res/layout/activity_new_share.xml" value="0.34692028985507245" />
+        <entry key="..\:/WorkPlace/BrandApp/app/src/main/res/layout/activity_real_rope_skpping.xml" value="0.36614583333333334" />
+        <entry key="..\:/WorkPlace/BrandApp/app/src/main/res/layout/app_activity_login.xml" value="0.36614583333333334" />
+        <entry key="..\:/WorkPlace/BrandApp/app/src/main/res/layout/app_activity_rope_web.xml" value="0.30104166666666665" />
+        <entry key="..\:/WorkPlace/BrandApp/app/src/main/res/layout/app_actvity_bind_mobilephone.xml" value="0.30978260869565216" />
+        <entry key="..\:/WorkPlace/BrandApp/app/src/main/res/layout/app_fragment_new_mine.xml" value="0.28306159420289856" />
+        <entry key="..\:/WorkPlace/BrandApp/app/src/main/res/layout/app_fragment_rope_day.xml" value="0.3" />
+        <entry key="..\:/WorkPlace/BrandApp/app/src/main/res/layout/dialog_pk_rope.xml" value="0.36614583333333334" />
+        <entry key="..\:/WorkPlace/BrandApp/app/src/main/res/layout/dialog_rope.xml" value="0.36614583333333334" />
+        <entry key="..\:/WorkPlace/BrandApp/app/src/main/res/layout/include_share_heartrate.xml" value="0.36614583333333334" />
+        <entry key="..\:/WorkPlace/BrandApp/app/src/main/res/layout/include_share_rope.xml" value="0.36614583333333334" />
+        <entry key="..\:/WorkPlace/BrandApp/app/src/main/res/layout/include_share_sleep.xml" value="0.36614583333333334" />
+        <entry key="..\:/WorkPlace/BrandApp/app/src/main/res/layout/item_share_item.xml" value="0.36614583333333334" />
+        <entry key="..\:/WorkPlace/BrandApp/socialmodule/src/main/res/layout/friend_activity_personalpagehome_test.xml" value="0.36614583333333334" />
+        <entry key="..\:/WorkPlace/BrandApp/socialmodule/src/main/res/layout/friend_activity_setting_user_info.xml" value="0.30978260869565216" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

@@ -3,6 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.isport.brandapp">
 
+
+
+
+    <queries>
+        <package android:name="com.tencent.mm" />          <!--  指定微信包名-->
+        <package android:name="com.tencent.mobileqq" />  <!--  //指定qq包名-->
+        <package android:name="com.sina.weibo" />           <!--  //指定微博包名-->
+        <package android:name="com.tencent.wework" />     <!-- //指定企业微信包名-->
+        <package android:name="com.qzone" />                  <!-- //指定QQ空间包名-->
+        <package android:name="com.alibaba.android.rimet" /><!-- // 指定钉钉包名-->
+        <package android:name="com.eg.android.AlipayGphone" /><!-- // 指定支付宝包名-->
+        <package android:name="com.instagram.android" />        <!-- // 指定instagram包名-->
+    </queries>
+
+
+
+
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
@@ -41,7 +58,8 @@
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
@@ -162,6 +180,9 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
+<!--
+        <activity android:name="com.sina.weibo.sdk.web.WeiboSdkWebActivity"/>-->
+
         <activity
             android:name="com.umeng.socialize.media.WBShareCallBackActivity"
             android:configChanges="keyboardHidden|orientation"
@@ -197,8 +218,7 @@
         <activity android:name=".device.scale.ActivityScaleHistory" />
         <activity android:name=".device.sleep.ActivitySleepMain" /> <!-- 微博 分享 -->
         <activity android:name=".device.sleep.ActivitySleepMonitor" />
-        <!--
-<activity
+<!--<activity
             android:name="com.sina.weibo.sdk.share.WbShareTransActivity"
             android:launchMode="singleTask"
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
@@ -208,8 +228,7 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity>
-        -->
+        </activity>-->
         <!-- 微信 分享 -->
         <activity android:name=".device.sleep.ActivityTimerSleep" /> <!-- QQ 分享 -->
         <activity android:name=".device.band.ActivityBandMain" />
@@ -324,6 +343,7 @@
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
+                tools:replace="android:resource"
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
@@ -396,6 +416,13 @@
 
 
         <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+
+
+
+
+
+
+
     </application>
 
 </manifest>

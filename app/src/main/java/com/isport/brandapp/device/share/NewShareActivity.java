@@ -45,6 +45,7 @@ import com.isport.brandapp.view.HeartrateRoundView;
 import com.isport.brandapp.view.SleepArcView;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.umeng.socialize.ShareAction;
+import com.umeng.socialize.UMShareAPI;
 import com.umeng.socialize.UMShareListener;
 import com.umeng.socialize.bean.SHARE_MEDIA;
 import com.umeng.socialize.media.UMImage;
@@ -619,6 +620,9 @@ public class NewShareActivity extends BaseActivity implements View.OnClickListen
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
         super.onActivityResult(requestCode, resultCode, data);
+
+        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
+
         Log.e("onActivityResult", "requestCode=" + requestCode + "resultCode=" + resultCode);
         if (callBackManager != null) {
             callBackManager.onActivityResult(requestCode, resultCode, data);
@@ -1250,4 +1254,6 @@ public class NewShareActivity extends BaseActivity implements View.OnClickListen
                 .statusBarDarkFont(false)
                 .init();
     }
+
+
 }

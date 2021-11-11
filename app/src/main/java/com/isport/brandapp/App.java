@@ -490,6 +490,7 @@ public class App extends BaseApp {
         PlatformConfig.setWeixin("wx83ad7682b33e28e5", "d673af9518942cd8ef8490837502c12e");
         // 新浪微博 2511584848 8be44eb4339235c451f978d1059c2763
         PlatformConfig.setSinaWeibo("2511584848", "8be44eb4339235c451f978d1059c2763", "http://sns.whalecloud.com");
+        // PlatformConfig.setSinaFileProvider(FileProvider);
         // QQ APP ID 1108767316
         //APP KEY bsAfYGPH8dW47RG8
         // PlatformConfig.setQQZone("1108767316", "bsAfYGPH8dW47RG8");

@@ -331,7 +331,7 @@ internal class RealRopeSkippingActivity() : BaseMVPTitleActivity<RealRopeSkippin
                             sportBean!!.ducation = msg.time.toInt()
                             sportBean!!.topValue = "" + msg.countdown
                             sportBean!!.bottomValue = DateUtil.getRopeFormatTimehhmmss(msg.time)
-                            sportBean!!.topTitle = "挑战个数"
+                            sportBean!!.topTitle = resources.getString(R.string.string_challenge_numbers)
                         } else {    //计时和记数
                            // sportBean!!.topValue = "" + msg.countdown
 
@@ -343,8 +343,8 @@ internal class RealRopeSkippingActivity() : BaseMVPTitleActivity<RealRopeSkippin
                             sportBean!!.bottomValue =""+ msg.countdown
 
                             sportBean!!.ducation = msg.time.toInt()
-                            sportBean!!.topTargetTips = "挑战时间"
-                            sportBean!!.topTitle = "挑战时间"
+                            sportBean!!.topTargetTips = resources.getString(R.string.string_challenge_time)
+                            sportBean!!.topTitle = resources.getString(R.string.string_challenge_time)
                         }
 
                     } else {
@@ -713,7 +713,7 @@ internal class RealRopeSkippingActivity() : BaseMVPTitleActivity<RealRopeSkippin
                     currentRopeRes = R.drawable.icon_rope_change
 
                     var topViewStr = if (bean!!.challengeItemId.toInt()>= 7) DateUtil.getRopeFormatTimehhmmss(bean!!.achieveSecond.toLong()) else bean!!.achieveNum
-                    val goalDesc =  if (bean!!.challengeItemId.toInt()>= 7) "挑战时间" else UIUtils.getString(R.string.rope_real_setting_taget_number_start)
+                    val goalDesc =  if (bean!!.challengeItemId.toInt()>= 7) resources.getString(R.string.string_challenge_time) else UIUtils.getString(R.string.rope_real_setting_taget_number_start)
 
                     sportBean = RopeSportTypeBean(goalDesc, UIUtils.getString(R.string.rope_real_setting_taget_number), false, UIUtils.getString(R.string.rope_real_rope_time), time, "" + topViewStr,
                             JkConfiguration.RopeSportType.Count, "", "")
@@ -901,8 +901,11 @@ internal class RealRopeSkippingActivity() : BaseMVPTitleActivity<RealRopeSkippin
 
 //        Logger.myLog("linearParams" + linearParams.height + "tv_top_value_precent.getHeight()=" + tv_top_value_precent.getHeight() + "linearParams.height" + linearParams.height + "pre=" + pre)
 
+        if(currentType != JkConfiguration.RopeSportType.Free){
+            layout_top_value.layoutParams = linearParams //使设置好的布局参数应用到控件
+        }
 
-        layout_top_value.layoutParams = linearParams //使设置好的布局参数应用到控件
+
 
         //layout_top_value.setp
 
@@ -1719,13 +1722,21 @@ internal class RealRopeSkippingActivity() : BaseMVPTitleActivity<RealRopeSkippin
 
 
     private fun showRopeIng(isRope : Boolean){
-        
+        if(isClickStart){   //运动中
+
+        }
+    }
+
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
 
-        if (event != null) {
-            if(event.action == KeyEvent.KEYCODE_BACK && sportBean!!.isStart){
+        if (event != null) {  //训练中屏蔽返回
+            if(event.action == 0 && sportBean!!.isStart){
                 return false
             }
 

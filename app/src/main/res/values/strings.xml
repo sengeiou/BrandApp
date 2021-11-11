@@ -3,6 +3,12 @@
     /**app**/
     <string name="app_name">Bonlala</string>//iSport健康管家
 
+
+    <string name="string_challenge_numbers">challenge numbers</string>
+    <string name="string_challenge_time">challenge time</string>
+    <string name="string_rope_share">Share</string>
+
+
     <string name="string_privacy_str">感谢您使用 奔啦啦 ！为保障您的权利，在使用我们的服务前，请通过《奔啦啦用户服务协议》和《奔啦啦隐私政策》了解我们对个人信息的使用情况与您所享有的相关权利。</string>
 
 
@@ -949,7 +955,7 @@
     <string name="rope_history">History</string>
     <string name="rope_training_times">Times</string>
     <string name="rope_trainning_time">Time</string>
-    <string name="rope_traninning_cal">Consumption</string>
+    <string name="rope_traninning_cal">Calories</string>
     <string name="rope_sum_count">Total jumps</string>
     <string name="rope_screen_setting">Screen settings</string>
     <string name="rope_hr_setting">Heart rate remind</string>

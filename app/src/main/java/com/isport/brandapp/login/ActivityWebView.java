@@ -7,6 +7,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -78,6 +79,13 @@ public class ActivityWebView extends BaseTitleActivity implements UMShareListene
     @Override
     protected int getLayoutId() {
         return R.layout.app_activity_user_agreement;
+    }
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Logger.e("WB","------onCreate-----");
     }
 
     @Override
@@ -372,7 +380,7 @@ public class ActivityWebView extends BaseTitleActivity implements UMShareListene
         public void onReceivedTitle(WebView view, String titlet) {
             super.onReceivedTitle(view, titlet);
 //            strTitle = titlet;
-//            titleBarView.setTitle(strTitle);
+            titleBarView.setTitle(titlet);
 
             Log.e(TAG,"-----webTitle="+titlet);
         }

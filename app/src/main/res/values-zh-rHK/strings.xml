@@ -3,6 +3,13 @@
     /**app**/
     <string name="app_name">奔啦啦</string>//iSport健康管家
 
+
+    <string name="string_challenge_1">全網第 </string>
+    <string name="string_challenge_2"> 人完成挑戰 </string>
+    <string name="string_challenge_numbers">挑戰個數</string>
+    <string name="string_challenge_time">挑戰時間</string>
+    <string name="string_rope_share">分享喜悅</string>
+
     <string name="string_practise_yoga">瑜伽</string>
     <string name="string_practise_elliptical">椭圆机</string>
     <string name="string_practise_spinning">动感单车</string>

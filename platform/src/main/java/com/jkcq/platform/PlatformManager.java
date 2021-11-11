@@ -34,5 +34,6 @@ public class PlatformManager {
         MobclickAgent.setSessionContinueMillis(30*1000);//黑屏，应用后台运行超过30s启动都算一次启动
         // 选用AUTO页面采集模式
         MobclickAgent.setPageCollectionMode(MobclickAgent.PageMode.AUTO);
+
     }
 }

@@ -4,6 +4,12 @@
     <string name="app_name">Bonlala</string>//iSport健康管家
 
 
+
+    <string name="string_challenge_numbers">challenge numbers</string>
+    <string name="string_challenge_time">challenge time</string>
+
+
+    <string name="string_rope_share">Share</string>
     <string name="string_practise_yoga">Yoga</string>
     <string name="string_practise_elliptical">Elliptical</string>
     <string name="string_practise_spinning">Spinning</string>
@@ -16,7 +22,7 @@
     <string name="app_band_step_number">steps(step)</string>//步数(步)
     //米
     <string name="unit_speed">km/h</string>//
-    <string name="unit_time_per_minute">BPM</string>//次/分
+    <string name="unit_time_per_minute">bpm</string>//次/分
     <string name="unit_minute">Minute</string>//分钟
     <string name="main_sport_sum">minutes of exercise tody</string>//分钟
     //分钟
@@ -947,7 +953,7 @@
     <string name="rope_history">History</string>
     <string name="rope_training_times">Times</string>
     <string name="rope_trainning_time">Time</string>
-    <string name="rope_traninning_cal">Consumption</string>
+    <string name="rope_traninning_cal">Calories</string>
     <string name="rope_sum_count">Total jumps</string>
     <string name="rope_screen_setting">Screen settings</string>
     <string name="rope_hr_setting">Heart rate remind</string>

@@ -308,7 +308,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginTop="5dp"
                     android:textStyle="bold"
-                    android:text="55525555222"
+                    android:text="--"
                     android:textColor="@color/common_white"
                     android:textSize="15sp" />
             </LinearLayout>

@@ -44,6 +44,13 @@ dependencies {
     def deps = rootProject.ext.deps
     api fileTree(dir: 'libs', include: ['*.jar'])
     api(name: 'crpblelib_141', ext: 'aar')
+
+   // api 'com.umeng.umsdk:share-sina:7.1.6'//新浪微博完整版
+
+/*    api 'com.sina.weibo.sdk:core:10.10.0:openDefaultRelease@aar'//新浪微博官方SDK依*/
+
+    api(name:'openDefault-10.10.0',ext: 'aar')
+
     implementation deps.appcompat
 //    testImplementation 'junit:junit:4.12'
 //    androidTestImplementation 'com.android.support.test:runner:1.0.2'

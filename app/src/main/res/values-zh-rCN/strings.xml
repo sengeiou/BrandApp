@@ -6,9 +6,12 @@
 
 
 
+
+    <string name="string_challenge_1">全网第 </string>
+    <string name="string_challenge_2"> 人完成挑战 </string>
     <string name="string_privacy_str">感谢您使用 奔啦啦 ！为保障您的权利，在使用我们的服务前，请通过《奔啦啦用户服务协议》和《奔啦啦隐私政策》了解我们对个人信息的使用情况与您所享有的相关权利。</string>
-
-
+    <string name="string_challenge_numbers">挑战个数</string>
+    <string name="string_challenge_time">挑战时间</string>
 
     //欢迎进入 iSport健康管家
     
@@ -98,6 +101,9 @@
     //微信登录取消
     //QQ登录失败
     //QQ登录取消
+
+    <string name="string_rope_share">分享喜悦</string>
+
     <string name="only_add_five_alarm">只能添加五个闹钟</string>
     <string name="detection">点击监测</string>
     <string name="hasBind">此设备已被其他用户绑定</string>

@@ -7,6 +7,10 @@
     <external-path name="external_image"  path="brandapp/image" />
     <external-files-path name="opensdk_external" path="Images/tmp"/>
     <root-path name="opensdk_root" path=""/>
+    
+    <external-files-path
+        name="share_files"
+        path="."/>
    <!-- <external-path
         name="external_files" path="." />-->
 </paths>

@@ -293,7 +293,7 @@ internal class RopeSkippingActivity() : BaseMVPActivity<RopeSkippingView, RopeSk
                     }
                     JkConfiguration.RopeSportType.Course -> {   //跳绳课程
                         var intent = Intent(this@RopeSkippingActivity, ActivityWebView::class.java)
-                        intent.putExtra("title", UIUtils.getString(R.string.rope_courese))
+                        intent.putExtra("title", "线上课程")
                         intent.putExtra("url", AppConfiguration.ropeCourseUrl)
                         startActivity(intent)
                     }

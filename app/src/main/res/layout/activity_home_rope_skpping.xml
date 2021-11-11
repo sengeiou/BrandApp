@@ -87,7 +87,7 @@
                             android:paddingLeft="@dimen/dp14"
                             android:paddingRight="@dimen/dp5"
                             android:singleLine="true"
-                            android:text="测试测试测试测试测试测试测试测试测试测试测试测试"
+                            android:text="--"
                             android:textColor="@color/common_white" />
 
                     </LinearLayout>
