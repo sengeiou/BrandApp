@@ -3,7 +3,7 @@
     /**app**/
     <string name="app_name">奔啦啦</string>//iSport健康管家
 
-
+    <string name="string_share_share">分享</string>
     <string name="string_challenge_1">全網第 </string>
     <string name="string_challenge_2"> 人完成挑戰 </string>
     <string name="string_challenge_numbers">挑戰個數</string>

@@ -61,11 +61,12 @@ public class RopePkCompletyDialog {
         if (isSuccess) {
             iv_success.setImageResource(R.drawable.bg_rope_success);
             tv_success.setText(mActivity.getString(R.string.rope_challeg_success));
-            tv_challeg_type_title.setText(String.format(mActivity.getString(R.string.rope_challeg_type_success), ropeTypeName));
+            tv_challeg_type_title.setText(String.format(mActivity.getString(R.string.rope_challenge_success2), ropeTypeName));
         } else {
+            dialogRopeGoalTimeTv.setText("/" + StringUtils.substringAfter(ropetime, "/") + "");
             iv_success.setImageResource(R.drawable.bg_rope_fail);
             tv_success.setText(mActivity.getString(R.string.rope_challeg_fail));
-            tv_challeg_type_title.setText(String.format(mActivity.getString(R.string.rope_challeg_type_fail), ropeTypeName));
+            tv_challeg_type_title.setText(String.format(mActivity.getString(R.string.rope_challenge_failed2), ropeTypeName));
         }
         tv_cal_value.setText(cal);
 
@@ -75,7 +76,7 @@ public class RopePkCompletyDialog {
         ropePkDialogGoalTv.setText(TextUtils.isEmpty(afterGoal) ? "":"/" +afterGoal);
         tv_time.setText(StringUtils.substringBefore(ropetime, "/") + "");
 
-        dialogRopeGoalTimeTv.setText("/" + StringUtils.substringAfter(ropetime, "/") + "");
+
         tv_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -25,13 +25,13 @@
             app:tabRippleColor="@android:color/transparent"
             app:tabSelectedTextColor="@color/common_text_color"
             app:tabTextAppearance="@style/tabStyle"
-            app:tabTextColor="@color/common_gray_color"></com.google.android.material.tabs.TabLayout>
+            app:tabTextColor="@color/common_gray_color"/>
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewpager_rank"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"></androidx.viewpager2.widget.ViewPager2>
+            android:orientation="horizontal"/>
 
     </LinearLayout>
 
@@ -84,15 +84,21 @@
             android:textColor="@color/common_text_color"
             android:textSize="@dimen/sp16" />
 
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
         <Button
             android:id="@+id/btn_launch"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp46"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/dp220"
             android:background="@drawable/shape_sleep_start_10_bg"
             android:text="@string/launch_rank"
+            android:layout_margin="25dp"
             android:textColor="@color/white"
-            android:textSize="@dimen/sp18"></Button>
+            android:textSize="@dimen/sp18"/>
     </LinearLayout>
 </FrameLayout>
