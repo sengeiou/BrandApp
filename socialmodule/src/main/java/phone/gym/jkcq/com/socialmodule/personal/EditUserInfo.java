@@ -866,8 +866,14 @@ public class EditUserInfo extends BaseTitleActivity implements View.OnClickListe
         String gender = getGender();
 
         String name = edtName.getText().toString().trim();
-        if (name.length() < 2 || name.length() > 18) {
+
+        if(TextUtils.isEmpty(name)){
             showToast(getString(R.string.friend_enter_nickname));
+            return;
+        }
+
+        if (name.length() < 2 || name.length() > 18) {
+            showToast("请输入2~18个长度内容!");
             return;
         }
         desPrifile = et_myProfile.getText().toString().trim();

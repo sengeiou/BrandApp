@@ -146,7 +146,7 @@
                     android:id="@+id/tv_bottom_unitl"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="千卡"
+                    android:text="@string/watch_step_unite_calory"
                     android:textColor="@color/common_white"
                     android:textSize="@dimen/sp12" />
             </LinearLayout>
@@ -239,7 +239,7 @@
                 android:background="@drawable/rope_share_btn"
                 android:gravity="center"
                 android:padding="8dp"
-                android:text="分享喜悦"
+                android:text="@string/string_rope_share"
                 android:textColor="@color/white"
                 android:textSize="@dimen/sp18"/>
 

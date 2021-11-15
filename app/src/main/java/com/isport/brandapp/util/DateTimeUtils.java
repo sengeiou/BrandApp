@@ -30,4 +30,19 @@ public class DateTimeUtils {
         }
 
     }
+
+
+
+    public static String getCurrentDate(){
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd",Locale.CHINA);
+        return simpleDateFormat.format(new Date());
+
+    }
+
+
+    public static String getCurrentDate(String format){
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format,Locale.CHINA);
+        return simpleDateFormat.format(new Date());
+
+    }
 }

@@ -2,7 +2,7 @@
     <string name="friend_cancel">取消</string>
 
 
-    <string name="rope_avg_unit_lower">bmp</string>
+    <string name="rope_avg_unit_lower">bpm</string>
     <string name="pull_to_refresh">下拉刷新</string>//下拉刷新
     <string name="xlistview_header_hint_ready">释放立即刷新</string>//释放立即刷新
     <string name="xlistview_header_hint_loading">正在刷新&#8230;</string>//正在刷新
@@ -126,7 +126,7 @@
     <string name="commend">评论</string>
     <string name="copy_text">复制</string>
     <string name="ensure_rope_tips">停用后您的运动数据不会出现在好友跳绳排行榜,并关闭您的跳绳排行榜功能</string>
-    <string name="launch_friend_rope_rank">启用好友跳绳运动排行功能吗？</string>
+    <string name="launch_friend_rope_rank">启用好友运动排行榜功能吗？</string>
     <string name="see_friend_rope_rank">1、查看好友的跳绳数据和排名情况 </string>
     <string name="friend_see_your_roperank">2、好友可以在排行榜中看到您的跳绳数据</string>
     <string name="rope_ranking">跳绳排行</string>
@@ -140,6 +140,11 @@
     <string name="rope_challeg_fail">挑战失败</string>
     <string name="rope_challeg_type_success">挑战\"%1s\"成功</string>
     <string name="rope_challeg_type_fail">挑战\"%1s\"失败</string>
+
+
+
+    <string name="rope_challenge_success2">你已完成挑战 \"%1s"\</string>
+    <string name="rope_challenge_failed2">挑战 \"%1s"\ 失败</string>
     <string name="rope_setting_count_unit">%1s 个</string>
     <string name="rope_setting_time_unit">%1s 秒</string>
     <string name="last_measurement">上次测量:</string>

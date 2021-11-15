@@ -11,8 +11,7 @@
     <RelativeLayout
         android:id="@+id/rl_title"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/view">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/iv_back"
@@ -25,9 +24,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="@string/edit_share"
+            android:text="@string/string_share_share"
             android:textColor="@color/common_white"
-            android:textSize="@dimen/sp17"/>
+            android:textSize="@dimen/sp17" />
     </RelativeLayout>
 
     <androidx.core.widget.NestedScrollView

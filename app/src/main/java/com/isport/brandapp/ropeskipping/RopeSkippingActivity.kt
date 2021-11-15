@@ -51,6 +51,7 @@ import com.isport.brandapp.ropeskipping.response.ResponseDailySummaries
 import com.isport.brandapp.ropeskipping.util.Preference
 import com.isport.brandapp.util.ActivitySwitcher
 import com.isport.brandapp.util.AppSP
+import com.isport.brandapp.util.DateTimeUtils
 import com.isport.brandapp.util.DeviceTypeUtil
 import com.isport.brandapp.wu.util.HeartRateConvertUtils
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener
@@ -293,7 +294,7 @@ internal class RopeSkippingActivity() : BaseMVPActivity<RopeSkippingView, RopeSk
                     }
                     JkConfiguration.RopeSportType.Course -> {   //跳绳课程
                         var intent = Intent(this@RopeSkippingActivity, ActivityWebView::class.java)
-                        intent.putExtra("title", UIUtils.getString(R.string.rope_courese))
+                        intent.putExtra("title", "线上课程")
                         intent.putExtra("url", AppConfiguration.ropeCourseUrl)
                         startActivity(intent)
                     }
@@ -386,7 +387,7 @@ internal class RopeSkippingActivity() : BaseMVPActivity<RopeSkippingView, RopeSk
         when (messageEvent.msg) {
 
             MessageEvent.ROPE_DATA_UPGRADE_SUCCESS -> {
-                mActPresenter.getSummary(TokenUtil.getInstance().getPeopleIdInt(BaseApp.instance), "2020-09-08", "ALL")
+                mActPresenter.getSummary(TokenUtil.getInstance().getPeopleIdInt(BaseApp.instance), DateTimeUtils.getCurrentDate(), "ALL")
             }
             MessageEvent.ADD_DEVICE_FIRST_PRESS -> {
                 ropeDeviceSync = true

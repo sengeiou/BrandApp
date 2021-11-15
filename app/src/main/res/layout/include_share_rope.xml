@@ -6,10 +6,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingLeft="@dimen/dp15"
-    android:paddingRight="@dimen/dp15"
+
     android:visibility="visible"
-    tools:background="@drawable/bg_share_rope_1">
+    tools:background="@drawable/item_comm_main_layout">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="3dp"
+        android:paddingLeft="@dimen/dp15"
+        android:paddingRight="@dimen/dp15"
+        android:background="@drawable/bg_share_rope_1">
+
+
 
     <View
         android:layout_width="1dp"
@@ -328,5 +338,7 @@
             android:layout_centerVertical="true"
             android:src="@drawable/share_app_logo" />
     </RelativeLayout>
+
+    </LinearLayout>
 </LinearLayout>
 
