@@ -39,8 +39,8 @@ repositories {
 }
 
 dependencies {
-    implementation files('libs\\AMap_Search_V6.9.3_20190722.jar')
-    implementation files('libs\\commons-lang-2.5.jar')
+    implementation files('libs/AMap_Search_V6.9.3_20190722.jar')
+    implementation files('libs/commons-lang-2.5.jar')
     def deps = rootProject.ext.deps
     api fileTree(dir: 'libs', include: ['*.jar'])
     api(name: 'crpblelib_141', ext: 'aar')
@@ -48,8 +48,12 @@ dependencies {
    // api 'com.umeng.umsdk:share-sina:7.1.6'//新浪微博完整版
 
 /*    api 'com.sina.weibo.sdk:core:10.10.0:openDefaultRelease@aar'//新浪微博官方SDK依*/
-
+   // api(name:'facebook-share',ext: 'aar')
     api(name:'openDefault-10.10.0',ext: 'aar')
+    // 显式依赖umeng asms库
+    implementation files('libs/umeng-asms-v1.2.2.aar') // asms包依赖(必选)
+    // 显式依赖umeng apm库
+    implementation files('libs/umeng-apm-v1.1.1.aar') // native crash包依赖(必选)
 
     implementation deps.appcompat
 //    testImplementation 'junit:junit:4.12'
@@ -61,7 +65,7 @@ dependencies {
      api 'com.squareup.okio:okio:latest.integration'*/
 //    api 'com.tencent.bugly:crashreport:latest.release'
 //    api 'com.tencent.bugly:nativecrashreport:latest.release'
-    api 'com.google.code.gson:gson:2.2.1'
+    api 'com.google.code.gson:gson:2.8.7'
 
     //图片加载库
      api 'jp.wasabeef:glide-transformations:4.0.1'
@@ -123,7 +127,7 @@ dependencies {
 
     api 'org.greenrobot:greendao:3.0.1'
     api 'org.greenrobot:greendao-generator:3.0.0'
-    api 'com.google.code.gson:gson:2.2.1'
+
     api 'com.alibaba:arouter-api:1.5.0'
 
 //    api 'com.github.PhilJay:MPAndroidChart:v3.0.3'
@@ -163,7 +167,7 @@ dependencies {
 
     api 'com.twitter.sdk.android:twitter-core:3.1.1'
     api 'com.twitter.sdk.android:tweet-composer:3.1.1'
-
+   // api 'com.facebook.android:facebook-share:5.15'
     api 'com.facebook.android:facebook-login:[5,6)'
     api 'com.tencent.bugly:crashreport:latest.release'
     api 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:5.4.3'
@@ -212,5 +216,8 @@ dependencies {
 
     //绕过Android P对非SDK接口的限制 http://weishu.me/2018/06/07/free-reflection-above-android-p/
     api 'me.weishu:free_reflection:1.2.0'
+
+
+  //  api 'com.github.chrisbanes:PhotoView:2.3.0'
 
 }

@@ -63,7 +63,8 @@ public class RopePkCompletyDialog {
             tv_success.setText(mActivity.getString(R.string.rope_challeg_success));
             tv_challeg_type_title.setText(String.format(mActivity.getString(R.string.rope_challenge_success2), ropeTypeName));
         } else {
-            dialogRopeGoalTimeTv.setText("/" + StringUtils.substringAfter(ropetime, "/") + "");
+            String allTimeGoal =  StringUtils.substringAfter(ropetime, "/").trim();
+            dialogRopeGoalTimeTv.setText(TextUtils.isEmpty(allTimeGoal) ? "" :"/"+allTimeGoal);
             iv_success.setImageResource(R.drawable.bg_rope_fail);
             tv_success.setText(mActivity.getString(R.string.rope_challeg_fail));
             tv_challeg_type_title.setText(String.format(mActivity.getString(R.string.rope_challenge_failed2), ropeTypeName));

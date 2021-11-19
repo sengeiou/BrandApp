@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.text.TextUtils;
 import android.widget.TextView;
 
+import com.isport.blelibrary.utils.Logger;
 import com.isport.brandapp.R;
 
 import java.util.ArrayList;
@@ -19,6 +20,8 @@ import phone.gym.jkcq.com.commonres.commonutil.Arith;
  * Create at 2018/4/20 10:26
  */
 public class HeartRateConvertUtils {
+
+    private static final String TAG = "HeartRateConvertUtils";
 
     //小数点后保留几位
     private static int scale = 2;
@@ -214,13 +217,20 @@ public class HeartRateConvertUtils {
 //        percent = Arith.div(heartRate,maxHeartRate,0)*100;
         percent = (heartRate * 1.0f / maxHeartRate) * 100;
         //  percent = Arith.div(percent, 1, 0);
+        Logger.myLog(TAG,"--------心率强度="+percent+" heart="+heartRate+" max="+maxHeartRate);
         return percent;
     }
 
     //最大心率
     public static int getMaxHeartRate(int age, String gender) {
+
+        Logger.myLog(TAG,"-------年龄="+age+" 性别="+gender);
         //女的226
         //男的220
+        if(TextUtils.isEmpty(gender))
+            gender = "Man";
+        if(age == 0)
+            age = 27;
         int maxHeartRate = 220 - age;
         if (!TextUtils.isEmpty(gender)) {
             if (gender.equals("Female")) {

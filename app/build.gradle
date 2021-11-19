@@ -187,4 +187,7 @@ dependencies {
     api 'com.alibaba:arouter-api:1.5.0'
 
 
+
+   // api 'com.github.chrisbanes:PhotoView:2.3.0'
+
 }

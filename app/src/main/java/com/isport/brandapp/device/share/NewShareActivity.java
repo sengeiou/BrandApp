@@ -108,8 +108,7 @@ public class NewShareActivity extends BaseActivity implements View.OnClickListen
     private LinearLayout shareRopeLayout;
     //排行
     private TextView ropeSortTv;
-    //描述
-    private TextView ropeDescTv;
+
     //平均心率
     private AkrobatNumberTextView tv_rope_avgHeartTv;
     //平均心率的布局
@@ -254,7 +253,6 @@ public class NewShareActivity extends BaseActivity implements View.OnClickListen
 
         shareRopeLayout = findViewById(R.id.shareRopeLayout);
         ropeSortTv = findViewById(R.id.shareRopeSortTv);
-        ropeDescTv = findViewById(R.id.shareRopeDescTv);
         tv_rope_avgHeartTv = findViewById(R.id.tv_rope_avgHeartTv);
 
 
@@ -486,6 +484,8 @@ public class NewShareActivity extends BaseActivity implements View.OnClickListen
 
                 break;
             case R.id.iv_weibo:
+//                hideView();
+//                util.checkCameraPersiomm(this, this, fl_share_content, "weibo");
                 if (PackageUtil.isWxInstall(NewShareActivity.this, PackageUtil.weiboPakage)) {
                     hideView();
                     util.checkCameraPersiomm(this, this, fl_share_content, "weibo");
@@ -496,14 +496,23 @@ public class NewShareActivity extends BaseActivity implements View.OnClickListen
 
                 break;
             case R.id.iv_facebook:
-                //判断facebook是否安装，没有按钮
-                if (PackageUtil.isWxInstall(NewShareActivity.this, PackageUtil.facebookPakage)) {
-                    hideView();
-                    util.checkCameraPersiomm(this, this, fl_share_content, "facebook");
-                } else {
+                boolean isFaceInstall = UMShareAPI.get(NewShareActivity.this).isInstall(this,SHARE_MEDIA.FACEBOOK);
+                if(!isFaceInstall){
                     ToastUtils.showToast(NewShareActivity.this, UIUtils.getString(R.string.please_install_software));
                     return;
                 }
+
+                hideView();
+                util.checkCameraPersiomm(this, this, fl_share_content, "facebook");
+
+//                //判断facebook是否安装，没有按钮
+//                if (PackageUtil.isWxInstall(NewShareActivity.this, PackageUtil.facebookPakage)) {
+//                    hideView();
+//                    util.checkCameraPersiomm(this, this, fl_share_content, "facebook");
+//                } else {
+//                    ToastUtils.showToast(NewShareActivity.this, UIUtils.getString(R.string.please_install_software));
+//                    return;
+//                }
                 break;
 
             case R.id.iv_more:
@@ -970,7 +979,7 @@ public class NewShareActivity extends BaseActivity implements View.OnClickListen
         shareRopeRecordCountTv.setVisibility(isChallenge ? View.INVISIBLE : View.VISIBLE);
         shareRopeHeartLayout.setVisibility(isChallenge ? View.VISIBLE : View.GONE);
 
-        shareTimeTitleTv.setText(isChallenge ? "用时" : getResources().getString(R.string.rope_share_sum_time));
+        shareTimeTitleTv.setText(isChallenge ? getResources().getString(R.string.rope_real_rope_time) : getResources().getString(R.string.rope_share_sum_time));
 
 
 
@@ -978,7 +987,7 @@ public class NewShareActivity extends BaseActivity implements View.OnClickListen
         ll_share_content_sleep.setVisibility(View.GONE);
         ll_share_content_hr.setVisibility(View.GONE);
         ll_share_rope_ll.setVisibility(View.VISIBLE);
-        fl_share_content.setBackgroundResource(R.drawable.bg_share_rope_1);
+        fl_share_content.setBackgroundResource(R.drawable.bg_share_rope_1_radius);
         iv_share_bg1.setImageResource(R.drawable.bg_share_small_rope_1);
         iv_share_bg2.setImageResource(R.drawable.bg_share_small_rope_2);
         iv_share_bg3.setImageResource(R.drawable.bg_share_small_rope_3);
@@ -1004,8 +1013,9 @@ public class NewShareActivity extends BaseActivity implements View.OnClickListen
             tv_rope_sum_cal.setText(shareBean.three);
             tv_rope_time.setText(shareBean.time);
             if(currentShareDeviceType == JkConfiguration.RopeSportType.ROPE_CHALLENGE){
-                ropeDescTv.setText("'"+shareBean.getChallengeDesc()+"'");
-                ropeSortTv.setText(shareBean.getChallengeRank()+"");
+//                ropeDescTv.setText("'"+shareBean.getChallengeDesc()+"'");
+//                ropeSortTv.setText(shareBean.getChallengeRank()+"");
+                ropeSortTv.setText(String.format(getResources().getString(R.string.string_share_rank_txt),shareBean.getChallengeRank(),shareBean.getChallengeDesc()));
                 tv_rope_avgHeartTv.setText(shareBean.getRopeAvgHeart()+"");
             }
         }

@@ -192,6 +192,7 @@ public class FragmentNewData extends BaseMVPFragment<FragmentDataView, FragmentD
     RefrushRecycleView refrushRecycleView;
     DataHeaderHolder dataHeaderHolder;//进度条
     // DataDeviceSportHolder dataSportHolder;//运动
+    //头部实时心率
     DataRealHeartRateHolder dataRealHeartRateHolder;
     // DataScaleHolder dataScaleHolder;//体脂秤
     DataHeartRateHolder dataHeartRateHolder;//心率
@@ -761,6 +762,8 @@ public class FragmentNewData extends BaseMVPFragment<FragmentDataView, FragmentD
                     case IResult.DEVICE_MESSURE:
                         try {
                             DeviceMessureDataResult deviceMessureDataResult = (DeviceMessureDataResult) mResult;
+
+                            Logger.myLog(TAG,"---DEVICE_MESSURE----deviceMessureDataResult="+deviceMessureDataResult.toString());
                             String deviceName = deviceMessureDataResult.getMac();
                             switch (deviceMessureDataResult.getMessureType()) {
                                 case DeviceMessureData.update_weather:
@@ -2316,6 +2319,7 @@ public class FragmentNewData extends BaseMVPFragment<FragmentDataView, FragmentD
     @Override
     public void successWatchHistoryDataFormHttp(boolean show, int type) {
 
+        Logger.myLog(TAG,"--------successWatchHistoryDataFormHttp="+show+" type="+type);
 
         switch (type) {
             case JkConfiguration.WatchDataType.STEP:

@@ -1734,6 +1734,8 @@ public class BaseAgent {
                 ((W812BDevice) currentDevice).setTargetStep(step);
             } else if (currentDevice instanceof W560Device) {
                 ((W560Device) currentDevice).setTargetStep(step);
+            }else if(currentDevice instanceof W560BDevice){
+                ((W560BDevice) currentDevice).setTargetStep(step);
             }
         }
     }
@@ -1993,6 +1995,9 @@ public class BaseAgent {
             } else if (currentDevice instanceof W560Device) {
                 ((W560Device) currentDevice).set_w526_raise_hand(0, 0, 0, 0, 0);
             }
+            else if(currentDevice instanceof W560BDevice){
+                ((W560BDevice) currentDevice).set_w526_raise_hand(0,0,0,0,0);
+            }
         }
     }
 
@@ -2059,6 +2064,8 @@ public class BaseAgent {
                 ((W812BDevice) currentDevice).sendRealHrSwitch(isEnable);
             } else if (currentDevice instanceof W560Device) {
                 ((W560Device) currentDevice).sendRealHrSwitch(isEnable);
+            }else if(currentDevice instanceof W560BDevice){
+                ((W560BDevice) currentDevice).sendRealHrSwitch(isEnable);
             }
         }
     }
@@ -2095,6 +2102,8 @@ public class BaseAgent {
                 ((W812BDevice) currentDevice).syncTodayData();
             } else if (currentDevice instanceof W560Device) {
                 ((W560Device) currentDevice).syncTodayData();
+            }else if(currentDevice instanceof W560BDevice){
+                ((W560BDevice) currentDevice).syncTodayData();
             }
         }
     }
@@ -2155,6 +2164,8 @@ public class BaseAgent {
                 ((W812BDevice) currentDevice).sendRealHrSwitch(isOpen);
             } else if (currentDevice instanceof W560Device) {
                 ((W560Device) currentDevice).sendRealHrSwitch(isOpen);
+            }else if(currentDevice instanceof W560BDevice){
+                ((W560BDevice) currentDevice).sendRealHrSwitch(isOpen);
             }
 
         }
@@ -2301,6 +2312,8 @@ public class BaseAgent {
                 ((W812BDevice) currentDevice).queryWatchFace();
             } else if (currentDevice instanceof W560Device) {
                 ((W560Device) currentDevice).queryWatchFace();
+            }else if(currentDevice instanceof W560BDevice){
+                ((W560BDevice) currentDevice).queryWatchFace();
             }
         }
     }

@@ -64,7 +64,7 @@
         android:layout_height="match_parent"
         android:layout_margin="20dp"
         android:orientation="vertical"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
@@ -112,7 +112,7 @@
             android:layout_margin="20dp"
             android:padding="3dp"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/rope_share_btn"
+            android:background="@drawable/rope_bg_shap"
             android:text="开启"
             android:textColor="@color/white"
             android:textSize="@dimen/sp18"/>

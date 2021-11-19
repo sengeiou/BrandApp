@@ -240,6 +240,7 @@ public class DeviceTypeUtil {
                 || AppConfiguration.deviceMainBeanList.containsKey(JkConfiguration.DeviceType.Watch_W557)
                 || AppConfiguration.deviceMainBeanList.containsKey(JkConfiguration.DeviceType.Watch_W812B)
                 || AppConfiguration.deviceMainBeanList.containsKey(JkConfiguration.DeviceType.Watch_W560)
+                || AppConfiguration.deviceMainBeanList.containsKey(JkConfiguration.DeviceType.Watch_W560B)
         )) {
             return true;
         } else {

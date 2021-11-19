@@ -143,8 +143,8 @@
     <string name="rope_challeg_type_success">Challenge \"%1s\" success</string>
     <string name="rope_challeg_type_fail">Challenge \"%1s\" failed</string>
 
-    <string name="rope_challenge_success2">Challenge success \"%1s"\</string>
-    <string name="rope_challenge_failed2">Challenge failed \"%1s"\</string>
+    <string name="rope_challenge_success2">Challenge success \"%1s\"</string>
+    <string name="rope_challenge_failed2">Challenge failed \"%1s\"</string>
 
     <string name="rope_setting_count_unit">%1s numbers</string>
     <string name="rope_setting_time_unit">%1s seconds</string>

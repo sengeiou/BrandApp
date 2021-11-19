@@ -137,8 +137,8 @@
                 android:id="@+id/view_indoor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:scaleType="fitXY"
                 android:layout_centerInParent="true"
+                android:scaleType="fitXY"
                 android:src="@drawable/bg_new_sport"
                 android:visibility="visible" />
 

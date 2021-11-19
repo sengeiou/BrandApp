@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
@@ -36,6 +37,7 @@ import com.isport.brandapp.ropeskipping.realsport.RealRopeSkippingActivity;
 import com.isport.brandapp.sport.bean.SportSumData;
 import com.jkcq.train.ui.TrainVideoActivity;
 import com.umeng.socialize.ShareAction;
+import com.umeng.socialize.UMShareAPI;
 import com.umeng.socialize.UMShareListener;
 import com.umeng.socialize.bean.SHARE_MEDIA;
 import com.umeng.socialize.media.UMImage;
@@ -43,6 +45,7 @@ import com.umeng.socialize.media.UMWeb;
 
 import java.util.List;
 
+import androidx.annotation.Nullable;
 import brandapp.isport.com.basicres.BaseTitleActivity;
 import brandapp.isport.com.basicres.base.BaseConstant;
 import brandapp.isport.com.basicres.commonutil.Logger;
@@ -157,6 +160,11 @@ public class ActivityWebView extends BaseTitleActivity implements UMShareListene
         titleBarView.setOnTitleBarClickListener(new TitleBarView.OnTitleBarClickListener() {
             @Override
             public void onLeftClicked(View view) {
+                if(tk_webview.canGoBack()){
+                    tk_webview.goBack();
+                    return;
+                }
+
                 finish();
             }
 
@@ -314,7 +322,7 @@ public class ActivityWebView extends BaseTitleActivity implements UMShareListene
         //Logger.e("data", "" + webData);
         if (webData != null) {
             if (webData.getType().equals("onlineCourse")) {
-                Intent intent = new Intent(this, ActivityWebView.class);
+                Intent intent = new Intent(ActivityWebView.this, ActivityWebView.class);
                 intent.putExtra("title", "线上课程");
                 intent.putExtra("url", webData.getUrl());
                 intent.putExtra("share_url", webData.getUrl());
@@ -367,6 +375,19 @@ public class ActivityWebView extends BaseTitleActivity implements UMShareListene
                 //  callJsFunc()
             }
 
+        }
+
+        @Override
+        public boolean shouldOverrideKeyEvent(WebView view, KeyEvent event) {
+
+
+
+            return super.shouldOverrideKeyEvent(view, event);
+        }
+
+        @Override
+        public void onUnhandledKeyEvent(WebView view, KeyEvent event) {
+            super.onUnhandledKeyEvent(view, event);
         }
 
         @Override
@@ -571,4 +592,25 @@ public class ActivityWebView extends BaseTitleActivity implements UMShareListene
         return false;
     }
 
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(keyCode == KeyEvent.KEYCODE_BACK){
+            if(tk_webview.canGoBack()){
+                tk_webview.goBack();
+                return true;
+            }else{
+                finish();
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
+    }
 }

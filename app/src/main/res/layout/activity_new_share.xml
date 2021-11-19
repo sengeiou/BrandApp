@@ -50,7 +50,8 @@
                 android:layout_height="@dimen/dp400"
                 android:layout_marginLeft="@dimen/dp15"
                 android:layout_marginRight="@dimen/dp15"
-                android:background="@drawable/share_step_bg1">
+                android:background="@drawable/white_bg_radius"
+               >
 
                 <include
                     layout="@layout/include_share_step"

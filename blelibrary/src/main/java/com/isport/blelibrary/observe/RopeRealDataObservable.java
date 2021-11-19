@@ -1,6 +1,8 @@
 
 package com.isport.blelibrary.observe;
 
+import android.util.Log;
+
 import com.isport.blelibrary.entry.RopeRealDataBean;
 import com.isport.blelibrary.observe.bean.EndBean;
 import com.isport.blelibrary.utils.Utils;
@@ -15,6 +17,8 @@ import java.util.Observable;
  * @author Administrator
  */
 public class RopeRealDataObservable extends Observable {
+
+    private static final String TAG = "RopeRealDataObservable";
 
     private static RopeRealDataObservable obser;
 
@@ -57,7 +61,7 @@ public class RopeRealDataObservable extends Observable {
 
     public void successRealData(byte[] data) {
         //00 80 01 00 47 84 0E 00 2D 00 00 00
-
+        Log.e(TAG,"--------RopeType="+data[0]);
         try {
 
             RopeRealDataBean ropeRealDataBean = new RopeRealDataBean();

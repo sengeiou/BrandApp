@@ -475,7 +475,7 @@ public class App extends BaseApp {
 
     private void initUmenData(){
         UMConfigure.setLogEnabled(true);
-
+        String fileProvider = "com.isport.brandapp.fileprovider";
         //初始化组件化基础库, 统计SDK/推送SDK/分享SDK都必须调用此初始化接口
         UMConfigure.init(this, null, null, UMConfigure.DEVICE_TYPE_PHONE,
                 null);
@@ -488,9 +488,10 @@ public class App extends BaseApp {
         //    public final static String APP_ID_WX = "wx83ad7682b33e28e5";
         //    public final static String APP_SECRET_WX = "d673af9518942cd8ef8490837502c12e";
         PlatformConfig.setWeixin("wx83ad7682b33e28e5", "d673af9518942cd8ef8490837502c12e");
+        PlatformConfig.setWXFileProvider(fileProvider);
         // 新浪微博 2511584848 8be44eb4339235c451f978d1059c2763
         PlatformConfig.setSinaWeibo("2511584848", "8be44eb4339235c451f978d1059c2763", "http://sns.whalecloud.com");
-        // PlatformConfig.setSinaFileProvider(FileProvider);
+         PlatformConfig.setSinaFileProvider(fileProvider);
         // QQ APP ID 1108767316
         //APP KEY bsAfYGPH8dW47RG8
         // PlatformConfig.setQQZone("1108767316", "bsAfYGPH8dW47RG8");

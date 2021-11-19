@@ -425,7 +425,7 @@ internal class RopeSkippingActivity() : BaseMVPActivity<RopeSkippingView, RopeSk
 
     override fun onResume() {
         super.onResume()
-        mActPresenter.getSummary(TokenUtil.getInstance().getPeopleIdInt(BaseApp.instance), "2020-09-08", "ALL")
+        mActPresenter.getSummary(TokenUtil.getInstance().getPeopleIdInt(BaseApp.instance), DateTimeUtils.getCurrentDate(), "ALL")
         commonUserPresenter!!.getUserinfo(TokenUtil.getInstance().getPeopleIdInt(BaseApp.instance))
         RopeRealDataObservable.getInstance().addObserver(this)
 

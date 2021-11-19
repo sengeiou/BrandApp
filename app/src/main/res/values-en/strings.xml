@@ -3,7 +3,7 @@
     /**app**/
     <string name="app_name">Bonlala</string>//iSport健康管家
 
-
+    <string name="string_share_rank_txt">The %1$s th person on the entire network completed the challenge \"%2$s\"</string>
     <string name="string_share_share">Share</string>
     <string name="string_challenge_numbers">challenge numbers</string>
     <string name="string_challenge_time">challenge time</string>

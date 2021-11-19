@@ -2,11 +2,8 @@
     <string name="app_id">5c7229e9</string>
     /**app**/
     <string name="app_name">奔啦啦</string>//iSport健康管家
-
-
+    <string name="string_share_rank_txt">全网第 %1$s 人完成挑战  %2$s</string>
     <string name="string_share_share">分享</string>
-    <string name="string_challenge_1">全網第 </string>
-    <string name="string_challenge_2"> 人完成挑戰 </string>
     <string name="string_challenge_numbers">挑戰個數</string>
     <string name="string_challenge_time">挑戰時間</string>
     <string name="string_rope_share">分享喜悅</string>

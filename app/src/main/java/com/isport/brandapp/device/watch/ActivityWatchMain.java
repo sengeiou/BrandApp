@@ -1307,12 +1307,17 @@ public class ActivityWatchMain extends BaseMVPTitleActivity<WatchView, WatchPres
             iv_watch_face.setVisibility(View.VISIBLE);
             iv_watch_backlight_time.setVisibility(View.VISIBLE);
             iv_watch_screen_luminance.setVisibility(View.VISIBLE);
+
+            if (currentType == JkConfiguration.DeviceType.Watch_W560 || currentType == JkConfiguration.DeviceType.Watch_W560B) {
+
+                boolean isW560B = currentType == JkConfiguration.DeviceType.Watch_W560B;
+
+                ivWatchDistanceTarget.setVisibility(isW560B ? View.GONE : View.VISIBLE);
+                ivWatchCalorieTarget.setVisibility(isW560B ? View.GONE : View.VISIBLE);
+            }
         }
 
-        if (currentType == JkConfiguration.DeviceType.Watch_W560 || currentType == JkConfiguration.DeviceType.Watch_W560B) {
-            ivWatchDistanceTarget.setVisibility(View.VISIBLE);
-            ivWatchCalorieTarget.setVisibility(View.VISIBLE);
-        }
+
     }
 
     public void setfindBraceletValue() {

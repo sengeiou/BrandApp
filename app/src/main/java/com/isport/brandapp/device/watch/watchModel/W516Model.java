@@ -48,6 +48,10 @@ import brandapp.isport.com.basicres.net.userNet.CommonUserAcacheUtil;
 import phone.gym.jkcq.com.commonres.common.JkConfiguration;
 
 public class W516Model implements IW516Model {
+
+
+    private static final String TAG = "W516Model";
+    
     public final static int allDayNoData = 0;
     public final static int day20beforhasData = 1;
     public final static int day20afterhasData = 2;
@@ -205,9 +209,10 @@ public class W516Model implements IW516Model {
     public HeartRateMainData getWatchHeartRteLastTwoData() {
         HeartRateMainData heartRateMainData = new HeartRateMainData();
         List<Watch_W516_24HDataModel> model = Watch_W516_24HDataModelAction.findWatch_W516_Watch_W516_24HDataModelByDeviceId_Last_Two_HR(TokenUtil.getInstance().getPeopleIdInt(BaseApp.getApp()), AppConfiguration.braceletID);
+
         if (model != null && model.size() > 0) {
             //Logger.myLog("getLast HeartRte Data" + model.toString());
-            Watch_W516_24HDataModel watch_w516_24HDataModel1 = model.get(0);
+            Watch_W516_24HDataModel watch_w516_24HDataModel1 = model.get(model.size()-1);
             heartRateMainData.setLastSyncTime(watch_w516_24HDataModel1.getTimestamp());
             heartRateMainData.setHeartRate(watch_w516_24HDataModel1.getAvgHR());
             heartRateMainData.setDateStr(watch_w516_24HDataModel1.getDateStr());

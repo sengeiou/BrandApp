@@ -30,6 +30,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 import com.isport.blelibrary.ISportAgent;
@@ -37,19 +39,16 @@ import com.isport.blelibrary.db.action.DeviceTypeTableAction;
 import com.isport.blelibrary.utils.Logger;
 import com.isport.blelibrary.utils.SyncCacheUtils;
 import com.isport.brandapp.App;
-import com.isport.brandapp.home.MainActivity;
 import com.isport.brandapp.R;
 import com.isport.brandapp.device.share.PackageUtil;
 import com.isport.brandapp.dialog.PriDialog;
+import com.isport.brandapp.home.MainActivity;
 import com.isport.brandapp.login.presenter.LoginPresenter;
 import com.isport.brandapp.login.view.LoginBaseView;
 import com.isport.brandapp.util.AppSP;
 import com.isport.brandapp.util.DeviceTypeUtil;
 import com.isport.brandapp.view.TimerView;
 import com.tbruyelle.rxpermissions2.RxPermissions;
-import com.umeng.analytics.MobclickAgent;
-import com.umeng.commonsdk.UMConfigure;
-import com.umeng.socialize.PlatformConfig;
 import com.umeng.socialize.UMAuthListener;
 import com.umeng.socialize.UMShareAPI;
 import com.umeng.socialize.bean.SHARE_MEDIA;
@@ -59,7 +58,6 @@ import org.greenrobot.eventbus.ThreadMode;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.Map;
 
@@ -215,7 +213,7 @@ public class ActivityLogin extends BaseMVPActivity<LoginBaseView, LoginPresenter
     }
 
     private void requestPermission() {
-        initUMeng();
+
         PermissionManageUtil permissionManage = new PermissionManageUtil(context);
         RxPermissions mRxPermission = new RxPermissions(this);
         if (!mRxPermission.isGranted(Manifest.permission.ACCESS_FINE_LOCATION)) {
@@ -592,13 +590,26 @@ public class ActivityLogin extends BaseMVPActivity<LoginBaseView, LoginPresenter
     }*/
 
     private void loginByFacebook() {
-
+        boolean isFaceInstall = UMShareAPI.get(ActivityLogin.this).isInstall(this,SHARE_MEDIA.FACEBOOK);
+        if(!isFaceInstall){
+            ToastUtils.showToast(ActivityLogin.this, UIUtils.getString(R.string.please_install_software));
+            return;
+        }
 
         LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile"));
         // LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile", "user_friends"));
     }
 
     private void loginByGoogle() {
+//        boolean isFaceInstall = UMShareAPI.get(ActivityLogin.this).isInstall(this,SHARE_MEDIA.GOOGLEPLUS);
+//        if(!isFaceInstall){
+//            ToastUtils.showToast(ActivityLogin.this, UIUtils.getString(R.string.please_install_software));
+//            return;
+//        }
+        if(!isSupportGoogleService()){
+            ToastUtils.showToast(ActivityLogin.this, UIUtils.getString(R.string.please_install_software));
+            return;
+        }
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
@@ -1072,52 +1083,11 @@ public class ActivityLogin extends BaseMVPActivity<LoginBaseView, LoginPresenter
 
     }
 
-    private void initUMeng() {
 
 
-        UMConfigure.setLogEnabled(true);
-        try {
-            Class<?> aClass = Class.forName("com.umeng.commonsdk.UMConfigure");
-            Field[] fs = aClass.getDeclaredFields();
-            for (Field f : fs) {
-                Log.e("xxxxxx", "ff=" + f.getName() + "   " + f.getType().getName());
-            }
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        //初始化组件化基础库, 统计SDK/推送SDK/分享SDK都必须调用此初始化接口
-        UMConfigure.init(this, null, null, UMConfigure.DEVICE_TYPE_PHONE,
-                null);
-        // interval 单位为毫秒，如果想设定为40秒，interval应为 40*1000.
-        MobclickAgent.setSessionContinueMillis(30 * 1000);//黑屏，应用后台运行超过30s启动都算一次启动
-        // 选用AUTO页面采集模式
-        MobclickAgent.setPageCollectionMode(MobclickAgent.PageMode.AUTO);
-
-
-        // 微信
-        //    public final static String APP_ID_WX = "wx83ad7682b33e28e5";
-        //    public final static String APP_SECRET_WX = "d673af9518942cd8ef8490837502c12e";
-        PlatformConfig.setWeixin("wx83ad7682b33e28e5", "d673af9518942cd8ef8490837502c12e");
-        // 新浪微博 2511584848 8be44eb4339235c451f978d1059c2763
-        PlatformConfig.setSinaWeibo("2511584848", "8be44eb4339235c451f978d1059c2763", "http://sns.whalecloud.com");
-        // QQ APP ID 1108767316
-        //APP KEY bsAfYGPH8dW47RG8
-        // PlatformConfig.setQQZone("1108767316", "bsAfYGPH8dW47RG8");
-        PlatformConfig.setQQZone("1110159454", "Ziwl5Fje7wi3327f");
-        PlatformConfig.setQQFileProvider("com.isport.brandapp.fileProvider");
-
-       /* UMConfigure.init(this, "5bbdb11cf1f556058a0002b6", "Umeng", UMConfigure.DEVICE_TYPE_PHONE,
-                "iSport健康管家");*/
-
-        // 友盟分享
-      /*  Config.DEBUG = true;// 开启debug模式，方便定位错误
-//        Config.REDIRECT_URL = "http://sns.whalecloud.com";
-        QueuedWork.isUseThreadPool = false;
-
-        UMShareConfig config = new UMShareConfig();
-        config.isNeedAuthOnGetUserInfo(true);
-        UMShareAPI.get(this).setShareConfig(config);
-        UMShareAPI.get(this);*/
+    //判断手机是否支持googleService
+    private boolean isSupportGoogleService(){
+        int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
+        return status == ConnectionResult.SUCCESS;
     }
-
 }

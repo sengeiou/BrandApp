@@ -2,6 +2,7 @@ package test;
 
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.isport.blelibrary.ISportAgent;
@@ -24,6 +25,7 @@ public class Test2Activity extends BaseActivity {
     private WatchStepChartView testWatchStepChartView;
     private EditText testInputEdit;
 
+    private Button getVersionBtn;
 
     public void test2SendData1(View view){
         ISportAgent.getInstance().requestBle(BleRequest.READ_DEVICE_GOAL);
@@ -38,6 +40,15 @@ public class Test2Activity extends BaseActivity {
     protected void initView(View view) {
         testWatchStepChartView = findViewById(R.id.testWatchStepChartView);
         testInputEdit = findViewById(R.id.testInputEdit);
+
+        getVersionBtn = findViewById(R.id.getVersionBtn);
+
+        getVersionBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getVersionData();
+            }
+        });
 
     }
 
@@ -54,6 +65,10 @@ public class Test2Activity extends BaseActivity {
     @Override
     protected void initHeader() {
 
+    }
+
+    private void getVersionData(){
+        ISportAgent.getInstance().requestBle(BleRequest.Common_GetVersion);
     }
 
 

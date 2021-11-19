@@ -143,8 +143,8 @@
 
 
 
-    <string name="rope_challenge_success2">你已完成挑战 \"%1s"\</string>
-    <string name="rope_challenge_failed2">挑战 \"%1s"\ 失败</string>
+    <string name="rope_challenge_success2">你已完成挑战 \"%1s\"</string>
+    <string name="rope_challenge_failed2">挑战 \"%1s\" 失败</string>
     <string name="rope_setting_count_unit">%1s 个</string>
     <string name="rope_setting_time_unit">%1s 秒</string>
     <string name="last_measurement">上次测量:</string>

@@ -6,19 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-
     android:visibility="visible"
-    tools:background="@drawable/item_comm_main_layout">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_margin="3dp"
-        android:paddingLeft="@dimen/dp15"
-        android:paddingRight="@dimen/dp15"
-        android:background="@drawable/bg_share_rope_1">
-
+    android:padding="15dp"
+    android:background="@drawable/bg_share_rope_1_radius">
 
 
     <View
@@ -279,48 +269,17 @@
 
     <LinearLayout
         android:id="@+id/shareRopeLayout"
-        android:visibility="gone"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:orientation="horizontal">
 
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:textColor="@color/white"
-            android:textSize="17sp"
-            android:layout_height="wrap_content"
-            android:text="全网第"/>
-
-
-        <TextView
-            android:id="@+id/shareRopeSortTv"
-            android:textColor="@color/white"
-            android:layout_width="wrap_content"
-            android:textSize="17sp"
-            android:layout_height="wrap_content"
-            android:text=" 8888 "/>
-
-
-        <TextView
-            android:textColor="@color/white"
-            android:textSize="17sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="人完成挑战"/>
-
-
-
-
-        <TextView
-            android:id="@+id/shareRopeDescTv"
-            android:textColor="@color/white"
-            android:textSize="23sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="''氪金之心''"/>
-
+       <TextView
+           android:id="@+id/shareRopeSortTv"
+           android:layout_width="match_parent"
+           android:textColor="@color/white"
+           android:layout_height="wrap_content"/>
 
 
     </LinearLayout>
@@ -339,6 +298,5 @@
             android:src="@drawable/share_app_logo" />
     </RelativeLayout>
 
-    </LinearLayout>
 </LinearLayout>
 

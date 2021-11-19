@@ -57,6 +57,7 @@ import com.isport.brandapp.view.VerBatteryView;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import java.io.File;
+import java.util.Locale;
 
 import androidx.core.app.ActivityCompat;
 import androidx.core.widget.NestedScrollView;
@@ -1173,6 +1174,14 @@ public class DFUActivity extends BaseMVPTitleActivity<DeviceUpgradeView, DevcieU
 
             } else {
 
+                Logger.myLog(TAG,"------固件版本="+serviceVersion+"currV="+currentVersion);
+
+                if(serviceVersion.toLowerCase(Locale.ROOT).contains("v")){
+                    serviceVersion = serviceVersion.replace("v","").trim();
+                }
+                if(currentVersion.toLowerCase(Locale.ROOT).contains("v")){
+                    currentVersion = currentVersion.replace("v","").trim();
+                }
                 if (serviceVersion.equals(currentVersion)) {
                     //if (false) {
                     //已经是最新版本

@@ -22,7 +22,7 @@
                 android:id="@+id/toolbar_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="@dimen/friend_dp150"
+
                 android:orientation="vertical"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
@@ -34,7 +34,7 @@
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="450dp"
+                        android:layout_height="wrap_content"
                         android:background="@color/common_bg"
                         android:orientation="vertical">
 
@@ -46,7 +46,7 @@
                             android:src="@drawable/friend_bg_homepage_defaut" />
 
                         <ImageView
-                            android:layout_width="fill_parent"
+                            android:layout_width="match_parent"
                             android:layout_height="220dp"
                             android:scaleType="centerCrop"
                             android:src="@color/blank_40" />
@@ -109,11 +109,14 @@
                             android:layout_marginLeft="@dimen/dp30"
                             android:layout_marginRight="@dimen/dp15"
                             android:layout_marginTop="@dimen/dp5"
-                            android:ellipsize="middle"
                             android:textStyle="bold"
+                            android:text="dfsafds"
                             android:singleLine="true"
                             android:textColor="@color/common_white"
                             android:textSize="28sp" />
+
+
+
 
                         <TextView
                             android:id="@+id/tv_myprofile_content"
@@ -123,16 +126,18 @@
                             android:layout_marginLeft="@dimen/dp30"
                             android:layout_marginTop="@dimen/dp10"
                             android:layout_marginRight="@dimen/dp30"
-                            android:ellipsize="end"
-                            android:maxLines="2"
+                            android:text="fjdlsfjdslfjlafjdlsfjdslfjlasdkjfklasdjflkasdjfklasjdlfkajskldfjskdlfjasldkfjlaskdjflkasdjfklasdjfklasdjkfljsdlkfjsdlkfjaslkdfjsdkjfklasdjflkasdjfklasjdlfkajskldfjskdlfjasldkfjlaskdjflkasdjfklasdjfklasdjkfljsdlkfjsdlkfjaslkdfj"
                             android:textColor="@color/common_tips_color"
                             android:textSize="13sp"
                             android:visibility="visible" />
 
+
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="82dp"
-                            android:layout_alignParentBottom="true"
+                            android:layout_marginTop="15dp"
+                           android:layout_below="@+id/tv_myprofile_content"
                             android:layout_marginLeft="@dimen/dp15"
                             android:layout_marginRight="@dimen/dp15"
                             android:background="@drawable/shape_btn_white_20_bg"

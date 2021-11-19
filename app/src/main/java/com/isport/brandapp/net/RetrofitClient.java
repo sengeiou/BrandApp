@@ -770,7 +770,7 @@ public class RetrofitClient {
     }
 
 
-    public Observable<?> ROPE_SUMMARYpostS002(PostBody body) {
+    public Observable<?> postS002(PostBody body) {
         RequestBody requestBody = null;
         if (body.data != null) {
             Gson gson = new Gson();

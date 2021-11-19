@@ -3,6 +3,7 @@ package com.isport.brandapp.ropeskipping.realsport
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.ObjectAnimator
+import android.annotation.SuppressLint
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothDevice
 import android.content.BroadcastReceiver
@@ -63,6 +64,7 @@ import com.isport.brandapp.ropeskipping.setting.RopeAppSettingActivity
 import com.isport.brandapp.ropeskipping.speakutil.SpeakUtil
 import com.isport.brandapp.ropeskipping.util.Preference
 import com.isport.brandapp.util.AppSP
+import com.isport.brandapp.util.DateTimeUtils
 import com.isport.brandapp.util.DeviceTypeUtil
 import com.isport.brandapp.util.UserAcacheUtil
 import com.isport.brandapp.view.CountDownDialogView
@@ -72,11 +74,6 @@ import io.reactivex.disposables.Disposable
 //import kotlinx.android.synthetic.main.activity_real_rope_skpping.*
 import kotlinx.android.synthetic.main.activity_real_rope_skpping.*
 import kotlinx.android.synthetic.main.app_fragment_rope_day.*
-import kotlinx.android.synthetic.main.app_fragment_rope_day.tv_cal
-import kotlinx.android.synthetic.main.app_fragment_rope_day.tv_exeCount
-import kotlinx.android.synthetic.main.app_fragment_rope_day.tv_hour
-import kotlinx.android.synthetic.main.app_fragment_rope_day.tv_rope_count
-import kotlinx.android.synthetic.main.app_fragment_rope_day.tv_update_time
 import kotlinx.android.synthetic.main.app_fragment_rope_month.*
 import phone.gym.jkcq.com.commonres.common.JkConfiguration
 import phone.gym.jkcq.com.commonres.commonutil.CommonDateUtil
@@ -101,6 +98,7 @@ internal class RealRopeSkippingActivity() : BaseMVPTitleActivity<RealRopeSkippin
     var mSelectPopupWindow: SelectPopupWindow? = null
     var mDeviceConnPresenter: DeviceConnPresenter? = null
 
+    //挑战模式的bean
     var bean: Challeng? = null
 
     var isClick = false;
@@ -155,10 +153,100 @@ internal class RealRopeSkippingActivity() : BaseMVPTitleActivity<RealRopeSkippin
 
 
 
+    @SuppressLint("ClickableViewAccessibility")
+    override fun initView(view: View?) {
+
+        initViews()
+
+        // tvToValue = view!!.findViewById(R.id.tv_top_value)
+        titleBarView?.setOnTitleBarClickListener(object : OnTitleBarClickListener() {
+            override fun onLeftClicked(view: View) {
+                stopPlayMusic()
+                finish()
+            }
+
+            override fun onRightClicked(view: View) {
+                startActivity(Intent(this@RealRopeSkippingActivity, RopeAppSettingActivity::class.java))
+            }
+        })
+
+
+        sport_stop?.setOnTouchListener(View.OnTouchListener { v, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    isUP = false
+                    mCurrentProgress = 0
+                    startStopPlay()
+                    return@OnTouchListener true
+                }
+                MotionEvent.ACTION_UP -> {
+                    isUP = true
+                    if (animator != null) {
+                        animator!!.cancel()
+                    }
+                }
+                else -> {
+                }
+            }
+            false
+        })
+
+    }
+
+
+
+    var currentType = 0
+    lateinit var userInfoBean: UserInfoBean
+    private var age = 0
+    private var sex: String? = null
+
+    override fun initData() {
+
+
+        userInfoBean = CommonUserAcacheUtil.getUserInfo(TokenUtil.getInstance().getPeopleIdStr(BaseApp.getApp()))
+        if (userInfoBean != null) {
+            val birthday = userInfoBean.birthday
+            age = UserUtils.getAge(birthday)
+            sex = userInfoBean.gender
+        }
+        register()
+        isSettingSuccess = false
+        initSpeech()
+        initDataPlayer()
+        //  playFromRawFile(this)
+        /*if (AppConfiguration.isConnected && AppConfiguration.currentConnectDevice != null && AppConfiguration.currentConnectDevice.deviceType == JkConfiguration.DeviceType.ROPE_SKIPPING) {
+            tv_connect_state.setText(UIUtils.getString(R.string.connect))
+        } else {
+            tv_connect_state.setText(UIUtils.getString(R.string.disConnect))
+        }*/
+        //上一个页面传输数据
+        //跳绳类型
+        currentType = intent.getIntExtra("ropeSportType", 0)
+
+        if (currentType == JkConfiguration.RopeSportType.Challenge) {
+            bean = intent.getSerializableExtra("bean") as Challeng?
+
+
+            layout_bottom?.visibility  = View.GONE
+            layout_bottom_value?.visibility = View.GONE
+
+            ropeChallengeLayout?.visibility = View.VISIBLE
+
+        }
+        setDeviceDef()
+        initDatas(currentType, isviewClick)
+        showHeartView(false)
+        isCanBack(true)
+        setconState()
+        setCalValue("0")
+        setHrValue(0)
+
+    }
 
 
 
     override fun initEvent() {
+
 
         iv_device_state.setOnClickListener {
             tag = iv_device_state.getTag() as String
@@ -174,6 +262,7 @@ internal class RealRopeSkippingActivity() : BaseMVPTitleActivity<RealRopeSkippin
         GetRopeTargDataObservable.getInstance().addObserver(this)
         titleBarView.setRightIcon(R.drawable.icon_rope_setting)
 
+        //开始按钮
         tv_rope_start.setOnClickListener {
 
             if (AppConfiguration.isConnected && AppConfiguration.currentConnectDevice.deviceType == JkConfiguration.DeviceType.ROPE_SKIPPING){
@@ -183,6 +272,7 @@ internal class RealRopeSkippingActivity() : BaseMVPTitleActivity<RealRopeSkippin
                 cusCountDownView.setOnCusCountDownCompleteListener(CountDownDialogView.OnCusCountDownCompleteListener {
                     cusCountDownView.dismiss()
 
+                    //发送开始的指令
                     ISportAgent.getInstance().requestBle(BleRequest.rope_start_or_end, 2)
                     sportBean!!.isStart = true
                     isClickStart = true
@@ -192,9 +282,11 @@ internal class RealRopeSkippingActivity() : BaseMVPTitleActivity<RealRopeSkippin
             }
 
         }
+
+        //设置目标
         tv_top_taget_view.setOnClickListener {
             when (sportBean!!.currentRopeType) {
-                JkConfiguration.RopeSportType.Count -> {
+                JkConfiguration.RopeSportType.Count -> {   //计数训练
                     mSelectPopupWindow?.popWindowSelect(
                             this@RealRopeSkippingActivity,
                             tv_top_value,
@@ -202,7 +294,7 @@ internal class RealRopeSkippingActivity() : BaseMVPTitleActivity<RealRopeSkippin
                             tv_top_value?.text.toString(), true
                     )
                 }
-                JkConfiguration.RopeSportType.Time -> {
+                JkConfiguration.RopeSportType.Time -> {  //计时训练
 
                     mSelectPopupWindow?.setPopupWindowTemp(
                             this@RealRopeSkippingActivity,
@@ -293,11 +385,9 @@ internal class RealRopeSkippingActivity() : BaseMVPTitleActivity<RealRopeSkippin
 
     override fun update(o: Observable?, arg: Any?) {
         super.update(o, arg)
-
-        Logger.myLog(tgs, "----接收结束的命令=")
         //监听是否结束
         if (o is RopeRealDataObservable) {
-            Logger.myLog(tgs, "-----监听是否结束------=" + Gson().toJson(arg))
+            Logger.myLog(tgs, "-----跳绳数据返回------=" + Gson().toJson(arg))
             handler.post {
                 if (arg is Boolean) {
                     if (arg) {
@@ -311,6 +401,8 @@ internal class RealRopeSkippingActivity() : BaseMVPTitleActivity<RealRopeSkippin
                         }
                     }
                 } else if (arg is RopeRealDataBean) {
+
+
                     if (!isCanStart) {
                         return@post
                     }
@@ -349,7 +441,7 @@ internal class RealRopeSkippingActivity() : BaseMVPTitleActivity<RealRopeSkippin
 
                     } else {
                         when (msg.ropeType) {
-                            JkConfiguration.RopeSportType.Free -> {   //自有训练
+                            JkConfiguration.RopeSportType.Free -> {   //自由训练
                                 sportBean!!.ducation = msg.time.toInt()
                                 sportBean!!.topValue = "" + msg.ropeSumCount
                                 sportBean!!.bottomValue = DateUtil.getRopeFormatTimehhmmss(msg.time)
@@ -383,6 +475,7 @@ internal class RealRopeSkippingActivity() : BaseMVPTitleActivity<RealRopeSkippin
 
                     // isPlayMusic()
 
+                    sportBean!!.currentRopeType = msg.ropeType
 
                     currentTime = DateUtil.getRopeFormatTimehhmmss(msg.time)
                     currentToalCal = "" + msg.cal
@@ -410,6 +503,9 @@ internal class RealRopeSkippingActivity() : BaseMVPTitleActivity<RealRopeSkippin
             }
 
         } else if (o is GetRopeTargDataObservable) {
+
+            Logger.myLog(tgs,"----------获取目标返回="+Gson().toJson(arg))
+
             handler.post {
                 isSettingSuccess = true
                 Logger.myLog("GetRopeTargDataObservable")
@@ -439,6 +535,7 @@ internal class RealRopeSkippingActivity() : BaseMVPTitleActivity<RealRopeSkippin
             }
         } else if (o is RopeStartOrEndSuccessObservable) {
 
+            Logger.myLog(tgs,"---------开始和结束状态返回="+Gson().toJson(arg))
             if (arg is RopeRealDataBean) {
                 //已经结束
                 val msg = arg as RopeRealDataBean
@@ -492,7 +589,7 @@ internal class RealRopeSkippingActivity() : BaseMVPTitleActivity<RealRopeSkippin
                         startPlayMusic()
                         playStartOrEndSpeak(true)
                         isCanBack(false)
-                        setValue()
+                       // setValue()
                     }
 
                 } else {
@@ -561,50 +658,12 @@ internal class RealRopeSkippingActivity() : BaseMVPTitleActivity<RealRopeSkippin
     }
 
 
-    override fun initView(view: View?) {
 
-        // tvToValue = view!!.findViewById(R.id.tv_top_value)
-        titleBarView?.setOnTitleBarClickListener(object : OnTitleBarClickListener() {
-            override fun onLeftClicked(view: View) {
-                stopPlayMusic()
-                finish()
-            }
-
-            override fun onRightClicked(view: View) {
-                startActivity(Intent(this@RealRopeSkippingActivity, RopeAppSettingActivity::class.java))
-            }
-        })
-
-
-        sport_stop?.setOnTouchListener(View.OnTouchListener { v, event ->
-            when (event.action) {
-                MotionEvent.ACTION_DOWN -> {
-                    isUP = false
-                    mCurrentProgress = 0
-                    startStopPlay()
-                    return@OnTouchListener true
-                }
-                MotionEvent.ACTION_UP -> {
-                    isUP = true
-                    if (animator != null) {
-                        animator!!.cancel()
-                    }
-                }
-                else -> {
-                }
-            }
-            false
-        })
-
-
-    }
 
     private fun startStopPlay() {
         isLockComple = false
         mCurrentProgress = 0
         startAnimotion()
-
-
     }
 
 
@@ -766,53 +825,7 @@ internal class RealRopeSkippingActivity() : BaseMVPTitleActivity<RealRopeSkippin
         }
     }
 
-    var currentType = 0
-    lateinit var userInfoBean: UserInfoBean
-    private var age = 0
-    private var sex: String? = null
 
-    override fun initData() {
-
-        initViews()
-
-        userInfoBean = CommonUserAcacheUtil.getUserInfo(TokenUtil.getInstance().getPeopleIdStr(BaseApp.getApp()))
-        if (userInfoBean != null) {
-            val birthday = userInfoBean.birthday
-            age = UserUtils.getAge(birthday)
-            sex = userInfoBean.gender
-        }
-        register()
-        isSettingSuccess = false
-        initSpeech()
-        initDataPlayer()
-        //  playFromRawFile(this)
-        /*if (AppConfiguration.isConnected && AppConfiguration.currentConnectDevice != null && AppConfiguration.currentConnectDevice.deviceType == JkConfiguration.DeviceType.ROPE_SKIPPING) {
-            tv_connect_state.setText(UIUtils.getString(R.string.connect))
-        } else {
-            tv_connect_state.setText(UIUtils.getString(R.string.disConnect))
-        }*/
-        currentType = intent.getIntExtra("ropeSportType", 0)
-        if (currentType == JkConfiguration.RopeSportType.Challenge) {
-            bean = intent.getSerializableExtra("bean") as Challeng?
-
-
-            layout_bottom?.visibility  = View.GONE
-            layout_bottom_value?.visibility = View.GONE
-
-            ropeChallengeLayout?.visibility = View.VISIBLE
-
-
-
-        }
-        setDeviceDef()
-        initDatas(currentType, isviewClick)
-        showHeartView(false)
-        isCanBack(true)
-        setconState()
-        setCalValue("0")
-        setHrValue(0)
-
-    }
 
 
     private fun initViews(){
@@ -828,20 +841,22 @@ internal class RealRopeSkippingActivity() : BaseMVPTitleActivity<RealRopeSkippin
 
 
 
-
-    /* var cal = ""
-     var hrValue = ""*/
+    //显示卡路里
     fun setCalValue(cal: String) {
         tv_cal_value.text = cal
         ropeChallengeKcalTv?.text = cal
     }
 
+
+    //显示数字进度条
     fun setTopeValue(count: String) {
 
+        Logger.myLog(tgs,"------sportBeansportBean-----="+Gson().toJson(sportBean)+"--bena="+Gson().toJson(bean)+"\n"+Gson().toJson(targetBean))
 
         tv_top_value.text = (count)
         tv_top_value_precent.text = (count)
 
+        Logger.myLog(tgs, "-----进度条currentType=$currentType")
 
         var pre = 1.0f
         when (currentType) {
@@ -853,7 +868,7 @@ internal class RealRopeSkippingActivity() : BaseMVPTitleActivity<RealRopeSkippin
                     pre = 0f
                 } else {
                     if (targetBean != null) {
-                        pre = sportBean!!.ducation * 1f / (targetBean!!.targetMin * 60 + targetBean!!.targetMin)
+                        pre = sportBean!!.ducation * 1f / (targetBean!!.targetMin * 60 + targetBean!!.targetSec)
                     }
 
                 }
@@ -884,7 +899,7 @@ internal class RealRopeSkippingActivity() : BaseMVPTitleActivity<RealRopeSkippin
 
         val linearParams = layout_top_value.layoutParams as RelativeLayout.LayoutParams //取控件textView当前的布局参数 linearParams.height = 20;// 控件的高强制设成20
 
-        Logger.myLog(tgs,"--------pre" + pre)
+        Logger.myLog(tgs, "--------进度条pre=$pre")
         if (pre != 1f && pre != 0f) {
             if (pre > 0.98f) {
                 pre = 0.98f
@@ -896,15 +911,17 @@ internal class RealRopeSkippingActivity() : BaseMVPTitleActivity<RealRopeSkippin
         }
 
         var realHeight = tv_top_value_precent.height
+     //   linearParams.height = (realHeight * (1 - pre) + DisplayUtils.dip2px(this, 15f)).toInt() // 控件的宽强制设成30
 
-        linearParams.height = (realHeight * (1 - pre) + DisplayUtils.dip2px(this, 15f)).toInt() // 控件的宽强制设成30
+        Logger.myLog("linearParams" + linearParams.height + "tv_top_value_precent.getHeight()=" + tv_top_value_precent.getHeight() + "linearParams.height" + linearParams.height + "pre=" + pre+" dip="+DisplayUtils.dip2px(this, 15f))
 
-//        Logger.myLog("linearParams" + linearParams.height + "tv_top_value_precent.getHeight()=" + tv_top_value_precent.getHeight() + "linearParams.height" + linearParams.height + "pre=" + pre)
+        // && sportBean?.currentRopeType != 0x00
+        if(currentType == JkConfiguration.RopeSportType.Free || sportBean?.currentRopeType ==0){
 
-        if(currentType != JkConfiguration.RopeSportType.Free){
+        }else{
+            linearParams.height = (realHeight * (1 - pre) + DisplayUtils.dip2px(this, 15f)).toInt() // 控件的宽强 // 控件的宽强制设成30
             layout_top_value.layoutParams = linearParams //使设置好的布局参数应用到控件
         }
-
 
 
         //layout_top_value.setp
@@ -1174,7 +1191,7 @@ internal class RealRopeSkippingActivity() : BaseMVPTitleActivity<RealRopeSkippin
                     //目标比例 设置的目标值与当前值的比列
                     shareBean.centerValue = currentRopeCount
                     shareBean.one = currentTime
-
+                    shareBean.time = DateTimeUtils.getCurrentDate()
                     //平均心率
                     shareBean.ropeAvgHeart = ""+avgHeart
                     //关卡描述
@@ -1208,7 +1225,7 @@ internal class RealRopeSkippingActivity() : BaseMVPTitleActivity<RealRopeSkippin
                     //目标比例 设置的目标值与当前值的比列
                     shareBean.centerValue = currentRopeCount
                     shareBean.one = currentTime
-
+                    shareBean.time = DateTimeUtils.getCurrentDate()
                     //平均心率
                     shareBean.ropeAvgHeart = ""+ avgHeart
                     //关卡描述

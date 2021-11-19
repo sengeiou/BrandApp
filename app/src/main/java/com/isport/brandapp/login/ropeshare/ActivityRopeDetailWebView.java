@@ -28,12 +28,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.core.content.FileProvider;
-import androidx.core.widget.NestedScrollView;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemChildClickListener;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
@@ -62,6 +56,11 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.annotation.NonNull;
+import androidx.core.content.FileProvider;
+import androidx.core.widget.NestedScrollView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import brandapp.isport.com.basicres.BaseTitleActivity;
 import brandapp.isport.com.basicres.commonpermissionmanage.PermissionGroup;
 import brandapp.isport.com.basicres.commonpermissionmanage.PermissionManageUtil;
@@ -73,6 +72,7 @@ import brandapp.isport.com.basicres.commonview.TitleBarView;
 import brandapp.isport.com.basicres.service.observe.NetProgressObservable;
 import phone.gym.jkcq.com.commonres.common.JkConfiguration;
 
+//跳绳详情分享
 public class ActivityRopeDetailWebView extends BaseTitleActivity implements UMShareListener, View.OnClickListener, IJsCallback {
     /**
      * 标题
